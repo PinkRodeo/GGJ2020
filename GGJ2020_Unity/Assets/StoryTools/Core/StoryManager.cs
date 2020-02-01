@@ -114,6 +114,17 @@ public class StoryManager : Singleton<StoryManager>
     {
         currentEvent = newEvent;
         currentEvent.StartEvent();
+
+        if (currentEvent.Text == "")
+        {
+            Debug.LogError("Event didn't get Text specified: " + newEvent.ToString() );
+        }
+        var actor = newEvent.ConversationActor;
+        if (actor == null)
+        {
+            Debug.LogError("Event doesn't define a ConversationActor " + newEvent.ToString() );
+        }
+
         if (OnEventStart != null)
             OnEventStart(newEvent);
     }

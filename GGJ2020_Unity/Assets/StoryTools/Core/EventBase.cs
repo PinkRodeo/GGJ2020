@@ -6,7 +6,7 @@ public abstract class EventBase
 {
     protected static StoryState State = StoryState.Instance;
     protected static StoryManager Story = StoryManager.Instance;
-    private string _text;
+    private string _text = "";
     private List<Choice> choices = new List<Choice>();
 
     public string Text
@@ -20,6 +20,21 @@ public abstract class EventBase
             _text = value;
         }
     }
+
+    private Actor _actor;
+
+    public Actor ConversationActor
+    {
+        get
+        {
+            return  _actor;
+        }
+        set
+        {
+            _actor = value;
+        }
+    }
+
 
     public Choice NewEventChoice()
     {

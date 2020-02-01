@@ -5,6 +5,9 @@ public class FridgeInteraction : EventBase
 {
     public override void StartEvent()
     {
+        Text = "Dummy";
+		ConversationActor = Actors.AI_Fridge();
+
         switch (State.FridgeState)
         {   
             case E_FridgeState.FirstInteract:

@@ -5,6 +5,7 @@ public class #SCRIPTNAME# : EventBase
     public override void StartEvent()
     {
         Text = "Event Text.";
+		ConversationActor = null;
 
 		{
 			var choiceA = NewEventChoice();
