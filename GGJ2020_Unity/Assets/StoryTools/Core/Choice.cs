@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Choice
 {
+    public StoryChoiceDelegate OnChoiceSelected;
+
     public EventBase ParentEvent;
     private string _text;
 
@@ -39,6 +41,9 @@ public class Choice
     public void Select()
     {
         _rewards.Reverse();
+
+        if (OnChoiceSelected != null)
+            OnChoiceSelected(this);
 
         foreach (var rewardType in _rewards)
         {

@@ -1,24 +1,23 @@
 ﻿
+using UnityEngine;
+
 public class FridgeInteraction : EventBase
 {
     public override void StartEvent()
     {
-        Text = "Event Text.";
+        switch (State.FridgeState)
+        {   
+            case E_FridgeState.FirstInteract:
+                Story.AddEvent<Fridge_A_1>();
+                break;
+            case E_FridgeState.AccessUnlocked:
+                Story.AddEvent<Fridge_B_1_Access_Menu>();
+                break;
+            default:
+                Debug.Log("Didn't Implement: " + State.FridgeState.ToString());
+                break;
+        }
 
-		{
-			var choiceA = NewEventChoice();
-			choiceA.Text = "Enter the other room.";
-			choiceA.AddReward<StartEventReward<TestEventB>>();
-			AddChoice(choiceA);
-		}
-        
-		{
-			var choiceB = NewEventChoice();
-			choiceB.Text = "Look around the current room.";
-			choiceB.AddReward<StartEventReward<TestEventC>>();
-			AddChoice(choiceB);
-		}
-
-        AddContinueChoice();
+        Story.CloseEvent();
     }
 }

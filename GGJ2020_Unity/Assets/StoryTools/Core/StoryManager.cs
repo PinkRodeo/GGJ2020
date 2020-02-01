@@ -32,6 +32,12 @@ public class StoryManager : Singleton<StoryManager>
         }
     }
 
+    public void AddEvent<T>() where T : EventBase
+    {
+        var newEvent = EventHelper.CreateEventByType(typeof(T));
+        AddEvent(newEvent);
+    }
+
     public void CloseEvent()
     {
         StoryLog.Log("Closing Even");
