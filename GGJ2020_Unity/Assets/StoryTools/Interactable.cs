@@ -57,6 +57,7 @@ public class Interactable : MonoBehaviour
 
         if (Input.GetKeyUp(KeyCode.Y) && bInteractable)
         {
+            Debug.LogWarning("Hello");
             var newEvent = EventHelper.CreateEventByString(eventToTrigger);
             if (newEvent == null)
             {
