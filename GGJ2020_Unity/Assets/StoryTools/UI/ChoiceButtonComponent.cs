@@ -28,6 +28,9 @@ public class ChoiceButtonComponent : MonoBehaviour
     {
         // TODO animate with tweens
         this.gameObject.SetActive(isVisible);
+
+        button.interactable = isVisible;
+       
     }
 
     public void SetToChoice(Choice choice)
