@@ -75,26 +75,27 @@ public class Gamemode : MonoBehaviour
         //TODO implement fade
         var oldSceneName = SceneManager.GetActiveScene().name;
 
+        bool isFirst = true;
+
         foreach (var roomName in GetRoomForType(room))
         {
-            yield return SceneManager.LoadSceneAsync(roomName, LoadSceneMode.Additive);
+            if (isFirst)
+            {
+                isFirst = false;
+                yield return SceneManager.LoadSceneAsync(roomName, LoadSceneMode.Single);
+            }
+            else
+            {
+                yield return SceneManager.LoadSceneAsync(roomName, LoadSceneMode.Additive);
+            }
         }
-
-        yield return SceneManager.UnloadSceneAsync(oldSceneName);
     }
 
     private static void CreateGameMode()
     {
         GameObject obj = new GameObject("GameMode");
         obj.AddComponent<Gamemode>();
-
-
-
- 
-    
-    
-   
-  }
+    }
 
     // Start is called before the first frame update
     void Awake()

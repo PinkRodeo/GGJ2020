@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-[CustomEditor(typeof(Interactable))]
+[CustomEditor(typeof(Player.Interactable))]
 public class InteractableInspector : Editor
 {
     string[] _choices = new[] { "foo", "foobar" };
@@ -19,7 +19,7 @@ public class InteractableInspector : Editor
         DrawDefaultInspector();
         _choiceIndex = EditorGUILayout.Popup(_choiceIndex, _choices);
 
-        var interactable = target as Interactable;
+        var interactable = target as Player.Interactable;
 
         interactable.eventToTrigger = _choices[_choiceIndex];
 

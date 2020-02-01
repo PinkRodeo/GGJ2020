@@ -23,13 +23,16 @@ public class PlayerTankController : MonoBehaviour
 
     public void InteractInput(InputAction.CallbackContext context)
     {
-        if (currentInteractable != null)
+        if (currentInteractable != null && IsMovementInputAllowed())
         {
             currentInteractable.OnInteract();
         }
     }
 
-
+    public bool IsMovementInputAllowed()
+    {
+        return !StoryManager.Instance.IsEventActive();
+    }
 
     void Awake()
     {
@@ -43,52 +46,75 @@ public class PlayerTankController : MonoBehaviour
         Gamemode.RegisterPlayer(this);
     }
 
-
-
     void Update()
     {
         if (currentInteractable != null)
         {
-            currentInteractable.OnHover();
+            if (IsMovementInputAllowed())
+            {
+                currentInteractable.OnHover();
+            }
+            else
+            {
+                StopInteracting();
+            }
         }
     }
 
     void FixedUpdate()
     {
+        if (!IsMovementInputAllowed())
+        {
+            return;
+        }
+
         rigidBody.velocity = transform.forward * (movementInput.y * movementSpeed);
         rigidBody.MoveRotation(Quaternion.Euler(rigidBody.rotation.eulerAngles + new Vector3(0, movementInput.x * rotationSpeed, 0)));
     }
 
-
     void OnTriggerEnter(Collider collider)
     {
-        IInteractable targetobj = collider.GetComponent<IInteractable>();
-        if (targetobj != null)
+        IInteractable targetObj = collider.GetComponent<IInteractable>();
+        if (targetObj != null)
         {
-            if (targetobj.GetEnterCollider() == collider)
+            if (targetObj.GetEnterCollider() == collider)
             {
-                currentInteractable = targetobj;
-                targetobj.OnEnter();
+                StartInteracting(targetObj);
             }
         }
     }
 
     void OnTriggerExit(Collider collider)
     {
-        IInteractable targetobj = collider.GetComponent<IInteractable>();
-        if (targetobj != null)
+        IInteractable targetObj = collider.GetComponent<IInteractable>();
+        if (targetObj != null)
         {
-            if (targetobj == currentInteractable)
+            if (targetObj == currentInteractable)
             {
-                if (targetobj.GetExitCollider() == collider)
+                if (targetObj.GetExitCollider() == collider)
                 {
-                    currentInteractable.OnExit();
-                    currentInteractable = null;
+                    StopInteracting();
                 }
-
             }
 
         }
+    }
+
+    private void StartInteracting(IInteractable interactable)
+    {
+        if (currentInteractable != null)
+        {
+            StopInteracting();
+        }
+
+        currentInteractable = interactable;
+        interactable.OnEnter();
+    }
+
+    private void StopInteracting()
+    {
+        currentInteractable.OnExit();
+        currentInteractable = null;
     }
 
 

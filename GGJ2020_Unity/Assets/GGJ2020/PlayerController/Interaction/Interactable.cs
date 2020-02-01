@@ -24,12 +24,41 @@ namespace Player
         [SerializeField]
         List<SphereCollider> Colliders = new List<SphereCollider>();
 
+        [HideInInspector]
+        public string eventToTrigger;
+
+        public MeshRenderer[] MeshesToHighlight;
+
+        private List<Material> _materials = new List<Material>();
+
         void Awake()
         {
-            OnValidate();
+
+            var materials = new List<Material>();
+            foreach (var meshRenderer in MeshesToHighlight)
+            {
+                meshRenderer.GetMaterials(materials);
+
+                foreach (var material in materials)
+                {
+                    _materials.Add(material);
+                }
+            }
+
+            SetHighlightAmount(0.0f);
+
+            SetupColliders();
         }
 
-        void OnValidate()
+        void SetHighlightAmount(float amount)
+        {
+            for (int i = 0; i < _materials.Count; i++)
+            {
+                _materials[i].SetFloat("Vector1_5B25C606", amount);
+            }
+        }
+
+        void SetupColliders()
         {
             GetComponent<Collider>().isTrigger = true;
             SphereCollider[] ComponentColliders = GetComponents<SphereCollider>();
@@ -52,10 +81,17 @@ namespace Player
             {
                 int FirstpossibleIndex = -1;
 
-                float CurrentSize = ComponentColliders[currentElement].bounds.size.magnitude;
+                var col = ComponentColliders[currentElement];
+
+                float CurrentSize = col.bounds.size.magnitude;
                 if (currentElement == 0)
                 {
-                    Colliders.Add(ComponentColliders[currentElement]);
+                    if (Colliders.Contains(col))
+                    {
+                        Colliders.Remove(col);
+                    }
+
+                    Colliders.Add(col);
                 }
 
                 for (int ElementsLeft = currentElement -1; ElementsLeft >= 0; ElementsLeft--)
@@ -73,10 +109,22 @@ namespace Player
 
                 if (FirstpossibleIndex == -1)
                 {
-                    Colliders.Add(ComponentColliders[currentElement]);
+                    if (Colliders.Contains(col))
+                    {
+                        Colliders.Remove(col);
+                    }
+                    Colliders.Add(col);
                 }
                 else
-                    Colliders.Insert(FirstpossibleIndex, ComponentColliders[currentElement]);
+                {
+                    if (Colliders.Contains(col))
+                    {
+                        Colliders.Remove(col);
+                    }
+
+                    Colliders.Insert(FirstpossibleIndex, col);
+
+                }
 
             }
 
@@ -98,13 +146,12 @@ namespace Player
 
         public void OnEnter()
         {
-
-            print("OnEnter");
+            SetHighlightAmount(1f);
         }
 
         public void OnExit()
         {
-            print("OnExit");
+            SetHighlightAmount(0f);
         }
 
         public void OnHover()
@@ -114,7 +161,13 @@ namespace Player
 
         public void OnInteract()
         {
-            print("pressed");
+            var newEvent = EventHelper.CreateEventByString(eventToTrigger);
+            if (newEvent == null)
+            {
+                Debug.LogError("Couldn't find event: " + eventToTrigger);
+                return;
+            }
+            StoryManager.Instance.AddEvent(newEvent);
         }
     }
 }
