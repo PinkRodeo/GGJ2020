@@ -9,7 +9,7 @@ public class StoryManager : Singleton<StoryManager>
 {
     public StoryEventDelegate OnEventStart;
     public StoryEventDelegate OnEventClose;
-
+    
     public StoryChoiceDelegate OnChoiceAdded;
     public StoryChoiceDelegate OnChoiceRemoved;
 
@@ -47,7 +47,8 @@ public class StoryManager : Singleton<StoryManager>
             }
 
             currentChoices.Clear();
-            OnEventClose(oldEvent);
+            if (OnEventClose != null)
+                OnEventClose(oldEvent);
         }
 
         if (eventQueue.Count > 0)
@@ -64,7 +65,8 @@ public class StoryManager : Singleton<StoryManager>
             return;
         }
         currentChoices.Add(newChoice);
-        OnChoiceAdded(newChoice);
+        if (OnChoiceAdded != null)
+            OnChoiceAdded(newChoice);
     }
 
     /// <summary>
@@ -80,7 +82,8 @@ public class StoryManager : Singleton<StoryManager>
 
         if (was_removed)
         {
-            OnChoiceRemoved(choiceToRemove);
+            if (OnChoiceRemoved != null)
+                OnChoiceRemoved(choiceToRemove);
         }
 
         return was_removed;
@@ -90,7 +93,8 @@ public class StoryManager : Singleton<StoryManager>
     {
         currentEvent = newEvent;
         currentEvent.StartEvent();
-        OnEventStart(newEvent);
+        if (OnEventStart != null)
+            OnEventStart(newEvent);
     }
 
 }
