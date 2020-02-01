@@ -4,8 +4,10 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
+using FMODUnity;
+using UnityEngine.EventSystems;
 
-public class ChoiceButtonComponent : MonoBehaviour
+public class ChoiceButtonComponent : MonoBehaviour, IPointerEnterHandler, ISelectHandler, ISubmitHandler, IPointerDownHandler
 {
     public TextMeshProUGUI choiceText;
 
@@ -15,9 +17,20 @@ public class ChoiceButtonComponent : MonoBehaviour
 
     public CanvasGroup choiceButtonGroup;
 
+    StudioEventEmitter EmitterSelect;
+    private StudioEventEmitter EmitterSubmit;
+    private StudioEventEmitter EmitterAppear;
+
     public void Awake()
     {
         SetVisible(false);
+
+        EmitterSelect = gameObject.AddComponent<StudioEventEmitter>();
+        EmitterSelect.Event = FModStrings.ChoiceHover;
+        EmitterSubmit = gameObject.AddComponent<StudioEventEmitter>();
+        EmitterSubmit.Event = FModStrings.ChoiceClick;
+        EmitterAppear = gameObject.AddComponent<StudioEventEmitter>();
+        EmitterAppear.Event = FModStrings.ListAppear;
 
         button.onClick.AddListener(delegate
         {
@@ -42,11 +55,15 @@ public class ChoiceButtonComponent : MonoBehaviour
         }
 
         button.interactable = isVisible;
-       
+
     }
 
     public void SetToChoice(Choice choice)
     {
+        //TODO fix this sound
+
+        EmitterAppear.Play();
+
         currentChoice = choice;
         SetVisible(true);
         choiceText.text = choice.Text;
@@ -57,4 +74,43 @@ public class ChoiceButtonComponent : MonoBehaviour
         SetVisible(false);
         currentChoice = null;
     }
+
+    public void OnPointerDown(PointerEventData eventData)
+    {
+        if (button.interactable)
+            SubmitEvent();
+
+    }
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        if (button.interactable)
+            HoverEvent();
+    }
+
+    public void OnSelect(BaseEventData eventData)
+    {
+        print("select");
+        HoverEvent();
+    }
+
+    public void OnSubmit(BaseEventData eventData)
+    {
+        print("submit");
+        SubmitEvent();
+    }
+
+
+    void HoverEvent()
+    {
+        // Emitter.Event = FModStrings.ChoiceClick;
+
+        EmitterSelect.Play();
+    }
+    void SubmitEvent()
+    {
+
+        EmitterSubmit.Play();
+    }
+
+
 }

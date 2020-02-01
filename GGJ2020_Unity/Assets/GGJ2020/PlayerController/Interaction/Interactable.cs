@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
-
+using FMODUnity;
 public interface IInteractable
 {
     void OnEnter();
@@ -19,10 +19,9 @@ namespace Player
 {
     using UnityEngine;
 
-    [RequireComponent(typeof(SphereCollider))]
+    [RequireComponent(typeof(SphereCollider), typeof(StudioEventEmitter))]
     public class Interactable : MonoBehaviour, IInteractable
     {
-        [SerializeField]
         List<SphereCollider> Colliders = new List<SphereCollider>();
 
         [HideInInspector]
@@ -71,7 +70,7 @@ namespace Player
 
             if (ComponentColliders.Length < 2)
             {
-                for (int i = 0; i < (2- ComponentColliders.Length); i++)
+                for (int i = 0; i < (2 - ComponentColliders.Length); i++)
                 {
                     gameObject.AddComponent<SphereCollider>();
                 }
@@ -94,7 +93,7 @@ namespace Player
                     Colliders.Add(col);
                 }
 
-                for (int ElementsLeft = currentElement -1; ElementsLeft >= 0; ElementsLeft--)
+                for (int ElementsLeft = currentElement - 1; ElementsLeft >= 0; ElementsLeft--)
                 {
                     float leftSize = ComponentColliders[ElementsLeft].bounds.size.magnitude;
 
