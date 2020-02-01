@@ -60,19 +60,29 @@ namespace Player
         void SetupColliders()
         {
             GetComponent<Collider>().isTrigger = true;
-            SphereCollider[] ComponentColliders = GetComponents<SphereCollider>();
+            var ComponentColliders = GetComponents<SphereCollider>();
             Colliders.Clear();
+
+
+            var TriggerComponents = new List<SphereCollider>();
 
             foreach (var item in ComponentColliders)
             {
-                item.isTrigger = true;
+                if (item.isTrigger)
+                {
+                    TriggerComponents.Add(item);
+                }
             }
+
+            ComponentColliders = TriggerComponents.ToArray();
 
             if (ComponentColliders.Length < 2)
             {
                 for (int i = 0; i < (2 - ComponentColliders.Length); i++)
                 {
-                    gameObject.AddComponent<SphereCollider>();
+                    var newCollider = gameObject.AddComponent<SphereCollider>();
+                    newCollider.isTrigger = true;
+                    Debug.LogWarning("Didn't add the correct components!!!");
                 }
             }
 

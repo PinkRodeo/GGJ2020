@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/GGJ2020/Levels/A/Environment.unity
+    guid: 7f21184685d048c4196e4655e686abb1
+  - enabled: 1
     path: Assets/GGJ2020/Levels/MainMenu/MainMenu.unity
     guid: 5cfc64f4031d86441bcd4480d6b4eabf
   - enabled: 1
