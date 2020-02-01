@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public interface IInteractable
 {
@@ -33,7 +34,6 @@ namespace Player
 
         void Awake()
         {
-
             var materials = new List<Material>();
             foreach (var meshRenderer in MeshesToHighlight)
             {
@@ -54,7 +54,7 @@ namespace Player
         {
             for (int i = 0; i < _materials.Count; i++)
             {
-                _materials[i].SetFloat("Vector1_5B25C606", amount);
+                _materials[i].DOFloat(amount, "Vector1_5B25C606", 0.3f);
             }
         }
 
@@ -130,10 +130,7 @@ namespace Player
 
         }
 
-
-
         //interface implementation
-
         public Collider GetExitCollider()
         {
             return Colliders[Colliders.Count - 1];

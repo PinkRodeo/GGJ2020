@@ -109,7 +109,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8352435031366474052}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.6544072, y: 1.027, z: -3.032539}
+  m_LocalPosition: {x: 0, y: 0.731, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8352435030386141197}
@@ -200,10 +200,10 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8352435031366474052}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: dce60d905f1f9f648b4a2041e1e71690, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5
+  m_Radius: 0.61
   m_Height: 1.4097145
   m_Direction: 1
   m_Center: {x: 0, y: 0.015081525, z: 0}
@@ -300,6 +300,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: c5f8f4d2-22a7-4984-88ee-4c05432cbb1a
     m_ActionName: UI/TrackedDeviceSelect
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: fd3ce1eb-1d3b-4b18-889a-66f5d5edc4b1
+    m_ActionName: Player/Interact[/Keyboard/f]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Gamepad
   m_DefaultActionMap: Player
