@@ -30,7 +30,6 @@ public static class CameraEffects
 
     public static void StartFadeToBlack(DG.Tweening.TweenCallback onComplete, Ease ease = Ease.InQuart, float duration = 1.5f)
     {
-        Debug.Log(CinemachineCam);
         var cam = CinemachineCam.GetComponent<CinemachineStoryboard>();
 
         FinishTween();
