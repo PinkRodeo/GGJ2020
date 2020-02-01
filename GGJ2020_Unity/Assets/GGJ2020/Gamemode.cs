@@ -87,7 +87,14 @@ public class Gamemode : MonoBehaviour
     {
         GameObject obj = new GameObject("GameMode");
         obj.AddComponent<Gamemode>();
-    }
+
+
+
+ 
+    
+    
+   
+  }
 
     // Start is called before the first frame update
     void Awake()

@@ -15,10 +15,21 @@ public class PlayerTankController : MonoBehaviour
 
     private IInteractable currentInteractable;
 
+
     public void MovementInput(InputAction.CallbackContext context)
     {
         movementInput = context.ReadValue<Vector2>();
     }
+
+    public void InteractInput(InputAction.CallbackContext context)
+    {
+        if (currentInteractable != null)
+        {
+            currentInteractable.OnInteract();
+        }
+    }
+
+
 
     void Awake()
     {
@@ -31,6 +42,7 @@ public class PlayerTankController : MonoBehaviour
     {
         Gamemode.RegisterPlayer(this);
     }
+
 
 
     void Update()
@@ -53,8 +65,11 @@ public class PlayerTankController : MonoBehaviour
         IInteractable targetobj = collider.GetComponent<IInteractable>();
         if (targetobj != null)
         {
-            currentInteractable = targetobj;
-            targetobj.OnEnter();
+            if (targetobj.GetEnterCollider() == collider)
+            {
+                currentInteractable = targetobj;
+                targetobj.OnEnter();
+            }
         }
     }
 
@@ -65,16 +80,16 @@ public class PlayerTankController : MonoBehaviour
         {
             if (targetobj == currentInteractable)
             {
-                currentInteractable.OnExit();
-                currentInteractable = null;
-              
-            }
-            else
-            {
-                Debug.LogError("Player exited a collider thats not its current Interactable are colliders overlapping ?", collider);
+                if (targetobj.GetExitCollider() == collider)
+                {
+                    currentInteractable.OnExit();
+                    currentInteractable = null;
+                }
+
             }
 
         }
     }
+
 
 }
