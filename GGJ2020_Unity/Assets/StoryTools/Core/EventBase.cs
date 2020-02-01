@@ -35,6 +35,18 @@ public abstract class EventBase
         }
     }
 
+    private List<System.Type> _closeRewards = new List<System.Type>();
+    
+    public void AddCloseReward<T>() where T : RewardBase
+    {
+        _closeRewards.Add(typeof(T));
+    }
+
+    public void RemoveCloseReward<T>() where T : RewardBase
+    {
+        _closeRewards.Remove(typeof(T));
+    }
+
 
     public Choice NewEventChoice()
     {
@@ -77,4 +89,13 @@ public abstract class EventBase
     }
 
     public abstract void StartEvent();
+
+    public void CloseEvent()
+    {
+        foreach (var rewardType in _closeRewards)
+        {
+            var reward = EventHelper.CreateRewardByType(rewardType);
+            reward.RunReward();
+        }
+    }
 }

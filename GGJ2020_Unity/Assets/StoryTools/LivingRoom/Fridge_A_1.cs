@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿// First conversation line with AI_Fridge
+
+using UnityEngine;
 public class Fridge_A_1 : EventBase
 {
     public override void StartEvent()

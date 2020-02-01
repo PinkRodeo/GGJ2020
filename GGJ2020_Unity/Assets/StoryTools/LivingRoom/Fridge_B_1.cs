@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿// Conversation line with AI_Fridge where the fridge inventory was unlocked
+
+using UnityEngine;
 
 public class Fridge_B_1_Access_Menu : EventBase
 {

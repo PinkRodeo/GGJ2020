@@ -40,7 +40,6 @@ public class StoryManager : Singleton<StoryManager>
 
     public void CloseEvent()
     {
-        StoryLog.Log("Closing Even");
         if (currentEvent != null)
         {
             var oldEvent = currentEvent;
@@ -53,6 +52,8 @@ public class StoryManager : Singleton<StoryManager>
             }
 
             currentChoices.Clear();
+            currentEvent.CloseEvent();
+            
             if (OnEventClose != null)
                 OnEventClose(oldEvent);
         }

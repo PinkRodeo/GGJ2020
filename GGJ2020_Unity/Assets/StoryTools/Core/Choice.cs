@@ -33,6 +33,11 @@ public class Choice
         _rewards.Add(typeof(T));
     }
 
+        public void RemoveReward<T>() where T : RewardBase
+    {
+        _rewards.Remove(typeof(T));
+    }
+
     public void AddNextEvent<T>() where T : EventBase
     {
         AddReward<StartEventReward<T>>();
