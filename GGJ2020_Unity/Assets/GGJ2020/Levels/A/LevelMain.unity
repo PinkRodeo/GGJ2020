@@ -278,7 +278,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 679320605}
-  m_LocalRotation: {x: 0.23249626, y: -0.44976166, z: -0.10196978, w: 0.85630727}
+  m_LocalRotation: {x: 0.13485734, y: -0.48800978, z: 0.07661909, w: 0.85894674}
   m_LocalPosition: {x: 4.61, y: 3, z: -6.17}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -861,7 +861,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1508777777}
-  m_LocalRotation: {x: 0.0052960482, y: 0.6168865, z: -0.2630947, w: 0.7417575}
+  m_LocalRotation: {x: 0.13349761, y: 0.60229176, z: -0.10304845, w: 0.780259}
   m_LocalPosition: {x: -6.069, y: 3, z: -4.45}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -1152,21 +1152,21 @@ MonoBehaviour:
   m_CollideAgainst:
     serializedVersion: 2
     m_Bits: 1
-  m_IgnoreTag: 
+  m_IgnoreTag: Player
   m_TransparentLayers:
     serializedVersion: 2
     m_Bits: 0
   m_MinimumDistanceFromTarget: 0.1
   m_AvoidObstacles: 0
   m_DistanceLimit: 0
-  m_MinimumOcclusionTime: 0
+  m_MinimumOcclusionTime: 0.5
   m_CameraRadius: 0.1
   m_Strategy: 1
   m_MaximumEffort: 4
   m_SmoothingTime: 0
   m_Damping: 0
   m_DampingWhenOccluded: 0
-  m_OptimalTargetDistance: 4.09
+  m_OptimalTargetDistance: 4
 --- !u!114 &1646103550
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1195,8 +1195,8 @@ MonoBehaviour:
   m_MinDuration: 0
   m_RandomizeChoice: 0
   m_DefaultBlend:
-    m_Style: 1
-    m_Time: 0
+    m_Style: 0
+    m_Time: 0.2
     m_CustomCurve:
       serializedVersion: 2
       m_Curve: []
@@ -1514,14 +1514,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2140263715}
-  m_LocalRotation: {x: 0.0052960482, y: 0.6168865, z: -0.2630947, w: 0.7417575}
+  m_LocalRotation: {x: 0.13349761, y: 0.60229176, z: -0.10304845, w: 0.780259}
   m_LocalPosition: {x: -6.069, y: 3, z: -4.45}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2098725357}
   m_Father: {fileID: 1646103552}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 19, y: 75.33, z: 0}
 --- !u!1001 &8352435031217314166
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1532,6 +1532,11 @@ PrefabInstance:
     - target: {fileID: 8352435031366474052, guid: d9e2661901b3aa04faa8b9ada42cfe3d,
         type: 3}
       propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8352435031366474052, guid: d9e2661901b3aa04faa8b9ada42cfe3d,
+        type: 3}
+      propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 8352435031366474062, guid: d9e2661901b3aa04faa8b9ada42cfe3d,
