@@ -22,10 +22,13 @@ public class PlayerTankController : MonoBehaviour
     private float rotationChangeSpeed = 0f;
     private float currentRotationSpeed = 0f;
 
+    private float previousAudioSpeed = 0f;
     private IInteractable currentInteractable;
     private StudioEventEmitter emitterOutline;
     private StudioEventEmitter emitterInteract;
     private StudioEventEmitter emitterDriving;
+
+    private bool _wasFullyStopped = true;
 
     public void MovementInput(InputAction.CallbackContext context)
     {
@@ -79,6 +82,12 @@ public class PlayerTankController : MonoBehaviour
         {
             rigidBody.velocity = Vector3.zero;
             rigidBody.angularVelocity = Vector3.zero;
+
+            emitterDriving.SetParameter("RobotSpeed", .00f);
+            emitterDriving.Stop();
+
+            _wasFullyStopped = true;
+
             return;
         }
 
@@ -106,17 +115,39 @@ public class PlayerTankController : MonoBehaviour
 
         rigidBody.MoveRotation(Quaternion.Euler(rigidBody.rotation.eulerAngles + new Vector3(0, Mathf.Lerp(currentRotationSpeed, currentRotationSpeed * 0.7f, rotationModifier), 0)));
 
-        var speed = rigidBody.velocity.magnitude == 0 ? rigidBody.angularVelocity.magnitude : rigidBody.velocity.magnitude;
-        if (speed < .1f)
+        var nextSpeed = Mathf.Clamp(movementInput.magnitude, 0f, 1f);
+        if (nextSpeed > previousAudioSpeed)
         {
-            emitterDriving.Stop();
+            nextSpeed = Mathf.MoveTowards(previousAudioSpeed, nextSpeed, 0.5f * Time.fixedDeltaTime);
+        }
+
+        var speed = Mathf.Max(nextSpeed, previousAudioSpeed);
+        if (_wasFullyStopped)
+        {
+            if (movementInput.magnitude > 0.2f)
+            {
+                _wasFullyStopped = false;
+            }
+            else
+            {
+                return;
+            }
+        }
+        if (speed < .05f)
+        {
+            emitterDriving.SetParameter("RobotSpeed", .05f);
         }
         else
         {
-            emitterDriving.SetParameter("RobotSpeed", speed -.1f);
+            emitterDriving.SetParameter("RobotSpeed", speed);
             if (!emitterDriving.IsPlaying())
                 emitterDriving.Play();
         }
+
+        if (movementInput.magnitude < 0.5f)
+            previousAudioSpeed = speed - ((1f/ 2f)  * Time.fixedDeltaTime);
+        else
+            previousAudioSpeed = speed;
 
     }
 
