@@ -411,6 +411,7 @@ GameObject:
   - component: {fileID: 3716823231566682739}
   - component: {fileID: 3716823231566682738}
   - component: {fileID: 8381879722424171769}
+  - component: {fileID: 684117154793896382}
   m_Layer: 5
   m_Name: EventPanel
   m_TagString: Untagged
@@ -498,6 +499,19 @@ MonoBehaviour:
   - {fileID: 5641678055837273497}
   - {fileID: 6184324972482858594}
   - {fileID: 6713655452177485818}
+  eventPanelGroup: {fileID: 684117154793896382}
+--- !u!225 &684117154793896382
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3716823231566682748}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &3716823231694296175
 GameObject:
   m_ObjectHideFlags: 0

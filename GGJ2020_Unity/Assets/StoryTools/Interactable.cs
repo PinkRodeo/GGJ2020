@@ -43,7 +43,7 @@ public class Interactable : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        bInteractable = Input.GetKey(KeyCode.T);
+        bInteractable = Input.GetKey(KeyCode.T) && !StoryManager.Instance.IsEventActive();
 
         if (bInteractable)
         {
@@ -57,7 +57,6 @@ public class Interactable : MonoBehaviour
 
         if (Input.GetKeyUp(KeyCode.Y) && bInteractable)
         {
-            Debug.LogWarning("Hello");
             var newEvent = EventHelper.CreateEventByString(eventToTrigger);
             if (newEvent == null)
             {

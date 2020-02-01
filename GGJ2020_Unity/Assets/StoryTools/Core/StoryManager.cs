@@ -51,10 +51,25 @@ public class StoryManager : Singleton<StoryManager>
                 OnEventClose(oldEvent);
         }
 
-        if (eventQueue.Count > 0)
+        if (IsEventQueued())
         {
             _SetCurrentEvent(eventQueue.Dequeue());
         }
+    }
+
+    public bool IsEventAvailable()
+    {
+        return IsEventActive() || IsEventQueued();
+    }
+
+    public bool IsEventActive()
+    {
+        return currentEvent != null;
+    }
+
+    public bool IsEventQueued()
+    {
+        return eventQueue.Count > 0;
     }
 
     public void AddChoice(Choice newChoice)

@@ -38,6 +38,8 @@ public class Choice
 
     public void Select()
     {
+        _rewards.Reverse();
+
         foreach (var rewardType in _rewards)
         {
             var reward = EventHelper.CreateRewardByType(rewardType);

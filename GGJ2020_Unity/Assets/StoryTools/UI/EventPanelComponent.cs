@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using DG.Tweening;
 
 public class EventPanelComponent : MonoBehaviour
 {
     public TextMeshProUGUI eventText;
 
     public ChoiceButtonComponent[] choiceButtons;
+    public CanvasGroup eventPanelGroup;
 
     public EventBase currentEvent;
 
@@ -26,7 +28,16 @@ public class EventPanelComponent : MonoBehaviour
     public void SetVisible(bool isVisible)
     {
         // TODO animate with tweens
-        this.gameObject.SetActive(isVisible);
+        //this.gameObject.SetActive(isVisible);
+
+        if (isVisible)
+        {
+            eventPanelGroup.DOFade(1.0f, 0.3f).SetEase(Ease.OutSine);
+        }
+        else
+        {
+            eventPanelGroup.DOFade(0.0f, 0.1f).SetEase(Ease.InSine);
+        }
     }
 
     public void OnEventStart(EventBase storyEvent)
@@ -48,8 +59,12 @@ public class EventPanelComponent : MonoBehaviour
             return;
         }
 
-        SetVisible(false);
         currentEvent = null;
+
+        if (!StoryManager.Instance.IsEventAvailable())
+        {
+            SetVisible(false);
+        }
     }
 
     public void OnChoiceAdded(Choice choice)

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class ChoiceButtonComponent : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class ChoiceButtonComponent : MonoBehaviour
     public Choice currentChoice;
 
     public Button button;
+
+    public CanvasGroup choiceButtonGroup;
 
     public void Awake()
     {
@@ -27,7 +30,16 @@ public class ChoiceButtonComponent : MonoBehaviour
     public void SetVisible(bool isVisible)
     {
         // TODO animate with tweens
-        this.gameObject.SetActive(isVisible);
+        //this.gameObject.SetActive(isVisible);
+
+        if (isVisible)
+        {
+            choiceButtonGroup.DOFade(1.0f, 0.5f).SetEase(Ease.OutSine);
+        }
+        else
+        {
+            choiceButtonGroup.DOFade(0.0f, 0.1f).SetEase(Ease.InSine);
+        }
 
         button.interactable = isVisible;
        
@@ -42,7 +54,7 @@ public class ChoiceButtonComponent : MonoBehaviour
 
     public void ClearChoice()
     {
-        currentChoice = null;
         SetVisible(false);
+        currentChoice = null;
     }
 }
