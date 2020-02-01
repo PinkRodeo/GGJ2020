@@ -10,7 +10,7 @@ LAST ORDER PLACED: 01-07-2065 | 09:13
 --------------------------------------
 CURRENT CONTENTS: 
 Milk: 2 Liters. Expiry date: 03-07-2065
-Home-cooked Thia Grill. Expiry date: 04-07-2065
+Home-cooked Thai Grill. Expiry date: 04-07-2065
 Soy sauce. Expiry date: 31-02-2064
 Soy sauce. Expiry date: 25-06-2065
 Soy sauce. Expiry date: 01-12-2065 

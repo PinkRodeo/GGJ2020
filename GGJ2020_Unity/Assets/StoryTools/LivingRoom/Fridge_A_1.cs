@@ -101,7 +101,7 @@ public class Fridge_A_2_Access_Expired_Final : EventBase
 			choiceA.AddNextEvent<Fridge_B_1_Access_Menu>();
 
 			choiceA.OnChoiceSelected += (Choice c) => {
-				Debug.Log("Unlocked Fridge");
+				State.FridgeState = E_FridgeState.AccessUnlocked;
 			};
 			AddChoice(choiceA);
 		}
