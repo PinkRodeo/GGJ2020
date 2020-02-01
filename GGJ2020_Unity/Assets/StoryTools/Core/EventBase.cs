@@ -4,19 +4,20 @@ using UnityEngine;
 
 public abstract class EventBase
 {
+    protected static StoryState State = StoryState.Instance;
     protected static StoryManager Story = StoryManager.Instance;
     private string _text;
     private List<Choice> choices = new List<Choice>();
 
     public string Text
     {
-        set
-        {
-            _text = value;
-        }
         get
         {
             return _text;
+        }
+        set
+        {
+            _text = value;
         }
     }
 
@@ -30,12 +31,24 @@ public abstract class EventBase
         return newChoice;
     }
 
-    public Choice AddContinueChoice()
+    public Choice NewEventChoice(string choiceText)
+    {
+        var newChoice = new Choice(this);
+
+        // Every Event Choice automatically gets a close event
+        newChoice.AddReward<CloseEventReward>();
+
+        newChoice.Text = choiceText;
+
+        return newChoice;
+    }
+
+    public Choice AddContinueChoice(string text = "…")
     {
         var newChoice = new Choice(this);
 
         newChoice.AddReward<CloseEventReward>();
-        newChoice.Text = "Continue";
+        newChoice.Text = text;
 
         AddChoice(newChoice);
 
