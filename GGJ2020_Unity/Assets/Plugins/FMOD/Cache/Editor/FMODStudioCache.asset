@@ -15,15 +15,49 @@ MonoBehaviour:
   Path: event:/Music/Music - Z-Cluster
   guid: 36258a3990d75e4584a8e01d4e761fc7
   Banks:
-  - {fileID: 3960328279419716896}
+  - {fileID: 5814152336227670557}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 6054032914475263680}
+  - {fileID: -7353515939166579435}
   MinDistance: 0
   MaxDistance: 0
   Length: 150432
+--- !u!114 &-8514566541633519350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music - The Rift/X Completed
+  m_EditorClassIdentifier: 
+  Name: X Completed
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
+--- !u!114 &-7353515939166579435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music - Z-Cluster/Dancing
+  m_EditorClassIdentifier: 
+  Name: Dancing
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &-6730074930597341476
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39,7 +73,7 @@ MonoBehaviour:
   Path: event:/SFX/SFX_Hook_HitReeledInTarget
   guid: ee0c12245cecf54b8356df5b7a88cffd
   Banks:
-  - {fileID: 3960328279419716896}
+  - {fileID: 5814152336227670557}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -62,7 +96,7 @@ MonoBehaviour:
   Path: event:/SFX/SFX_Travel_Through_Portal
   guid: 3625e85e1b3c004197453e675932493b
   Banks:
-  - {fileID: 3960328279419716896}
+  - {fileID: 5814152336227670557}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -153,7 +187,7 @@ MonoBehaviour:
   Path: event:/SFX/SFX_StingerA
   guid: 73f05441a0724e49b35f8f08f53a2c6d
   Banks:
-  - {fileID: 3960328279419716896}
+  - {fileID: 5814152336227670557}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -161,6 +195,23 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 4211
+--- !u!114 &-4324081080537509203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music - The Rift/Y Completed
+  m_EditorClassIdentifier: 
+  Name: Y Completed
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &-4061723273230787902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -210,18 +261,35 @@ MonoBehaviour:
   Path: event:/Music/Music - The Rift
   guid: 0f260d7edbd0df4cbfa33790a3f19191
   Banks:
-  - {fileID: 3960328279419716896}
+  - {fileID: 5814152336227670557}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 3665924714273640038}
-  - {fileID: 5509264095007661570}
-  - {fileID: -5381762615733298032}
-  - {fileID: -4984668124626476156}
+  - {fileID: 4998488700999654814}
+  - {fileID: -8514566541633519350}
+  - {fileID: -4324081080537509203}
+  - {fileID: -3531459725034869583}
   MinDistance: 0
   MaxDistance: 0
   Length: 231321
+--- !u!114 &-3531459725034869583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music - The Rift/Z Completed
+  m_EditorClassIdentifier: 
+  Name: Z Completed
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &-3455857069697942308
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -237,7 +305,7 @@ MonoBehaviour:
   Path: event:/SFX/SFX_Large_Object_Floating_By
   guid: a5463739508b4d4ca12901ca7b9b2ed1
   Banks:
-  - {fileID: 3960328279419716896}
+  - {fileID: 5814152336227670557}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
@@ -259,11 +327,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: ../FMODAssets/Desktop/Master Bank.strings.bank
   SubDir: 
-  lastModified: 637161573984909121
+  lastModified: 636841901270000000
   LoadResult: 0
   FileSizes:
   - Name: 
     Value: 1538
+  Exists: 1
+--- !u!114 &-1948712232967717025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music - X-Cluster/Dancing
+  m_EditorClassIdentifier: 
+  Name: Dancing
+  Min: 0
+  Max: 1
+  Default: 0
   Exists: 1
 --- !u!114 &-1503054174066621946
 MonoBehaviour:
@@ -280,12 +365,12 @@ MonoBehaviour:
   Path: event:/Music/Music - Y-Cluster
   guid: 9d353fdec01bea4082559896d7fe2839
   Banks:
-  - {fileID: 3960328279419716896}
+  - {fileID: 5814152336227670557}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: -5471998787753025405}
+  - {fileID: 7942161945292325586}
   MinDistance: 0
   MaxDistance: 0
   Length: 231321
@@ -304,7 +389,7 @@ MonoBehaviour:
   Path: event:/SFX/SFX_Hook_ReelTargetIn
   guid: ead9a692f3c4c648a4c2ca6d48217464
   Banks:
-  - {fileID: 3960328279419716896}
+  - {fileID: 5814152336227670557}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
@@ -346,7 +431,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: -2936403748371044302}
-  - {fileID: 3960328279419716896}
+  - {fileID: 5814152336227670557}
   EditorEvents:
   - {fileID: -3721809670603148850}
   - {fileID: -9041187810519504573}
@@ -365,10 +450,10 @@ MonoBehaviour:
   - {fileID: 5062317344736713926}
   EditorParameters: []
   MasterBanks:
-  - {fileID: 3960328279419716896}
+  - {fileID: 5814152336227670557}
   StringsBanks:
   - {fileID: -2936403748371044302}
-  stringsBankWriteTime: 637161573984909121
+  stringsBankWriteTime: 636841901270000000
   cacheVersion: 3
 --- !u!114 &6128095153466758
 MonoBehaviour:
@@ -402,7 +487,7 @@ MonoBehaviour:
   Path: event:/SFX/SFX_DetachAfterWaltz
   guid: 8633de097cf5404194757c6760289369
   Banks:
-  - {fileID: 3960328279419716896}
+  - {fileID: 5814152336227670557}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -425,7 +510,7 @@ MonoBehaviour:
   Path: event:/SFX/SFX_UI_TextMessage
   guid: d0229f071f54a642b2d402797dbb98fd
   Banks:
-  - {fileID: 3960328279419716896}
+  - {fileID: 5814152336227670557}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -468,6 +553,23 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 1
+--- !u!114 &4998488700999654814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music - The Rift/Dancing
+  m_EditorClassIdentifier: 
+  Name: Dancing
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &5062317344736713926
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -483,7 +585,7 @@ MonoBehaviour:
   Path: event:/SFX/SFX_ClusterComplete
   guid: fb82cbe93618df4dac174a4940cda6d9
   Banks:
-  - {fileID: 3960328279419716896}
+  - {fileID: 5814152336227670557}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -523,12 +625,12 @@ MonoBehaviour:
   Path: event:/Music/Music - X-Cluster
   guid: cb763782dde19647b563a73b62f3e3ca
   Banks:
-  - {fileID: 3960328279419716896}
+  - {fileID: 5814152336227670557}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 7431289195274854764}
+  - {fileID: -1948712232967717025}
   MinDistance: 0
   MaxDistance: 0
   Length: 156911
@@ -547,7 +649,7 @@ MonoBehaviour:
   Path: event:/SFX/SFX_StingerB
   guid: b42b70f9a398804c87c6d0c13cba6fbe
   Banks:
-  - {fileID: 3960328279419716896}
+  - {fileID: 5814152336227670557}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -571,6 +673,24 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+  Exists: 1
+--- !u!114 &5814152336227670557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master Bank.bank
+  m_EditorClassIdentifier: 
+  Path: ../FMODAssets/Desktop/Master Bank.bank
+  SubDir: 
+  lastModified: 636841901510000000
+  LoadResult: 0
+  FileSizes: []
   Exists: 1
 --- !u!114 &5999875134722939440
 MonoBehaviour:
@@ -621,7 +741,7 @@ MonoBehaviour:
   Path: event:/SFX/SFX_Hook_HitTarget
   guid: 5c64f444bf2b1f4eb3ce24c5a410d469
   Banks:
-  - {fileID: 3960328279419716896}
+  - {fileID: 5814152336227670557}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -640,6 +760,23 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
   m_Name: parameter:/Music - X-Cluster/Dancing
+  m_EditorClassIdentifier: 
+  Name: Dancing
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
+--- !u!114 &7942161945292325586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music - Y-Cluster/Dancing
   m_EditorClassIdentifier: 
   Name: Dancing
   Min: 0
@@ -678,7 +815,7 @@ MonoBehaviour:
   Path: event:/SFX/SFX_Hook_ShootHook
   guid: 78d5477cec9e0341b31e663f7af68b90
   Banks:
-  - {fileID: 3960328279419716896}
+  - {fileID: 5814152336227670557}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
