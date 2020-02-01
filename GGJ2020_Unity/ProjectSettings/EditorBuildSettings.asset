@@ -11,4 +11,16 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: d1c3109bdb54ad54c8a2b2838528e640
+  - enabled: 1
+    path: Assets/GGJ2020/Levels/MainMenu/MainMenu.unity
+    guid: 5cfc64f4031d86441bcd4480d6b4eabf
+  - enabled: 1
+    path: Assets/GGJ2020/Levels/A/LevelMain.unity
+    guid: 798f55b20da474647bba9129a0e7c05d
+  - enabled: 1
+    path: Assets/GGJ2020/Levels/TestRoom/Test2.unity
+    guid: c3d320bc9b346224eacc8d6a088e7eaa
+  - enabled: 1
+    path: Assets/GGJ2020/Levels/EndScreen/EndScreen.unity
+    guid: 729e2aca38296cf438ed3d0e2a34e5f0
   m_configObjects: {}
