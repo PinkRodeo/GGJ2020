@@ -13,6 +13,12 @@ public class PlayerTankController : MonoBehaviour
 
     private Vector2 movementInput = Vector2.zero;
 
+    private float currentMovementSpeed = 0f;
+
+
+    private float rotationChangeSpeed = 0f;
+    private float currentRotationSpeed = 0f;
+
     private IInteractable currentInteractable;
 
 
@@ -68,8 +74,29 @@ public class PlayerTankController : MonoBehaviour
             return;
         }
 
-        rigidBody.velocity = transform.forward * (movementInput.y * movementSpeed);
-        rigidBody.MoveRotation(Quaternion.Euler(rigidBody.rotation.eulerAngles + new Vector3(0, movementInput.x * rotationSpeed, 0)));
+        if (Mathf.Abs(movementInput.x) > 0f)
+        {
+            currentRotationSpeed = Mathf.SmoothDamp(currentRotationSpeed, rotationSpeed * movementInput.x, ref rotationChangeSpeed, 0.2f, 20f, Time.fixedDeltaTime);
+        }
+        else
+        {
+            currentRotationSpeed = Mathf.SmoothDamp(currentRotationSpeed, rotationSpeed * movementInput.x, ref rotationChangeSpeed, 0.15f, 50f, Time.fixedDeltaTime);
+        }
+
+        if (Mathf.Abs(movementInput.y) > 0f)
+        {
+            currentMovementSpeed = Mathf.Lerp(currentMovementSpeed, movementInput.y * movementSpeed, 0.17f);
+        }
+        else
+        {
+            currentMovementSpeed = Mathf.Lerp(currentMovementSpeed, movementInput.y * movementSpeed, 0.28f);
+        }
+
+        rigidBody.velocity = Vector3.Lerp(rigidBody.velocity, transform.forward * currentMovementSpeed, 0.14f);
+
+        var rotationModifier = Mathf.Abs(currentMovementSpeed);
+
+        rigidBody.MoveRotation(Quaternion.Euler(rigidBody.rotation.eulerAngles + new Vector3(0, Mathf.Lerp(currentRotationSpeed, currentRotationSpeed * 0.7f, rotationModifier), 0)));
     }
 
     void OnTriggerEnter(Collider collider)
