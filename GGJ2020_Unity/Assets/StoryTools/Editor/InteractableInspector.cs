@@ -16,7 +16,7 @@ public class InteractableInspector : Editor
 
     public override void OnInspectorGUI()
     {
-        //DrawDefaultInspector();
+        DrawDefaultInspector();
         _choiceIndex = EditorGUILayout.Popup(_choiceIndex, _choices);
 
         var interactable = target as Interactable;
