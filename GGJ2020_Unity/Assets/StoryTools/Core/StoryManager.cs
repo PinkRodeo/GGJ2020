@@ -112,4 +112,14 @@ public class StoryManager : Singleton<StoryManager>
             OnEventStart(newEvent);
     }
 
+    public void Reset()
+    {
+        while (currentEvent == null)
+        {
+            CloseEvent();
+        }
+
+
+    }
+
 }

@@ -1,0 +1,26 @@
+using UnityEngine;
+
+public class #SCRIPTNAME# : EventBase
+{
+    public override void StartEvent()
+    {
+        Text = "Event Text.";
+
+		{
+			var choiceA = NewEventChoice();
+			choiceA.Text = "Choice A";
+			choiceA.AddReward<StartEventReward<TestEventB>>();
+			AddChoice(choiceA);
+		}
+        
+		{
+			var choiceB = NewEventChoice();
+			choiceB.Text = "Choice B";
+			choiceB.AddReward<StartEventReward<TestEventC>>();
+			AddChoice(choiceB);
+		}
+
+        
+        AddContinueChoice();
+    }
+}
