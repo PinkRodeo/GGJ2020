@@ -148,26 +148,7 @@ public class VR_Interaction_B_5 : EventBase
     }
 }
 
-
 public class VR_Interaction_C_1 : EventBase
-{
-    public override void StartEvent()
-    {
-        Text = "SETTINGS";
-        ConversationActor = Actors.Headset();
-
-        {
-            var choice = NewEventChoice("ERASE USER DATA");
-            choice.AddNextEvent<VR_Interaction_C_A_2>();
-        }
-        {
-            var choice = NewEventChoice("CHANGE PROFILE DATA: [BLOCKED]");
-            choice.AddNextEvent<VR_Interaction_C_B_1>();
-        }
-    }
-}
-
-public class VR_Interaction_C_A_1 : EventBase
 {
     public override void StartEvent()
     {
@@ -268,6 +249,9 @@ public class VR_Interaction_C_B_4 : EventBase
 
         {
             var choice = NewEventChoice("affirmative.");
+            choice.OnChoiceSelected += (Choice c) => {
+                State.State_Headset = E_ThrowawayState.PickedUp;
+            };
         }
     }
 }

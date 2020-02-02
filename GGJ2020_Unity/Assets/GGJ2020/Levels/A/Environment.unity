@@ -687,6 +687,38 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 107516902439624976, guid: 4a6d65176de5a1248bde26daf4ef89c4,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: bf689a0d25519ca4d8c0b037d8160c46,
+        type: 3}
+    - target: {fileID: 107516902439624976, guid: 4a6d65176de5a1248bde26daf4ef89c4,
+        type: 3}
+      propertyPath: m_Type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 107516902439624976, guid: 4a6d65176de5a1248bde26daf4ef89c4,
+        type: 3}
+      propertyPath: m_PixelsPerUnitMultiplier
+      value: 0.39
+      objectReference: {fileID: 0}
+    - target: {fileID: 391068044999808498, guid: 4a6d65176de5a1248bde26daf4ef89c4,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: bf689a0d25519ca4d8c0b037d8160c46,
+        type: 3}
+    - target: {fileID: 391068044999808498, guid: 4a6d65176de5a1248bde26daf4ef89c4,
+        type: 3}
+      propertyPath: m_Type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 391068044999808498, guid: 4a6d65176de5a1248bde26daf4ef89c4,
+        type: 3}
+      propertyPath: m_PixelsPerUnitMultiplier
+      value: 0.39
+      objectReference: {fileID: 0}
     - target: {fileID: 826870955531038976, guid: 4a6d65176de5a1248bde26daf4ef89c4,
         type: 3}
       propertyPath: m_Material
@@ -697,20 +729,47 @@ PrefabInstance:
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 2818185374410257827, guid: 4a6d65176de5a1248bde26daf4ef89c4,
+    - target: {fileID: 2159057445469678274, guid: 4a6d65176de5a1248bde26daf4ef89c4,
         type: 3}
-      propertyPath: m_Alpha
-      value: 0
+      propertyPath: m_Type
+      value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 8994717578111381856, guid: 4a6d65176de5a1248bde26daf4ef89c4,
+    - target: {fileID: 2159057445469678274, guid: 4a6d65176de5a1248bde26daf4ef89c4,
         type: 3}
-      propertyPath: m_Material
-      value: 
+      propertyPath: m_PixelsPerUnitMultiplier
+      value: 0.28
       objectReference: {fileID: 0}
-    - target: {fileID: 8994717578111381856, guid: 4a6d65176de5a1248bde26daf4ef89c4,
+    - target: {fileID: 2322560166649750052, guid: 4a6d65176de5a1248bde26daf4ef89c4,
         type: 3}
-      propertyPath: m_sharedMaterial
+      propertyPath: m_Sprite
       value: 
+      objectReference: {fileID: 21300000, guid: bf689a0d25519ca4d8c0b037d8160c46,
+        type: 3}
+    - target: {fileID: 2322560166649750052, guid: 4a6d65176de5a1248bde26daf4ef89c4,
+        type: 3}
+      propertyPath: m_Type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2322560166649750052, guid: 4a6d65176de5a1248bde26daf4ef89c4,
+        type: 3}
+      propertyPath: m_PixelsPerUnitMultiplier
+      value: 0.39
+      objectReference: {fileID: 0}
+    - target: {fileID: 3027702456044017494, guid: 4a6d65176de5a1248bde26daf4ef89c4,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: bf689a0d25519ca4d8c0b037d8160c46,
+        type: 3}
+    - target: {fileID: 3027702456044017494, guid: 4a6d65176de5a1248bde26daf4ef89c4,
+        type: 3}
+      propertyPath: m_Type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3027702456044017494, guid: 4a6d65176de5a1248bde26daf4ef89c4,
+        type: 3}
+      propertyPath: m_PixelsPerUnitMultiplier
+      value: 0.39
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a6d65176de5a1248bde26daf4ef89c4, type: 3}
@@ -1698,7 +1757,7 @@ GameObject:
   - component: {fileID: 870773788}
   - component: {fileID: 870773787}
   m_Layer: 0
-  m_Name: CM CAMS
+  m_Name: CinemachineFadeCams
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
