@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -237,6 +237,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 107516902439624982, guid: 4a6d65176de5a1248bde26daf4ef89c4,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.6230469
+      objectReference: {fileID: 0}
+    - target: {fileID: 391068044999808500, guid: 4a6d65176de5a1248bde26daf4ef89c4,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.6230469
+      objectReference: {fileID: 0}
+    - target: {fileID: 2322560166649750050, guid: 4a6d65176de5a1248bde26daf4ef89c4,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.6230469
+      objectReference: {fileID: 0}
+    - target: {fileID: 3027702456044017488, guid: 4a6d65176de5a1248bde26daf4ef89c4,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.6230469
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a6d65176de5a1248bde26daf4ef89c4, type: 3}
@@ -1105,17 +1125,17 @@ PrefabInstance:
     - target: {fileID: 1378847345394029601, guid: de6e29240363e954aa3eefd3b29b7212,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.18717742
+      value: 0.1871774
       objectReference: {fileID: 0}
     - target: {fileID: 1378847345394029601, guid: de6e29240363e954aa3eefd3b29b7212,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.10634472
+      value: 0.1063447
       objectReference: {fileID: 0}
     - target: {fileID: 1378847345394029601, guid: de6e29240363e954aa3eefd3b29b7212,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.48240528
+      value: -0.48240525
       objectReference: {fileID: 0}
     - target: {fileID: 1378847345394029601, guid: de6e29240363e954aa3eefd3b29b7212,
         type: 3}
