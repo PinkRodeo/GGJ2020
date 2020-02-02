@@ -19,7 +19,7 @@ public class Phone_Jenn_Interaction : EventBase
 
             var Settings = NewEventChoice();
             Messages.Text = "SETTINGS";
-            Messages.AddReward<StartEventReward<Message1>>();
+            Messages.AddReward<StartEventReward<Settings>>();
         }
     }
 }
