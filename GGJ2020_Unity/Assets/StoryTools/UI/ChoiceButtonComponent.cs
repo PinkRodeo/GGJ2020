@@ -17,13 +17,19 @@ public class ChoiceButtonComponent : MonoBehaviour, IPointerEnterHandler, ISelec
 
     public CanvasGroup choiceButtonGroup;
 
-    StudioEventEmitter EmitterSelect;
+    private EventUIScriptableObject uiTypes;
+
+    private StudioEventEmitter EmitterSelect;
     private StudioEventEmitter EmitterSubmit;
     private StudioEventEmitter EmitterAppear;
+
+
 
     public void Awake()
     {
         SetVisible(false);
+
+        uiTypes = Gamemode.GetUiSettings();
 
         EmitterSelect = gameObject.AddComponent<StudioEventEmitter>();
         EmitterSelect.Event = FModStrings.ChoiceHover;
@@ -61,12 +67,19 @@ public class ChoiceButtonComponent : MonoBehaviour, IPointerEnterHandler, ISelec
     public void SetToChoice(Choice choice)
     {
         //TODO fix this sound
+        E_ActorCategory category = choice.ParentEvent.ConversationActor.ActorCategory;
+
+        var data = uiTypes.GetDataForCategory(category);
+
 
         EmitterAppear.Play();
 
         currentChoice = choice;
         SetVisible(true);
         choiceText.text = choice.Text;
+
+        choiceText.font = data.font;
+        //choiceText.UpdateFontAsset();
     }
 
     public void ClearChoice()
@@ -75,6 +88,8 @@ public class ChoiceButtonComponent : MonoBehaviour, IPointerEnterHandler, ISelec
         currentChoice = null;
     }
 
+
+    #region Audio Handlers
     public void OnPointerDown(PointerEventData eventData)
     {
         if (button.interactable)
@@ -111,6 +126,6 @@ public class ChoiceButtonComponent : MonoBehaviour, IPointerEnterHandler, ISelec
 
         EmitterSubmit.Play();
     }
-
+    #endregion
 
 }

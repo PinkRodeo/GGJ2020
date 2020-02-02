@@ -52,7 +52,7 @@ public class StoryManager : Singleton<StoryManager>
             }
 
             currentChoices.Clear();
-            currentEvent.CloseEvent();
+            oldEvent.CloseEvent();
             
             if (OnEventClose != null)
                 OnEventClose(oldEvent);
