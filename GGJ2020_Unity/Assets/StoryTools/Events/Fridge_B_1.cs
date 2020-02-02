@@ -21,7 +21,9 @@ FLYING DOUGH: PEPPERONI PIZZA: three slices, 5 crusts.  Expiry date: 12-07-2065
 FLYING DOUGH: CHICKEN BBQ: seven slices, 1 crust.  Expiry date: 13-07-2065";
 		ConversationActor = Actors.AI_Fridge();
 
-		AddContinueChoice();
+        {
+            var choice = NewEventChoice("CLOSE");
+        }
     }
 }
 

@@ -9,8 +9,8 @@ public class Door_A_Interaction : EventBase
 
 		if (State.Door_A_State == E_DoorState.Locked)
 		{
-			Text = "First clean.";
-            AddContinueChoice();
+			Text = "I don’t think you’re done yet.";
+            NewEventChoice("[sad] affirmative.");
 		}
 		else if (State.Door_A_State == E_DoorState.ShutHard)
 		{
