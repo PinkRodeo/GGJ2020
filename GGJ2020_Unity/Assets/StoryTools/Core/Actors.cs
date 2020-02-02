@@ -34,7 +34,7 @@ public enum E_ActorType
 
     // AI
     AI_Alinna,
-    AI_HomeStation,
+    AI_BaseStation,
     AI_Fridge,
     AI_Plant,
 
@@ -43,6 +43,7 @@ public enum E_ActorType
     Phone_Jen,
 
     Headset,
+    Capsules,
 
 
 
@@ -73,7 +74,7 @@ public static class Actors
         {
             _AI_Alinna = new Actor(E_ActorCategory.AI,
                             E_ActorType.AI_Alinna,
-                            Color.white,
+                            Color.magenta,
                             "Alinna");    
         }
  
@@ -81,18 +82,18 @@ public static class Actors
     }
 
     
-    private static Actor _AI_HomeStation;
-    public static Actor AI_HomeStation()
+    private static Actor _AI_BaseStation;
+    public static Actor AI_BaseStation()
     {
-        if (_AI_HomeStation == null)
+        if (_AI_BaseStation == null)
         {
-            _AI_HomeStation = new Actor(E_ActorCategory.AI,
-                            E_ActorType.AI_HomeStation,
+            _AI_BaseStation = new Actor(E_ActorCategory.AI,
+                            E_ActorType.AI_BaseStation,
                             Color.blue,
-                            "Home Station");    
+                            "Base Station");    
         }
  
-        return _AI_HomeStation;
+        return _AI_BaseStation;
     }
 
     
@@ -163,10 +164,25 @@ public static class Actors
             _Headset = new Actor(E_ActorCategory.Phone,
                             E_ActorType.Headset,
                             Color.green,
-                            "Jen's Phone");    
+                            "VR GEAR THE GLASS");    
         }
  
         return _Headset;
     }
+
+    private static Actor _Capsules;
+    public static Actor Capsules()
+    {
+        if (_Capsules == null)
+        {
+            _Capsules = new Actor(E_ActorCategory.Phone,
+                            E_ActorType.Capsules,
+                            Color.red,
+                            "E-CIG CAPSULES");    
+        }
+ 
+        return _Capsules;
+    }
+    
     
 }

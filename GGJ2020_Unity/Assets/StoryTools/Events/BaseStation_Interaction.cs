@@ -150,7 +150,7 @@ public class BaseStation_Dispose_Capsules_A_1 : EventBase
     public override void StartEvent()
     {
         Text = "Welcome home.";
-        ConversationActor = Actors.AI_HomeStation();
+        ConversationActor = Actors.AI_BaseStation();
 
         {
             var choice = NewEventChoice("EMPTY CONTAINER");
@@ -164,7 +164,7 @@ public class BaseStation_Dispose_Capsules_A_2 : EventBase
     public override void StartEvent()
     {
         Text = "Capsules go *shoop*";
-        ConversationActor = Actors.AI_HomeStation();
+        ConversationActor = Actors.AI_BaseStation();
 
         {
             var choice = NewEventChoice("[relieved] affirmative.");
@@ -181,7 +181,7 @@ public class BaseStation_Dispose_Headset_1 : EventBase
     public override void StartEvent()
     {
         Text = "Welcome home.";
-        ConversationActor = Actors.AI_HomeStation();
+        ConversationActor = Actors.AI_BaseStation();
 
         {
             var choice = NewEventChoice("EMPTY CONTAINER");
@@ -194,7 +194,7 @@ public class BaseStation_Dispose_Headset_2 : EventBase
     public override void StartEvent()
     {
         Text = "VR Headset goes *shoop*";
-        ConversationActor = Actors.AI_HomeStation();
+        ConversationActor = Actors.AI_BaseStation();
 
         {
             var choice = NewEventChoice("[relieved] affirmative.");
@@ -220,7 +220,7 @@ public class BaseStation_Dispose_Phone_A_Scott_1 : EventBase
     public override void StartEvent()
     {
         Text = "Welcome home.";
-        ConversationActor = Actors.AI_HomeStation();
+        ConversationActor = Actors.AI_BaseStation();
 
         {
             var choice = NewEventChoice("EMPTY CONTAINER");
@@ -233,7 +233,7 @@ public class BaseStation_Dispose_Phone_A_Scott_2 : EventBase
     public override void StartEvent()
     {
         Text = "Scott's phone goes *shoop*";
-        ConversationActor = Actors.AI_HomeStation();
+        ConversationActor = Actors.AI_BaseStation();
 
         {
             var choice = NewEventChoice("[relieved] affirmative.");
@@ -273,7 +273,7 @@ public class BaseStation_Dispose_Capsules_B_1 : EventBase
     public override void StartEvent()
     {
         Text = "Welcome home.";
-        ConversationActor = Actors.AI_HomeStation();
+        ConversationActor = Actors.AI_BaseStation();
 
         {
             var choice = NewEventChoice("EMPTY CONTAINER");
@@ -290,7 +290,7 @@ public class BaseStation_Dispose_Capsules_B_2 : EventBase
     public override void StartEvent()
     {
         Text = "The capsules go *shoop*";
-        ConversationActor = Actors.AI_HomeStation();
+        ConversationActor = Actors.AI_BaseStation();
 
         {
             var choice = NewEventChoice("[relieved] affirmative.");
@@ -320,7 +320,7 @@ public class BaseStation_Dispose_Phone_B_Jen_1 : EventBase
     public override void StartEvent()
     {
         Text = "Welcome home.";
-        ConversationActor = Actors.AI_HomeStation();
+        ConversationActor = Actors.AI_BaseStation();
 
         {
             var choice = NewEventChoice("EMPTY CONTAINER");
@@ -337,7 +337,7 @@ public class BaseStation_Dispose_Phone_B_Jen_2 : EventBase
     public override void StartEvent()
     {
         Text = "Jen's phone goes *shoop*";
-        ConversationActor = Actors.AI_HomeStation();
+        ConversationActor = Actors.AI_BaseStation();
 
         {
             var choice = NewEventChoice("[relieved] affirmative.");
@@ -368,7 +368,7 @@ public class BaseStation_Dispose_Vape_1 : EventBase
     public override void StartEvent()
     {
         Text = "Welcome home.";
-        ConversationActor = Actors.AI_HomeStation();
+        ConversationActor = Actors.AI_BaseStation();
 
         {
             var choice = NewEventChoice("EMPTY CONTAINER");
@@ -384,7 +384,7 @@ public class BaseStation_Dispose_Vape_2 : EventBase
     public override void StartEvent()
     {
         Text = "The vape goes *shoop*";
-        ConversationActor = Actors.AI_HomeStation();
+        ConversationActor = Actors.AI_BaseStation();
 
         {
             var choice = NewEventChoice("[relieved] affirmative.");
