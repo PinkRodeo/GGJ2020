@@ -45,6 +45,11 @@ public class EventPanelComponent : MonoBehaviour
         else
         {
             eventPanelGroup.DOFade(0.0f, 0.1f).SetEase(Ease.InSine);
+
+            foreach (var button in choiceButtons)
+            {
+                button.ClearChoice();
+            }
         }
     }
 

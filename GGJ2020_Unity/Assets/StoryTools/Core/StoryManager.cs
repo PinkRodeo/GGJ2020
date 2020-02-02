@@ -129,7 +129,7 @@ public class StoryManager : Singleton<StoryManager>
 
         if (currentEvent == null)
         {
-            Debug.Log("Event disposed of itself and didn't spawn follow ups.");
+            //Debug.Log("Event disposed of itself and didn't spawn follow ups.");
             return;
         }
 
