@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: T_Panels
-  m_Shader: {fileID: -6465566751694194690, guid: 7aef41cfddd97844a8ca3e775b900108,
+  m_Shader: {fileID: -6465566751694194690, guid: 602a807ea4849094eb5bcd30eefa5da8,
     type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -101,10 +101,10 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - ColorTint: {r: 0.8490566, g: 0.8490566, b: 0.8490566, a: 0}
+    - ColorTint: {r: 1, g: 1, b: 1, a: 0}
     - EmissionCol: {r: 0, g: 0, b: 0, a: 0}
-    - MetallicMinMax: {r: 0, g: 0.4, b: 0, a: 0}
-    - SmoothnessMinMax: {r: 1, g: 0.3, b: 0, a: 0}
+    - MetallicMinMax: {r: 1, g: 1, b: 0, a: 0}
+    - SmoothnessMinMax: {r: 1, g: 1, b: 0, a: 0}
     - _BaseColor: {r: 0.9063317, g: 0.9063317, b: 0.9063317, a: 1}
     - _Color: {r: 0.8, g: 0.8, b: 0.8, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 0}

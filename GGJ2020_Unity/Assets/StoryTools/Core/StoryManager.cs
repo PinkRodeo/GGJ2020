@@ -57,6 +57,10 @@ public class StoryManager : Singleton<StoryManager>
 
             oldEvent = null;
         }
+        else
+        {
+            Debug.Log("Panic?");
+        }
 
         if (IsEventQueued())
         {
@@ -121,16 +125,23 @@ public class StoryManager : Singleton<StoryManager>
         currentEvent = newEvent;
         currentEvent.StartEvent();
 
-        foreach (var choice in currentEvent.EventChoices)
+        if (currentEvent.EventChoices == null)
         {
-            if (choice.DisplayOnEventStart == true)
-            {
-                currentEvent.DisplayChoice(choice);
-            }
+            Debug.Log("Event didnn't have valid choices: " + newEvent.ToString());
+            currentEvent.EventChoices = new List<Choice>();
         }
+        else
+        {
+            foreach (var choice in currentEvent.EventChoices)
+            {
+                if (choice.DisplayOnEventStart == true)
+                {
+                    currentEvent.DisplayChoice(choice);
+                }
+            }
 
-        currentEvent.EventChoices.Clear();
-
+            currentEvent.EventChoices.Clear();
+        }
 
         if (currentEvent.Text == "")
         {

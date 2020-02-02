@@ -110,6 +110,11 @@ public class EventPanelComponent : MonoBehaviour
 
     public void SetToEvent(EventBase newEvent)
     {
+        if (newEvent.IsClosing())
+        {
+            return;
+        }
+
         var data = uiTypes.GetDataForCategory(newEvent.ConversationActor.ActorCategory);
         eventText.text = newEvent.Text;
         eventText.alignment = data.alignment;

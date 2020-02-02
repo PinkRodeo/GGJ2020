@@ -44,6 +44,44 @@ public class BaseStation_Interaction : EventBase
     }
 }
 
+public class BaseStation_Interaction_Return : EventBase
+{
+    public override void StartEvent()
+    {
+        Text = "This is the basestation, where you live and the trash goes.";
+        ConversationActor = Actors.AI_Alinna();
+        Story.CloseEvent();
+
+        if (State.State_Capsules_A == E_ThrowawayState.PickedUp)
+        {
+            Story.AddEvent<BaseStation_Dispose_Capsules_A_1>();
+        }
+        else if (State.State_Headset == E_ThrowawayState.PickedUp)
+        {
+            Story.AddEvent<BaseStation_Dispose_Headset_1>();
+        }
+        else if (State.State_Phone_A_Scott == E_ThrowawayState.PickedUp)
+        {
+            Story.AddEvent<BaseStation_Dispose_Phone_A_Scott_1>();
+        }
+        else if (State.State_Capsules_B == E_ThrowawayState.PickedUp)
+        {
+            Story.AddEvent<BaseStation_Dispose_Capsules_B_1>();
+        }
+        else if (State.State_Phone_B_Jen == E_ThrowawayState.PickedUp)
+        {
+            Story.AddEvent<BaseStation_Dispose_Phone_B_Jen_1>();
+        }
+        else if (State.State_Vape == E_ThrowawayState.PickedUp)
+        {
+            Story.AddEvent<BaseStation_Dispose_Vape_1>();
+        }
+        else if (State.IntroState == E_IntroState.Psycho)
+        {
+            Story.AddEvent<BaseStation_Dispose_Vacuum_1>();
+        }
+    }
+}
 
 public class BaseStation_Dispose_Vacuum_1 : EventBase
 {
@@ -51,8 +89,6 @@ public class BaseStation_Dispose_Vacuum_1 : EventBase
     {
         Text = "Thank you for your services";
         ConversationActor = Actors.AI_Alinna();
-
-        Debug.Log("Ennd of game");
 
         AddContinueChoice();
     }
@@ -81,6 +117,8 @@ public class BaseStation_Dispose_Capsules_A_1 : EventBase
             choice.OnChoiceSelected += (Choice c) =>
             {
                 State.State_Capsules_A = E_ThrowawayState.ThrownInBaseStation;
+                Story.AddEvent<BaseStation_Interaction_Return>();
+
             };
         }
     }
@@ -97,6 +135,8 @@ public class BaseStation_Dispose_Headset_1 : EventBase
             choice.OnChoiceSelected += (Choice c) =>
             {
                 State.State_Headset = E_ThrowawayState.ThrownInBaseStation;
+                Story.AddEvent<BaseStation_Interaction_Return>();
+
             };
         }
     }
@@ -113,6 +153,8 @@ public class BaseStation_Dispose_Phone_A_Scott_1 : EventBase
             choice.OnChoiceSelected += (Choice c) =>
             {
                 State.State_Phone_A_Scott = E_ThrowawayState.ThrownInBaseStation;
+                Story.AddEvent<BaseStation_Interaction_Return>();
+
             };
         }
     }
@@ -129,6 +171,8 @@ public class BaseStation_Dispose_Capsules_B_1 : EventBase
             choice.OnChoiceSelected += (Choice c) =>
             {
                 State.State_Capsules_B = E_ThrowawayState.ThrownInBaseStation;
+                Story.AddEvent<BaseStation_Interaction_Return>();
+
             };
         }
     }
@@ -145,6 +189,8 @@ public class BaseStation_Dispose_Phone_B_Jen_1 : EventBase
             choice.OnChoiceSelected += (Choice c) =>
             {
                 State.State_Phone_B_Jen = E_ThrowawayState.ThrownInBaseStation;
+                Story.AddEvent<BaseStation_Interaction_Return>();
+
             };
         }
     }
@@ -161,6 +207,8 @@ public class BaseStation_Dispose_Vape_1 : EventBase
             choice.OnChoiceSelected += (Choice c) =>
             {
                 State.State_Vape = E_ThrowawayState.ThrownInBaseStation;
+                Story.AddEvent<BaseStation_Interaction_Return>();
+
             };
         }
     }
