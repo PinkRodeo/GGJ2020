@@ -194,21 +194,22 @@ public class PlayerTankController : MonoBehaviour
             return;
         }
 
-        if (interactable.GetInteractType() == E_InteractType.OnOverlap)
-        {
-            return;
-        }
-
          if (currentInteractable != null)
         {
             StopInteracting();
         }
 
-        OnItemInteractUI.SetActive(true);
-
         currentInteractable = interactable;
-        emitterOutline.Play();
         interactable.OnEnter();
+
+        if (interactable.GetInteractType() == E_InteractType.OnOverlap)
+        {
+            return;
+        }
+
+        OnItemInteractUI.SetActive(true);
+        emitterOutline.Play();
+
     }
 
     private void StopInteracting()

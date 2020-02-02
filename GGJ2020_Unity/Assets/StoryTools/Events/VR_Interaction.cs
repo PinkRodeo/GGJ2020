@@ -158,11 +158,11 @@ public class VR_Interaction_C_1 : EventBase
 
         {
             var choice = NewEventChoice("ERASE USER DATA");
-            choice.AddNextEvent<VR_Interaction>();
+            choice.AddNextEvent<VR_Interaction_C_A_2>();
         }
         {
             var choice = NewEventChoice("CHANGE PROFILE DATA: [BLOCKED]");
-            choice.AddNextEvent<VR_Interaction>();
+            choice.AddNextEvent<VR_Interaction_C_B_1>();
         }
     }
 }
