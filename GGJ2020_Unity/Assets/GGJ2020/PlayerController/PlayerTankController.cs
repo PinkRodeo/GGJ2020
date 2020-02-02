@@ -181,6 +181,11 @@ public class PlayerTankController : MonoBehaviour
 
     private void StartInteracting(IInteractable interactable)
     {
+        if (!interactable.CanInteractWith())
+        {
+            return;
+        }
+
         if (currentInteractable != null)
         {
             StopInteracting();

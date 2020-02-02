@@ -4,7 +4,7 @@ public class Alinna_Congratulations_1 : EventBase
 {
     public override void StartEvent()
     {
-        Text = "Alinna congratulates you on cleaning the house.";
+        Text = "Alinna congratulates you on cleaning the house. \nUwho sinister stuff.";
         ConversationActor = Actors.AI_Alinna();
 
         AddContinueChoice();

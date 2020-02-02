@@ -11,7 +11,7 @@ public class VR_Interaction : EventBase
         {
             var choice = NewEventChoice("WIPE DOWN HEADSET");
             choice.OnChoiceSelected += (Choice c) => {
-                State.DoorBState = E_DoorState.Open;
+                State.State_Headset = E_ThrowawayState.PickedUp;
             };
         }
 
