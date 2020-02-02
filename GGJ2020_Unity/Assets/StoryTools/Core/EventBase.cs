@@ -70,7 +70,7 @@ public abstract class EventBase
         return newChoice;
     }
 
-    public Choice AddContinueChoice(string text = "…")
+    public void AddContinueChoice(string text = "…")
     {
         var newChoice = new Choice(this);
 
@@ -78,8 +78,6 @@ public abstract class EventBase
         newChoice.Text = text;
 
         AddChoice(newChoice);
-
-        return newChoice;
     }
 
     public void AddChoice(Choice newChoice)

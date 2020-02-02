@@ -17,7 +17,7 @@ public class ChoiceButtonComponent : MonoBehaviour, IPointerEnterHandler, ISelec
 
     public CanvasGroup choiceButtonGroup;
 
-    StudioEventEmitter EmitterSelect;
+    private StudioEventEmitter EmitterSelect;
     private StudioEventEmitter EmitterSubmit;
     private StudioEventEmitter EmitterAppear;
 
@@ -35,16 +35,16 @@ public class ChoiceButtonComponent : MonoBehaviour, IPointerEnterHandler, ISelec
         button.onClick.AddListener(delegate
         {
             if (currentChoice == null)
+            {
+                Debug.LogError("Button shouldn't have beenn interactable");
                 return;
+            }
             currentChoice.Select();
         });
     }
 
     public void SetVisible(bool isVisible)
     {
-        // TODO animate with tweens
-        //this.gameObject.SetActive(isVisible);
-
         if (isVisible)
         {
             choiceButtonGroup.DOFade(1.0f, 0.5f).SetEase(Ease.OutSine);
