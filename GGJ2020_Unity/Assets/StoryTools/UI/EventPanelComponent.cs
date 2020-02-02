@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.UI;
 
 public class EventPanelComponent : MonoBehaviour
 {
@@ -13,8 +14,12 @@ public class EventPanelComponent : MonoBehaviour
 
     public EventBase currentEvent;
 
+    public EventUIScriptableObject uiTypes;
+
     public void Start()
     {
+        uiTypes = Gamemode.GetUiSettings();
+
         StoryManager.Instance.OnEventStart += OnEventStart;
         StoryManager.Instance.OnEventClose += OnEventClose;
 
@@ -46,6 +51,12 @@ public class EventPanelComponent : MonoBehaviour
         {
             Debug.LogError("Event was still active in the UI, not supposed to happen");
         }
+       
+
+        //var colors = button.colors;
+        //colors.normalColor = choice.ParentEvent.ConversationActor.Tint;
+        //button.colors = colors;
+
         currentEvent = storyEvent;
         SetVisible(true);
         SetToEvent(storyEvent);
