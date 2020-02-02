@@ -53,6 +53,7 @@ public class EventPanelComponent : MonoBehaviour
             Debug.LogError("Event was still active in the UI, not supposed to happen");
         }
 
+       
 
         //var colors = button.colors;
         //colors.normalColor = choice.ParentEvent.ConversationActor.Tint;

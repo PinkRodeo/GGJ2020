@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: UiSettings
   m_EditorClassIdentifier: 
   UiTypes:
+<<<<<<< HEAD
   - Target: 2
     font: {fileID: 11400000, guid: 8dc0db39766dc504686231c2c1302584, type: 2}
     TitleSprite: {fileID: 21300000, guid: 8a493b6b0f6c1dd4bae5dd9ac8e8785f, type: 3}
@@ -37,3 +38,15 @@ MonoBehaviour:
     PressedSprite: {fileID: 21300000, guid: 06d5b80f2ac4a244abc7296073e2d22d, type: 3}
     SelectedSprite: {fileID: 21300000, guid: 73599e6e28d713346a923446936efbfd, type: 3}
     alignment: 513
+=======
+  - Target: 0
+    BackGround: {fileID: 0}
+    PersonColor: {fileID: 0}
+    font: {fileID: 11400000, guid: 1b99002387d590a4aaf5d6b3d9f0d251, type: 2}
+    alignment: 513
+  - Target: 1
+    BackGround: {fileID: 0}
+    PersonColor: {fileID: 0}
+    font: {fileID: 11400000, guid: 1b99002387d590a4aaf5d6b3d9f0d251, type: 2}
+    alignment: 4097
+>>>>>>> d6faeb2a3df59290fdf92404fdbb4d4ac943f121
