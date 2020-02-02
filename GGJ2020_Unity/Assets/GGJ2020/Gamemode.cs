@@ -27,6 +27,17 @@ public class Gamemode : MonoBehaviour
     rooms activeRoom = rooms.MainMenu;
     #endregion
 
+    static EventUIScriptableObject uiSettings;
+
+    public static EventUIScriptableObject GetUiSettings()
+    {
+        if (uiSettings == null)
+        {
+            uiSettings = Resources.Load("UiSettings") as EventUIScriptableObject;
+        }
+        return uiSettings;
+    }
+
     public static void RegisterPlayer(PlayerTankController controller)
     {
         if (gameMode == null)
@@ -64,7 +75,6 @@ public class Gamemode : MonoBehaviour
                 return;
             }
         }
-
         gameMode.StartCoroutine(gameMode.LoadSceneWithFade(room));
     }
 

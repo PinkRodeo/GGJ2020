@@ -15,7 +15,7 @@ public class Choice
     {
         ParentEvent = parentEvent;
     }
-    
+
     public string Text
     {
         set
@@ -33,7 +33,7 @@ public class Choice
         _rewards.Add(typeof(T));
     }
 
-        public void RemoveReward<T>() where T : RewardBase
+    public void RemoveReward<T>() where T : RewardBase
     {
         _rewards.Remove(typeof(T));
     }
