@@ -71,7 +71,8 @@ public class PlayerTankController : MonoBehaviour
             }
             else
             {
-                StopInteracting();
+                //SHOULD FIX Interaction issue
+            //    StopInteracting();
             }
         }
     }
@@ -145,7 +146,7 @@ public class PlayerTankController : MonoBehaviour
         }
 
         if (movementInput.magnitude < 0.5f)
-            previousAudioSpeed = speed - ((1f/ 2f)  * Time.fixedDeltaTime);
+            previousAudioSpeed = speed - ((1f / 2f) * Time.fixedDeltaTime);
         else
             previousAudioSpeed = speed;
 
