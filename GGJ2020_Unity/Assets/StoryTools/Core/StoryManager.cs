@@ -129,6 +129,8 @@ public class StoryManager : Singleton<StoryManager>
             }
         }
 
+        currentEvent.EventChoices.Clear();
+
 
         if (currentEvent.Text == "")
         {
