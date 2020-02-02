@@ -9,6 +9,7 @@ public class EventPanelComponent : MonoBehaviour
 {
     public TextMeshProUGUI eventTitleText;
     public TextMeshProUGUI eventText;
+    public Image ColorSkinImage;
 
     public ChoiceButtonComponent[] choiceButtons;
     public CanvasGroup eventPanelGroup;
@@ -16,6 +17,7 @@ public class EventPanelComponent : MonoBehaviour
     public EventBase currentEvent;
 
     public EventUIScriptableObject uiTypes;
+    Vector2 originalScale;
 
     public void Start()
     {
@@ -28,7 +30,7 @@ public class EventPanelComponent : MonoBehaviour
         StoryManager.Instance.OnChoiceRemoved += OnChoiceRemoved;
 
         SetVisible(false);
-
+        originalScale = eventText.transform.parent.GetComponent<RectTransform>().sizeDelta;
     }
 
     public void SetVisible(bool isVisible)
@@ -113,6 +115,31 @@ public class EventPanelComponent : MonoBehaviour
         eventText.alignment = data.alignment;
         eventText.font = data.font;
 
+        var eventBorderRect = eventText.transform.parent.GetComponent<RectTransform>();
+
+        if (data.RightTextPanelOverride != 0)
+        {
+            var oldScale = eventBorderRect.sizeDelta;
+            oldScale.x =data.RightTextPanelOverride;
+            eventBorderRect.sizeDelta = oldScale;
+            
+        }
+        else
+        {
+            eventBorderRect.sizeDelta = originalScale;
+        }
+
+        if (data.UseColorBorder)
+        {
+            ColorSkinImage.color = newEvent.ConversationActor.Tint;
+            ColorSkinImage.gameObject.SetActive(true);
+        }
+        else
+        {
+            ColorSkinImage.gameObject.SetActive(false);
+        }
+
+
         eventText.GetComponentInParent<Image>().sprite = data.TextBoxSprite;
 
         var EventActorName = newEvent.ConversationActor.Name;
@@ -121,6 +148,7 @@ public class EventPanelComponent : MonoBehaviour
         {
             eventTitleText.transform.parent.gameObject.SetActive(true);
             eventTitleText.text = newEvent.ConversationActor.Name;
+            eventTitleText.font = data.font;
             eventTitleText.GetComponentInParent<Image>().sprite = data.TitleSprite;
         }
         else

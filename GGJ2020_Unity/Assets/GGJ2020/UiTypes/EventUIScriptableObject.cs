@@ -16,7 +16,7 @@ public class EventUIScriptableObject : ScriptableObject
         [SerializeField]
         public E_ActorCategory Target;
 
-       // [SerializeField]
+        // [SerializeField]
         //public Texture2D PersonColor;
 
         [SerializeField]
@@ -39,6 +39,12 @@ public class EventUIScriptableObject : ScriptableObject
 
         [SerializeField]
         public TextAlignmentOptions alignment;
+
+        [SerializeField]
+        public bool UseColorBorder;
+
+        [SerializeField]
+        public float RightTextPanelOverride;
 
     }
 
