@@ -12,7 +12,7 @@ public class Capsules_A_Interaction : EventBase
             var choice = NewEventChoice();
             choice.Text = "CLEAN UP CAPSULES";
             choice.OnChoiceSelected += (Choice c) => {
-                State.DoorAState = E_DoorState.Open;
+                State.State_Capsules_A = E_ThrowawayState.PickedUp;
             };
         }
     }

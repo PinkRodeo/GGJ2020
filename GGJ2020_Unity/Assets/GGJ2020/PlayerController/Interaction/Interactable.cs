@@ -10,6 +10,7 @@ public interface IInteractable
     void OnInteract();
     void OnHover();
 
+    bool CanInteractWith();
 
     Collider GetExitCollider();
     Collider GetEnterCollider();
@@ -22,6 +23,8 @@ namespace Player
     [RequireComponent(typeof(SphereCollider), typeof(StudioEventEmitter))]
     public class Interactable : MonoBehaviour, IInteractable
     {
+        public E_ThrowawayType throwAwayType = E_ThrowawayType.None;
+
         List<SphereCollider> Colliders = new List<SphereCollider>();
 
         [HideInInspector]
@@ -47,6 +50,72 @@ namespace Player
             SetHighlightAmount(0.0f);
 
             SetupColliders();
+
+            var state = StoryState.Instance;
+
+            switch (throwAwayType)
+            {
+                case E_ThrowawayType.None:
+                    // Nothing
+                    break;
+                case E_ThrowawayType.Capsules_A:
+                    state.OnChanged_Capsules_A += OnThrowayTypeChanged;
+                    OnThrowayTypeChanged(state.State_Capsules_A);
+                    break;
+                case E_ThrowawayType.Headset:
+                    state.OnChanged_Headset += OnThrowayTypeChanged;
+                    OnThrowayTypeChanged(state.State_Headset);
+                    break;
+                case E_ThrowawayType.Phone_A_Scott:
+                    state.OnChanged_Phone_A_Scott += OnThrowayTypeChanged;
+                    OnThrowayTypeChanged(state.State_Phone_A_Scott);
+                    break;
+                case E_ThrowawayType.Capsules_B:
+                    state.OnChanged_Capsules_B += OnThrowayTypeChanged;
+                    OnThrowayTypeChanged(state.State_Capsules_B);
+                    break;
+                case E_ThrowawayType.Vape:
+                    state.OnChanged_Vape += OnThrowayTypeChanged;
+                    OnThrowayTypeChanged(state.State_Vape);
+                    break;
+                case E_ThrowawayType.Phone_B_Jen:
+                    state.OnChanged_Phone_B_Jen += OnThrowayTypeChanged;
+                    OnThrowayTypeChanged(state.State_Phone_B_Jen);
+                    break;
+                default:
+                    Debug.LogError("Unhandled throwaway type: " + throwAwayType.ToString());
+                    break;
+            }
+        }
+
+        private void OnThrowayTypeChanged(E_ThrowawayState newThrowawayState)
+        {
+            switch (newThrowawayState)
+            {
+                case E_ThrowawayState.OnFloor:
+                    foreach (var meshRenderer in MeshesToHighlight)
+                    {
+                        meshRenderer.gameObject.SetActive(true);
+                    }
+                    _IsInteractable = true;
+                    break;
+                case E_ThrowawayState.PickedUp:
+                    foreach (var meshRenderer in MeshesToHighlight)
+                    {
+                        meshRenderer.gameObject.SetActive(false);
+                    }
+                    _IsInteractable = false;
+                    break;
+                case E_ThrowawayState.ThrownInBaseStation:
+                    foreach (var meshRenderer in MeshesToHighlight)
+                    {
+                        meshRenderer.gameObject.SetActive(false);
+                    }
+                    _IsInteractable = false;
+                    break;
+                default:
+                    break;
+            }
         }
 
         void SetHighlightAmount(float amount)
@@ -148,6 +217,13 @@ namespace Player
         public Collider GetEnterCollider()
         {
             return Colliders[0];
+        }
+
+        private bool _IsInteractable = true;
+
+        public bool CanInteractWith()
+        {
+            return _IsInteractable;
         }
 
         public void OnEnter()
