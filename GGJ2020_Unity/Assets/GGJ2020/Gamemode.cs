@@ -7,8 +7,7 @@ public enum rooms
 {
     MainMenu,
     EndGameMenu,
-    A,
-    B,
+    Game,
 }
 
 public class Gamemode : MonoBehaviour
@@ -20,7 +19,7 @@ public class Gamemode : MonoBehaviour
     static readonly Dictionary<rooms, string[]> Rooms = new Dictionary<rooms, string[]> {
         {rooms.MainMenu, new string[]{ "MainMenu"} },
         {rooms.EndGameMenu, new string[]{"EndScreen"} },
-        { rooms.A, new string[] { "LevelMain" }},
+        { rooms.Game, new string[] { "Environment" }},
     };
 
     [SerializeField]

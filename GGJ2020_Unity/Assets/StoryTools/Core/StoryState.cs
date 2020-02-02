@@ -10,6 +10,7 @@ public enum E_IntroState
     GivenTaskList,
 
     Psycho,
+    Done,
 }
 
 public enum E_FridgeState
@@ -63,12 +64,50 @@ public delegate void ThrowawayChangedDelegate(E_ThrowawayState newThrowawayState
 public enum E_DoorState
 {
     Locked,
+    Unlocked,
     Open,
     ShutHard
 }
 
+public enum E_CleanupState
+{
+    LivingRoom,
+    Bedroom,
+    Bathroom,
+    Done
+}
+
 public class StoryState : Singleton<StoryState>
 {
+    public E_CleanupState CleanupState
+    {
+        get
+        {
+            if (State_Capsules_A == E_ThrowawayState.ThrownInBaseStation &&
+                State_Headset == E_ThrowawayState.ThrownInBaseStation &&
+                State_Phone_A_Scott == E_ThrowawayState.ThrownInBaseStation &&
+                State_Capsules_B == E_ThrowawayState.PickedUp &&
+                State_Phone_B_Jen == E_ThrowawayState.PickedUp &&
+                State_Vape == E_ThrowawayState.PickedUp)
+            {
+                return E_CleanupState.Done;
+            }
+            else if (Door_B_State == E_DoorState.Open || Door_B_State == E_DoorState.Unlocked) 
+            {
+                return E_CleanupState.Bathroom;
+            }
+            else if (Door_A_State == E_DoorState.Open || Door_A_State == E_DoorState.Unlocked)
+            {
+                return E_CleanupState.Bedroom;
+            }
+            else
+            {
+                return E_CleanupState.LivingRoom;
+            }
+
+        }
+    }
+
     private StoryManager Story;
 
     private void OnStoryStateChanged()
@@ -82,18 +121,18 @@ public class StoryState : Singleton<StoryState>
 
         if (State_Capsules_A == E_ThrowawayState.ThrownInBaseStation)
         {
-            if (DoorAState == E_DoorState.Locked)
+            if (Door_A_State == E_DoorState.Locked)
             {
-                DoorAState = E_DoorState.Open;
+                Door_A_State = E_DoorState.Unlocked;
                 Story.AddEvent<Alinna_Door_A_Unlock_1>();
             }
         }
 
         if (State_Headset == E_ThrowawayState.ThrownInBaseStation && State_Phone_A_Scott == E_ThrowawayState.ThrownInBaseStation)
         {
-            if (DoorBState == E_DoorState.Locked)
+            if (Door_B_State == E_DoorState.Locked)
             {
-                DoorBState = E_DoorState.Open;
+                Door_B_State = E_DoorState.Unlocked;
                 Story.AddEvent<Alinna_Door_B_Unlock_1>();
             }
         }
@@ -101,12 +140,25 @@ public class StoryState : Singleton<StoryState>
         if (State_Capsules_A == E_ThrowawayState.ThrownInBaseStation &&
             State_Headset == E_ThrowawayState.ThrownInBaseStation &&
             State_Phone_A_Scott == E_ThrowawayState.ThrownInBaseStation &&
-            State_Capsules_B == E_ThrowawayState.ThrownInBaseStation &&
-            State_Phone_B_Jen == E_ThrowawayState.ThrownInBaseStation &&
-            State_Vape == E_ThrowawayState.ThrownInBaseStation)
+            State_Capsules_B == E_ThrowawayState.PickedUp &&
+            State_Phone_B_Jen == E_ThrowawayState.PickedUp &&
+            State_Vape == E_ThrowawayState.PickedUp &&
+            IntroState != E_IntroState.Psycho && IntroState != E_IntroState.Done)
         {
             IntroState = E_IntroState.Psycho;
             Story.AddEvent<Alinna_Congratulations_1>();
+        }
+
+        if (State_Capsules_A == E_ThrowawayState.ThrownInBaseStation &&
+            State_Headset == E_ThrowawayState.ThrownInBaseStation &&
+            State_Phone_A_Scott == E_ThrowawayState.ThrownInBaseStation &&
+            State_Capsules_B == E_ThrowawayState.ThrownInBaseStation &&
+            State_Phone_B_Jen == E_ThrowawayState.ThrownInBaseStation &&
+            State_Vape == E_ThrowawayState.ThrownInBaseStation &&
+            IntroState != E_IntroState.Done)
+        {
+            IntroState = E_IntroState.Done;
+            Story.AddEvent<Alinna_End_1>();
         }
 
     }
@@ -114,7 +166,7 @@ public class StoryState : Singleton<StoryState>
     public void Start()
     {
         Story = StoryManager.Instance;
-        Invoke("OnStoryStateChanged", 1.5f);
+        Invoke("OnStoryStateChanged", 1.8f);
 
     }
 
@@ -166,7 +218,7 @@ public class StoryState : Singleton<StoryState>
 
     private E_DoorState _doorAState = E_DoorState.Locked;
 
-    public E_DoorState DoorAState
+    public E_DoorState Door_A_State
     {
         get
         {
@@ -259,7 +311,7 @@ public class StoryState : Singleton<StoryState>
 
     private E_DoorState _doorBState = E_DoorState.Locked;
 
-    public E_DoorState DoorBState
+    public E_DoorState Door_B_State
     {
         get
         {

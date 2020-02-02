@@ -82,6 +82,16 @@ public abstract class EventBase
         EventChoices.Add(newChoice);
     }
 
+    public void AddAffirmativeChoice(string text = "affirmative.")
+    {
+        var newChoice = new Choice(this);
+
+        newChoice.AddReward<CloseEventReward>();
+        newChoice.Text = text;
+        EventChoices.Add(newChoice);
+    }
+
+
     public void DisplayChoice(Choice newChoice)
     {
         choices.Add(newChoice);
@@ -91,6 +101,8 @@ public abstract class EventBase
 
     public abstract void StartEvent();
 
+    private bool _closing = false;
+
     public void CloseEvent()
     {
         foreach (var rewardType in _closeRewards)
@@ -98,5 +110,12 @@ public abstract class EventBase
             var reward = EventHelper.CreateRewardByType(rewardType);
             reward.RunReward();
         }
+
+        _closing = true;
+    }
+
+    public bool IsClosing()
+    {
+        return _closing;
     }
 }

@@ -49,13 +49,13 @@ public class Choice
     {
         _rewards.Reverse();
 
-        if (OnChoiceSelected != null)
-            OnChoiceSelected(this);
-
         foreach (var rewardType in _rewards)
         {
             var reward = EventHelper.CreateRewardByType(rewardType);
             reward.RunReward();
         }
+
+        if (OnChoiceSelected != null)
+            OnChoiceSelected(this);
     }
 }

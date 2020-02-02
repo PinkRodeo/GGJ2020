@@ -29,7 +29,7 @@ public class MainMenuPlayPressed : MonoBehaviour
 
             CameraEffects.StartFadeToBlackToGame(() =>
             {
-                Gamemode.StartLoadingScene(rooms.A);
+                Gamemode.StartLoadingScene(rooms.Game);
 
             }, DG.Tweening.Ease.InQuart, Ease.OutQuart, .3f
             );

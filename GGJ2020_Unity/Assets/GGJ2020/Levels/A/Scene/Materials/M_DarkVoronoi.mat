@@ -83,8 +83,8 @@ Material:
     m_Colors:
     - ColorTint: {r: 0.6886792, g: 0.56198823, b: 0.56198823, a: 0}
     - EmissionCol: {r: 0, g: 0, b: 0, a: 0}
-    - MetallicMinMax: {r: 1, g: 0, b: 0, a: 0}
-    - SmoothnessMinMax: {r: 0.23, g: 1.26, b: 0, a: 0}
+    - MetallicMinMax: {r: 0.6, g: 0, b: 0, a: 0}
+    - SmoothnessMinMax: {r: 0.23, g: 1, b: 0, a: 0}
     - _BaseColor: {r: 0.20641014, g: 0.20641014, b: 0.20641014, a: 1}
     - _Color: {r: 0.20641014, g: 0.20641014, b: 0.20641014, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
