@@ -53,7 +53,7 @@ namespace Player
         {
             for (int i = 0; i < _materials.Count; i++)
             {
-                _materials[i].DOFloat(amount, "HighlightAmount", 0.3f);
+                _materials[i].DOFloat(amount, "Vector1_5B25C606", 0.3f);
             }
         }
 

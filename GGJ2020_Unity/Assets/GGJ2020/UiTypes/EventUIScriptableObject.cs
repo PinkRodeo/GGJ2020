@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
+
 
 public class EventUIScriptableObject : ScriptableObject
 {
@@ -16,26 +16,14 @@ public class EventUIScriptableObject : ScriptableObject
         [SerializeField]
         public E_ActorCategory Target;
 
-       // [SerializeField]
-        //public Texture2D PersonColor;
+        [SerializeField]
+        public Texture2D BackGround;
+
+        [SerializeField]
+        public Texture2D PersonColor;
 
         [SerializeField]
         public TMP_FontAsset font;
-
-        [SerializeField]
-        public Sprite TitleSprite;
-
-        [SerializeField]
-        public Sprite TextBoxSprite;
-
-        [SerializeField]
-        public Sprite DefaultSprite;
-
-        [SerializeField]
-        public Sprite PressedSprite;
-
-        [SerializeField]
-        public Sprite SelectedSprite;
 
         [SerializeField]
         public TextAlignmentOptions alignment;

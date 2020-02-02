@@ -17,14 +17,19 @@ public class ChoiceButtonComponent : MonoBehaviour, IPointerEnterHandler, ISelec
 
     public CanvasGroup choiceButtonGroup;
 
+    private EventUIScriptableObject uiTypes;
+
     private StudioEventEmitter EmitterSelect;
     private StudioEventEmitter EmitterSubmit;
     private StudioEventEmitter EmitterAppear;
-    private EventUIScriptableObject uiTypes;
+
+
 
     public void Awake()
     {
         SetVisible(false);
+
+        uiTypes = Gamemode.GetUiSettings();
 
         EmitterSelect = gameObject.AddComponent<StudioEventEmitter>();
         EmitterSelect.Event = FModStrings.ChoiceHover;
@@ -42,8 +47,6 @@ public class ChoiceButtonComponent : MonoBehaviour, IPointerEnterHandler, ISelec
             }
             currentChoice.Select();
         });
-
-        uiTypes = Gamemode.GetUiSettings();
     }
 
     public void SetVisible(bool isVisible)
@@ -64,30 +67,19 @@ public class ChoiceButtonComponent : MonoBehaviour, IPointerEnterHandler, ISelec
     public void SetToChoice(Choice choice)
     {
         //TODO fix this sound
-        EmitterAppear.Play();
+        E_ActorCategory category = choice.ParentEvent.ConversationActor.ActorCategory;
 
-        var data = uiTypes.GetDataForCategory(choice.ParentEvent.ConversationActor.ActorCategory);
-        if (data == null)
-        {
-            Debug.LogError($"No UI data found for {choice.ParentEvent.ConversationActor.ActorCategory}");
-            return;
-        }
+        var data = uiTypes.GetDataForCategory(category);
+
+
+        EmitterAppear.Play();
 
         currentChoice = choice;
         SetVisible(true);
         choiceText.text = choice.Text;
-        choiceText.alignment = data.alignment;
+
         choiceText.font = data.font;
-
-        var parrentButton = choiceText.GetComponentInParent<Button>();
-        var parrentImage = choiceText.GetComponentInParent<Image>();
-
-        var spriteState = parrentButton.spriteState;
-        spriteState.pressedSprite = data.PressedSprite;
-        spriteState.selectedSprite = data.SelectedSprite;
-        spriteState.highlightedSprite = data.SelectedSprite;
-        parrentButton.spriteState = spriteState;
-        parrentImage.sprite = data.DefaultSprite;
+        //choiceText.UpdateFontAsset();
     }
 
     public void ClearChoice()
@@ -96,6 +88,8 @@ public class ChoiceButtonComponent : MonoBehaviour, IPointerEnterHandler, ISelec
         currentChoice = null;
     }
 
+
+    #region Audio Handlers
     public void OnPointerDown(PointerEventData eventData)
     {
         if (button.interactable)
@@ -132,6 +126,6 @@ public class ChoiceButtonComponent : MonoBehaviour, IPointerEnterHandler, ISelec
 
         EmitterSubmit.Play();
     }
-
+    #endregion
 
 }
