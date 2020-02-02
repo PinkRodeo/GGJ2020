@@ -69,8 +69,45 @@ public enum E_DoorState
     ShutHard
 }
 
+public enum E_CleanupState
+{
+    LivingRoom,
+    Bedroom,
+    Bathroom,
+    Done
+}
+
 public class StoryState : Singleton<StoryState>
 {
+    public E_CleanupState CleanupState
+    {
+        get
+        {
+            if (State_Capsules_A == E_ThrowawayState.ThrownInBaseStation &&
+                State_Headset == E_ThrowawayState.ThrownInBaseStation &&
+                State_Phone_A_Scott == E_ThrowawayState.ThrownInBaseStation &&
+                State_Capsules_B == E_ThrowawayState.PickedUp &&
+                State_Phone_B_Jen == E_ThrowawayState.PickedUp &&
+                State_Vape == E_ThrowawayState.PickedUp)
+            {
+                return E_CleanupState.Done;
+            }
+            else if (Door_B_State == E_DoorState.Open || Door_B_State == E_DoorState.Unlocked) 
+            {
+                return E_CleanupState.Bathroom;
+            }
+            else if (Door_A_State == E_DoorState.Open || Door_A_State == E_DoorState.Unlocked)
+            {
+                return E_CleanupState.Bedroom;
+            }
+            else
+            {
+                return E_CleanupState.LivingRoom;
+            }
+
+        }
+    }
+
     private StoryManager Story;
 
     private void OnStoryStateChanged()

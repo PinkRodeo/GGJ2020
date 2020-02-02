@@ -4,27 +4,27 @@ public class Alinna_Door_B_Unlock_1 : EventBase
 {
     public override void StartEvent()
     {
-        Text = "Alinna unlocked the door to bathroom.";
+        Text = "Only one room to go to.";
         ConversationActor = Actors.AI_Alinna();
 
-        AddContinueChoice();
-
-        // Text = "Dummy";
-		// ConversationActor = Actors.AI_Fridge();
-
-        // switch (State.FridgeState)
-        // {   
-        //     case E_FridgeState.FirstInteract:
-        //         Story.AddEvent<Fridge_A_1>();
-        //         break;
-        //     case E_FridgeState.AccessUnlocked:
-        //         Story.AddEvent<Fridge_B_1_Access_Menu>();
-        //         break;
-        //     default:
-        //         Debug.Log("Didn't Implement: " + State.FridgeState.ToString());
-        //         break;
-        // }
-
-        // Story.CloseEvent();
+        {
+            var choice = NewEventChoice("[excited] affirmative.");
+            choice.AddNextEvent<Alinna_Door_B_Unlock_2>();
+        }
     }
 }
+
+
+public class Alinna_Door_B_Unlock_2 : EventBase
+{
+    public override void StartEvent()
+    {
+        Text = "I like your energy, but there is still enough to do. You have an important task here. \nnI’m trusting you. Quickly clear you container at the home station.\nThis last room will be a tricky one. But you might have what it takes. The door will be open when you get back.";
+        ConversationActor = Actors.AI_Alinna();
+
+        {
+            var choice = NewEventChoice("[determined] affirmative.");
+        }
+    }
+}
+

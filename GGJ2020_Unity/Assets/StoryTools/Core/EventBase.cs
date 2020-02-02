@@ -82,6 +82,16 @@ public abstract class EventBase
         EventChoices.Add(newChoice);
     }
 
+    public void AddAffirmativeChoice(string text = "affirmative.")
+    {
+        var newChoice = new Choice(this);
+
+        newChoice.AddReward<CloseEventReward>();
+        newChoice.Text = text;
+        EventChoices.Add(newChoice);
+    }
+
+
     public void DisplayChoice(Choice newChoice)
     {
         choices.Add(newChoice);

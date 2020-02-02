@@ -34,12 +34,16 @@ public enum E_ActorType
 
     // AI
     AI_Alinna,
+    AI_HomeStation,
     AI_Fridge,
     AI_Plant,
 
     // Config
     Phone_Scott,
     Phone_Jen,
+
+    Headset,
+
 
 
 
@@ -74,6 +78,21 @@ public static class Actors
         }
  
         return _AI_Alinna;
+    }
+
+    
+    private static Actor _AI_HomeStation;
+    public static Actor AI_HomeStation()
+    {
+        if (_AI_HomeStation == null)
+        {
+            _AI_HomeStation = new Actor(E_ActorCategory.AI,
+                            E_ActorType.AI_HomeStation,
+                            Color.blue,
+                            "Home Station");    
+        }
+ 
+        return _AI_HomeStation;
     }
 
     
@@ -133,6 +152,21 @@ public static class Actors
         }
  
         return _Phone_Jen;
+    }
+
+
+    private static Actor _Headset;
+    public static Actor Headset()
+    {
+        if (_Headset == null)
+        {
+            _Headset = new Actor(E_ActorCategory.Phone,
+                            E_ActorType.Headset,
+                            Color.green,
+                            "Jen's Phone");    
+        }
+ 
+        return _Headset;
     }
     
 }
