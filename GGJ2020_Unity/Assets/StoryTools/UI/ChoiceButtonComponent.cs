@@ -78,6 +78,11 @@ public class ChoiceButtonComponent : MonoBehaviour, IPointerEnterHandler, ISelec
         EmitterAppear.Play();
 
         var data = uiTypes.GetDataForCategory(choice.ParentEvent.ConversationActor.ActorCategory);
+        if (data == null)
+        {
+            Debug.LogError($"No UI data found for {choice.ParentEvent.ConversationActor.ActorCategory}");
+            return;
+        }
 
         currentChoice = choice;
         SetVisible(true);
@@ -94,7 +99,8 @@ public class ChoiceButtonComponent : MonoBehaviour, IPointerEnterHandler, ISelec
         var spriteState = parrentButton.spriteState;
         spriteState.pressedSprite = data.PressedSprite;
         spriteState.selectedSprite = data.SelectedSprite;
-        spriteState.highlightedSprite = data.PressedSprite;
+        spriteState.highlightedSprite = data.SelectedSprite;
+        parrentButton.spriteState = spriteState;
         parrentImage.sprite = data.DefaultSprite;
     }
 

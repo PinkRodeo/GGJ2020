@@ -113,6 +113,7 @@ public class EventPanelComponent : MonoBehaviour
         eventText.text = newEvent.Text;
         eventText.alignment = data.alignment;
         eventText.font = data.font;
+
         eventText.GetComponentInParent<Image>().sprite = data.TextBoxSprite;
 
         var EventActorName = newEvent.ConversationActor.Name;
