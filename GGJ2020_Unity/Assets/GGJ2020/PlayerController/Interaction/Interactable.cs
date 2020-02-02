@@ -3,6 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using FMODUnity;
+
+public enum E_InteractType
+{
+    OnInteract,
+    OnOverlap,
+}
+
 public interface IInteractable
 {
     void OnEnter();
@@ -23,6 +30,8 @@ namespace Player
     [RequireComponent(typeof(SphereCollider), typeof(StudioEventEmitter))]
     public class Interactable : MonoBehaviour, IInteractable
     {
+
+        public E_InteractType interactType = E_InteractType.OnInteract;
         public E_ThrowawayType throwAwayType = E_ThrowawayType.None;
 
         List<SphereCollider> Colliders = new List<SphereCollider>();
@@ -229,6 +238,11 @@ namespace Player
         public void OnEnter()
         {
             SetHighlightAmount(1f);
+
+            if (interactType == E_InteractType.OnOverlap)
+            {
+                RunEvent();
+            }
         }
 
         public void OnExit()
@@ -242,6 +256,14 @@ namespace Player
         }
 
         public void OnInteract()
+        {
+            if (interactType == E_InteractType.OnInteract)
+            {
+                RunEvent();
+            }
+        }
+
+        private void RunEvent()
         {
             var newEvent = EventHelper.CreateEventByString(eventToTrigger);
             if (newEvent == null)

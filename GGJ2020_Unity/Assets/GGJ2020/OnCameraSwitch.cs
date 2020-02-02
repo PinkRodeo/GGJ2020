@@ -11,6 +11,7 @@ public class OnCameraSwitch : MonoBehaviour
     StudioEventEmitter emitter;
     [SerializeField]
     int room;
+
     void Awake()
     {
         cam = GetComponent<CinemachineVirtualCamera>();
@@ -26,13 +27,19 @@ public class OnCameraSwitch : MonoBehaviour
 
     }
 
+    private bool _HasSet = false;
+
     // Start is called before the first frame update
     void Start()
     {
         cam.m_Transitions.m_OnCameraLive.AddListener(
             (a, b) =>
             {
-                emitter.SetParameter("Room", room);
+                if (!_HasSet)
+                {
+                    _HasSet = true;
+                    emitter.SetParameter("Room", room);
+                }
             });
     }
 

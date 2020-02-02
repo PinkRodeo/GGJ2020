@@ -125,9 +125,15 @@ public class StoryManager : Singleton<StoryManager>
         currentEvent = newEvent;
         currentEvent.StartEvent();
 
+        if (currentEvent == null)
+        {
+            Debug.Log("Event disposed of itself and didn't spawn follow ups.");
+            return;
+        }
+
         if (currentEvent.EventChoices == null)
         {
-            Debug.Log("Event didnn't have valid choices: " + newEvent.ToString());
+            Debug.Log("Event didn't have valid choices: " + newEvent.ToString());
             currentEvent.EventChoices = new List<Choice>();
         }
         else
