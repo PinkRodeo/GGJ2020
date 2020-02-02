@@ -42,11 +42,12 @@ public static class CameraEffects
 
         var cam = CinemachineCam.GetComponent<CinemachineStoryboard>();
 
+
         ActiveTween = DOTween.To(() => cam.m_Alpha, x => cam.m_Alpha = x, 0f, duration).OnComplete(onComplete).SetEase(Ease.OutQuart);
     }
 
     //Fade to black and get half way there a callback
-    public static void StartFadeToBlackToGame(DG.Tweening.TweenCallback OnHalfway, Ease ease, float duration = 1.5f)
+    public static void StartFadeToBlackToGame(DG.Tweening.TweenCallback OnHalfway, Ease easeIn = Ease.InQuart, Ease EaseOut = Ease.InOutQuart, float duration = 1.5f)
     {
         FinishTween();
 
@@ -55,8 +56,8 @@ public static class CameraEffects
         StartFadeToBlack(() =>
         {
             OnHalfway.Invoke();
-            StartFadeToGame(() => { });
-        });
+            StartFadeToGame(() => { }, EaseOut);
+        }, easeIn);
 
     }
 
