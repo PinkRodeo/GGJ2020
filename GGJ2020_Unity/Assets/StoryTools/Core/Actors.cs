@@ -36,7 +36,9 @@ public enum E_ActorType
     AI_Alinna,
     AI_BaseStation,
     AI_Fridge,
-    AI_Plant,
+    AI_Plant_Fern,
+    AI_Plant_Planto,
+    AI_Plant_Blini,
 
     // Config
     Phone_Scott,
@@ -112,43 +114,48 @@ public static class Actors
     }
 
     
-    private static Actor _AI_Plant;
+    private static Actor _AI_Plant_Fern;
     public static Actor AI_Plant_JULES_FERN()
     {
-        if (_AI_Plant == null)
+        if (_AI_Plant_Fern == null)
         {
-            _AI_Plant = new Actor(E_ActorCategory.AI,
-                            E_ActorType.AI_Plant,
+            _AI_Plant_Fern = new Actor(E_ActorCategory.AI,
+                            E_ActorType.AI_Plant_Fern,
                             Color.green,
                             "JULES FERN");    
         }
  
-        return _AI_Plant;
+        return _AI_Plant_Fern;
     }
+
+    private static Actor _AI_Plant_Planto;
 
     public static Actor AI_Plant_PLANTO()
     {
-        if (_AI_Plant == null)
+        if (_AI_Plant_Planto == null)
         {
-            _AI_Plant = new Actor(E_ActorCategory.AI,
-                            E_ActorType.AI_Plant,
+            _AI_Plant_Planto = new Actor(E_ActorCategory.AI,
+                            E_ActorType.AI_Plant_Planto,
                             Color.green,
                             "PLANTO");    
         }
  
-        return _AI_Plant;
+        return _AI_Plant_Planto;
     }
+
+    private static Actor _AI_Plant_Blini;
+
     public static Actor AI_Plant_BLINI()
     {
-        if (_AI_Plant == null)
+        if (_AI_Plant_Blini == null)
         {
-            _AI_Plant = new Actor(E_ActorCategory.AI,
-                            E_ActorType.AI_Plant,
+            _AI_Plant_Blini = new Actor(E_ActorCategory.AI,
+                            E_ActorType.AI_Plant_Blini,
                             Color.green,
                             "BLINI");    
         }
  
-        return _AI_Plant;
+        return _AI_Plant_Blini;
     }
 
     private static Actor _Phone_Scott;
