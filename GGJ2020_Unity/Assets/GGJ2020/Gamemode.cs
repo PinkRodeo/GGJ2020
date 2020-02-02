@@ -64,6 +64,35 @@ public class Gamemode : MonoBehaviour
         return Rooms[room];
     }
 
+    public static void LoadSceneBlocking(rooms room)
+    {
+        if (gameMode == null)
+        {
+            CreateGameMode();
+            if (gameMode == null)
+            {
+                Debug.LogWarning("Gamemode static ref is not  valid");
+                return;
+            }
+        }
+
+        bool isFirst = true;
+        foreach (var roomName in GetRoomForType(room))
+        {
+            if (isFirst)
+            {
+                isFirst = false;
+                SceneManager.LoadSceneAsync(roomName, LoadSceneMode.Single);
+            }
+            else
+            {
+                SceneManager.LoadSceneAsync(roomName, LoadSceneMode.Additive);
+            }
+        }
+
+
+    }
+
     public static void StartLoadingScene(rooms room, bool UseFade = false)
     {
         if (gameMode == null)
@@ -82,8 +111,6 @@ public class Gamemode : MonoBehaviour
 
     IEnumerator LoadSceneWithFade(rooms room)
     {
-        //TODO implement fade
-        var oldSceneName = SceneManager.GetActiveScene().name;
 
         bool isFirst = true;
 

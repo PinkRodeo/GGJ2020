@@ -12,8 +12,6 @@ public class PlayerTankController : MonoBehaviour
     [SerializeField] float rotationSpeed = 5f;
     [SerializeField] float movementSpeed = 5f;
 
-
-
     private Vector2 movementInput = Vector2.zero;
 
     private float currentMovementSpeed = 0f;
@@ -68,12 +66,16 @@ public class PlayerTankController : MonoBehaviour
             if (IsMovementInputAllowed())
             {
                 currentInteractable.OnHover();
+                OnItemInteractUI.SetActive(true);
             }
             else
             {
-                //SHOULD FIX Interaction issue
-            //    StopInteracting();
+                OnItemInteractUI.SetActive(false);
             }
+        }
+        else
+        {
+
         }
     }
 
@@ -192,6 +194,8 @@ public class PlayerTankController : MonoBehaviour
             StopInteracting();
         }
 
+        OnItemInteractUI.SetActive(true);
+
         currentInteractable = interactable;
         emitterOutline.Play();
         interactable.OnEnter();
@@ -199,6 +203,7 @@ public class PlayerTankController : MonoBehaviour
 
     private void StopInteracting()
     {
+        OnItemInteractUI.SetActive(false);
         currentInteractable.OnExit();
         currentInteractable = null;
     }
