@@ -8,8 +8,7 @@ public class Alinna_Introduction_1 : EventBase
         ConversationActor = Actors.AI_Alinna();
 
 		{
-            var choice = NewEventChoice();
-            choice.Text = "affirmative.";
+            var choice = NewEventChoice("affirmative.");
             choice.AddNextEvent<Alinna_Introduction_2>();
         }
     }
@@ -24,8 +23,7 @@ public class Alinna_Introduction_2 : EventBase
         ConversationActor = Actors.AI_Alinna();
 
 		{
-            var choice = NewEventChoice();
-            choice.Text = "[excited] affirmative.";
+            var choice = NewEventChoice("[excited] affirmative.");
         }
     }
 }

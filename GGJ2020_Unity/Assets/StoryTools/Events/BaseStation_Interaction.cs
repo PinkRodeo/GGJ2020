@@ -153,7 +153,7 @@ public class BaseStation_Dispose_Capsules_A_1 : EventBase
         ConversationActor = Actors.AI_BaseStation();
 
         {
-            var choice = NewEventChoice("EMPTY CONTAINER");
+            var choice = NewEventChoice("DISPOSE WASTE");
             choice.AddNextEvent<BaseStation_Dispose_Capsules_A_2>();
         }
     }
@@ -184,7 +184,7 @@ public class BaseStation_Dispose_Headset_1 : EventBase
         ConversationActor = Actors.AI_BaseStation();
 
         {
-            var choice = NewEventChoice("EMPTY CONTAINER");
+            var choice = NewEventChoice("DISPOSE WASTE");
             choice.AddNextEvent<BaseStation_Dispose_Headset_2>();
         }
     }
@@ -223,7 +223,7 @@ public class BaseStation_Dispose_Phone_A_Scott_1 : EventBase
         ConversationActor = Actors.AI_BaseStation();
 
         {
-            var choice = NewEventChoice("EMPTY CONTAINER");
+            var choice = NewEventChoice("DISPOSE WASTE");
             choice.AddNextEvent<BaseStation_Dispose_Phone_A_Scott_2>();
         }
     }
@@ -276,7 +276,7 @@ public class BaseStation_Dispose_Capsules_B_1 : EventBase
         ConversationActor = Actors.AI_BaseStation();
 
         {
-            var choice = NewEventChoice("EMPTY CONTAINER");
+            var choice = NewEventChoice("DISPOSE WASTE");
             choice.OnChoiceSelected += (Choice c) =>
             {
                 Story.AddEvent<BaseStation_Dispose_Capsules_B_2>();
@@ -323,7 +323,7 @@ public class BaseStation_Dispose_Phone_B_Jen_1 : EventBase
         ConversationActor = Actors.AI_BaseStation();
 
         {
-            var choice = NewEventChoice("EMPTY CONTAINER");
+            var choice = NewEventChoice("DISPOSE WASTE");
             choice.OnChoiceSelected += (Choice c) =>
             {
                 Story.AddEvent<BaseStation_Dispose_Phone_B_Jen_2>();
@@ -371,7 +371,7 @@ public class BaseStation_Dispose_Vape_1 : EventBase
         ConversationActor = Actors.AI_BaseStation();
 
         {
-            var choice = NewEventChoice("EMPTY CONTAINER");
+            var choice = NewEventChoice("DISPOSE WASTE");
             choice.OnChoiceSelected += (Choice c) =>
             {
                 Story.AddEvent<BaseStation_Dispose_Vape_2>();

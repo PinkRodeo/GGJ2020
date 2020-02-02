@@ -99,8 +99,12 @@ namespace Player
             }
         }
 
+        private E_ThrowawayState _currentThrowawayState = E_ThrowawayState.OnFloor;
+
         private void OnThrowayTypeChanged(E_ThrowawayState newThrowawayState)
         {
+            _currentThrowawayState = newThrowawayState;
+
             switch (newThrowawayState)
             {
                 case E_ThrowawayState.OnFloor:
@@ -238,7 +242,7 @@ namespace Player
 
         public bool CanInteractWith()
         {
-            return _IsInteractable;
+            return _IsInteractable && _currentThrowawayState == E_ThrowawayState.OnFloor;
         }
 
         public void OnEnter()

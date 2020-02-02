@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using FMODUnity;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerTankController : MonoBehaviour
@@ -35,8 +36,12 @@ public class PlayerTankController : MonoBehaviour
 
     public void InteractInput(InputAction.CallbackContext context)
     {
-        if (currentInteractable != null && IsMovementInputAllowed())
+        if (currentInteractable != null && IsMovementInputAllowed() && currentInteractable.CanInteractWith())
         {
+            if (emitterInteract == null)
+            {
+                SetupAudioEmitters();
+            }
             emitterInteract.Play();
             currentInteractable.OnInteract();
         }
@@ -47,11 +52,25 @@ public class PlayerTankController : MonoBehaviour
         return !StoryManager.Instance.IsEventActive();
     }
 
+    private static PlayerTankController _singleInstance;
+
     void Awake()
     {
+        if (_singleInstance != null)
+        {
+            Object.Destroy(gameObject);
+            return;
+        }
         rigidBody = GetComponent<Rigidbody>();
         SetupAudioEmitters();
         DontDestroyOnLoad(gameObject);
+        _singleInstance = this;
+
+        SceneManager.sceneLoaded += (Scene scene, LoadSceneMode mode) =>
+        {
+            currentInteractable = null;
+            SetupAudioEmitters();
+        };
     }
 
     void Start()
@@ -67,6 +86,14 @@ public class PlayerTankController : MonoBehaviour
             {
                 if (currentInteractable.GetInteractType() == E_InteractType.OnOverlap)
                 {
+                    OnItemInteractUI.SetActive(false);
+
+                    return;
+                }
+
+                if (!currentInteractable.CanInteractWith())
+                {
+                    OnItemInteractUI.SetActive(false);
                     return;
                 }
 
@@ -75,6 +102,12 @@ public class PlayerTankController : MonoBehaviour
             }
             else
             {
+                if (!currentInteractable.CanInteractWith())
+                {
+                    OnItemInteractUI.SetActive(false);
+                    return;
+                }
+
                 OnItemInteractUI.SetActive(false);
             }
         }
@@ -86,6 +119,11 @@ public class PlayerTankController : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (emitterDriving == null)
+        {
+            SetupAudioEmitters();
+        }
+
         if (!IsMovementInputAllowed())
         {
             rigidBody.velocity = Vector3.zero;
@@ -208,6 +246,10 @@ public class PlayerTankController : MonoBehaviour
         }
 
         OnItemInteractUI.SetActive(true);
+        if (emitterOutline == null)
+        {
+            SetupAudioEmitters();
+        }
         emitterOutline.Play();
 
     }

@@ -21,7 +21,7 @@ public class Capsules_A_1 : EventBase
 {
     public override void StartEvent()
     {
-        Text = "Capsules are deprived of any content.\n\nThey do contain an unknown stray substance...";
+        Text = "Capsules are depleted.\n\nThey do contain an unknown stray traces...";
         ConversationActor = Actors.Capsules();
 
         {
@@ -35,7 +35,7 @@ public class Capsules_A_2 : EventBase
 {
     public override void StartEvent()
     {
-        Text = "No need to look into that, just move on to your task.";
+        Text = "No need to look into that, stay on top of your tasks. Take this litter out.";
         ConversationActor = Actors.AI_Alinna();
 
         {

@@ -8,7 +8,7 @@ public class Overlap_Door_B : EventBase
 
 		if (State.IntroState == E_IntroState.Psycho && State.Door_B_State != E_DoorState.ShutHard)
 		{
-			Text = "I'm Helping";
+			Text = "I can tell your battery is getting low. \n\nPlease proceed to your charging station.";
 
 			State.Door_B_State = E_DoorState.ShutHard;
 

@@ -112,6 +112,10 @@ public class StoryState : Singleton<StoryState>
 
     private void OnStoryStateChanged()
     {
+        // Ignore story state changes while resetting
+        if (_isResetting)
+            return;
+
         if (IntroState == E_IntroState.NotGiven)
         {
             IntroState = E_IntroState.GivenTaskList;
@@ -405,8 +409,21 @@ public class StoryState : Singleton<StoryState>
 
 
     //--------- Core
+
+    private bool _isResetting = false;
     public void Reset()
     {
-        Destroy(gameObject);
+        _isResetting = true;
+        IntroState = E_IntroState.NotGiven;
+        FridgeState = E_FridgeState.FirstInteract;
+        Door_A_State = E_DoorState.Locked;
+        State_Capsules_A = E_ThrowawayState.OnFloor;
+        State_Headset = E_ThrowawayState.OnFloor;
+        State_Phone_A_Scott = E_ThrowawayState.OnFloor;
+        Door_B_State = E_DoorState.Locked;
+        State_Capsules_B = E_ThrowawayState.OnFloor;
+        State_Vape = E_ThrowawayState.OnFloor;
+        State_Phone_B_Jen = E_ThrowawayState.OnFloor;
+        _isResetting = false;
     }
 }

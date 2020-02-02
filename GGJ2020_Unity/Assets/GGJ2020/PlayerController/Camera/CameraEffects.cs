@@ -17,6 +17,8 @@ public static class CameraEffects
 
                 if (cam == null)
                     Debug.LogWarning($"Failed to find gameobject with name: {CinemachineCamName}");
+
+                GameObject.DontDestroyOnLoad(cam);
             };
             return cam;
 
@@ -32,9 +34,15 @@ public static class CameraEffects
     {
         var cam = CinemachineCam.GetComponent<CinemachineStoryboard>();
 
+        if (cam == null)
+        {
+            Debug.LogError("Cannot StartFadeToBlack, CinemachineStoryboard component is missing.");
+            return;
+        }
+
         FinishTween();
 
-        ActiveTween = DOTween.To(() => cam.m_Alpha, x => cam.m_Alpha = x, 1f, duration).OnComplete(onComplete).SetEase(Ease.InQuart);// cam.m_Alpha.
+        ActiveTween = DOTween.To(() => cam.m_Alpha, x => cam.m_Alpha = x, 1.5f, duration).OnComplete(onComplete).SetEase(Ease.InQuart);// cam.m_Alpha.
     }
     public static void StartFadeToGame(DG.Tweening.TweenCallback onComplete, Ease ease = Ease.OutQuart, float duration = 1.5f)
     {
@@ -42,6 +50,11 @@ public static class CameraEffects
 
         var cam = CinemachineCam.GetComponent<CinemachineStoryboard>();
 
+        if (cam == null)
+        {
+            Debug.LogError("Cannot StartFadeToGame, CinemachineStoryboard component is missing.");
+            return;
+        }
 
         ActiveTween = DOTween.To(() => cam.m_Alpha, x => cam.m_Alpha = x, 0f, duration).OnComplete(onComplete).SetEase(Ease.OutQuart);
     }

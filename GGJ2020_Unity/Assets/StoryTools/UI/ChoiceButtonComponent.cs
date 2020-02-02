@@ -84,7 +84,7 @@ public class ChoiceButtonComponent : MonoBehaviour, IPointerEnterHandler, ISelec
 
         choiceText.font = data.font;
         //choiceText.UpdateFontAsset();
-        choiceText.alignment = data.alignment;
+        choiceText.alignment = TextAlignmentOptions.Left;
         choiceText.font = data.font;
 
         var parrentButton = choiceText.GetComponentInParent<Button>();

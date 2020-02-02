@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+using DG.Tweening;
+
 public delegate void StoryEventDelegate(EventBase storyEvent);
 public delegate void StoryChoiceDelegate(Choice storyChoice);
 
@@ -163,14 +165,25 @@ public class StoryManager : Singleton<StoryManager>
             OnEventStart(newEvent);
     }
 
+    public void GoToEndScreen()
+    {
+        CameraEffects.StartFadeToBlack(() =>
+        {
+            DOTween.KillAll(false);
+            Reset();
+            StoryState.Instance.Reset();
+            UnityEngine.SceneManagement.SceneManager.LoadScene(2);
+            
+        });
+    }
+
     public void Reset()
     {
-        while (currentEvent == null)
+        while (currentEvent != null)
         {
             CloseEvent();
         }
-
-
+     
     }
 
 }
