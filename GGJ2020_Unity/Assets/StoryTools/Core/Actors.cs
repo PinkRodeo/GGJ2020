@@ -113,14 +113,39 @@ public static class Actors
 
     
     private static Actor _AI_Plant;
-    public static Actor AI_Plant()
+    public static Actor AI_Plant_JULES_FERN()
     {
         if (_AI_Plant == null)
         {
             _AI_Plant = new Actor(E_ActorCategory.AI,
                             E_ActorType.AI_Plant,
                             Color.green,
-                            "Plant");    
+                            "JULES FERN");    
+        }
+ 
+        return _AI_Plant;
+    }
+
+    public static Actor AI_Plant_PLANTO()
+    {
+        if (_AI_Plant == null)
+        {
+            _AI_Plant = new Actor(E_ActorCategory.AI,
+                            E_ActorType.AI_Plant,
+                            Color.green,
+                            "PLANTO");    
+        }
+ 
+        return _AI_Plant;
+    }
+    public static Actor AI_Plant_BLINI()
+    {
+        if (_AI_Plant == null)
+        {
+            _AI_Plant = new Actor(E_ActorCategory.AI,
+                            E_ActorType.AI_Plant,
+                            Color.green,
+                            "BLINI");    
         }
  
         return _AI_Plant;

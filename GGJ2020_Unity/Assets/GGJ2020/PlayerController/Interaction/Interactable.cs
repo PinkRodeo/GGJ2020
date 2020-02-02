@@ -21,6 +21,8 @@ public interface IInteractable
 
     Collider GetExitCollider();
     Collider GetEnterCollider();
+
+    E_InteractType GetInteractType();
 }
 
 namespace Player
@@ -133,6 +135,10 @@ namespace Player
             {
                 _materials[i].DOFloat(amount, "HighlightAmount", 0.3f);
             }
+        }
+        public E_InteractType GetInteractType()
+        {
+            return interactType;
         }
 
         void SetupColliders()
@@ -267,7 +273,7 @@ namespace Player
         {
             if (!CanInteractWith())
                 return;
-                
+
             var newEvent = EventHelper.CreateEventByString(eventToTrigger);
             if (newEvent == null)
             {

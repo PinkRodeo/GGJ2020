@@ -5,8 +5,8 @@ public class Plant_B_Interaction : EventBase
 {
     public override void StartEvent()
     {
-        Text = "We don't need you!!";
-        ConversationActor = Actors.AI_Plant();
+        Text = "I absorb energy from the sun. What have you done today?";
+        ConversationActor = Actors.AI_Plant_BLINI();
 
         AddContinueChoice();
     }
