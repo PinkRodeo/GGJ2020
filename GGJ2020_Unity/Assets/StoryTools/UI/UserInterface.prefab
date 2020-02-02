@@ -63,7 +63,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: db0ac7f3cc07a7d408158873acd838a0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a482f113134f9e14f89e6ad0582bb717, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -72,7 +72,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 0.46
+  m_PixelsPerUnitMultiplier: 0.4
 --- !u!1 &106815235120808753
 GameObject:
   m_ObjectHideFlags: 0
@@ -467,6 +467,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 106815235120808754}
     m_Modifications:
+    - target: {fileID: 684117154793896382, guid: df0200161f32b1c41a660d57d1dba009,
+        type: 3}
+      propertyPath: m_Alpha
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2056426414229077959, guid: df0200161f32b1c41a660d57d1dba009,
         type: 3}
       propertyPath: m_padding
@@ -637,6 +642,12 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.50000006
       objectReference: {fileID: 0}
+    - target: {fileID: 3716823231696529119, guid: df0200161f32b1c41a660d57d1dba009,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 47081325b04db494aa6590daabec1be7,
+        type: 3}
     - target: {fileID: 3874730322174541521, guid: df0200161f32b1c41a660d57d1dba009,
         type: 3}
       propertyPath: m_AnchoredPosition.x

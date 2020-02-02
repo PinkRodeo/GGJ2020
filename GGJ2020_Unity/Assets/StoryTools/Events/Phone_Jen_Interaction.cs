@@ -74,8 +74,7 @@ public class Call2 : EventBase
 }
 
 public class Call3 : EventBase
-{
-
+{   
     public override void StartEvent()
     {
         ConversationActor = Actors.Phone_Jen();
@@ -106,7 +105,6 @@ public class Call4 : EventBase
 
 public class Message1 : EventBase
 {
-
     public override void StartEvent()
     {
         ConversationActor = Actors.Phone_Jen();
@@ -208,6 +206,7 @@ public class EraseUserData : EventBase
         var choice = NewEventChoice();
         choice.Text = "PROCEED";
         choice.AddReward<StartEventReward<EraseUserDataProceed>>();
+
     }
 }
 
@@ -223,10 +222,7 @@ public class EraseUserDataProceed : EventBase
         choice.Text = "...";
         choice.AddReward<StartEventReward<EraseUserDataProceed2>>();
 
-        choice.OnChoiceSelected += (Choice c) =>
-        {
-            State.State_Phone_B_Jen = E_ThrowawayState.PickedUp;
-        };
+        
     }
 }
 
@@ -254,6 +250,10 @@ public class EraseUserDataProceed3 : EventBase
 
         var choice = NewEventChoice();
         choice.Text = "...";
-        choice.AddReward<StartEventReward<Phone_Jenn_Interaction>>();
+        //choice.AddReward<StartEventReward<Phone_Jenn_Interaction>>();
+        choice.OnChoiceSelected += (Choice c) =>
+        {
+            State.State_Phone_B_Jen = E_ThrowawayState.PickedUp;
+        };
     }
 }
