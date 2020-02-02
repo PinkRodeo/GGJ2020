@@ -8,7 +8,14 @@ public class VR_Interaction : EventBase
         Text = "VR Goggles Interaction";
         ConversationActor = Actors.AI_Alinna();
 
-        AddContinueChoice();
+        {
+            var choice = NewEventChoice();
+            choice.Text = "WIPE DOWN HEADSET";
+            choice.OnChoiceSelected += (Choice c) => {
+                State.DoorBState = E_DoorState.Open;
+            };
+            AddChoice(choice);
+        }
 
         // Text = "Dummy";
 		// ConversationActor = Actors.AI_Fridge();

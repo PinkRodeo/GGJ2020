@@ -12,7 +12,6 @@ public enum E_FridgeState
 
 
 
-
 //-------- Room 3
 
 
@@ -24,10 +23,14 @@ public enum E_FridgeState
 
 
 //--------- Core
+public delegate void DoorChangedDelegate(E_DoorState newDoorState);
 
-
-
-
+public enum E_DoorState
+{
+    Locked,
+    Open,
+    ShutHard
+}
 
 public class StoryState : Singleton<StoryState>
 {
@@ -46,8 +49,45 @@ public class StoryState : Singleton<StoryState>
         }
     }
 
+    public DoorChangedDelegate OnDoorAChanged;
+
+    private E_DoorState _doorAState = E_DoorState.Locked;
+
+    public E_DoorState DoorAState
+    {
+        get
+        {
+            return _doorAState;
+        }
+        set
+        {
+            _doorAState = value;
+
+            if (OnDoorAChanged != null)
+                OnDoorAChanged(_doorAState);
+        }
+    }
+
     //-------- Room 2
 
+    public DoorChangedDelegate OnDoorBChanged;
+
+    private E_DoorState _doorBState = E_DoorState.Locked;
+
+    public E_DoorState DoorBState
+    {
+        get
+        {
+            return _doorBState;
+        }
+        set
+        {
+            _doorBState = value;
+
+            if (OnDoorBChanged != null)
+                OnDoorBChanged(_doorBState);
+        }
+    }
 
 
     //-------- Room 3

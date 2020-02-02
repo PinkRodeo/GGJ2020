@@ -162,7 +162,6 @@ GameObject:
   - component: {fileID: 8352435031366474062}
   - component: {fileID: 8352435031366474050}
   - component: {fileID: 8352435031366474053}
-  - component: {fileID: 8352435031366474051}
   - component: {fileID: 8352435031366474063}
   m_Layer: 9
   m_Name: Player
@@ -217,21 +216,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 3
-  movementSpeed: 4
---- !u!136 &8352435031366474051
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8352435031366474052}
-  m_Material: {fileID: 13400000, guid: dce60d905f1f9f648b4a2041e1e71690, type: 2}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  m_Radius: 0.31
-  m_Height: 0.53
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.03, z: 0}
+  movementSpeed: 2.5
 --- !u!114 &8352435031366474063
 MonoBehaviour:
   m_ObjectHideFlags: 0
