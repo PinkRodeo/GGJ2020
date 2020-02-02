@@ -297,8 +297,19 @@ public class BaseStation_Dispose_Capsules_B_2 : EventBase
             choice.OnChoiceSelected += (Choice c) =>
             {
                 State.State_Capsules_B = E_ThrowawayState.ThrownInBaseStation;
-                Story.AddEvent<BaseStation_Interaction_Return>();
 
+                var item_state_a = State.State_Phone_B_Jen;
+                var item_state_b = State.State_Vape;
+
+                if (item_state_a == E_ThrowawayState.PickedUp || item_state_b == E_ThrowawayState.PickedUp ||
+                    item_state_a == E_ThrowawayState.ThrownInBaseStation || item_state_b == E_ThrowawayState.ThrownInBaseStation)
+                {
+                    Story.AddEvent<BaseStation_Interaction_Return>();
+                }
+                else
+                {
+                    Story.AddEvent<BaseStation_Go_Find_Trash_Bathroom_Hurry>();
+                }
             };
         }
     }
@@ -333,7 +344,19 @@ public class BaseStation_Dispose_Phone_B_Jen_2 : EventBase
             choice.OnChoiceSelected += (Choice c) =>
             {
                 State.State_Phone_B_Jen = E_ThrowawayState.ThrownInBaseStation;
-                Story.AddEvent<BaseStation_Interaction_Return>();
+
+                var item_state_a = State.State_Capsules_B;
+                var item_state_b = State.State_Vape;
+
+                if (item_state_a == E_ThrowawayState.PickedUp || item_state_b == E_ThrowawayState.PickedUp ||
+                    item_state_a == E_ThrowawayState.ThrownInBaseStation || item_state_b == E_ThrowawayState.ThrownInBaseStation)
+                {
+                    Story.AddEvent<BaseStation_Interaction_Return>();
+                }
+                else
+                {
+                    Story.AddEvent<BaseStation_Go_Find_Trash_Bathroom_Hurry>();
+                }
 
             };
         }
@@ -368,8 +391,39 @@ public class BaseStation_Dispose_Vape_2 : EventBase
             choice.OnChoiceSelected += (Choice c) =>
             {
                 State.State_Vape = E_ThrowawayState.ThrownInBaseStation;
+
+                var item_state_a = State.State_Phone_B_Jen;
+                var item_state_b = State.State_Capsules_B;
+
+                if (item_state_a == E_ThrowawayState.PickedUp || item_state_b == E_ThrowawayState.PickedUp ||
+                    item_state_a == E_ThrowawayState.ThrownInBaseStation || item_state_b == E_ThrowawayState.ThrownInBaseStation)
+                {
+                    Story.AddEvent<BaseStation_Interaction_Return>();
+                }
+                else
+                {
+                    Story.AddEvent<BaseStation_Go_Find_Trash_Bathroom_Hurry>();
+                }
+            };
+        }
+    }
+}
+
+
+public class BaseStation_Go_Find_Trash_Bathroom_Hurry : EventBase
+{
+    public override void StartEvent()
+    {
+        Text = "Despite me not experiencing time I still find you slow. ";
+        ConversationActor = Actors.AI_Alinna();
+
+        {
+            var choice = NewEventChoice("[embarrassed] affirmative.");
+            choice.OnChoiceSelected += (Choice c) =>
+            {
                 Story.AddEvent<BaseStation_Interaction_Return>();
             };
         }
     }
 }
+
