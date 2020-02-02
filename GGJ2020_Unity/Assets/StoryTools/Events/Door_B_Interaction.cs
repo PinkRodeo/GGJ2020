@@ -9,7 +9,7 @@ public class Door_B_Interaction : EventBase
 
 		if (State.Door_B_State == E_DoorState.Locked)
 		{
-			Text = "First clean.";
+			Text = "Access Denied.\nYou’re not ready for the task that follows. Return later! ";
             AddContinueChoice();
 		}
 		else if (State.Door_B_State == E_DoorState.ShutHard)
