@@ -84,18 +84,18 @@ public class StoryState : Singleton<StoryState>
 
         if (State_Capsules_A == E_ThrowawayState.ThrownInBaseStation)
         {
-            if (DoorAState == E_DoorState.Locked)
+            if (Door_A_State == E_DoorState.Locked)
             {
-                DoorAState = E_DoorState.Unlocked;
+                Door_A_State = E_DoorState.Unlocked;
                 Story.AddEvent<Alinna_Door_A_Unlock_1>();
             }
         }
 
         if (State_Headset == E_ThrowawayState.ThrownInBaseStation && State_Phone_A_Scott == E_ThrowawayState.ThrownInBaseStation)
         {
-            if (DoorBState == E_DoorState.Locked)
+            if (Door_B_State == E_DoorState.Locked)
             {
-                DoorBState = E_DoorState.Unlocked;
+                Door_B_State = E_DoorState.Unlocked;
                 Story.AddEvent<Alinna_Door_B_Unlock_1>();
             }
         }
@@ -181,7 +181,7 @@ public class StoryState : Singleton<StoryState>
 
     private E_DoorState _doorAState = E_DoorState.Locked;
 
-    public E_DoorState DoorAState
+    public E_DoorState Door_A_State
     {
         get
         {
@@ -274,7 +274,7 @@ public class StoryState : Singleton<StoryState>
 
     private E_DoorState _doorBState = E_DoorState.Locked;
 
-    public E_DoorState DoorBState
+    public E_DoorState Door_B_State
     {
         get
         {

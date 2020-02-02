@@ -265,6 +265,9 @@ namespace Player
 
         private void RunEvent()
         {
+            if (!CanInteractWith())
+                return;
+                
             var newEvent = EventHelper.CreateEventByString(eventToTrigger);
             if (newEvent == null)
             {

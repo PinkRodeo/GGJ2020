@@ -6,11 +6,11 @@ public class Overlap_Door_B : EventBase
     {
 		ConversationActor = Actors.AI_Alinna();
 
-		if (State.IntroState == E_IntroState.Psycho)
+		if (State.IntroState == E_IntroState.Psycho && State.Door_B_State != E_DoorState.ShutHard)
 		{
 			Text = "I'm Helping";
 
-			State.DoorBState = E_DoorState.ShutHard;
+			State.Door_B_State = E_DoorState.ShutHard;
 
 			{
 				var choice = NewEventChoice();
@@ -21,11 +21,11 @@ public class Overlap_Door_B : EventBase
 			}
 
 		}
-		else if (State.DoorBState == E_DoorState.Unlocked)
+		else if (State.Door_B_State == E_DoorState.Unlocked)
 		{
 			Text = "Dummy Text.";
 			Story.CloseEvent();
-			State.DoorBState = E_DoorState.Open;
+			State.Door_B_State = E_DoorState.Open;
 		}
 		else
 		{

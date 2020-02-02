@@ -5,7 +5,7 @@ public class Plant_A_Interaction : EventBase
 {
     public override void StartEvent()
     {
-        Text = "Interactions with a nasty plant A";
+        Text = "GET LOST, I don't need you.";
         ConversationActor = Actors.AI_Plant();
 
         AddContinueChoice();
