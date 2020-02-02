@@ -17,8 +17,6 @@ public class ChoiceButtonComponent : MonoBehaviour, IPointerEnterHandler, ISelec
 
     public CanvasGroup choiceButtonGroup;
 
-    private EventUIScriptableObject uiTypes;
-
     private StudioEventEmitter EmitterSelect;
     private StudioEventEmitter EmitterSubmit;
     private StudioEventEmitter EmitterAppear;
@@ -78,8 +76,6 @@ public class ChoiceButtonComponent : MonoBehaviour, IPointerEnterHandler, ISelec
 
 
         EmitterAppear.Play();
-
-        var data = uiTypes.GetDataForCategory(choice.ParentEvent.ConversationActor.ActorCategory);
         if (data == null)
         {
             Debug.LogError($"No UI data found for {choice.ParentEvent.ConversationActor.ActorCategory}");
