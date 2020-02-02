@@ -13,13 +13,19 @@ MonoBehaviour:
   m_Name: UiSettings
   m_EditorClassIdentifier: 
   UiTypes:
-  - Target: 0
-    BackGround: {fileID: 0}
-    PersonColor: {fileID: 0}
+  - Target: 2
     font: {fileID: 11400000, guid: 1b99002387d590a4aaf5d6b3d9f0d251, type: 2}
+    TitleSprite: {fileID: 0}
+    TextBoxSprite: {fileID: 0}
+    DefaultSprite: {fileID: 0}
+    PressedSprite: {fileID: 0}
+    SelectedSprite: {fileID: 0}
     alignment: 513
-  - Target: 1
-    BackGround: {fileID: 0}
-    PersonColor: {fileID: 0}
-    font: {fileID: 11400000, guid: 1b99002387d590a4aaf5d6b3d9f0d251, type: 2}
-    alignment: 4097
+  - Target: 0
+    font: {fileID: 11400000, guid: fc13f4d962608614e92ea737eadc490f, type: 2}
+    TitleSprite: {fileID: 21300000, guid: aed825860c970b84fa4cfc1a58cb5783, type: 3}
+    TextBoxSprite: {fileID: 21300000, guid: 16d8cf60bcd97c4429ad488fa81bb57a, type: 3}
+    DefaultSprite: {fileID: 21300000, guid: aed825860c970b84fa4cfc1a58cb5783, type: 3}
+    PressedSprite: {fileID: 21300000, guid: 048f9331cf9e0114e923aadefdf43157, type: 3}
+    SelectedSprite: {fileID: 21300000, guid: 542f542144b90c041b515e03f631308b, type: 3}
+    alignment: 514

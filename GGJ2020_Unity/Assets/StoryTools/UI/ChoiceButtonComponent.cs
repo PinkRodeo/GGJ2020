@@ -20,6 +20,7 @@ public class ChoiceButtonComponent : MonoBehaviour, IPointerEnterHandler, ISelec
     private StudioEventEmitter EmitterSelect;
     private StudioEventEmitter EmitterSubmit;
     private StudioEventEmitter EmitterAppear;
+    private EventUIScriptableObject uiTypes;
 
     public void Awake()
     {
@@ -41,6 +42,8 @@ public class ChoiceButtonComponent : MonoBehaviour, IPointerEnterHandler, ISelec
             }
             currentChoice.Select();
         });
+
+        uiTypes = Gamemode.GetUiSettings();
     }
 
     public void SetVisible(bool isVisible)
@@ -61,12 +64,24 @@ public class ChoiceButtonComponent : MonoBehaviour, IPointerEnterHandler, ISelec
     public void SetToChoice(Choice choice)
     {
         //TODO fix this sound
-
         EmitterAppear.Play();
+
+        var data = uiTypes.GetDataForCategory(choice.ParentEvent.ConversationActor.ActorCategory);
 
         currentChoice = choice;
         SetVisible(true);
         choiceText.text = choice.Text;
+        choiceText.alignment = data.alignment;
+        choiceText.font = data.font;
+
+        var parrentButton = choiceText.GetComponentInParent<Button>();
+        var parrentImage = choiceText.GetComponentInParent<Image>();
+
+        var spriteState = parrentButton.spriteState;
+        spriteState.pressedSprite = data.PressedSprite;
+        spriteState.selectedSprite = data.SelectedSprite;
+        spriteState.highlightedSprite = data.PressedSprite;
+        parrentImage.sprite = data.DefaultSprite;
     }
 
     public void ClearChoice()
