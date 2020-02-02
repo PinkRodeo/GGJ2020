@@ -5,7 +5,7 @@ public class BaseStation_Interaction : EventBase
 {
     public override void StartEvent()
     {
-        Text = "This is the basestation, where you live and the trash goes.";
+        Text = "This is your Home Station, where the trash goes and you live.";
         ConversationActor = Actors.AI_Alinna();
         Story.CloseEvent();
 
@@ -66,7 +66,7 @@ public class BaseStation_Interaction_Return : EventBase
 {
     public override void StartEvent()
     {
-        Text = "This is the basestation, where you live and the trash goes.";
+        Text = "This is your Home Station, where the trash goes and you live.";
         ConversationActor = Actors.AI_Alinna();
         Story.CloseEvent();
 
@@ -170,7 +170,7 @@ public class BaseStation_Dispose_Capsules_A_2 : EventBase
             var choice = NewEventChoice("[relieved] affirmative.");
             choice.OnChoiceSelected += (Choice c) =>
             {
-                State.State_Capsules_A = E_ThrowawayState.ThrownInBaseStation;
+                State.State_Capsules_A = E_ThrowawayState.ThrownInHomeStation;
                 Story.AddEvent<BaseStation_Interaction_Return>();
             };
         }
@@ -200,7 +200,7 @@ public class BaseStation_Dispose_Headset_2 : EventBase
             var choice = NewEventChoice("[relieved] affirmative.");
             choice.OnChoiceSelected += (Choice c) =>
             {
-                State.State_Headset = E_ThrowawayState.ThrownInBaseStation;
+                State.State_Headset = E_ThrowawayState.ThrownInHomeStation;
 
                 if (State.State_Phone_A_Scott == E_ThrowawayState.OnFloor)
                 {
@@ -239,7 +239,7 @@ public class BaseStation_Dispose_Phone_A_Scott_2 : EventBase
             var choice = NewEventChoice("[relieved] affirmative.");
             choice.OnChoiceSelected += (Choice c) =>
             {
-                State.State_Phone_A_Scott = E_ThrowawayState.ThrownInBaseStation;
+                State.State_Phone_A_Scott = E_ThrowawayState.ThrownInHomeStation;
 
                 if (State.State_Headset == E_ThrowawayState.OnFloor)
                 {
@@ -296,13 +296,13 @@ public class BaseStation_Dispose_Capsules_B_2 : EventBase
             var choice = NewEventChoice("[relieved] affirmative.");
             choice.OnChoiceSelected += (Choice c) =>
             {
-                State.State_Capsules_B = E_ThrowawayState.ThrownInBaseStation;
+                State.State_Capsules_B = E_ThrowawayState.ThrownInHomeStation;
 
                 var item_state_a = State.State_Phone_B_Jen;
                 var item_state_b = State.State_Vape;
 
                 if (item_state_a == E_ThrowawayState.PickedUp || item_state_b == E_ThrowawayState.PickedUp ||
-                    item_state_a == E_ThrowawayState.ThrownInBaseStation || item_state_b == E_ThrowawayState.ThrownInBaseStation)
+                    item_state_a == E_ThrowawayState.ThrownInHomeStation || item_state_b == E_ThrowawayState.ThrownInHomeStation)
                 {
                     Story.AddEvent<BaseStation_Interaction_Return>();
                 }
@@ -343,13 +343,13 @@ public class BaseStation_Dispose_Phone_B_Jen_2 : EventBase
             var choice = NewEventChoice("[relieved] affirmative.");
             choice.OnChoiceSelected += (Choice c) =>
             {
-                State.State_Phone_B_Jen = E_ThrowawayState.ThrownInBaseStation;
+                State.State_Phone_B_Jen = E_ThrowawayState.ThrownInHomeStation;
 
                 var item_state_a = State.State_Capsules_B;
                 var item_state_b = State.State_Vape;
 
                 if (item_state_a == E_ThrowawayState.PickedUp || item_state_b == E_ThrowawayState.PickedUp ||
-                    item_state_a == E_ThrowawayState.ThrownInBaseStation || item_state_b == E_ThrowawayState.ThrownInBaseStation)
+                    item_state_a == E_ThrowawayState.ThrownInHomeStation || item_state_b == E_ThrowawayState.ThrownInHomeStation)
                 {
                     Story.AddEvent<BaseStation_Interaction_Return>();
                 }
@@ -390,13 +390,13 @@ public class BaseStation_Dispose_Vape_2 : EventBase
             var choice = NewEventChoice("[relieved] affirmative.");
             choice.OnChoiceSelected += (Choice c) =>
             {
-                State.State_Vape = E_ThrowawayState.ThrownInBaseStation;
+                State.State_Vape = E_ThrowawayState.ThrownInHomeStation;
 
                 var item_state_a = State.State_Phone_B_Jen;
                 var item_state_b = State.State_Capsules_B;
 
                 if (item_state_a == E_ThrowawayState.PickedUp || item_state_b == E_ThrowawayState.PickedUp ||
-                    item_state_a == E_ThrowawayState.ThrownInBaseStation || item_state_b == E_ThrowawayState.ThrownInBaseStation)
+                    item_state_a == E_ThrowawayState.ThrownInHomeStation || item_state_b == E_ThrowawayState.ThrownInHomeStation)
                 {
                     Story.AddEvent<BaseStation_Interaction_Return>();
                 }

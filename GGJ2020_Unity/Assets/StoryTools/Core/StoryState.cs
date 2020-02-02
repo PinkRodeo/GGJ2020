@@ -23,7 +23,7 @@ public enum E_ThrowawayState
 {
     OnFloor,
     PickedUp,
-    ThrownInBaseStation,
+    ThrownInHomeStation,
 }
 
 
@@ -83,9 +83,9 @@ public class StoryState : Singleton<StoryState>
     {
         get
         {
-            if (State_Capsules_A == E_ThrowawayState.ThrownInBaseStation &&
-                State_Headset == E_ThrowawayState.ThrownInBaseStation &&
-                State_Phone_A_Scott == E_ThrowawayState.ThrownInBaseStation &&
+            if (State_Capsules_A == E_ThrowawayState.ThrownInHomeStation &&
+                State_Headset == E_ThrowawayState.ThrownInHomeStation &&
+                State_Phone_A_Scott == E_ThrowawayState.ThrownInHomeStation &&
                 State_Capsules_B == E_ThrowawayState.PickedUp &&
                 State_Phone_B_Jen == E_ThrowawayState.PickedUp &&
                 State_Vape == E_ThrowawayState.PickedUp)
@@ -119,7 +119,7 @@ public class StoryState : Singleton<StoryState>
             Story.AddEvent<Alinna_Introduction_1>();
         }
 
-        if (State_Capsules_A == E_ThrowawayState.ThrownInBaseStation)
+        if (State_Capsules_A == E_ThrowawayState.ThrownInHomeStation)
         {
             if (Door_A_State == E_DoorState.Locked)
             {
@@ -128,7 +128,7 @@ public class StoryState : Singleton<StoryState>
             }
         }
 
-        if (State_Headset == E_ThrowawayState.ThrownInBaseStation && State_Phone_A_Scott == E_ThrowawayState.ThrownInBaseStation)
+        if (State_Headset == E_ThrowawayState.ThrownInHomeStation && State_Phone_A_Scott == E_ThrowawayState.ThrownInHomeStation)
         {
             if (Door_B_State == E_DoorState.Locked)
             {
@@ -137,9 +137,9 @@ public class StoryState : Singleton<StoryState>
             }
         }
 
-        if (State_Capsules_A == E_ThrowawayState.ThrownInBaseStation &&
-            State_Headset == E_ThrowawayState.ThrownInBaseStation &&
-            State_Phone_A_Scott == E_ThrowawayState.ThrownInBaseStation &&
+        if (State_Capsules_A == E_ThrowawayState.ThrownInHomeStation &&
+            State_Headset == E_ThrowawayState.ThrownInHomeStation &&
+            State_Phone_A_Scott == E_ThrowawayState.ThrownInHomeStation &&
             State_Capsules_B == E_ThrowawayState.PickedUp &&
             State_Phone_B_Jen == E_ThrowawayState.PickedUp &&
             State_Vape == E_ThrowawayState.PickedUp &&
@@ -149,12 +149,12 @@ public class StoryState : Singleton<StoryState>
             Story.AddEvent<Alinna_Congratulations_1>();
         }
 
-        if (State_Capsules_A == E_ThrowawayState.ThrownInBaseStation &&
-            State_Headset == E_ThrowawayState.ThrownInBaseStation &&
-            State_Phone_A_Scott == E_ThrowawayState.ThrownInBaseStation &&
-            State_Capsules_B == E_ThrowawayState.ThrownInBaseStation &&
-            State_Phone_B_Jen == E_ThrowawayState.ThrownInBaseStation &&
-            State_Vape == E_ThrowawayState.ThrownInBaseStation &&
+        if (State_Capsules_A == E_ThrowawayState.ThrownInHomeStation &&
+            State_Headset == E_ThrowawayState.ThrownInHomeStation &&
+            State_Phone_A_Scott == E_ThrowawayState.ThrownInHomeStation &&
+            State_Capsules_B == E_ThrowawayState.ThrownInHomeStation &&
+            State_Phone_B_Jen == E_ThrowawayState.ThrownInHomeStation &&
+            State_Vape == E_ThrowawayState.ThrownInHomeStation &&
             IntroState != E_IntroState.Done)
         {
             IntroState = E_IntroState.Done;

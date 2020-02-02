@@ -90,7 +90,7 @@ public static class Actors
             _AI_BaseStation = new Actor(E_ActorCategory.AI,
                             E_ActorType.AI_BaseStation,
                             Color.blue,
-                            "Base Station");    
+                            "TAANGO Home Station");    
         }
  
         return _AI_BaseStation;
@@ -105,7 +105,7 @@ public static class Actors
             _AI_Fridge = new Actor(E_ActorCategory.AI,
                             E_ActorType.AI_Fridge,
                             Color.white,
-                            "FridgeBot");    
+                            "FIFO - Fridge");    
         }
  
         return _AI_Fridge;

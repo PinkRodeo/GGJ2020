@@ -379,7 +379,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 40146847}
-  m_LocalRotation: {x: -0.20501365, y: -0.75343615, z: 0.27547112, w: -0.5607309}
+  m_LocalRotation: {x: -0.20501365, y: -0.7534362, z: 0.27547115, w: -0.5607308}
   m_LocalPosition: {x: -2.6925385, y: 3.4018097, z: 0.9381505}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children:
@@ -428,7 +428,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.6, y: 3, z: 1.2}
+  m_Size: {x: 0.78, y: 3.91, z: 2.36}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &113779689
 Transform:
@@ -819,7 +819,7 @@ ReflectionProbe:
   m_BlendDistance: 1
   m_HDR: 1
   m_BoxProjection: 1
-  m_RenderDynamicObjects: 0
+  m_RenderDynamicObjects: 1
   m_UseOcclusionCulling: 1
   m_Importance: 1
   m_CustomBakedTexture: {fileID: 0}
@@ -2029,7 +2029,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 196353374456636835}
+    m_TransformParent: {fileID: 8611983958573944184}
     m_Modifications:
     - target: {fileID: 8463532312594686648, guid: af066f2613cea834cae33363b30ae1ca,
         type: 3}
@@ -2039,42 +2039,42 @@ PrefabInstance:
     - target: {fileID: 8463532312594686649, guid: af066f2613cea834cae33363b30ae1ca,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.92
+      value: -0.0043510497
       objectReference: {fileID: 0}
     - target: {fileID: 8463532312594686649, guid: af066f2613cea834cae33363b30ae1ca,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.13850863
+      value: 0.16708153
       objectReference: {fileID: 0}
     - target: {fileID: 8463532312594686649, guid: af066f2613cea834cae33363b30ae1ca,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.556
+      value: -0.36794785
       objectReference: {fileID: 0}
     - target: {fileID: 8463532312594686649, guid: af066f2613cea834cae33363b30ae1ca,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 1
+      value: 0.36126924
       objectReference: {fileID: 0}
     - target: {fileID: 8463532312594686649, guid: af066f2613cea834cae33363b30ae1ca,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0.2752298
       objectReference: {fileID: 0}
     - target: {fileID: 8463532312594686649, guid: af066f2613cea834cae33363b30ae1ca,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0.112506956
       objectReference: {fileID: 0}
     - target: {fileID: 8463532312594686649, guid: af066f2613cea834cae33363b30ae1ca,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.00000020861626
+      value: 0.88378465
       objectReference: {fileID: 0}
     - target: {fileID: 8463532312594686649, guid: af066f2613cea834cae33363b30ae1ca,
         type: 3}
       propertyPath: m_RootOrder
-      value: 16
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8463532312594686649, guid: af066f2613cea834cae33363b30ae1ca,
         type: 3}
@@ -2650,7 +2650,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.32, y: 2.87, z: 1.35}
+  m_Size: {x: 0.73, y: 4.02, z: 3.26}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &1437270598
 Transform:
@@ -2832,7 +2832,7 @@ ReflectionProbe:
   m_BlendDistance: 1
   m_HDR: 1
   m_BoxProjection: 1
-  m_RenderDynamicObjects: 0
+  m_RenderDynamicObjects: 1
   m_UseOcclusionCulling: 1
   m_Importance: 2
   m_CustomBakedTexture: {fileID: 0}
@@ -3264,7 +3264,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1686743647}
-  m_LocalRotation: {x: 0.24213168, y: 0.2877137, z: -0.075433075, w: 0.9235275}
+  m_LocalRotation: {x: 0.24213167, y: 0.28771368, z: -0.07543306, w: 0.9235275}
   m_LocalPosition: {x: -2.5602698, y: 3.4018097, z: -8.858572}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children:
@@ -3520,7 +3520,7 @@ ReflectionProbe:
   m_BlendDistance: 1
   m_HDR: 1
   m_BoxProjection: 1
-  m_RenderDynamicObjects: 0
+  m_RenderDynamicObjects: 1
   m_UseOcclusionCulling: 1
   m_Importance: 1
   m_CustomBakedTexture: {fileID: 0}
@@ -3584,7 +3584,7 @@ ReflectionProbe:
   m_BlendDistance: 1
   m_HDR: 1
   m_BoxProjection: 1
-  m_RenderDynamicObjects: 0
+  m_RenderDynamicObjects: 1
   m_UseOcclusionCulling: 1
   m_Importance: 1
   m_CustomBakedTexture: {fileID: 0}
@@ -4010,7 +4010,6 @@ Transform:
   - {fileID: 1547961050643529445}
   - {fileID: 3953907328541405429}
   - {fileID: 6493869959626391798}
-  - {fileID: 1091234236}
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9960,9 +9959,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8003510401121657228}
   m_LocalRotation: {x: 0.8837847, y: 0.112507015, z: -0.27522978, w: 0.36126906}
-  m_LocalPosition: {x: -8.131963, y: 0, z: -0.87097293}
+  m_LocalPosition: {x: -8.361, y: 0, z: -1.279}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1091234236}
   m_Father: {fileID: 196353374456636835}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10076,8 +10076,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.1541364, y: 0.10928167, z: 2.8653438}
-  m_Center: {x: -0.5770682, y: 0.02964045, z: 1.450791}
+  m_Size: {x: 1.1541364, y: 0.38, z: 2.8653438}
+  m_Center: {x: -0.5770682, y: 0, z: 1.450791}
 --- !u!33 &8829352949205447405
 MeshFilter:
   m_ObjectHideFlags: 0

@@ -117,7 +117,7 @@ namespace Player
                     }
                     _IsInteractable = false;
                     break;
-                case E_ThrowawayState.ThrownInBaseStation:
+                case E_ThrowawayState.ThrownInHomeStation:
                     foreach (var meshRenderer in MeshesToHighlight)
                     {
                         meshRenderer.gameObject.SetActive(false);

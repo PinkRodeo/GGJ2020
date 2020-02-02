@@ -5,7 +5,7 @@ public class Fridge_A_1 : EventBase
 {
     public override void StartEvent()
     {
-        Text = "Fridge Description";
+        Text = "Statement. “Fridges guard the freshness of more than just your food.”";
 		ConversationActor = Actors.AI_Fridge();
 
         {
@@ -19,7 +19,7 @@ public class Fridge_A_2 : EventBase
 {
     public override void StartEvent()
     {
-        Text = "Access Denied. Fridge says: “My data hasn’t been accessed in weeks. Are you certain you want to continue?”";
+        Text = "Access Denied. “My data hasn’t been accessed in weeks. Are you certain you want to continue?”";
 		ConversationActor = Actors.AI_Fridge();
 
 		{
@@ -38,7 +38,7 @@ public class Fridge_A_2_Leave : EventBase
 {
     public override void StartEvent()
     {
-        Text = "Fridge says: “I’m not that interesting anyway. I’ll just stay here.”";
+        Text = "Nervous. “I’m not that interesting anyway. I’ll just give you some more time to reconsider.”";
 		ConversationActor = Actors.AI_Fridge();
 		
         AddContinueChoice();
@@ -64,7 +64,7 @@ public class Fridge_A_2_Access_Expired : EventBase
 {
     public override void StartEvent()
     {
-        Text = "Fridge says: “Products have an 'expired' status. Are you certain you want to continue?”";
+        Text = "Fridge says: “Many products have an 'expired' status. Are you certain you want to continue?”";
 		ConversationActor = Actors.AI_Fridge();
 
 		{
@@ -84,7 +84,7 @@ public class Fridge_A_2_Access_Expired_Leave : EventBase
 {
     public override void StartEvent()
     {
-        Text = "Fridge says: “I guess I did take the advice too seriously. Stay… Goodbye.”";
+        Text = "“I'm just very professionally affected. Don't stay… Goodbye.”";
 		ConversationActor = Actors.AI_Fridge();
 
 		AddContinueChoice();
@@ -96,7 +96,7 @@ public class Fridge_A_2_Access_Expired_Final : EventBase
 {
     public override void StartEvent()
     {
-        Text = "Fridge says: “Do you really think I’m still cool enough? Well… Thank you.”";
+        Text = "Fridge says: “Do you really think I’m cool enough? Well… Thank you.”";
 		ConversationActor = Actors.AI_Fridge();
 
 		{
