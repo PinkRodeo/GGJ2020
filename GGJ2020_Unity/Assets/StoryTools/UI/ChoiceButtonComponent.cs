@@ -22,10 +22,6 @@ public class ChoiceButtonComponent : MonoBehaviour, IPointerEnterHandler, ISelec
     private StudioEventEmitter EmitterAppear;
     private EventUIScriptableObject uiTypes;
 
-
-
-
-
     public void Awake()
     {
         SetVisible(false);
@@ -124,13 +120,11 @@ public class ChoiceButtonComponent : MonoBehaviour, IPointerEnterHandler, ISelec
 
     public void OnSelect(BaseEventData eventData)
     {
-        print("select");
         HoverEvent();
     }
 
     public void OnSubmit(BaseEventData eventData)
     {
-        print("submit");
         SubmitEvent();
     }
 

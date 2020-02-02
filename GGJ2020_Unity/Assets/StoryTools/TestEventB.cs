@@ -10,8 +10,6 @@ public class TestEventB : EventBase
         choiceA.Text = "Go back to the first room.";
         choiceA.AddReward<StartEventReward<TestEventA>>();
 
-        AddChoice(choiceA);
-
         AddContinueChoice();
     }
 }

@@ -14,7 +14,6 @@ public class Capsules_A_Interaction : EventBase
             choice.OnChoiceSelected += (Choice c) => {
                 State.DoorAState = E_DoorState.Open;
             };
-            AddChoice(choice);
         }
     }
 }

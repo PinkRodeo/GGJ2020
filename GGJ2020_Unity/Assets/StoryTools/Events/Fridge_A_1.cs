@@ -11,7 +11,6 @@ public class Fridge_A_1 : EventBase
         {
 			var choiceA = NewEventChoice("ACCESS FRIDGE DATA");
 			choiceA.AddNextEvent<Fridge_A_2>();
-			AddChoice(choiceA);
 		}
     }
 }
@@ -26,13 +25,11 @@ public class Fridge_A_2 : EventBase
 		{
 			var choiceA = NewEventChoice("LEAVE");
 			choiceA.AddNextEvent<Fridge_A_2_Leave>();
-			AddChoice(choiceA);
 		}
         
 		{
 			var choiceB = NewEventChoice("ACCESS FRIDGE DATA");
 			choiceB.AddNextEvent<Fridge_A_2_Access>();
-			AddChoice(choiceB);
 		}
     }
 }
@@ -58,7 +55,6 @@ public class Fridge_A_2_Access : EventBase
 		{
 			var choiceA = NewEventChoice("AFFIRMATIVE");
 			choiceA.AddNextEvent<Fridge_A_2_Access_Expired>();
-			AddChoice(choiceA);
 		}
     }
 }
@@ -74,13 +70,11 @@ public class Fridge_A_2_Access_Expired : EventBase
 		{
 			var choiceA = NewEventChoice("LEAVE");
 			choiceA.AddNextEvent<Fridge_A_2_Access_Expired_Leave>();
-			AddChoice(choiceA);
 		}
 
 		{
 			var choiceA = NewEventChoice("ACCESS FRIDGE DATA");
 			choiceA.AddNextEvent<Fridge_A_2_Access_Expired_Final>();
-			AddChoice(choiceA);
 		}
     }
 }
@@ -112,7 +106,6 @@ public class Fridge_A_2_Access_Expired_Final : EventBase
 			choiceA.OnChoiceSelected += (Choice c) => {
 				State.FridgeState = E_FridgeState.AccessUnlocked;
 			};
-			AddChoice(choiceA);
 		}
     }
 }

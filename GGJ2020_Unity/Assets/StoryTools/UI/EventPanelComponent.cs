@@ -50,10 +50,14 @@ public class EventPanelComponent : MonoBehaviour
     {
         if (currentEvent != null)
         {
-            Debug.LogError("Event was still active in the UI, not supposed to happen");
+            OnEventClose(storyEvent);
         }
 
-       
+        if (storyEvent == null)
+        {
+            Debug.LogError("Story Event was not valid!");
+            return;
+        }
 
         //var colors = button.colors;
         //colors.normalColor = choice.ParentEvent.ConversationActor.Tint;
@@ -66,12 +70,6 @@ public class EventPanelComponent : MonoBehaviour
 
     public void OnEventClose(EventBase storyEvent)
     {
-        if (storyEvent != currentEvent)
-        {
-            Debug.LogError("Event closed wasn't the one active ");
-            return;
-        }
-
         currentEvent = null;
 
         if (!StoryManager.Instance.IsEventAvailable())

@@ -9,12 +9,10 @@ public class VR_Interaction : EventBase
         ConversationActor = Actors.AI_Alinna();
 
         {
-            var choice = NewEventChoice();
-            choice.Text = "WIPE DOWN HEADSET";
+            var choice = NewEventChoice("WIPE DOWN HEADSET");
             choice.OnChoiceSelected += (Choice c) => {
                 State.DoorBState = E_DoorState.Open;
             };
-            AddChoice(choice);
         }
 
         // Text = "Dummy";

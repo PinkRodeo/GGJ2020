@@ -20,8 +20,6 @@ public class StoryManager : Singleton<StoryManager>
 
     public void AddEvent(EventBase storyEvent)
     {
-        StoryLog.Log("Adding Event");
-
         if (currentEvent == null)
         {
             _SetCurrentEvent(storyEvent);
@@ -115,8 +113,22 @@ public class StoryManager : Singleton<StoryManager>
 
     private void _SetCurrentEvent(EventBase newEvent)
     {
+        if (newEvent == null)
+        {
+            Debug.LogError("NewEvent needs to be valid");
+            return;
+        }
         currentEvent = newEvent;
         currentEvent.StartEvent();
+
+        foreach (var choice in currentEvent.EventChoices)
+        {
+            if (choice.DisplayOnEventStart == true)
+            {
+                currentEvent.DisplayChoice(choice);
+            }
+        }
+
 
         if (currentEvent.Text == "")
         {

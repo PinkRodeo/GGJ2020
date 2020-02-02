@@ -47,6 +47,7 @@ public abstract class EventBase
         _closeRewards.Remove(typeof(T));
     }
 
+    public List<Choice> EventChoices = new List<Choice>();
 
     public Choice NewEventChoice()
     {
@@ -54,6 +55,7 @@ public abstract class EventBase
 
         // Every Event Choice automatically gets a close event
         newChoice.AddReward<CloseEventReward>();
+        EventChoices.Add(newChoice);
 
         return newChoice;
     }
@@ -66,6 +68,7 @@ public abstract class EventBase
         newChoice.AddReward<CloseEventReward>();
 
         newChoice.Text = choiceText;
+        EventChoices.Add(newChoice);
 
         return newChoice;
     }
@@ -76,14 +79,14 @@ public abstract class EventBase
 
         newChoice.AddReward<CloseEventReward>();
         newChoice.Text = text;
-
-        AddChoice(newChoice);
+        EventChoices.Add(newChoice);
     }
 
-    public void AddChoice(Choice newChoice)
+    public void DisplayChoice(Choice newChoice)
     {
         choices.Add(newChoice);
         Story.AddChoice(newChoice);
+        newChoice.DisplayOnEventStart = false;
     }
 
     public abstract void StartEvent();

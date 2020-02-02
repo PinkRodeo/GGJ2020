@@ -7,6 +7,7 @@ public class FridgeInteraction : EventBase
     {
         Text = "Dummy";
 		ConversationActor = Actors.AI_Fridge();
+        Story.CloseEvent();
 
         switch (State.FridgeState)
         {   
@@ -21,6 +22,5 @@ public class FridgeInteraction : EventBase
                 break;
         }
 
-        Story.CloseEvent();
     }
 }

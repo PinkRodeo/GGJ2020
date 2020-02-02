@@ -11,6 +11,8 @@ public class Choice
 
     private List<System.Type> _rewards = new List<System.Type>();
 
+    public bool DisplayOnEventStart = true;
+
     public Choice(EventBase parentEvent)
     {
         ParentEvent = parentEvent;
