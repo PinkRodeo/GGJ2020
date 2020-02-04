@@ -11,7 +11,7 @@ public class SwitchToMainMenu : MonoBehaviour
     void Awake()
     {
         // Untill all the global state can be sorted out, this is for the best.
-        Application.Quit();
+        GetComponent<Button>().onClick.AddListener(() => Application.Quit());
         //GetComponent<Button>().onClick.AddListener(() => SceneManager.LoadScene(0));
     }
 }
