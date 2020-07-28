@@ -2,11 +2,11 @@
 
 public class Overlap_Door_A : EventBase
 {
-    public override void StartEvent()
-    {
+	public override void StartEvent()
+	{
 		ConversationActor = Actors.AI_Alinna();
 
-		if (State.IntroState == E_IntroState.Psycho  && State.Door_A_State != E_DoorState.ShutHard)
+		if (State.IntroState == E_IntroState.Psycho && State.Door_A_State != E_DoorState.ShutHard)
 		{
 			Text = "I need you to listen to me.\n\nFor both of us.";
 
@@ -15,7 +15,8 @@ public class Overlap_Door_A : EventBase
 			{
 				var choice = NewEventChoice();
 				choice.Text = "... ... ACKNOWLEDGED";
-				choice.OnChoiceSelected += (Choice c) => {
+				choice.OnChoiceSelected += (Choice c) =>
+				{
 
 				};
 			}
@@ -32,5 +33,5 @@ public class Overlap_Door_A : EventBase
 			Text = "Dummy Text.";
 			Story.CloseEvent();
 		}
-    }
+	}
 }

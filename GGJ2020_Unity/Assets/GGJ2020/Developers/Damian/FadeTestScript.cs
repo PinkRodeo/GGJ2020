@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class FadeTestScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        StartCoroutine(TestFade());
-    }
+	// Start is called before the first frame update
+	void Start()
+	{
+		StartCoroutine(TestFade());
+	}
 
-    IEnumerator TestFade()
-    {
-        yield return new WaitForSecondsRealtime(1);
-        CameraEffects.StartFadeToBlack(() => { print("start finished"); });
-        yield return new WaitForSecondsRealtime(3);
+	IEnumerator TestFade()
+	{
+		yield return new WaitForSecondsRealtime(1);
+		CameraEffects.StartFadeToBlack(() => { print("start finished"); });
+		yield return new WaitForSecondsRealtime(3);
 
-        CameraEffects.StartFadeToGame(() => { print("end finished"); });
-    }
+		CameraEffects.StartFadeToGame(() => { print("end finished"); });
+	}
 }

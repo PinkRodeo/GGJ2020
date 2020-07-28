@@ -1,8 +1,7 @@
-﻿
-public class CloseEventReward : RewardBase
+﻿public class CloseEventReward : RewardBase
 {
-    public override void RunReward()
-    {
-        Story.CloseEvent();
-    }
+	public override void RunReward()
+	{
+		Story.CloseEvent();
+	}
 }

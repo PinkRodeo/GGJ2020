@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 using DG.Tweening;
 
 public delegate void StoryEventDelegate(EventBase storyEvent);
@@ -9,181 +8,181 @@ public delegate void StoryChoiceDelegate(Choice storyChoice);
 
 public class StoryManager : Singleton<StoryManager>
 {
-    public StoryEventDelegate OnEventStart;
-    public StoryEventDelegate OnEventClose;
-    
-    public StoryChoiceDelegate OnChoiceAdded;
-    public StoryChoiceDelegate OnChoiceRemoved;
+	public StoryEventDelegate OnEventStart;
+	public StoryEventDelegate OnEventClose;
 
-    private EventBase currentEvent;
-    private Queue<EventBase> eventQueue = new Queue<EventBase>();
+	public StoryChoiceDelegate OnChoiceAdded;
+	public StoryChoiceDelegate OnChoiceRemoved;
 
-    private List<Choice> currentChoices = new List<Choice>();
+	private EventBase currentEvent;
+	private Queue<EventBase> eventQueue = new Queue<EventBase>();
 
-    public void AddEvent(EventBase storyEvent)
-    {
-        if (currentEvent == null)
-        {
-            _SetCurrentEvent(storyEvent);
-        }
-        else
-        {
-            eventQueue.Enqueue(storyEvent);
-        }
-    }
+	private List<Choice> currentChoices = new List<Choice>();
 
-    public void AddEvent<T>() where T : EventBase
-    {
-        var newEvent = EventHelper.CreateEventByType(typeof(T));
-        AddEvent(newEvent);
-    }
+	public void AddEvent(EventBase storyEvent)
+	{
+		if (currentEvent == null)
+		{
+			_SetCurrentEvent(storyEvent);
+		}
+		else
+		{
+			eventQueue.Enqueue(storyEvent);
+		}
+	}
 
-    public void CloseEvent()
-    {
-        if (currentEvent != null)
-        {
-            var oldEvent = currentEvent;
-            currentEvent = null;
+	public void AddEvent<T>() where T : EventBase
+	{
+		var newEvent = EventHelper.CreateEventByType(typeof(T));
+		AddEvent(newEvent);
+	}
 
-            var oldChoices = currentChoices.ToArray();
-            foreach (var choice in oldChoices)
-            {
-                RemoveChoice(choice);
-            }
+	public void CloseEvent()
+	{
+		if (currentEvent != null)
+		{
+			var oldEvent = currentEvent;
+			currentEvent = null;
 
-            currentChoices.Clear();
-            oldEvent.CloseEvent();
-            
-            if (OnEventClose != null)
-                OnEventClose(oldEvent);
+			var oldChoices = currentChoices.ToArray();
+			foreach (var choice in oldChoices)
+			{
+				RemoveChoice(choice);
+			}
 
-            oldEvent = null;
-        }
-        else
-        {
-            Debug.Log("Panic?");
-        }
+			currentChoices.Clear();
+			oldEvent.CloseEvent();
 
-        if (IsEventQueued())
-        {
-            _SetCurrentEvent(eventQueue.Dequeue());
-        }
-    }
+			if (OnEventClose != null)
+				OnEventClose(oldEvent);
 
-    public bool IsEventAvailable()
-    {
-        return IsEventActive() || IsEventQueued();
-    }
+			oldEvent = null;
+		}
+		else
+		{
+			Debug.Log("Panic?");
+		}
 
-    public bool IsEventActive()
-    {
-        return currentEvent != null;
-    }
+		if (IsEventQueued())
+		{
+			_SetCurrentEvent(eventQueue.Dequeue());
+		}
+	}
 
-    public bool IsEventQueued()
-    {
-        return eventQueue.Count > 0;
-    }
+	public bool IsEventAvailable()
+	{
+		return IsEventActive() || IsEventQueued();
+	}
 
-    public void AddChoice(Choice newChoice)
-    {
-        if (currentChoices.Contains(newChoice))
-        {
-            Debug.LogError("Tried to add new choice when it already existed!");
-            return;
-        }
-        currentChoices.Add(newChoice);
-        if (OnChoiceAdded != null)
-            OnChoiceAdded(newChoice);
-    }
+	public bool IsEventActive()
+	{
+		return currentEvent != null;
+	}
 
-    /// <summary>
-    /// Try to remove a choice
-    /// </summary>
-    /// <param name="choiceToRemove"></param>
-    /// <returns>
-    /// Was the choice succesfully removed.
-    /// </returns>
-    public bool RemoveChoice(Choice choiceToRemove)
-    {
-        bool was_removed = currentChoices.Remove(choiceToRemove);
+	public bool IsEventQueued()
+	{
+		return eventQueue.Count > 0;
+	}
 
-        if (was_removed)
-        {
-            if (OnChoiceRemoved != null)
-                OnChoiceRemoved(choiceToRemove);
-        }
+	public void AddChoice(Choice newChoice)
+	{
+		if (currentChoices.Contains(newChoice))
+		{
+			Debug.LogError("Tried to add new choice when it already existed!");
+			return;
+		}
+		currentChoices.Add(newChoice);
+		if (OnChoiceAdded != null)
+			OnChoiceAdded(newChoice);
+	}
 
-        return was_removed;
-    }
+	/// <summary>
+	/// Try to remove a choice
+	/// </summary>
+	/// <param name="choiceToRemove"></param>
+	/// <returns>
+	/// Was the choice succesfully removed.
+	/// </returns>
+	public bool RemoveChoice(Choice choiceToRemove)
+	{
+		bool was_removed = currentChoices.Remove(choiceToRemove);
 
-    private void _SetCurrentEvent(EventBase newEvent)
-    {
-        if (newEvent == null)
-        {
-            Debug.LogError("NewEvent needs to be valid");
-            return;
-        }
-        currentEvent = newEvent;
-        currentEvent.StartEvent();
+		if (was_removed)
+		{
+			if (OnChoiceRemoved != null)
+				OnChoiceRemoved(choiceToRemove);
+		}
 
-        if (currentEvent == null)
-        {
-            //Debug.Log("Event disposed of itself and didn't spawn follow ups.");
-            return;
-        }
+		return was_removed;
+	}
 
-        if (currentEvent.EventChoices == null)
-        {
-            Debug.Log("Event didn't have valid choices: " + newEvent.ToString());
-            currentEvent.EventChoices = new List<Choice>();
-        }
-        else
-        {
-            foreach (var choice in currentEvent.EventChoices)
-            {
-                if (choice.DisplayOnEventStart == true)
-                {
-                    currentEvent.DisplayChoice(choice);
-                }
-            }
+	private void _SetCurrentEvent(EventBase newEvent)
+	{
+		if (newEvent == null)
+		{
+			Debug.LogError("NewEvent needs to be valid");
+			return;
+		}
+		currentEvent = newEvent;
+		currentEvent.StartEvent();
 
-            currentEvent.EventChoices.Clear();
-        }
+		if (currentEvent == null)
+		{
+			//Debug.Log("Event disposed of itself and didn't spawn follow ups.");
+			return;
+		}
 
-        if (currentEvent.Text == "")
-        {
-            Debug.LogError("Event didn't get Text specified: " + newEvent.ToString() );
-        }
-        var actor = newEvent.ConversationActor;
-        if (actor == null)
-        {
-            Debug.LogError("Event doesn't define a ConversationActor " + newEvent.ToString() );
-        }
+		if (currentEvent.EventChoices == null)
+		{
+			Debug.Log("Event didn't have valid choices: " + newEvent.ToString());
+			currentEvent.EventChoices = new List<Choice>();
+		}
+		else
+		{
+			foreach (var choice in currentEvent.EventChoices)
+			{
+				if (choice.DisplayOnEventStart == true)
+				{
+					currentEvent.DisplayChoice(choice);
+				}
+			}
 
-        if (OnEventStart != null)
-            OnEventStart(newEvent);
-    }
+			currentEvent.EventChoices.Clear();
+		}
 
-    public void GoToEndScreen()
-    {
-        CameraEffects.StartFadeToBlack(() =>
-        {
-            DOTween.KillAll(false);
-            Reset();
-            StoryState.Instance.Reset();
-            UnityEngine.SceneManagement.SceneManager.LoadScene(2);
-            
-        });
-    }
+		if (currentEvent.Text == "")
+		{
+			Debug.LogError("Event didn't get Text specified: " + newEvent.ToString());
+		}
+		var actor = newEvent.ConversationActor;
+		if (actor == null)
+		{
+			Debug.LogError("Event doesn't define a ConversationActor " + newEvent.ToString());
+		}
 
-    public void Reset()
-    {
-        while (currentEvent != null)
-        {
-            CloseEvent();
-        }
-     
-    }
+		if (OnEventStart != null)
+			OnEventStart(newEvent);
+	}
+
+	public void GoToEndScreen()
+	{
+		CameraEffects.StartFadeToBlack(() =>
+		{
+			DOTween.KillAll(false);
+			Reset();
+			StoryState.Instance.Reset();
+			UnityEngine.SceneManagement.SceneManager.LoadScene(2);
+
+		});
+	}
+
+	public void Reset()
+	{
+		while (currentEvent != null)
+		{
+			CloseEvent();
+		}
+
+	}
 
 }

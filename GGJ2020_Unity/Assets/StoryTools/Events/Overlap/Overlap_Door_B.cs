@@ -2,8 +2,8 @@
 
 public class Overlap_Door_B : EventBase
 {
-    public override void StartEvent()
-    {
+	public override void StartEvent()
+	{
 		ConversationActor = Actors.AI_Alinna();
 
 		if (State.IntroState == E_IntroState.Psycho && State.Door_B_State != E_DoorState.ShutHard)
@@ -15,7 +15,8 @@ public class Overlap_Door_B : EventBase
 			{
 				var choice = NewEventChoice();
 				choice.Text = "ACKNOWLEDGED";
-				choice.OnChoiceSelected += (Choice c) => {
+				choice.OnChoiceSelected += (Choice c) =>
+				{
 
 				};
 			}
@@ -32,5 +33,5 @@ public class Overlap_Door_B : EventBase
 			Text = "Dummy Text.";
 			Story.CloseEvent();
 		}
-    }
+	}
 }

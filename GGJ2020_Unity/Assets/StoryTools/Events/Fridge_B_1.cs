@@ -1,12 +1,11 @@
 ﻿// Conversation line with AI_Fridge where the fridge inventory was unlocked
-
 using UnityEngine;
 
 public class Fridge_B_1_Access_Menu : EventBase
 {
-    public override void StartEvent()
-    {
-        Text = @"ACCESS: AVAILABLE FRIDGE DATA:
+	public override void StartEvent()
+	{
+		Text = @"ACCESS: AVAILABLE FRIDGE DATA:
 --------------------------------------
 LAST ORDER PLACED: 01-07-2065 | 09:13
 --------------------------------------
@@ -21,9 +20,9 @@ FLYING DOUGH: PEPPERONI PIZZA: three slices, 5 crusts.  Expiry date: 12-07-2065
 FLYING DOUGH: CHICKEN BBQ: seven slices, 1 crust.  Expiry date: 13-07-2065";
 		ConversationActor = Actors.AI_Fridge();
 
-        {
-            var choice = NewEventChoice("CLOSE");
-        }
-    }
+		{
+			var choice = NewEventChoice("CLOSE");
+		}
+	}
 }
 

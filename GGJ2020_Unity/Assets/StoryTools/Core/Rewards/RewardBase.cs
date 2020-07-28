@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class RewardBase
 {
-    protected static StoryManager Story = StoryManager.Instance;
+	protected static StoryManager Story = StoryManager.Instance;
 
-    public abstract void RunReward();
+	public abstract void RunReward();
 }

@@ -99,9 +99,6 @@ public class VR_Interaction_B_2 : EventBase
 	}
 }
 
-
-
-
 public class VR_Interaction_B_3 : EventBase
 {
 	public override void StartEvent()
@@ -115,7 +112,6 @@ public class VR_Interaction_B_3 : EventBase
 		}
 	}
 }
-
 
 public class VR_Interaction_B_4 : EventBase
 {
@@ -180,7 +176,6 @@ public class VR_Interaction_C_A_2 : EventBase
 		}
 	}
 }
-
 
 public class VR_Interaction_C_A_3 : EventBase
 {
@@ -253,12 +248,3 @@ public class VR_Interaction_C_B_4 : EventBase
 		}
 	}
 }
-
-
-
-
-
-
-
-
-

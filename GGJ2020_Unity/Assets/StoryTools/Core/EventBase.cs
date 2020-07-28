@@ -4,118 +4,118 @@ using UnityEngine;
 
 public abstract class EventBase
 {
-    protected static StoryState State = StoryState.Instance;
-    protected static StoryManager Story = StoryManager.Instance;
-    private string _text = "";
-    private List<Choice> choices = new List<Choice>();
+	protected static StoryState State = StoryState.Instance;
+	protected static StoryManager Story = StoryManager.Instance;
+	private string _text = "";
+	private List<Choice> choices = new List<Choice>();
 
-    public string Text
-    {
-        get
-        {
-            return _text;
-        }
-        set
-        {
-            _text = value;
-        }
-    }
+	public string Text
+	{
+		get
+		{
+			return _text;
+		}
+		set
+		{
+			_text = value;
+		}
+	}
 
-    private Actor _actor;
+	private Actor _actor;
 
-    public Actor ConversationActor
-    {
-        get
-        {
-            return  _actor;
-        }
-        set
-        {
-            _actor = value;
-        }
-    }
+	public Actor ConversationActor
+	{
+		get
+		{
+			return _actor;
+		}
+		set
+		{
+			_actor = value;
+		}
+	}
 
-    private List<System.Type> _closeRewards = new List<System.Type>();
-    
-    public void AddCloseReward<T>() where T : RewardBase
-    {
-        _closeRewards.Add(typeof(T));
-    }
+	private List<System.Type> _closeRewards = new List<System.Type>();
 
-    public void RemoveCloseReward<T>() where T : RewardBase
-    {
-        _closeRewards.Remove(typeof(T));
-    }
+	public void AddCloseReward<T>() where T : RewardBase
+	{
+		_closeRewards.Add(typeof(T));
+	}
 
-    public List<Choice> EventChoices = new List<Choice>();
+	public void RemoveCloseReward<T>() where T : RewardBase
+	{
+		_closeRewards.Remove(typeof(T));
+	}
 
-    public Choice NewEventChoice()
-    {
-        var newChoice = new Choice(this);
+	public List<Choice> EventChoices = new List<Choice>();
 
-        // Every Event Choice automatically gets a close event
-        newChoice.AddReward<CloseEventReward>();
-        EventChoices.Add(newChoice);
+	public Choice NewEventChoice()
+	{
+		var newChoice = new Choice(this);
 
-        return newChoice;
-    }
+		// Every Event Choice automatically gets a close event
+		newChoice.AddReward<CloseEventReward>();
+		EventChoices.Add(newChoice);
 
-    public Choice NewEventChoice(string choiceText)
-    {
-        var newChoice = new Choice(this);
+		return newChoice;
+	}
 
-        // Every Event Choice automatically gets a close event
-        newChoice.AddReward<CloseEventReward>();
+	public Choice NewEventChoice(string choiceText)
+	{
+		var newChoice = new Choice(this);
 
-        newChoice.Text = choiceText;
-        EventChoices.Add(newChoice);
+		// Every Event Choice automatically gets a close event
+		newChoice.AddReward<CloseEventReward>();
 
-        return newChoice;
-    }
+		newChoice.Text = choiceText;
+		EventChoices.Add(newChoice);
 
-    public void AddContinueChoice(string text = "…")
-    {
-        var newChoice = new Choice(this);
+		return newChoice;
+	}
 
-        newChoice.AddReward<CloseEventReward>();
-        newChoice.Text = text;
-        EventChoices.Add(newChoice);
-    }
+	public void AddContinueChoice(string text = "…")
+	{
+		var newChoice = new Choice(this);
 
-    public void AddAffirmativeChoice(string text = "affirmative.")
-    {
-        var newChoice = new Choice(this);
+		newChoice.AddReward<CloseEventReward>();
+		newChoice.Text = text;
+		EventChoices.Add(newChoice);
+	}
 
-        newChoice.AddReward<CloseEventReward>();
-        newChoice.Text = text;
-        EventChoices.Add(newChoice);
-    }
+	public void AddAffirmativeChoice(string text = "affirmative.")
+	{
+		var newChoice = new Choice(this);
+
+		newChoice.AddReward<CloseEventReward>();
+		newChoice.Text = text;
+		EventChoices.Add(newChoice);
+	}
 
 
-    public void DisplayChoice(Choice newChoice)
-    {
-        choices.Add(newChoice);
-        Story.AddChoice(newChoice);
-        newChoice.DisplayOnEventStart = false;
-    }
+	public void DisplayChoice(Choice newChoice)
+	{
+		choices.Add(newChoice);
+		Story.AddChoice(newChoice);
+		newChoice.DisplayOnEventStart = false;
+	}
 
-    public abstract void StartEvent();
+	public abstract void StartEvent();
 
-    private bool _closing = false;
+	private bool _closing = false;
 
-    public void CloseEvent()
-    {
-        foreach (var rewardType in _closeRewards)
-        {
-            var reward = EventHelper.CreateRewardByType(rewardType);
-            reward.RunReward();
-        }
+	public void CloseEvent()
+	{
+		foreach (var rewardType in _closeRewards)
+		{
+			var reward = EventHelper.CreateRewardByType(rewardType);
+			reward.RunReward();
+		}
 
-        _closing = true;
-    }
+		_closing = true;
+	}
 
-    public bool IsClosing()
-    {
-        return _closing;
-    }
+	public bool IsClosing()
+	{
+		return _closing;
+	}
 }
