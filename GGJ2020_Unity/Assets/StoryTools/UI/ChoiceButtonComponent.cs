@@ -65,7 +65,7 @@ public class ChoiceButtonComponent : MonoBehaviour, IPointerEnterHandler, ISelec
 	public void SetToChoice(Choice choice)
 	{
 		//TODO fix this sound
-		E_ActorCategory category = choice.ParentEvent.ConversationActor.ActorCategory;
+		E_ActorCategory category = choice.ParentEvent.EventActor.ActorCategory;
 
 		var data = uiTypes.GetDataForCategory(category);
 
@@ -73,7 +73,7 @@ public class ChoiceButtonComponent : MonoBehaviour, IPointerEnterHandler, ISelec
 		EmitterAppear.Play();
 		if (data == null)
 		{
-			Debug.LogError($"No UI data found for {choice.ParentEvent.ConversationActor.ActorCategory}");
+			Debug.LogError($"No UI data found for {choice.ParentEvent.EventActor.ActorCategory}");
 			return;
 		}
 

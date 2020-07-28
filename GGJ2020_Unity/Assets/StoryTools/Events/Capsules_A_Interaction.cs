@@ -1,42 +1,42 @@
 using UnityEngine;
 
-public class Capsules_A_Interaction : EventBase
+public class Capsules_A_Interaction : Event
 {
-	public override void StartEvent()
+	public override void PlayEvent()
 	{
 		Text = "I feel empty....";
-		ConversationActor = Actors.Capsules();
+		EventActor = Actors.Capsules();
 
 		{
-			var choice = NewEventChoice("ANALYZE");
+			var choice = NewChoice("ANALYZE");
 			choice.AddNextEvent<Capsules_A_1>();
 		}
 	}
 }
 
-public class Capsules_A_1 : EventBase
+public class Capsules_A_1 : Event
 {
-	public override void StartEvent()
+	public override void PlayEvent()
 	{
 		Text = "Capsules are depleted.\n\nThey do contain an unknown stray traces...";
-		ConversationActor = Actors.Capsules();
+		EventActor = Actors.Capsules();
 
 		{
-			var choice = NewEventChoice("ANALYZE");
+			var choice = NewChoice("ANALYZE");
 			choice.AddNextEvent<Capsules_A_2>();
 		}
 	}
 }
 
-public class Capsules_A_2 : EventBase
+public class Capsules_A_2 : Event
 {
-	public override void StartEvent()
+	public override void PlayEvent()
 	{
 		Text = "No need to look into that, stay on top of your tasks. Take this litter out.";
-		ConversationActor = Actors.AI_Alinna();
+		EventActor = Actors.AI_Alinna();
 
 		{
-			var choice = NewEventChoice("VACUUM");
+			var choice = NewChoice("VACUUM");
 			choice.AddNextEvent<Capsules_A_3>();
 
 			choice.OnChoiceSelected += (Choice c) =>
@@ -47,15 +47,15 @@ public class Capsules_A_2 : EventBase
 	}
 }
 
-public class Capsules_A_3 : EventBase
+public class Capsules_A_3 : Event
 {
-	public override void StartEvent()
+	public override void PlayEvent()
 	{
 		Text = "Right on schedule. Please empty your container at your perfect little home station, we have more to do, more to clean.\nI will open the door to the bedroom for you after you’re done. ";
-		ConversationActor = Actors.AI_Alinna();
+		EventActor = Actors.AI_Alinna();
 
 		{
-			var choice = NewEventChoice("[proud] affirmative. ");
+			var choice = NewChoice("[proud] affirmative. ");
 		}
 	}
 }

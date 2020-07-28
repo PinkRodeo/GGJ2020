@@ -1,10 +1,10 @@
 ﻿using UnityEngine;
 
-public class StartEventReward<T> : RewardBase where T : EventBase
+public class StartEventReward<T> : RewardBase where T : Event
 {
 	public override void RunReward()
 	{
 		var newEvent = EventHelper.CreateEventByType(typeof(T));
-		Story.AddEvent(newEvent);
+		Story.AddNextEvent(newEvent);
 	}
 }

@@ -1,11 +1,11 @@
 using UnityEngine;
 
-public class Vape_Interaction : EventBase
+public class Vape_Interaction : Event
 {
-	public override void StartEvent()
+	public override void PlayEvent()
 	{
 		Text = "Make it squeeky clean, little dancer.";
-		ConversationActor = Actors.AI_Alinna();
+		EventActor = Actors.AI_Alinna();
 
 		{
 			var choice = NewEventChoice();

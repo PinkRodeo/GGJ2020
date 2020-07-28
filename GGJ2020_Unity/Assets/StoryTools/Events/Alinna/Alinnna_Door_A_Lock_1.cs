@@ -1,11 +1,11 @@
 using UnityEngine;
 
-public class Alinna_Door_A_Lock_1 : EventBase
+public class Alinna_Door_A_Lock_1 : Event
 {
-	public override void StartEvent()
+	public override void PlayEvent()
 	{
 		Text = "Alinna locks door A behind you, some silly excuse. Tensions rising.";
-		ConversationActor = Actors.AI_Alinna();
+		EventActor = Actors.AI_Alinna();
 
 		AddContinueChoice();
 	}

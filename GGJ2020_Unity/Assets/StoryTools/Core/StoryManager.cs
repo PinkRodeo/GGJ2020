@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
-public delegate void StoryEventDelegate(EventBase storyEvent);
+public delegate void StoryEventDelegate(Event storyEvent);
 public delegate void StoryChoiceDelegate(Choice storyChoice);
 
 public class StoryManager : Singleton<StoryManager>
@@ -14,12 +14,12 @@ public class StoryManager : Singleton<StoryManager>
 	public StoryChoiceDelegate OnChoiceAdded;
 	public StoryChoiceDelegate OnChoiceRemoved;
 
-	private EventBase currentEvent;
-	private Queue<EventBase> eventQueue = new Queue<EventBase>();
+	private Event currentEvent;
+	private Queue<Event> eventQueue = new Queue<Event>();
 
 	private List<Choice> currentChoices = new List<Choice>();
 
-	public void AddEvent(EventBase storyEvent)
+	public void AddNextEvent(Event storyEvent)
 	{
 		if (currentEvent == null)
 		{
@@ -31,13 +31,13 @@ public class StoryManager : Singleton<StoryManager>
 		}
 	}
 
-	public void AddEvent<T>() where T : EventBase
+	public void AddNextEvent<T>() where T : Event
 	{
 		var newEvent = EventHelper.CreateEventByType(typeof(T));
-		AddEvent(newEvent);
+		AddNextEvent(newEvent);
 	}
 
-	public void CloseEvent()
+	public void CloseCurrentEvent()
 	{
 		if (currentEvent != null)
 		{
@@ -116,7 +116,7 @@ public class StoryManager : Singleton<StoryManager>
 		return was_removed;
 	}
 
-	private void _SetCurrentEvent(EventBase newEvent)
+	private void _SetCurrentEvent(Event newEvent)
 	{
 		if (newEvent == null)
 		{
@@ -124,7 +124,7 @@ public class StoryManager : Singleton<StoryManager>
 			return;
 		}
 		currentEvent = newEvent;
-		currentEvent.StartEvent();
+		currentEvent.PlayEvent();
 
 		if (currentEvent == null)
 		{
@@ -154,7 +154,7 @@ public class StoryManager : Singleton<StoryManager>
 		{
 			Debug.LogError("Event didn't get Text specified: " + newEvent.ToString());
 		}
-		var actor = newEvent.ConversationActor;
+		var actor = newEvent.EventActor;
 		if (actor == null)
 		{
 			Debug.LogError("Event doesn't define a ConversationActor " + newEvent.ToString());
@@ -180,7 +180,7 @@ public class StoryManager : Singleton<StoryManager>
 	{
 		while (currentEvent != null)
 		{
-			CloseEvent();
+			CloseCurrentEvent();
 		}
 
 	}

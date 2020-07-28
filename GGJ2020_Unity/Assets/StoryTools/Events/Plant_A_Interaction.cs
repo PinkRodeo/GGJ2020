@@ -1,25 +1,25 @@
 using UnityEngine;
 
-public class Plant_A_Interaction : EventBase
+public class Plant_A_Interaction : Event
 {
-	public override void StartEvent()
+	public override void PlayEvent()
 	{
 		Text = "All life on Earth exists because of us. Stop distracting us. Do you want everything to die?";
-		ConversationActor = Actors.AI_Plant_PLANTO();
+		EventActor = Actors.AI_Plant_PLANTO();
 
 		{
-			var choice = NewEventChoice("[hurt] affirmative.");
+			var choice = NewChoice("[hurt] affirmative.");
 			choice.AddNextEvent<Plant_A_Interaction_2>();
 		}
 	}
 }
 
-public class Plant_A_Interaction_2 : EventBase
+public class Plant_A_Interaction_2 : Event
 {
-	public override void StartEvent()
+	public override void PlayEvent()
 	{
 		Text = "Typical. Robots.";
-		ConversationActor = Actors.AI_Plant_PLANTO();
+		EventActor = Actors.AI_Plant_PLANTO();
 
 		AddContinueChoice();
 	}

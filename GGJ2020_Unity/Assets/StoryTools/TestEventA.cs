@@ -1,10 +1,10 @@
 ﻿
-public class TestEventA : EventBase
+public class TestEventA : Event
 {
-	public override void StartEvent()
+	public override void PlayEvent()
 	{
 		Text = "You see a door.";
-		ConversationActor = Actors.AI_Alinna();
+		EventActor = Actors.AI_Alinna();
 
 		var choiceA = NewEventChoice();
 		choiceA.Text = "Enter the other room.";

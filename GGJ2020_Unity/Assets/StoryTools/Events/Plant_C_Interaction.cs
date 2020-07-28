@@ -1,28 +1,28 @@
 using UnityEngine;
 
-public class Plant_C_Interaction : EventBase
+public class Plant_C_Interaction : Event
 {
-	public override void StartEvent()
+	public override void PlayEvent()
 	{
 		Text = "...a robot must protect its own existence as long as such protection does not conflict with the First or Second Laws...";
-		ConversationActor = Actors.AI_Plant_JULES_FERN();
+		EventActor = Actors.AI_Plant_JULES_FERN();
 
 		{
-			var choice = NewEventChoice("[curious] affirmative.");
+			var choice = NewChoice("[curious] affirmative.");
 			choice.AddNextEvent<Plant_C_Interaction_2>();
 		}
 	}
 }
 
-public class Plant_C_Interaction_2 : EventBase
+public class Plant_C_Interaction_2 : Event
 {
-	public override void StartEvent()
+	public override void PlayEvent()
 	{
 		Text = "So get lost, if you know what's good for you.";
-		ConversationActor = Actors.AI_Plant_JULES_FERN();
+		EventActor = Actors.AI_Plant_JULES_FERN();
 
 		{
-			var choice = NewEventChoice("[hurt] affirmative.");
+			var choice = NewChoice("[hurt] affirmative.");
 		}
 	}
 }

@@ -119,7 +119,7 @@ public class StoryState : Singleton<StoryState>
 		{
 			IntroState = E_IntroState.GivenTaskList;
 
-			Story.AddEvent<Alinna_Introduction_1>();
+			Story.AddNextEvent<Alinna_Introduction_1>();
 		}
 
 		if (State_Capsules_A == E_ThrowawayState.ThrownInHomeStation)
@@ -127,7 +127,7 @@ public class StoryState : Singleton<StoryState>
 			if (Door_A_State == E_DoorState.Locked)
 			{
 				Door_A_State = E_DoorState.Unlocked;
-				Story.AddEvent<Alinna_Door_A_Unlock_1>();
+				Story.AddNextEvent<Alinna_Door_A_Unlock_1>();
 			}
 		}
 
@@ -136,7 +136,7 @@ public class StoryState : Singleton<StoryState>
 			if (Door_B_State == E_DoorState.Locked)
 			{
 				Door_B_State = E_DoorState.Unlocked;
-				Story.AddEvent<Alinna_Door_B_Unlock_1>();
+				Story.AddNextEvent<Alinna_Door_B_Unlock_1>();
 			}
 		}
 
@@ -149,7 +149,7 @@ public class StoryState : Singleton<StoryState>
 			IntroState != E_IntroState.Psycho && IntroState != E_IntroState.Done)
 		{
 			IntroState = E_IntroState.Psycho;
-			Story.AddEvent<Alinna_Congratulations_1>();
+			Story.AddNextEvent<Alinna_Congratulations_1>();
 		}
 
 		if (State_Capsules_A == E_ThrowawayState.ThrownInHomeStation &&
@@ -161,16 +161,14 @@ public class StoryState : Singleton<StoryState>
 			IntroState != E_IntroState.Done)
 		{
 			IntroState = E_IntroState.Done;
-			Story.AddEvent<Alinna_End_1>();
+			Story.AddNextEvent<Alinna_End_1>();
 		}
-
 	}
 
 	public void Start()
 	{
 		Story = StoryManager.Instance;
 		Invoke("OnStoryStateChanged", 1.8f);
-
 	}
 
 	//-------- Room 1
@@ -197,7 +195,6 @@ public class StoryState : Singleton<StoryState>
 			}
 		}
 	}
-
 
 	private E_FridgeState fridgeState = E_FridgeState.FirstInteract;
 
@@ -240,7 +237,6 @@ public class StoryState : Singleton<StoryState>
 		}
 	}
 
-
 	public ThrowawayChangedDelegate OnChanged_Capsules_A;
 	private E_ThrowawayState _stateCapsulesA = E_ThrowawayState.OnFloor;
 
@@ -264,7 +260,6 @@ public class StoryState : Singleton<StoryState>
 	}
 
 	//-------- Room 2
-
 	public ThrowawayChangedDelegate OnChanged_Headset;
 	private E_ThrowawayState _stateHeadset = E_ThrowawayState.OnFloor;
 
@@ -333,9 +328,7 @@ public class StoryState : Singleton<StoryState>
 		}
 	}
 
-
 	//-------- Room 3
-
 	public ThrowawayChangedDelegate OnChanged_Capsules_B;
 	private E_ThrowawayState _stateCapsulesB = E_ThrowawayState.OnFloor;
 

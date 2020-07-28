@@ -1,11 +1,11 @@
 using UnityEngine;
 
-public class Alinna_Door_A_Unlock_1 : EventBase
+public class Alinna_Door_A_Unlock_1 : Event
 {
-	public override void StartEvent()
+	public override void PlayEvent()
 	{
 		Text = "Alinna: I've opened the door for you.";
-		ConversationActor = Actors.AI_Alinna();
+		EventActor = Actors.AI_Alinna();
 
 		AddAffirmativeChoice();
 	}

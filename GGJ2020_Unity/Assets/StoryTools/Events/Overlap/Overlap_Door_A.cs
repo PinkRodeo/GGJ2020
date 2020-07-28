@@ -1,10 +1,10 @@
 ﻿using UnityEngine;
 
-public class Overlap_Door_A : EventBase
+public class Overlap_Door_A : Event
 {
-	public override void StartEvent()
+	public override void PlayEvent()
 	{
-		ConversationActor = Actors.AI_Alinna();
+		EventActor = Actors.AI_Alinna();
 
 		if (State.IntroState == E_IntroState.Psycho && State.Door_A_State != E_DoorState.ShutHard)
 		{
@@ -13,8 +13,7 @@ public class Overlap_Door_A : EventBase
 			State.Door_A_State = E_DoorState.ShutHard;
 
 			{
-				var choice = NewEventChoice();
-				choice.Text = "... ... ACKNOWLEDGED";
+				var choice = NewChoice("... ... ACKNOWLEDGED");
 				choice.OnChoiceSelected += (Choice c) =>
 				{
 
@@ -24,14 +23,16 @@ public class Overlap_Door_A : EventBase
 		}
 		else if (State.Door_A_State == E_DoorState.Unlocked)
 		{
-			Text = "Dummy Text.";
-			Story.CloseEvent();
+			// Instantly close the current event and set the door to be opened
+			Text = "...";
+			StoryManager.CloseCurrentEvent();
 			State.Door_A_State = E_DoorState.Open;
 		}
 		else
 		{
-			Text = "Dummy Text.";
-			Story.CloseEvent();
+			// Instantly close the current event
+			Text = "...";
+			StoryManager.CloseCurrentEvent();
 		}
 	}
 }

@@ -1,15 +1,15 @@
 using UnityEngine;
 
-public class Door_A_Interaction : EventBase
+public class Door_A_Interaction : Event
 {
-	public override void StartEvent()
+	public override void PlayEvent()
 	{
-		ConversationActor = Actors.AI_Alinna();
+		EventActor = Actors.AI_Alinna();
 
 		if (State.Door_A_State == E_DoorState.Locked)
 		{
 			Text = "I don’t think you’re done yet.";
-			NewEventChoice("[sad] affirmative.");
+			NewChoice("[sad] affirmative.");
 		}
 		else if (State.Door_A_State == E_DoorState.ShutHard)
 		{
@@ -19,7 +19,7 @@ public class Door_A_Interaction : EventBase
 		else
 		{
 			Text = "Dummy";
-			Story.CloseEvent();
+			StoryManager.CloseCurrentEvent();
 		}
 	}
 }

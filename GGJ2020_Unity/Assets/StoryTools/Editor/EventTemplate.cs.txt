@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class #SCRIPTNAME# : EventBase
+public class #SCRIPTNAME# : Event
 {
     public override void StartEvent()
     {

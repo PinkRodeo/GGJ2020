@@ -6,14 +6,14 @@ public class Choice
 {
 	public StoryChoiceDelegate OnChoiceSelected;
 
-	public EventBase ParentEvent;
+	public Event ParentEvent;
 	private string _text;
 
 	private List<System.Type> _rewards = new List<System.Type>();
 
 	public bool DisplayOnEventStart = true;
 
-	public Choice(EventBase parentEvent)
+	public Choice(Event parentEvent)
 	{
 		ParentEvent = parentEvent;
 	}
@@ -40,7 +40,7 @@ public class Choice
 		_rewards.Remove(typeof(T));
 	}
 
-	public void AddNextEvent<T>() where T : EventBase
+	public void AddNextEvent<T>() where T : Event
 	{
 		AddReward<StartEventReward<T>>();
 	}

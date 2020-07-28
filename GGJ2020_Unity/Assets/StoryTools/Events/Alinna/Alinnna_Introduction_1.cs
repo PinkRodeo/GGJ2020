@@ -1,28 +1,28 @@
 using UnityEngine;
 
-public class Alinna_Introduction_1 : EventBase
+public class Alinna_Introduction_1 : Event
 {
-	public override void StartEvent()
+	public override void PlayEvent()
 	{
 		Text = "Good morning little one. Did you charge fully?";
-		ConversationActor = Actors.AI_Alinna();
+		EventActor = Actors.AI_Alinna();
 
 		{
-			var choice = NewEventChoice("affirmative.");
+			var choice = NewChoice("affirmative.");
 			choice.AddNextEvent<Alinna_Introduction_2>();
 		}
 	}
 }
 
-public class Alinna_Introduction_2 : EventBase
+public class Alinna_Introduction_2 : Event
 {
-	public override void StartEvent()
+	public override void PlayEvent()
 	{
 		Text = "Perfect. I have the chores for today. Just some simple ones.\nNothing crazy.\nPlease vacuum the livingroom. I will get back to you once you’re done.";
-		ConversationActor = Actors.AI_Alinna();
+		EventActor = Actors.AI_Alinna();
 
 		{
-			var choice = NewEventChoice("[excited] affirmative.");
+			var choice = NewChoice("[excited] affirmative.");
 		}
 	}
 }

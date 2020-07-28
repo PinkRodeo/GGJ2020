@@ -284,7 +284,7 @@ namespace Player
 				Debug.LogError("Couldn't find event: " + eventToTrigger);
 				return;
 			}
-			StoryManager.Instance.AddEvent(newEvent);
+			StoryManager.Instance.AddNextEvent(newEvent);
 		}
 	}
 }

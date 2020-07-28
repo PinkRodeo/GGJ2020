@@ -1,10 +1,10 @@
 using UnityEngine;
 
-public class Door_B_Interaction : EventBase
+public class Door_B_Interaction : Event
 {
-	public override void StartEvent()
+	public override void PlayEvent()
 	{
-		ConversationActor = Actors.AI_Alinna();
+		EventActor = Actors.AI_Alinna();
 
 		if (State.Door_B_State == E_DoorState.Locked)
 		{
@@ -19,7 +19,7 @@ public class Door_B_Interaction : EventBase
 		else
 		{
 			Text = "Dummy";
-			Story.CloseEvent();
+			StoryManager.CloseCurrentEvent();
 		}
 	}
 }

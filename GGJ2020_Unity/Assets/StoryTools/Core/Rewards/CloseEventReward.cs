@@ -2,6 +2,6 @@
 {
 	public override void RunReward()
 	{
-		Story.CloseEvent();
+		Story.CloseCurrentEvent();
 	}
 }

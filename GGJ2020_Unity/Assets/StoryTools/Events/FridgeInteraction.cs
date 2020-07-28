@@ -1,20 +1,20 @@
 ﻿using UnityEngine;
 
-public class FridgeInteraction : EventBase
+public class FridgeInteraction : Event
 {
-	public override void StartEvent()
+	public override void PlayEvent()
 	{
 		Text = "Dummy";
-		ConversationActor = Actors.AI_Fridge();
-		Story.CloseEvent();
+		EventActor = Actors.AI_Fridge();
+		StoryManager.CloseCurrentEvent();
 
 		switch (State.FridgeState)
 		{
 			case E_FridgeState.FirstInteract:
-				Story.AddEvent<Fridge_A_1>();
+				StoryManager.AddNextEvent<Fridge_A_1>();
 				break;
 			case E_FridgeState.AccessUnlocked:
-				Story.AddEvent<Fridge_B_1_Access_Menu>();
+				StoryManager.AddNextEvent<Fridge_B_1_Access_Menu>();
 				break;
 			default:
 				Debug.Log("Didn't Implement: " + State.FridgeState.ToString());

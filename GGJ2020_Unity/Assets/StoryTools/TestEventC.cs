@@ -1,10 +1,10 @@
 ﻿
-public class TestEventC : EventBase
+public class TestEventC : Event
 {
-	public override void StartEvent()
+	public override void PlayEvent()
 	{
 		Text = "Not a lot of interesting stuff is happening in the room.";
-		ConversationActor = Actors.World();
+		EventActor = Actors.World();
 
 		AddContinueChoice();
 	}

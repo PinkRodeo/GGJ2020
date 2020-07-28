@@ -9,7 +9,7 @@ public static class EventHelper
 {
 	public static string[] GetAllEventStrings()
 	{
-		var derivedType = typeof(EventBase);
+		var derivedType = typeof(Event);
 		var types = Assembly.GetAssembly(derivedType).GetTypes().Where(t => t != derivedType && derivedType.IsAssignableFrom(t)).ToArray();
 
 		var newChoices = new string[types.Length];
@@ -22,25 +22,25 @@ public static class EventHelper
 		return newChoices.ToArray();
 	}
 
-	public static EventBase CreateEventByString(string EventID)
+	public static Event CreateEventByString(string EventID)
 	{
-		var derivedType = typeof(EventBase);
+		var derivedType = typeof(Event);
 		var types = Assembly.GetAssembly(derivedType).GetTypes().Where(t => t != derivedType && derivedType.IsAssignableFrom(t)).ToArray();
 
 		for (int i = 0; i < types.Length; i++)
 		{
 			if (types[i].ToString() == EventID)
 			{
-				return Activator.CreateInstance(types[i]) as EventBase;
+				return Activator.CreateInstance(types[i]) as Event;
 			}
 		}
 
 		return null;
 	}
 
-	public static EventBase CreateEventByType(Type EventType)
+	public static Event CreateEventByType(Type EventType)
 	{
-		return Activator.CreateInstance(EventType) as EventBase;
+		return Activator.CreateInstance(EventType) as Event;
 	}
 
 	public static string[] GetAllRewardStrings()

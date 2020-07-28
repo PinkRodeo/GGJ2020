@@ -1,10 +1,10 @@
 ﻿
-public class TestEventB : EventBase
+public class TestEventB : Event
 {
-	public override void StartEvent()
+	public override void PlayEvent()
 	{
 		Text = "You're in the other room.";
-		ConversationActor = Actors.Phone_Jen();
+		EventActor = Actors.Phone_Jen();
 
 		var choiceA = NewEventChoice();
 		choiceA.Text = "Go back to the first room.";

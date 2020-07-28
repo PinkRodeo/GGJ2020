@@ -1,11 +1,11 @@
 using UnityEngine;
 
-public class Alinna_Finish_1 : EventBase
+public class Alinna_Finish_1 : Event
 {
-	public override void StartEvent()
+	public override void PlayEvent()
 	{
 		Text = "Alinna thanks you for your hard work. The police show up. You get yeeted.";
-		ConversationActor = Actors.AI_Alinna();
+		EventActor = Actors.AI_Alinna();
 
 		AddContinueChoice();
 	}

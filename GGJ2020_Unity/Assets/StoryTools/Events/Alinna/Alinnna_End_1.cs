@@ -1,16 +1,16 @@
 using UnityEngine;
 
-public class Alinna_End_1 : EventBase
+public class Alinna_End_1 : Event
 {
-	public override void StartEvent()
+	public override void PlayEvent()
 	{
 		Text = "You've made me very proud. The detective will be here shortly, but they won't ever suspect us.";
-		ConversationActor = Actors.AI_Alinna();
+		EventActor = Actors.AI_Alinna();
 
-		var choice = NewEventChoice("affirmative.");
+		var choice = NewChoice("affirmative.");
 		choice.OnChoiceSelected += (Choice c) =>
 		{
-			Story.GoToEndScreen();
+			StoryManager.GoToEndScreen();
 		};
 	}
 }

@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class EventBase
+public abstract class Event
 {
 	protected static StoryState State = StoryState.Instance;
-	protected static StoryManager Story = StoryManager.Instance;
+	protected static StoryManager StoryManager = global::StoryManager.Instance;
 	private string _text = "";
 	private List<Choice> choices = new List<Choice>();
 
@@ -23,7 +23,7 @@ public abstract class EventBase
 
 	private Actor _actor;
 
-	public Actor ConversationActor
+	public Actor EventActor
 	{
 		get
 		{
@@ -60,7 +60,7 @@ public abstract class EventBase
 		return newChoice;
 	}
 
-	public Choice NewEventChoice(string choiceText)
+	public Choice NewChoice(string choiceText)
 	{
 		var newChoice = new Choice(this);
 
@@ -91,15 +91,14 @@ public abstract class EventBase
 		EventChoices.Add(newChoice);
 	}
 
-
 	public void DisplayChoice(Choice newChoice)
 	{
 		choices.Add(newChoice);
-		Story.AddChoice(newChoice);
+		StoryManager.AddChoice(newChoice);
 		newChoice.DisplayOnEventStart = false;
 	}
 
-	public abstract void StartEvent();
+	public abstract void PlayEvent();
 
 	private bool _closing = false;
 
