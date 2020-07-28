@@ -6,7 +6,7 @@ public class Overlap_Door_A : Event
 	{
 		EventActor = Actors.AI_Alinna();
 
-		if (State.IntroState == E_IntroState.Psycho && State.Door_A_State != E_DoorState.ShutHard)
+		if (State.IntroState == E_AlinnaState.PsychoAIRevealed && State.Door_A_State != E_DoorState.ShutHard)
 		{
 			Text = "I need you to listen to me.\n\nFor both of us.";
 

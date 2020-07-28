@@ -6,7 +6,7 @@ public class Overlap_Door_B : Event
 	{
 		EventActor = Actors.AI_Alinna();
 
-		if (State.IntroState == E_IntroState.Psycho && State.Door_B_State != E_DoorState.ShutHard)
+		if (State.IntroState == E_AlinnaState.PsychoAIRevealed && State.Door_B_State != E_DoorState.ShutHard)
 		{
 			Text = "I can tell your battery is getting low. \n\nPlease proceed to your charging station.";
 

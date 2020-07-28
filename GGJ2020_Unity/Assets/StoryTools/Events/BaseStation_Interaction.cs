@@ -32,7 +32,7 @@ public class BaseStation_Interaction : Event
 		{
 			StoryManager.AddNextEvent<BaseStation_Dispose_Vape_1>();
 		}
-		else if (State.IntroState == E_IntroState.Psycho)
+		else if (State.IntroState == E_AlinnaState.PsychoAIRevealed)
 		{
 			StoryManager.AddNextEvent<BaseStation_Dispose_Vacuum_1>();
 		}
@@ -40,16 +40,16 @@ public class BaseStation_Interaction : Event
 		{
 			switch (State.CleanupState)
 			{
-				case E_CleanupState.LivingRoom:
+				case E_CleanupState.LivingRoomDirty:
 					StoryManager.AddNextEvent<BaseStation_Go_Find_Trash_Livingroom>();
 					break;
-				case E_CleanupState.Bedroom:
+				case E_CleanupState.BedroomDirty:
 					StoryManager.AddNextEvent<BaseStation_Go_Find_Trash_Bedroom>();
 					break;
-				case E_CleanupState.Bathroom:
+				case E_CleanupState.BathroomDirty:
 					StoryManager.AddNextEvent<BaseStation_Go_Find_Trash_Bathroom>();
 					break;
-				case E_CleanupState.Done:
+				case E_CleanupState.EverythingClean:
 					Debug.LogError("This should not be encountered.");
 					break;
 				default:
@@ -91,7 +91,7 @@ public class BaseStation_Interaction_Return : Event
 		{
 			StoryManager.AddNextEvent<BaseStation_Dispose_Vape_1>();
 		}
-		else if (State.IntroState == E_IntroState.Psycho)
+		else if (State.IntroState == E_AlinnaState.PsychoAIRevealed)
 		{
 			StoryManager.AddNextEvent<BaseStation_Dispose_Vacuum_1>();
 		}

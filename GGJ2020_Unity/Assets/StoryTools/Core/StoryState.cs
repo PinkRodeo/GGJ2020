@@ -2,13 +2,11 @@
 
 using UnityEngine;
 
-public enum E_IntroState
+public enum E_AlinnaState
 {
-	NotGiven,
-
+	IntroductionsNotCompleted,
 	GivenTaskList,
-
-	Psycho,
+	PsychoAIRevealed,
 	Done,
 }
 
@@ -24,7 +22,6 @@ public enum E_ThrowawayState
 	PickedUp,
 	ThrownInHomeStation,
 }
-
 
 public enum E_ThrowawayType
 {
@@ -57,7 +54,7 @@ public enum E_ThrowawayType
 
 //--------- Core
 public delegate void DoorChangedDelegate(E_DoorState newDoorState);
-public delegate void IntroStateDelegate(E_IntroState newIntroState);
+public delegate void IntroStateDelegate(E_AlinnaState newIntroState);
 public delegate void ThrowawayChangedDelegate(E_ThrowawayState newThrowawayState);
 
 public enum E_DoorState
@@ -70,10 +67,10 @@ public enum E_DoorState
 
 public enum E_CleanupState
 {
-	LivingRoom,
-	Bedroom,
-	Bathroom,
-	Done
+	LivingRoomDirty,
+	BedroomDirty,
+	BathroomDirty,
+	EverythingClean
 }
 
 public class StoryState : Singleton<StoryState>
@@ -89,19 +86,19 @@ public class StoryState : Singleton<StoryState>
 				State_Phone_B_Jen == E_ThrowawayState.PickedUp &&
 				State_Vape == E_ThrowawayState.PickedUp)
 			{
-				return E_CleanupState.Done;
+				return E_CleanupState.EverythingClean;
 			}
 			else if (Door_B_State == E_DoorState.Open || Door_B_State == E_DoorState.Unlocked)
 			{
-				return E_CleanupState.Bathroom;
+				return E_CleanupState.BathroomDirty;
 			}
 			else if (Door_A_State == E_DoorState.Open || Door_A_State == E_DoorState.Unlocked)
 			{
-				return E_CleanupState.Bedroom;
+				return E_CleanupState.BedroomDirty;
 			}
 			else
 			{
-				return E_CleanupState.LivingRoom;
+				return E_CleanupState.LivingRoomDirty;
 			}
 
 		}
@@ -109,19 +106,23 @@ public class StoryState : Singleton<StoryState>
 
 	private StoryManager Story;
 
+	/// <summary>
+	/// This function is ran after any piece of story state changed
+	/// </summary>
 	private void OnStoryStateChanged()
 	{
 		// Ignore story state changes while resetting
 		if (_isResetting)
 			return;
 
-		if (IntroState == E_IntroState.NotGiven)
+		// Start of the game
+		if (IntroState == E_AlinnaState.IntroductionsNotCompleted)
 		{
-			IntroState = E_IntroState.GivenTaskList;
-
+			IntroState = E_AlinnaState.GivenTaskList;
 			Story.AddNextEvent<Alinna_Introduction_1>();
 		}
 
+		// Thrown away Capsules_A
 		if (State_Capsules_A == E_ThrowawayState.ThrownInHomeStation)
 		{
 			if (Door_A_State == E_DoorState.Locked)
@@ -131,6 +132,7 @@ public class StoryState : Singleton<StoryState>
 			}
 		}
 
+		// Threw away all the garbage in the bedroom
 		if (State_Headset == E_ThrowawayState.ThrownInHomeStation && State_Phone_A_Scott == E_ThrowawayState.ThrownInHomeStation)
 		{
 			if (Door_B_State == E_DoorState.Locked)
@@ -140,27 +142,29 @@ public class StoryState : Singleton<StoryState>
 			}
 		}
 
+		// All the garbage is thrown away
 		if (State_Capsules_A == E_ThrowawayState.ThrownInHomeStation &&
 			State_Headset == E_ThrowawayState.ThrownInHomeStation &&
 			State_Phone_A_Scott == E_ThrowawayState.ThrownInHomeStation &&
 			State_Capsules_B == E_ThrowawayState.PickedUp &&
 			State_Phone_B_Jen == E_ThrowawayState.PickedUp &&
 			State_Vape == E_ThrowawayState.PickedUp &&
-			IntroState != E_IntroState.Psycho && IntroState != E_IntroState.Done)
+			IntroState != E_AlinnaState.PsychoAIRevealed && IntroState != E_AlinnaState.Done)
 		{
-			IntroState = E_IntroState.Psycho;
+			IntroState = E_AlinnaState.PsychoAIRevealed;
 			Story.AddNextEvent<Alinna_Congratulations_1>();
 		}
 
+		// Creepy reveal at the end
 		if (State_Capsules_A == E_ThrowawayState.ThrownInHomeStation &&
 			State_Headset == E_ThrowawayState.ThrownInHomeStation &&
 			State_Phone_A_Scott == E_ThrowawayState.ThrownInHomeStation &&
 			State_Capsules_B == E_ThrowawayState.ThrownInHomeStation &&
 			State_Phone_B_Jen == E_ThrowawayState.ThrownInHomeStation &&
 			State_Vape == E_ThrowawayState.ThrownInHomeStation &&
-			IntroState != E_IntroState.Done)
+			IntroState != E_AlinnaState.Done)
 		{
-			IntroState = E_IntroState.Done;
+			IntroState = E_AlinnaState.Done;
 			Story.AddNextEvent<Alinna_End_1>();
 		}
 	}
@@ -174,8 +178,8 @@ public class StoryState : Singleton<StoryState>
 	//-------- Room 1
 	public IntroStateDelegate OnIntroStateChanged;
 
-	private E_IntroState introState = E_IntroState.NotGiven;
-	public E_IntroState IntroState
+	private E_AlinnaState introState = E_AlinnaState.IntroductionsNotCompleted;
+	public E_AlinnaState IntroState
 	{
 		get
 		{
@@ -406,7 +410,7 @@ public class StoryState : Singleton<StoryState>
 	public void Reset()
 	{
 		_isResetting = true;
-		IntroState = E_IntroState.NotGiven;
+		IntroState = E_AlinnaState.IntroductionsNotCompleted;
 		FridgeState = E_FridgeState.FirstInteract;
 		Door_A_State = E_DoorState.Locked;
 		State_Capsules_A = E_ThrowawayState.OnFloor;
