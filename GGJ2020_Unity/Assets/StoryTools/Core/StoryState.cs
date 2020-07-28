@@ -106,6 +106,15 @@ public class StoryState : Singleton<StoryState>
 
 	private StoryManager Story;
 
+	// Get's run on game start by Unity
+	public void Start()
+	{
+		Story = StoryManager.Instance;
+
+		// Start the game loop
+		Invoke("OnStoryStateChanged", 1.8f);
+	}
+
 	/// <summary>
 	/// This function is ran after any piece of story state changed
 	/// </summary>
@@ -167,12 +176,6 @@ public class StoryState : Singleton<StoryState>
 			IntroState = E_AlinnaState.Done;
 			Story.AddNextEvent<Alinna_End_1>();
 		}
-	}
-
-	public void Start()
-	{
-		Story = StoryManager.Instance;
-		Invoke("OnStoryStateChanged", 1.8f);
 	}
 
 	//-------- Room 1
@@ -401,10 +404,11 @@ public class StoryState : Singleton<StoryState>
 
 	//-------- Global
 
-
-
-
 	//--------- Core
+
+
+	// Unsuccesful attempts at cleaning up all the dirty global state
+	// TODO: Clean up all this global state on reset
 
 	private bool _isResetting = false;
 	public void Reset()
