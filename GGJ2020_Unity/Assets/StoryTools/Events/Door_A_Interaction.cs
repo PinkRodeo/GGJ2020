@@ -20,7 +20,7 @@ public class Door_A_Interaction : Event
 			// If it's locked, the event text becomes:
 			Text = "I don’t think you’re done yet.";
 
-			// And at a single choice button to this event, it does nothing it just reads this text
+			// And add a single choice button to this event, it does nothing it just reads this text
 			NewChoice("[sad] affirmative.");
 		}
 		// Is the door ShutHard (happens at the end of the game where doors close after you go through them)
