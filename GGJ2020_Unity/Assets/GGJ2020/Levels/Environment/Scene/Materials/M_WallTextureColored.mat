@@ -34,7 +34,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - Albedo:
-        m_Texture: {fileID: 2800000, guid: 1ccc77c046960c44587b20f65b66c5e7, type: 3}
+        m_Texture: {fileID: 2800000, guid: 82619605153941540ba30ed4d3a1c567, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Normal:
@@ -85,6 +85,18 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Floats:
     - NormalStrengthP: 1
     - _AlphaClip: 0
@@ -113,7 +125,7 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - ColorTint: {r: 1, g: 1, b: 1, a: 0}
+    - ColorTint: {r: 0.5073968, g: 0.41960788, b: 1, a: 0}
     - EmissionCol: {r: 0, g: 0, b: 0, a: 0}
     - MetallicMinMax: {r: 0, g: 0, b: 0, a: 0}
     - SmoothnessMinMax: {r: 0, g: 0.1, b: 0, a: 0}
@@ -121,3 +133,4 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
+  m_BuildTextureStacks: []
