@@ -1403,6 +1403,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_BathroomProps
       objectReference: {fileID: 0}
+    - target: {fileID: 1260104248766752856, guid: 14071947f65a3ea4a94f5bae3d2e4c3d,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: ddf3a1cfffc95f54d92f5733ad791911, type: 2}
     - target: {fileID: 1359610097169792083, guid: 14071947f65a3ea4a94f5bae3d2e4c3d,
         type: 3}
       propertyPath: m_StaticEditorFlags
@@ -3213,7 +3218,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1321395649}
-  m_LocalRotation: {x: 0.5132987, y: 0.3082948, z: -0.19281976, w: 0.77736694}
+  m_LocalRotation: {x: 0.5132987, y: 0.30829474, z: -0.19281971, w: 0.77736694}
   m_LocalPosition: {x: 1.3996333, y: 3.4018097, z: -2.401877}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -3964,7 +3969,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1686743647}
-  m_LocalRotation: {x: 0.24213168, y: 0.2877137, z: -0.075433075, w: 0.9235275}
+  m_LocalRotation: {x: 0.24213167, y: 0.28771368, z: -0.07543306, w: 0.9235275}
   m_LocalPosition: {x: -2.5602698, y: 3.4018097, z: -8.858572}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children:
@@ -4587,7 +4592,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2137422529}
-  m_LocalRotation: {x: 0.50672966, y: 0.3189769, z: -0.20905742, w: 0.7731584}
+  m_LocalRotation: {x: 0.50672966, y: 0.31897685, z: -0.20905738, w: 0.7731584}
   m_LocalPosition: {x: 1.3996333, y: 3.4018097, z: -2.401877}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children:

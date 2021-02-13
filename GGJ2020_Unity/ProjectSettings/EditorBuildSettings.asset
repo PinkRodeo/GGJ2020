@@ -6,12 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/GGJ2020/Levels/MainMenu/MainMenu.unity
+    path: Assets/GGJ2020/Scenes/MainMenu.unity
     guid: 5cfc64f4031d86441bcd4480d6b4eabf
   - enabled: 1
-    path: Assets/GGJ2020/Levels/Environment/Environment.unity
+    path: Assets/GGJ2020/Scenes/ApartmentLevel_01/ApartmentLevel_01.unity
     guid: 7f21184685d048c4196e4655e686abb1
   - enabled: 1
-    path: Assets/GGJ2020/Levels/EndScreen/EndScreen.unity
+    path: Assets/GGJ2020/Scenes/EndScreen.unity
     guid: 729e2aca38296cf438ed3d0e2a34e5f0
   m_configObjects: {}
