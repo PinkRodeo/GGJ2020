@@ -22,6 +22,16 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: M_GreyPlastic
+    second: {fileID: 2100000, guid: cd7adc7a9d3e91343ab978a35d62c781, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Vase
+    second: {fileID: 2100000, guid: ad522091febf6d446a6d7595ae780fd9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: M_WhiteShiny
     second: {fileID: 2100000, guid: 124cff9485e17a24a97358f116faa8e8, type: 2}
   materials:
