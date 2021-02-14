@@ -47,6 +47,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: M_Marble
+    second: {fileID: 2100000, guid: a119dd5327a14cb4f91591284ee8772a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: M_WallConcrete
     second: {fileID: 2100000, guid: 419504c7e34fd3d41a72f26d17249408, type: 2}
   - first:
@@ -57,7 +62,17 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: M_WallTexture.001
+    second: {fileID: 2100000, guid: 89c927745856fec4c8b1e68dbab29fb8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: M_WallTextureColored
+    second: {fileID: 2100000, guid: a15db248f9c0eb349a869ead2278e891, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_WallTextureGreen
     second: {fileID: 2100000, guid: a15db248f9c0eb349a869ead2278e891, type: 2}
   - first:
       type: UnityEngine:Material
@@ -115,7 +130,7 @@ ModelImporter:
   meshes:
     lODScreenPercentages: []
     globalScale: 1
-    meshCompression: 1
+    meshCompression: 0
     addColliders: 1
     useSRGBMaterialColor: 1
     sortHierarchyByName: 1
