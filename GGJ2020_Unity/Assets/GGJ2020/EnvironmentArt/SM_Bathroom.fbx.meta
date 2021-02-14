@@ -13,7 +13,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: M_EmBlue
-    second: {fileID: 2100000, guid: 67c3e23ccf2c64f40856cb689491d1d7, type: 2}
+    second: {fileID: 2100000, guid: d2410b648ee661a48b778af6643b4f49, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -23,7 +23,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: M_GreyPlastic
-    second: {fileID: 2100000, guid: 9e67ab39db35add44b1da13427c1cd72, type: 2}
+    second: {fileID: 2100000, guid: 799b91a5826b4ce4fb6927bc763fd25b, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -43,7 +43,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: M_Vase
-    second: {fileID: 2100000, guid: dca70cc9ba552924bace112915f0eda4, type: 2}
+    second: {fileID: 2100000, guid: 16746c70073e5614b970aa8ace54f948, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -58,7 +58,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: M_WhitePlastic
-    second: {fileID: 2100000, guid: d0c67acd323453841be48f93046a5dc8, type: 2}
+    second: {fileID: 2100000, guid: 89d1555885e11f54f9e40e0a4b3b2e29, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule

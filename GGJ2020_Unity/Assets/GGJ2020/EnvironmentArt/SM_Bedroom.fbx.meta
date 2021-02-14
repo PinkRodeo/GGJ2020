@@ -33,7 +33,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: M_EmBlue
-    second: {fileID: 2100000, guid: 67c3e23ccf2c64f40856cb689491d1d7, type: 2}
+    second: {fileID: 2100000, guid: d2410b648ee661a48b778af6643b4f49, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -53,12 +53,12 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: M_Plants
-    second: {fileID: 2100000, guid: 31ead59f1af0b754fa6d64cd68023d2a, type: 2}
+    second: {fileID: 2100000, guid: 8761d6fe0ac83644182f1d06ae19d782, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: M_Vase
-    second: {fileID: 2100000, guid: 0038630bfe6a40642b93028ae35fccdc, type: 2}
+    second: {fileID: 2100000, guid: 16746c70073e5614b970aa8ace54f948, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule

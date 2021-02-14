@@ -121,6 +121,9 @@ Material:
     - NormalStrengthP: 1
     - Vector1_06883f82e9424acdaa5f172d2f7426d0: 0
     - Vector1_e5fc3d66cb7e44bea3543ba38a3477e7: 0
+    - Vector1_e6afcca9b68b4a8db1c8989502d067d8: 0
+    - Vector1_e99eee59357c4deabe42ee42a2def6ce: 0
+    - Vector1_f717cefe38c8413684fc479be792c846: 0.18
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -148,13 +151,15 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - ColorTint: {r: 0.5073968, g: 0.41960788, b: 1, a: 0}
-    - Color_f9bd1708daf74d988209959479c85d1c: {r: 0.41042802, g: 0.35294116, b: 1,
+    - Color_822c43bc6b72482a8a54bfa7a4945922: {r: 0, g: 0, b: 0, a: 0}
+    - Color_f9bd1708daf74d988209959479c85d1c: {r: 0.17782128, g: 0.33962262, b: 0.18404439,
         a: 0}
     - EmissionCol: {r: 0, g: 0, b: 0, a: 0}
     - MetallicMinMax: {r: 0, g: 0, b: 0, a: 0}
     - SmoothnessMinMax: {r: 0, g: 0.1, b: 0, a: 0}
     - Vector2_499295fde74e4aa8a86bf43ba725e29f: {r: 0, g: 0, b: 0, a: 0}
     - Vector2_a5dcd527a0fc42beb87ee51c23b42c41: {r: 0, g: 0, b: 0, a: 0}
+    - Vector3_402de68f2ccf4bec83a8826b86b6900c: {r: 0, g: 0, b: 0, a: 0}
     - Vector4_06f8886bfcc54434a7a8872646916be3: {r: 1, g: 1, b: 0, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}

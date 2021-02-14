@@ -8,17 +8,17 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: M_EmBlue
-    second: {fileID: 2100000, guid: 21f9760a3fc03a94582cec182af7b3cd, type: 2}
+    second: {fileID: 2100000, guid: 12eca974712070846bb4b8ba58bb8092, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: M_EmRed
-    second: {fileID: 2100000, guid: 25106cbf0a69b9842b9d392810d8fe38, type: 2}
+    second: {fileID: 2100000, guid: d2410b648ee661a48b778af6643b4f49, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: M_Vase
-    second: {fileID: 2100000, guid: 16746c70073e5614b970aa8ace54f948, type: 2}
+    second: {fileID: 2100000, guid: 71a0c8a0c4d17a844b5d1b2462476c35, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

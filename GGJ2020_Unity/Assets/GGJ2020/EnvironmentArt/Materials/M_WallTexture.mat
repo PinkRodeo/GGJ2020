@@ -25,11 +25,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Normal:
-        m_Texture: {fileID: 2800000, guid: fab85e0cacda9644a99e5182a86b71f5, type: 3}
+        m_Texture: {fileID: 2800000, guid: 49bf39c1fffc4c34eb1913e8afc06471, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_255ee04d6345498baae34c8b7b85cefc:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: e95b5edcdd16c734ba27035764fda1c8, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_e3e38047918e42d6882727bc1f87030b:
@@ -108,7 +108,7 @@ Material:
     - NormalStrengthP: 1
     - Vector1_06883f82e9424acdaa5f172d2f7426d0: 0
     - Vector1_e5fc3d66cb7e44bea3543ba38a3477e7: 0
-    - Vector1_f717cefe38c8413684fc479be792c846: 1
+    - Vector1_f717cefe38c8413684fc479be792c846: 0.181
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -142,7 +142,7 @@ Material:
     - SmoothnessMinMax: {r: 0, g: 0.2, b: 0, a: 0}
     - Vector2_499295fde74e4aa8a86bf43ba725e29f: {r: 0, g: 0, b: 0, a: 0}
     - Vector2_a5dcd527a0fc42beb87ee51c23b42c41: {r: 0, g: 0, b: 0, a: 0}
-    - Vector4_06f8886bfcc54434a7a8872646916be3: {r: 1, g: 1, b: 0, a: 0}
+    - Vector4_06f8886bfcc54434a7a8872646916be3: {r: 3, g: 3, b: 0, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 0}
