@@ -80,15 +80,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90ec92ab92b51a4409a894e9ad307a83, type: 3}
   m_Name: NewBlit
   m_EditorClassIdentifier: 
-  m_Active: 1
+  m_Active: 0
   settings:
-    Event: 300
+    Event: 1000
     blitMaterial: {fileID: 2100000, guid: de1625b6904d456468a4612fc66666bb, type: 2}
     blitMaterialPassIndex: 0
     setInverseViewMatrix: 0
-    srcType: 0
-    srcTextureId: _CameraColorTexture
+    srcType: 1
+    srcTextureId: _AfterPostProcessTexture
     srcTextureObject: {fileID: 0}
-    dstType: 0
-    dstTextureId: _BlitPassTexture
+    dstType: 1
+    dstTextureId: _AfterPostProcessTexture
     dstTextureObject: {fileID: 0}

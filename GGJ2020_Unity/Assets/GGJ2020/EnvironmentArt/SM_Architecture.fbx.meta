@@ -52,6 +52,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: M_PlayerBody
+    second: {fileID: 2100000, guid: 4feb469a70307a44bae67431802224d6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: M_WallConcrete
     second: {fileID: 2100000, guid: 419504c7e34fd3d41a72f26d17249408, type: 2}
   - first:
