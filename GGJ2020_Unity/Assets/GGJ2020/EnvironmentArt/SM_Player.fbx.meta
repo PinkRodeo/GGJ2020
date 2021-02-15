@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ece25ca2cff388c4b8260628ef362fde
+guid: 9ded792fe758b364699bd1025e731d47
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
@@ -7,10 +7,40 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: M_DarkPlastic
+    second: {fileID: 2100000, guid: 71a0c8a0c4d17a844b5d1b2462476c35, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_EmBlue
+    second: {fileID: 2100000, guid: a1dc0754e8f87b2438dc235933bd7b0e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: M_EmBlueStronk
-    second: {fileID: 2100000, guid: 4c1505c6746eb3c48943e7371c23d679, type: 2}
+    second: {fileID: 2100000, guid: 95d6b2ede6bf6ef47a313cdaf58d3c2e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_PlayerBody
+    second: {fileID: 2100000, guid: 3916422a420b7634da4f6f8abe7528b7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_PlayerEm
+    second: {fileID: 2100000, guid: 529744fef6504be4a85bbb3dbf96de47, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_White2
+    second: {fileID: 2100000, guid: 3c56045fc2c538848bc3155ec7948426, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat
+    second: {fileID: 2100000, guid: b4112028e916ac244b537a8e54a95d88, type: 2}
   materials:
-    materialImportMode: 1
+    materialImportMode: 2
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -70,7 +100,7 @@ ModelImporter:
     secondaryUVPackMargin: 4
     useFileScale: 0
   tangentSpace:
-    normalSmoothAngle: 60
+    normalSmoothAngle: 30
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4

@@ -1,29 +1,19 @@
 fileFormatVersion: 2
-guid: 9ded792fe758b364699bd1025e731d47
+guid: 957353f9dc84d724886df8432ea414c0
 ModelImporter:
-  serializedVersion: 19300
+  serializedVersion: 20200
   internalIDToNameTable: []
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: M_EmBlue
-    second: {fileID: 2100000, guid: a1dc0754e8f87b2438dc235933bd7b0e, type: 2}
+      name: M_ArtPoster1
+    second: {fileID: 2100000, guid: ec8cd549bbec7134fae9166df2270b16, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: M_EmBlueStronk
-    second: {fileID: 2100000, guid: 95d6b2ede6bf6ef47a313cdaf58d3c2e, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: M_White2
-    second: {fileID: 2100000, guid: 3c56045fc2c538848bc3155ec7948426, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Mat
-    second: {fileID: 2100000, guid: b4112028e916ac244b537a8e54a95d88, type: 2}
+      name: T_ArtPoster2
+    second: {fileID: 2100000, guid: b0c062941c536334d9c6ea854e19171c, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -63,11 +53,13 @@ ModelImporter:
     importBlendShapes: 1
     importCameras: 1
     importLights: 1
+    fileIdsGeneration: 2
     swapUVChannels: 0
-    generateSecondaryUV: 0
+    generateSecondaryUV: 1
     useFileUnits: 1
     keepQuads: 0
     weldVertices: 1
+    bakeAxisConversion: 0
     preserveHierarchy: 0
     skinWeightsMode: 0
     maxBonesPerVertex: 4
@@ -77,8 +69,11 @@ ModelImporter:
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
-    useFileScale: 0
+    useFileScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -110,6 +105,7 @@ ModelImporter:
   animationType: 2
   humanoidOversampling: 1
   avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
   additionalBone: 0
   userData: 
   assetBundleName: 
