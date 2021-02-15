@@ -10,7 +10,7 @@ Material:
   m_Name: Retro
   m_Shader: {fileID: -6465566751694194690, guid: 77b7bf11caf2e2e43823cdbe4ee381e1,
     type: 3}
-  m_ShaderKeywords: SCROLL_STATIC_ON
+  m_ShaderKeywords: STATIC_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -40,18 +40,18 @@ Material:
     - CRT_WARP: 0
     - DISTORT: 0
     - RGB_STRIPES: 0
-    - SCROLL_STATIC: 1
-    - STATIC: 0
+    - SCROLL_STATIC: 0
+    - STATIC: 1
     - Vector1_1BFF6B46: 254.56
-    - Vector1_5660967D: 2
+    - Vector1_5660967D: 1
     - Vector1_63AA1B2A: 0.2
     - Vector1_96113905: 100
     - Vector1_DF019693: 0.5
     - WOBBLE: 0
     - _DistortionStrength: 131.9
-    - _ScanlineHeight: 10
+    - _ScanlineHeight: 20
     - _ScanlineStrength: 0.1
-    - _StaticStrength: 0.01
+    - _StaticStrength: 0.003
     m_Colors:
     - _CRTWarpStrength: {r: 1, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []
