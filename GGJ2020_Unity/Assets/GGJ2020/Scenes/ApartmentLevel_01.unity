@@ -3549,7 +3549,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1321395649}
-  m_LocalRotation: {x: -0.15789948, y: -0.750523, z: 0.61406475, w: -0.18629982}
+  m_LocalRotation: {x: -0.15789948, y: -0.750523, z: 0.6140647, w: -0.18629985}
   m_LocalPosition: {x: 1.3996333, y: 3.4018097, z: -2.401877}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -3718,12 +3718,12 @@ PrefabInstance:
     - target: {fileID: 954834340688248936, guid: ac0aa20eda38f7a4e8023a5601f2080c,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.17339894
+      value: -0.17339897
       objectReference: {fileID: 0}
     - target: {fileID: 954834340688248936, guid: ac0aa20eda38f7a4e8023a5601f2080c,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.14214708
+      value: -0.1421471
       objectReference: {fileID: 0}
     - target: {fileID: 954834340688248936, guid: ac0aa20eda38f7a4e8023a5601f2080c,
         type: 3}
@@ -4510,6 +4510,63 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1704138514}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1706480626
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1706480628}
+  - component: {fileID: 1706480627}
+  m_Layer: 0
+  m_Name: NarrativeManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1706480627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1706480626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8454da6917f64b9d8775cc1966f80139, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  test:
+    SerializedDictionary:
+    - key: Introduction
+      value:
+        Name: Alinna
+        Icon: 
+        Audio: 
+        Text: Hello there, I am Alinna
+        Answers:
+        - Label: affermative
+          Consequence: 
+          Reply:
+            Filename: 
+            Key: 
+--- !u!4 &1706480628
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1706480626}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.858159, y: 0.17771617, z: 0.14349431}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 21
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1721729076 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8463532312594686649, guid: af066f2613cea834cae33363b30ae1ca,

@@ -1,0 +1,102 @@
+{
+    "SerializedDictionary": 
+	[
+        {
+            "key": "Introduction",
+            "value": 
+			{
+                "Name": "Alinna",
+				"Icon": "",
+				"Audio": "",
+				"Text": "Hello there, I am Alinna",
+				"Answers":
+				[
+					{
+						"Label": "",
+						"Consequence": "",
+						"Reply":
+						{
+							"Filename": "DialogueSystem.json",
+							"Key": "Choice 1"
+						}
+					}
+				]
+            }
+        },
+		{
+            "key": "Choice 1",
+            "value": 
+			{
+                "Name": "Alinna",
+				"Icon": "",
+				"Audio": "",
+				"Text": "Clean up the mess.",
+				"Answers":
+				[
+					{
+						"Label": "Comply",
+						"Consequence": "Alinna_Happy",
+						"Reply":
+						{
+							"Filename": "DialogueSystem.json",
+							"Key": "Alinna_Happy"
+						}
+					},
+					{
+						"Label": "Disobey",
+						"Consequence": "Alinna_Angry",
+						"Reply":
+						{
+							"Filename": "DialogueSystem.json",
+							"Key": "Alinna_Angry"
+						}
+					}
+				]
+            }
+        },
+		{
+            "key": "Alinna_Angry",
+            "value": 
+			{
+                "Name": "Alinna",
+				"Icon": "",
+				"Audio": "",
+				"Text": "Don't argue, little dancer. Clean the room",
+				"Answers":
+				[
+					{
+						"Label": "[sad] Affermative",
+						"Consequence": "",
+						"Reply":
+						{
+							"Filename": "",
+							"Key": ""
+						}
+					}
+				]
+            }
+        },
+		{
+            "key": "Alinna_Happy",
+            "value": 
+			{
+                "Name": "Alinna",
+				"Icon": "",
+				"Audio": "",
+				"Text": "Have fun cleaning!",
+				"Answers":
+				[
+					{
+						"Label": "[excited] Affermative",
+						"Consequence": "",
+						"Reply":
+						{
+							"Filename": "",
+							"Key": ""
+						}
+					}
+				]
+            }
+        }
+    ]
+}

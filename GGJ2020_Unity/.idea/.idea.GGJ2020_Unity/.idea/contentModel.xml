@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\Ronal\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Ronal\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_GGJ2020_Unity.-1357013719.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Ronal\AppData\Roaming\JetBrains\Rider2020.2\scratches" t="IncludeRecursive" />
+    <e p="D:\Game Engines\Unity\Projects\Fractured Sunrise\GGJ2020_Unity" t="IncludeRecursive">
+      <e p="Assembly-CSharp-Editor-firstpass.csproj" t="IncludeRecursive" />
+      <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
+      <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="Demigiant" t="Include">
+          <e p="DOTween" t="Include">
+            <e p="Modules" t="Include">
+              <e p="DOTweenModuleAudio.cs" t="Include" />
+              <e p="DOTweenModulePhysics.cs" t="Include" />
+              <e p="DOTweenModulePhysics2D.cs" t="Include" />
+              <e p="DOTweenModuleSprite.cs" t="Include" />
+              <e p="DOTweenModuleUI.cs" t="Include" />
+              <e p="DOTweenModuleUnityVersion.cs" t="Include" />
+              <e p="DOTweenModuleUtils.cs" t="Include" />
+            </e>
+            <e p="readme.txt" t="Include" />
+          </e>
+        </e>
+        <e p="Editor" t="Include">
+          <e p="PropertyDrawers" t="Include">
+            <e p="SerializableDictionaryDrawer.cs" t="Include" />
+            <e p="SerializableEnumDictionaryDrawer.cs" t="Include" />
+          </e>
+          <e p="Utility" t="Include">
+            <e p="EditorUtils.cs" t="Include" />
+          </e>
+        </e>
+        <e p="GGJ2020" t="Include">
+          <e p="Developers" t="Include">
+            <e p="Damian" t="Include">
+              <e p="FadeTestScript.cs" t="Include" />
+              <e p="GarbageGroupInteractionExample.cs" t="Include" />
+            </e>
+          </e>
+          <e p="ExtensionMethods" t="Include">
+            <e p="EnumerableExtenstions.cs" t="Include" />
+            <e p="EnumExtensions.cs" t="Include" />
+            <e p="Int32Extentions.cs" t="Include" />
+            <e p="ListExtensions.cs" t="Include" />
+            <e p="ObjectExtensions.cs" t="Include" />
+            <e p="RandomItem.cs" t="Include" />
+            <e p="StringExtensions.cs" t="Include" />
+          </e>
+          <e p="FModStrings.cs" t="Include" />
+          <e p="Gamemode.cs" t="Include" />
+          <e p="NarrativeSystem" t="Include">
+            <e p="Components" t="Include">
+              <e p="DialogueObject.cs" t="Include" />
+            </e>
+            <e p="Interfaces" t="Include">
+              <e p="INarrativeAudioPlayer.cs" t="Include" />
+              <e p="INarrativeIconGetter.cs" t="Include" />
+            </e>
+            <e p="NarrativeManager.cs" t="Include" />
+            <e p="Structs" t="Include">
+              <e p="DialogueAnswer.cs" t="Include" />
+              <e p="DialogueEntry.cs" t="Include" />
+            </e>
+          </e>
+          <e p="OnCameraSwitch.cs" t="Include" />
+          <e p="PlayerController" t="Include">
+            <e p="Camera" t="Include">
+              <e p="CameraEffects.cs" t="Include" />
+            </e>
+            <e p="Garbage" t="Include">
+              <e p="GarbageGroup.cs" t="Include" />
+              <e p="GarbageItem.cs" t="Include" />
+            </e>
+            <e p="Interaction" t="Include">
+              <e p="Interactable.cs" t="Include" />
+            </e>
+            <e p="PlayerTankController.cs" t="Include" />
+          </e>
+          <e p="Scenes" t="Include">
+            <e p="MainMenuPlayPressed.cs" t="Include" />
+          </e>
+          <e p="Scripts" t="Include">
+            <e p="Interfaces" t="Include">
+              <e p="IKeyValuePair.cs" t="Include" />
+            </e>
+            <e p="Structs" t="Include">
+              <e p="Utility" t="Include">
+                <e p="EnumDictionaryUtil.cs" t="Include" />
+                <e p="RandomUtil.cs" t="Include" />
+                <e p="SerializableKeyValuePair.cs" t="Include" />
+                <e p="StringVariableWriter.cs" t="Include" />
+              </e>
+            </e>
+            <e p="Utility" t="Include">
+              <e p="SerializableDictionary.cs" t="Include" />
+              <e p="SerializableEnumDictionary.cs" t="Include" />
+            </e>
+          </e>
+          <e p="StoryTools" t="Include">
+            <e p="Core" t="Include">
+              <e p="Actors.cs" t="Include" />
+              <e p="Choice.cs" t="Include" />
+              <e p="DoorComponent.cs" t="Include" />
+              <e p="EventBase.cs" t="Include" />
+              <e p="EventHelper.cs" t="Include" />
+              <e p="Rewards" t="Include">
+                <e p="CloseEventReward.cs" t="Include" />
+                <e p="RewardBase.cs" t="Include" />
+                <e p="StartEventReward.cs" t="Include" />
+              </e>
+              <e p="Singleton.cs" t="Include" />
+              <e p="StoryLog.cs" t="Include" />
+              <e p="StoryManager.cs" t="Include" />
+              <e p="StoryState.cs" t="Include" />
+            </e>
+            <e p="Editor" t="Include">
+              <e p="CreateNewScriptClassFromCustomTemplate.cs" t="Include" />
+              <e p="EventTemplate.cs.txt" t="Include" />
+              <e p="InteractableInspector.cs" t="Include" />
+              <e p="MeshFixerInspector.cs" t="Include" />
+            </e>
+            <e p="Events" t="Include">
+              <e p="Alinna" t="Include">
+                <e p="Alinnna_Congratulations_1.cs" t="Include" />
+                <e p="Alinnna_Door_A_Lock_1.cs" t="Include" />
+                <e p="Alinnna_Door_A_Unlock_1.cs" t="Include" />
+                <e p="Alinnna_Door_B_Lock_1.cs" t="Include" />
+                <e p="Alinnna_Door_B_Unlock_1.cs" t="Include" />
+                <e p="Alinnna_End_1.cs" t="Include" />
+                <e p="Alinnna_Finish_1.cs" t="Include" />
+                <e p="Alinnna_Introduction_1.cs" t="Include" />
+              </e>
+              <e p="BaseStation_Interaction.cs" t="Include" />
+              <e p="Capsules_A_Interaction.cs" t="Include" />
+              <e p="Capsules_B_Interaction.cs" t="Include" />
+              <e p="Door_A_Interaction.cs" t="Include" />
+              <e p="Door_B_Interaction.cs" t="Include" />
+              <e p="Fridge_A_1.cs" t="Include" />
+              <e p="Fridge_B_1.cs" t="Include" />
+              <e p="FridgeInteraction.cs" t="Include" />
+              <e p="Overlap" t="Include">
+                <e p="Overlap_Door_A.cs" t="Include" />
+                <e p="Overlap_Door_B.cs" t="Include" />
+              </e>
+              <e p="Phone_Jen_Interaction.cs" t="Include" />
+              <e p="Phone_Scott_Interaction.cs" t="Include" />
+              <e p="Plant_A_Interaction.cs" t="Include" />
+              <e p="Plant_B_Interaction.cs" t="Include" />
+              <e p="Plant_C_Interaction.cs" t="Include" />
+              <e p="Vape_Interaction.cs" t="Include" />
+              <e p="VR_Interaction.cs" t="Include" />
+            </e>
+            <e p="MeshFixer.cs" t="Include" />
+            <e p="TestEventA.cs" t="Include" />
+            <e p="TestEventB.cs" t="Include" />
+            <e p="TestEventC.cs" t="Include" />
+            <e p="UI" t="Include">
+              <e p="ChoiceButtonComponent.cs" t="Include" />
+              <e p="EventPanelComponent.cs" t="Include" />
+            </e>
+          </e>
+          <e p="uploadtest" t="Include">
+            <e p="New Text Document.txt" t="Include" />
+          </e>
+          <e p="UserInterface" t="Include">
+            <e p="UiTypes" t="Include">
+              <e p="EventUI.cs" t="Include" />
+              <e p="EventUIScriptableObject.cs" t="Include" />
+              <e p="OnItemInteractUI.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Plugins" t="Include">
+          <e p="FMOD" t="Include">
+            <e p="addons" t="Include">
+              <e p="ResonanceAudio" t="Include">
+                <e p="Editor" t="Include">
+                  <e p="FmodResonanceAudioRoomEditor.cs" t="Include" />
+                </e>
+                <e p="Scripts" t="Include">
+                  <e p="FmodResonanceAudio.cs" t="Include" />
+                  <e p="FmodResonanceAudioRoom.cs" t="Include" />
+                </e>
+              </e>
+            </e>
+            <e p="src" t="Include">
+              <e p="Editor" t="Include">
+                <e p="BankRefDrawer.cs" t="Include" />
+                <e p="CreateEventPopup.cs" t="Include" />
+                <e p="EditorBankRef.cs" t="Include" />
+                <e p="EditorEventRef.cs" t="Include" />
+                <e p="EditorParamRef.cs" t="Include" />
+                <e p="EditorUtils.cs" t="Include" />
+                <e p="EventBrowser.cs" t="Include" />
+                <e p="EventCache.cs" t="Include" />
+                <e p="EventManager.cs" t="Include" />
+                <e p="EventRefDrawer.cs" t="Include" />
+                <e p="FindAndReplace.cs" t="Include" />
+                <e p="LogViewer.cs" t="Include" />
+                <e p="ParamRefDrawer.cs" t="Include" />
+                <e p="SettingsEditor.cs" t="Include" />
+                <e p="StudioBankLoaderEditor.cs" t="Include" />
+                <e p="StudioEventEmitterEditor.cs" t="Include" />
+                <e p="StudioEventEmitterGizmoDrawer.cs" t="Include" />
+                <e p="StudioGlobalParameterTriggerEditor.cs" t="Include" />
+                <e p="StudioListenerEditor.cs" t="Include" />
+                <e p="StudioParameterTriggerEditor.cs" t="Include" />
+                <e p="Timeline" t="Include">
+                  <e p="FMODEventPlayableEditor.cs" t="Include" />
+                </e>
+              </e>
+              <e p="Runtime" t="Include">
+                <e p="BankRefAttribute.cs" t="Include" />
+                <e p="EventHandler.cs" t="Include" />
+                <e p="EventRefAttribute.cs" t="Include" />
+                <e p="FMODRuntimeManagerOnGUIHelper.cs" t="Include" />
+                <e p="ParamRef.cs" t="Include" />
+                <e p="ParamRefAttribute.cs" t="Include" />
+                <e p="RuntimeManager.cs" t="Include" />
+                <e p="RuntimeUtils.cs" t="Include" />
+                <e p="Settings.cs" t="Include" />
+                <e p="StudioBankLoader.cs" t="Include" />
+                <e p="StudioEventEmitter.cs" t="Include" />
+                <e p="StudioGlobalParameterTrigger.cs" t="Include" />
+                <e p="StudioListener.cs" t="Include" />
+                <e p="StudioParameterTrigger.cs" t="Include" />
+                <e p="Timeline" t="Include">
+                  <e p="FMODEventPlayable.cs" t="Include" />
+                  <e p="FMODEventTrack.cs" t="Include" />
+                </e>
+                <e p="wrapper" t="Include">
+                  <e p="fmod.cs" t="Include" />
+                  <e p="fmod_android.cs" t="Include" />
+                  <e p="fmod_dsp.cs" t="Include" />
+                  <e p="fmod_errors.cs" t="Include" />
+                  <e p="fmod_studio.cs" t="Include" />
+                </e>
+              </e>
+            </e>
+          </e>
+        </e>
+        <e p="Settings" t="Include">
+          <e p="Blit.cs" t="Include" />
+        </e>
+        <e p="SwitchToMainMenu.cs" t="Include" />
+        <e p="TextMesh Pro" t="Include">
+          <e p="Fonts" t="Include">
+            <e p="LiberationSans - OFL.txt" t="Include" />
+          </e>
+          <e p="Resources" t="Include">
+            <e p="LineBreaking Following Characters.txt" t="Include" />
+            <e p="LineBreaking Leading Characters.txt" t="Include" />
+            <e p="Shaders" t="Include">
+              <e p="TMP_Bitmap-Custom-Atlas.shader" t="Include" />
+              <e p="TMP_Bitmap-Mobile.shader" t="Include" />
+              <e p="TMP_Bitmap.shader" t="Include" />
+              <e p="TMP_SDF Overlay.shader" t="Include" />
+              <e p="TMP_SDF-Mobile Masking.shader" t="Include" />
+              <e p="TMP_SDF-Mobile Overlay.shader" t="Include" />
+              <e p="TMP_SDF-Mobile.shader" t="Include" />
+              <e p="TMP_SDF-Surface-Mobile.shader" t="Include" />
+              <e p="TMP_SDF-Surface.shader" t="Include" />
+              <e p="TMP_SDF.shader" t="Include" />
+              <e p="TMP_Sprite.shader" t="Include" />
+              <e p="TMPro.cginc" t="Include" />
+              <e p="TMPro_Properties.cginc" t="Include" />
+              <e p="TMPro_Surface.cginc" t="Include" />
+            </e>
+          </e>
+          <e p="Sprites" t="Include">
+            <e p="EmojiOne Attribution.txt" t="Include" />
+          </e>
+        </e>
+      </e>
+      <e p="GGJ2020_Unity.sln" t="IncludeFlat" />
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="Packages" t="ExcludeRecursive" />
+      <e p="Temp\Bin" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>

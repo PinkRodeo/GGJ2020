@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="446e1c6e-addf-40fb-a996-28572e7a1571" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/GGJ2020/Scripts/Structs/Utility/SerializableKeyValuePair.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/10021401-6059-4824-8453-0038EFB79DD7/14/d74f2079/Queue`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7A640F6C-B241-40B6-897C-AC910F849430/68/26123b43/Dictionary`2.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.0.1/InputSystem/Utilities/JsonParser.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.0.1/InputSystem/Actions/InputAction.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Editor/Utility/EditorUtils.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Assets/GGJ2020/StoryTools/Core/StoryState.cs" />
+        <option value="$PROJECT_DIR$/Assets/GGJ2020/StoryTools/Core/Singleton.cs" />
+        <option value="$PROJECT_DIR$/Assets/Editor/Utility/EditorUtils.cs" />
+        <option value="$PROJECT_DIR$/Assets/GGJ2020/Scripts/Structs/Utility/SerializableKeyValuePair.cs" />
+        <option value="$PROJECT_DIR$/Assets/GGJ2020/Scripts/Utility/SerializableEnumDictionary.cs" />
+        <option value="$PROJECT_DIR$/Assets/GGJ2020/NarrativeSystem/DialogueManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/GGJ2020/NarrativeSystem/DialogueEntry.cs" />
+        <option value="$PROJECT_DIR$/Assets/GGJ2020/NarrativeSystem/DialogueAnswer.cs" />
+        <option value="$PROJECT_DIR$/Assets/GGJ2020/NarrativeSystem/NarrativeInspectorTest.cs" />
+        <option value="$PROJECT_DIR$/Assets/GGJ2020/NarrativeSystem/INarrativeAudioPlayer.cs" />
+        <option value="$PROJECT_DIR$/Assets/GGJ2020/NarrativeSystem/Interfaces/INarrativeAudioPlayer.cs" />
+        <option value="$PROJECT_DIR$/Assets/GGJ2020/NarrativeSystem/Interfaces/INarrativeIconGetter.cs" />
+        <option value="$PROJECT_DIR$/Assets/GGJ2020/NarrativeSystem/NarrativeManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/GGJ2020/NarrativeSystem/Components/DialogueObject.cs" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1oQrsC1mhP7tUVcpqVKIrD2vj1r" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Discover.Launch.Via.Unity" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="settings.editor.selected.configurable" value="preferences.environmentSetup" />
+  </component>
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="selectedOptions">
+        <set />
+      </option>
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="selectedOptions">
+        <set />
+      </option>
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1613425201646">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1613425201646" />
+  </component>
+</project>
