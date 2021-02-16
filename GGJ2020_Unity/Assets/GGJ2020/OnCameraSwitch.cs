@@ -7,6 +7,7 @@ using FMODUnity;
 [RequireComponent(typeof(CinemachineVirtualCamera))]
 public class OnCameraSwitch : MonoBehaviour
 {
+    public CameraText camtext;
     CinemachineVirtualCamera cam;
     StudioEventEmitter emitter;
     [SerializeField]
@@ -39,6 +40,7 @@ public class OnCameraSwitch : MonoBehaviour
                 {
                     _HasSet = true;
                     emitter.SetParameter("Room", room);
+                    camtext.SetRoom(room);
                 }
             });
     }
