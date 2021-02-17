@@ -4,117 +4,113 @@ using UnityEngine;
 
 public abstract class Event
 {
-	protected static StoryState State = StoryState.Instance;
-	protected static StoryManager StoryManager = global::StoryManager.Instance;
-	private string _text = "";
-	private List<Choice> choices = new List<Choice>();
 
-	public string Text
-	{
-		get
-		{
-			return _text;
-		}
-		set
-		{
-			_text = value;
-		}
-	}
+    private string _text = "";
 
-	private Actor _actor;
+    public string Text
+    {
+        get
+        {
+            return _text;
+        }
+        set
+        {
+            _text = value;
+        }
+    }
 
-	public Actor EventActor
-	{
-		get
-		{
-			return _actor;
-		}
-		set
-		{
-			_actor = value;
-		}
-	}
+    private Actor _actor;
 
-	private List<System.Type> _closeRewards = new List<System.Type>();
+    public Actor EventActor
+    {
+        get
+        {
+            return _actor;
+        }
+        set
+        {
+            _actor = value;
+        }
+    }
 
-	public void AddCloseReward<T>() where T : RewardBase
-	{
-		_closeRewards.Add(typeof(T));
-	}
+    protected static StoryState State = StoryState.Instance;
+    protected static StoryManager StoryManager = global::StoryManager.Instance;
 
-	public void RemoveCloseReward<T>() where T : RewardBase
-	{
-		_closeRewards.Remove(typeof(T));
-	}
+    private bool _closing = false;
 
-	public List<Choice> EventChoices = new List<Choice>();
+    private List<Choice> choices = new List<Choice>();
 
-	public Choice NewEventChoice()
-	{
-		var newChoice = new Choice(this);
+    public List<Choice> EventChoices = new List<Choice>();
 
-		// Every Event Choice automatically gets a close event
-		newChoice.AddReward<CloseEventReward>();
-		EventChoices.Add(newChoice);
+    private List<System.Type> _onCloseRewards = new List<System.Type>();
 
-		return newChoice;
-	}
+    public void AddCloseReward<T>() where T : RewardBase
+    {
+        _onCloseRewards.Add(typeof(T));
+    }
 
-	public Choice NewChoice(string choiceText)
-	{
-		var newChoice = new Choice(this);
+    public void RemoveCloseReward<T>() where T : RewardBase
+    {
+        _onCloseRewards.Remove(typeof(T));
+    }
 
-		// Every Event Choice automatically gets a close event
-		newChoice.AddReward<CloseEventReward>();
 
-		newChoice.Text = choiceText;
-		EventChoices.Add(newChoice);
+    public Choice NewEventChoice()
+    {
+        var newChoice = new Choice(this);
 
-		return newChoice;
-	}
+        // Every Event Choice automatically gets a close event
+        newChoice.AddReward<CloseEventReward>();
+        EventChoices.Add(newChoice);
 
-	public void AddContinueChoice(string text = "…")
-	{
-		var newChoice = new Choice(this);
+        return newChoice;
+    }
 
-		newChoice.AddReward<CloseEventReward>();
-		newChoice.Text = text;
-		EventChoices.Add(newChoice);
-	}
+    public Choice NewChoice(string choiceText)
+    {
+        var newChoice = new Choice(this);
 
-	public void AddAffirmativeChoice(string text = "affirmative.")
-	{
-		var newChoice = new Choice(this);
+        // Every Event Choice automatically gets a close event
+        newChoice.AddReward<CloseEventReward>();
 
-		newChoice.AddReward<CloseEventReward>();
-		newChoice.Text = text;
-		EventChoices.Add(newChoice);
-	}
+        newChoice.Text = choiceText;
+        EventChoices.Add(newChoice);
 
-	public void DisplayChoice(Choice newChoice)
-	{
-		choices.Add(newChoice);
-		StoryManager.AddChoice(newChoice);
-		newChoice.DisplayOnEventStart = false;
-	}
+        return newChoice;
+    }
 
-	public abstract void PlayEvent();
+    public Choice AddContinueChoice()
+    {
+        return NewChoice("…");
+    }
 
-	private bool _closing = false;
+    public Choice AddAffirmativeChoice()
+    {
+        return NewChoice("affirmative.");
+    }
 
-	public void CloseEvent()
-	{
-		foreach (var rewardType in _closeRewards)
-		{
-			var reward = EventHelper.CreateRewardByType(rewardType);
-			reward.RunReward();
-		}
+    public void DisplayChoice(Choice newChoice)
+    {
+        choices.Add(newChoice);
+        StoryManager.AddChoice(newChoice);
+        newChoice.DisplayOnEventStart = false;
+    }
 
-		_closing = true;
-	}
+    public abstract void PlayEvent();
 
-	public bool IsClosing()
-	{
-		return _closing;
-	}
+    public void CloseEvent()
+    {
+        foreach (var rewardType in _onCloseRewards)
+        {
+            var reward = EventHelper.CreateRewardByType(rewardType);
+            reward.RunReward();
+        }
+
+        _closing = true;
+    }
+
+    public bool IsClosing()
+    {
+        return _closing;
+    }
 }
