@@ -16,6 +16,12 @@ public enum E_FridgeState
 	AccessUnlocked,
 }
 
+public enum E_TrashcanState
+{
+	FirstInteract,
+	AccessUnlocked,
+}
+
 public enum E_ThrowawayState
 {
 	OnFloor,
@@ -221,6 +227,24 @@ public class StoryState : Singleton<StoryState>
 		}
 	}
 
+	private E_TrashcanState trashcanState = E_TrashcanState.FirstInteract;
+
+	public E_TrashcanState TrashcanState
+	{
+		get
+		{
+			return trashcanState;
+		}
+		set
+		{
+			if (trashcanState != value)
+			{
+				trashcanState = value;
+				OnStoryStateChanged();
+			}
+		}
+	}
+
 	public DoorChangedDelegate OnDoorAChanged;
 
 	private E_DoorState _doorAState = E_DoorState.Locked;
@@ -416,6 +440,7 @@ public class StoryState : Singleton<StoryState>
 		_isResetting = true;
 		IntroState = E_AlinnaState.IntroductionsNotCompleted;
 		FridgeState = E_FridgeState.FirstInteract;
+		TrashcanState = E_TrashcanState.FirstInteract;
 		Door_A_State = E_DoorState.Locked;
 		State_Capsules_A = E_ThrowawayState.OnFloor;
 		State_Headset = E_ThrowawayState.OnFloor;
