@@ -39,6 +39,7 @@ public enum E_ActorType
 	AI_Plant_Fern,
 	AI_Plant_Planto,
 	AI_Plant_Blini,
+	AI_Trashcan,
 
 	// Config
 	Phone_Scott,
@@ -104,6 +105,20 @@ public static class Actors
 		}
 
 		return _AI_Fridge;
+	}
+
+	private static Actor _AI_Trashcan;
+	public static Actor AI_Trashcan()
+	{
+		if (_AI_Trashcan == null)
+		{
+			_AI_Trashcan = new Actor(E_ActorCategory.AI,
+							E_ActorType.AI_Trashcan,
+							Color.white,
+							"Trashy the trashcan");
+		}
+
+		return _AI_Trashcan;
 	}
 
 	private static Actor _AI_Plant_Fern;
