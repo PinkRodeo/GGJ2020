@@ -4,7 +4,6 @@ using UnityEngine;
 
 public abstract class Event
 {
-
     private string _text = "";
 
     public string Text
@@ -19,48 +18,54 @@ public abstract class Event
         }
     }
 
-    private Actor _actor;
+    private Actor _eventActor;
 
     public Actor EventActor
     {
         get
         {
-            return _actor;
+            return _eventActor;
         }
         set
         {
-            _actor = value;
+            _eventActor = value;
+        }
+    }
+
+    public bool IsClosing
+    {
+        get
+        {
+            return _isClosing;
         }
     }
 
     protected static StoryState State = StoryState.Instance;
     protected static StoryManager StoryManager = global::StoryManager.Instance;
 
-    private bool _closing = false;
-
-    private List<Choice> choices = new List<Choice>();
+    private bool _isClosing = false;
 
     public List<Choice> EventChoices = new List<Choice>();
 
     private List<System.Type> _onCloseRewards = new List<System.Type>();
 
-    public void AddCloseReward<T>() where T : RewardBase
+    public void AddOnCloseReward<T>() where T : RewardBase
     {
         _onCloseRewards.Add(typeof(T));
     }
 
-    public void RemoveCloseReward<T>() where T : RewardBase
+    public void RemoveOnCloseReward<T>() where T : RewardBase
     {
         _onCloseRewards.Remove(typeof(T));
     }
 
-
-    public Choice NewEventChoice()
+    public Choice NewChoice()
     {
         var newChoice = new Choice(this);
 
-        // Every Event Choice automatically gets a close event
-        newChoice.AddReward<CloseEventReward>();
+        // Every Event Choice automatically gets a close current event reward
+        newChoice.AddReward<CloseCurrentEventReward>();
+
         EventChoices.Add(newChoice);
 
         return newChoice;
@@ -68,30 +73,23 @@ public abstract class Event
 
     public Choice NewChoice(string choiceText)
     {
-        var newChoice = new Choice(this);
-
-        // Every Event Choice automatically gets a close event
-        newChoice.AddReward<CloseEventReward>();
-
+        var newChoice = NewChoice();
         newChoice.Text = choiceText;
-        EventChoices.Add(newChoice);
-
         return newChoice;
     }
 
-    public Choice AddContinueChoice()
+    public Choice NewContinueChoice()
     {
         return NewChoice("…");
     }
 
-    public Choice AddAffirmativeChoice()
+    public Choice NewAffirmativeChoice()
     {
         return NewChoice("affirmative.");
     }
 
     public void DisplayChoice(Choice newChoice)
     {
-        choices.Add(newChoice);
         StoryManager.AddChoice(newChoice);
         newChoice.DisplayOnEventStart = false;
     }
@@ -106,11 +104,6 @@ public abstract class Event
             reward.RunReward();
         }
 
-        _closing = true;
-    }
-
-    public bool IsClosing()
-    {
-        return _closing;
+        _isClosing = true;
     }
 }
