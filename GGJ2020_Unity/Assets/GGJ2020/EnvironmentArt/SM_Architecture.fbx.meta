@@ -47,6 +47,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: M_FrontDoor
+    second: {fileID: 2100000, guid: 2b72ee8d0e0176f4e87159850377028c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: M_Marble
     second: {fileID: 2100000, guid: a119dd5327a14cb4f91591284ee8772a, type: 2}
   - first:

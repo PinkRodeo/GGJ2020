@@ -28,7 +28,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: M_LIghtFixture
-    second: {fileID: 2100000, guid: a550e3753001c9c4e8a32880dc14d51b, type: 2}
+    second: {fileID: 2100000, guid: 16a6e48eea6aaff4da99fd380e06a316, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule

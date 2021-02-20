@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: M_Cloth
-  m_Shader: {fileID: -6465566751694194690, guid: 7aef41cfddd97844a8ca3e775b900108,
+  m_Shader: {fileID: -6465566751694194690, guid: e47b84649282a7f40b498aaa4221dcbb,
     type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -21,11 +21,19 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - Albedo:
-        m_Texture: {fileID: 2800000, guid: 2a3e92c0e6515074ca615aef0837b876, type: 3}
+        m_Texture: {fileID: 2800000, guid: cbfe155400ee0b24aa0bb80d4aacc3aa, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Normal:
         m_Texture: {fileID: 2800000, guid: e109905c411b0f84e82eaaf2705ece30, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_255ee04d6345498baae34c8b7b85cefc:
+        m_Texture: {fileID: 2800000, guid: 8e3ddac63b56ac043b5ecca95e9b3f6b, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_d7678bc5aafc49beb13f358eed5e21b8:
+        m_Texture: {fileID: 2800000, guid: 8e3ddac63b56ac043b5ecca95e9b3f6b, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseMap:
@@ -56,9 +64,27 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Floats:
     - HighlightAmount: 0
     - NormalStrengthP: 0.5
+    - Vector1_06883f82e9424acdaa5f172d2f7426d0: 0
+    - Vector1_0e7c6cfb5f4045919db08f081c2babe6: 0.281
+    - Vector1_69677e998db244278a0ce3b5a6b12fda: 0
+    - Vector1_e48e4a4937664e0ea47388d5e9b2559b: 0
+    - Vector1_e6afcca9b68b4a8db1c8989502d067d8: 0
+    - Vector1_f717cefe38c8413684fc479be792c846: 0.24
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -82,13 +108,19 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - ColorTint: {r: 1, g: 1, b: 1, a: 0}
+    - Color_822c43bc6b72482a8a54bfa7a4945922: {r: 0, g: 0, b: 0, a: 0}
+    - Color_aeb05e7f19554f23bd571eb040fdd790: {r: 0, g: 0, b: 0, a: 0}
+    - Color_f9bd1708daf74d988209959479c85d1c: {r: 1, g: 1, b: 1, a: 0}
     - EmissionCol: {r: 0, g: 0, b: 0, a: 0}
     - MetallicMinMax: {r: 0.46, g: 0, b: 0, a: 0}
     - SmoothnessMinMax: {r: 0.5, g: 0.5, b: 0, a: 0}
+    - Vector4_06f8886bfcc54434a7a8872646916be3: {r: 1, g: 1, b: 0, a: 0}
+    - Vector4_c76677d8b44c42f9926304cb39b417ba: {r: 1, g: 1, b: 0, a: 0}
     - _BaseColor: {r: 0.8, g: 0.8, b: 0.8, a: 1}
     - _Color: {r: 0.8, g: 0.8, b: 0.8, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
+  m_BuildTextureStacks: []
 --- !u!114 &2328317749491455991
 MonoBehaviour:
   m_ObjectHideFlags: 11

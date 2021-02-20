@@ -17,6 +17,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: M_Cable
+    second: {fileID: 2100000, guid: a39692e5dc4f1af469a4d3a39ddde667, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: M_Cloth
     second: {fileID: 2100000, guid: 8a0b1c8f56696d74386de80858d001b5, type: 2}
   - first:
@@ -29,6 +34,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: M_DarkVoronoi
     second: {fileID: 2100000, guid: 46f4d048d803f0541b5ff3207cace22b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Dirt
+    second: {fileID: 2100000, guid: 3c4301e098e27674d8603dc8258eee8f, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -52,8 +62,28 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: M_KitchenProps
+    second: {fileID: 2100000, guid: 200b7657dbdb04f4a8f9de35e28973b1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: M_Plants
     second: {fileID: 2100000, guid: 8761d6fe0ac83644182f1d06ae19d782, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Plants_D
+    second: {fileID: 2100000, guid: d3351cd1a298960438bd9f382f0e789a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_PlayerEm
+    second: {fileID: 2100000, guid: 529744fef6504be4a85bbb3dbf96de47, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Refrigator
+    second: {fileID: 2100000, guid: 4b0a4fe8bfb0dea43a59fd9ef40e5974, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
