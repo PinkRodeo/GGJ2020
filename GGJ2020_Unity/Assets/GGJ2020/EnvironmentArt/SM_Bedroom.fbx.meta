@@ -12,6 +12,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: M_BedroomProps
+    second: {fileID: 2100000, guid: 3f0826a119414b44cb383d9cf0bffc50, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: M_Black
     second: {fileID: 2100000, guid: f3dfcd5af31fe6243a51db8ae7445670, type: 2}
   - first:

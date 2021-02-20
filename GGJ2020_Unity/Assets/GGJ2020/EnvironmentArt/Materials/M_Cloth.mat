@@ -21,11 +21,11 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - Albedo:
-        m_Texture: {fileID: 2800000, guid: cbfe155400ee0b24aa0bb80d4aacc3aa, type: 3}
+        m_Texture: {fileID: 2800000, guid: 5b379239187366b44974307612001c9a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Normal:
-        m_Texture: {fileID: 2800000, guid: e109905c411b0f84e82eaaf2705ece30, type: 3}
+        m_Texture: {fileID: 2800000, guid: 438bf3dd96da5e74ab34ef4683d83e18, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_255ee04d6345498baae34c8b7b85cefc:
@@ -78,7 +78,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - HighlightAmount: 0
-    - NormalStrengthP: 0.5
+    - NormalStrengthP: 1.5
     - Vector1_06883f82e9424acdaa5f172d2f7426d0: 0
     - Vector1_0e7c6cfb5f4045919db08f081c2babe6: 0.281
     - Vector1_69677e998db244278a0ce3b5a6b12fda: 0

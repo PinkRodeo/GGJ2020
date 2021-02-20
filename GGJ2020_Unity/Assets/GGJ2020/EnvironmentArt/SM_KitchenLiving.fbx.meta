@@ -57,6 +57,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: M_Glass02
+    second: {fileID: 2100000, guid: 4bd4708d84b84df4fa12163048b3f705, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: M_GreyPlastic
     second: {fileID: 2100000, guid: 799b91a5826b4ce4fb6927bc763fd25b, type: 2}
   - first:
@@ -89,6 +94,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: M_Refrigator
     second: {fileID: 2100000, guid: 4b0a4fe8bfb0dea43a59fd9ef40e5974, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Silver
+    second: {fileID: 2100000, guid: 6c54a4b0f67937f4896190aead0c20c2, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
