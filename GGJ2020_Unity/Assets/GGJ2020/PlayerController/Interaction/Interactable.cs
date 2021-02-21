@@ -93,6 +93,10 @@ namespace Player
 					state.OnChanged_Phone_B_Jen += OnThrowayTypeChanged;
 					OnThrowayTypeChanged(state.State_Phone_B_Jen);
 					break;
+				case E_ThrowawayType.Shoes:
+					state.OnChanged_Shoes += OnThrowayTypeChanged;
+					OnThrowayTypeChanged(state.State_Shoes);
+					break;
 				default:
 					Debug.LogError("Unhandled throwaway type: " + throwAwayType.ToString());
 					break;

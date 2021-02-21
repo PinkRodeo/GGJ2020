@@ -215,12 +215,12 @@ public class BaseStation_Dispose_Headset_2 : Event
                 var item_state_a = State.State_Phone_A_Scott;
                 var item_state_b = State.State_Shoes;
 
-                if (item_state_a == E_ThrowawayState.PickedUp || item_state_b == E_ThrowawayState.PickedUp ||
-                    item_state_a == E_ThrowawayState.ThrownInHomeStation || item_state_b == E_ThrowawayState.ThrownInHomeStation)
+                if (item_state_a == E_ThrowawayState.OnFloor || item_state_b == E_ThrowawayState.OnFloor)
                 {
                     StoryManager.AddNextEvent<BaseStation_Dispose_Bedroom_Half_1>();
                 }
-                else
+                else if (item_state_a == E_ThrowawayState.PickedUp || item_state_b == E_ThrowawayState.PickedUp ||
+                    item_state_a == E_ThrowawayState.ThrownInHomeStation || item_state_b == E_ThrowawayState.ThrownInHomeStation)
                 {
                     StoryManager.AddNextEvent<BaseStation_Interaction_Return>();
                 }
@@ -261,13 +261,13 @@ public class BaseStation_Dispose_Phone_A_Scott_2 : Event
 
                 var item_state_a = State.State_Shoes;
                 var item_state_b = State.State_Headset;
-
-                if (item_state_a == E_ThrowawayState.PickedUp || item_state_b == E_ThrowawayState.PickedUp ||
-                    item_state_a == E_ThrowawayState.ThrownInHomeStation || item_state_b == E_ThrowawayState.ThrownInHomeStation)
+                
+                if (item_state_a == E_ThrowawayState.OnFloor || item_state_b == E_ThrowawayState.OnFloor)
                 {
                     StoryManager.AddNextEvent<BaseStation_Dispose_Bedroom_Half_1>();
                 }
-                else
+                else if (item_state_a == E_ThrowawayState.PickedUp || item_state_b == E_ThrowawayState.PickedUp ||
+                    item_state_a == E_ThrowawayState.ThrownInHomeStation || item_state_b == E_ThrowawayState.ThrownInHomeStation)
                 {
                     StoryManager.AddNextEvent<BaseStation_Interaction_Return>();
                 }
@@ -309,12 +309,12 @@ public class BaseStation_Dispose_Shoes_2 : Event
                 var item_state_a = State.State_Headset;
                 var item_state_b = State.State_Phone_A_Scott;
 
-                if (item_state_a == E_ThrowawayState.PickedUp || item_state_b == E_ThrowawayState.PickedUp ||
-                    item_state_a == E_ThrowawayState.ThrownInHomeStation || item_state_b == E_ThrowawayState.ThrownInHomeStation)
+                if (item_state_a == E_ThrowawayState.OnFloor || item_state_b == E_ThrowawayState.OnFloor)
                 {
                     StoryManager.AddNextEvent<BaseStation_Dispose_Bedroom_Half_1>();
                 }
-                else
+                else if (item_state_a == E_ThrowawayState.PickedUp || item_state_b == E_ThrowawayState.PickedUp ||
+                    item_state_a == E_ThrowawayState.ThrownInHomeStation || item_state_b == E_ThrowawayState.ThrownInHomeStation)
                 {
                     StoryManager.AddNextEvent<BaseStation_Interaction_Return>();
                 }
@@ -327,11 +327,15 @@ public class BaseStation_Dispose_Bedroom_Half_1 : Event
 {
     public override void PlayEvent()
     {
-        Text = "Just one more thing to clear from the bedroom! You're almost there.";
+        Text = "er ligt nog iets op de grond";
         EventActor = Actors.AI_Alinna();
 
         {
             var choice = NewChoice("[determined] affirmative.");
+            choice.OnChoiceSelected += (Choice c) =>
+            {
+                StoryManager.AddNextEvent<BaseStation_Interaction_Return>();
+            };
         }
     }
 }
