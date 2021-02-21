@@ -215,7 +215,7 @@ public class BaseStation_Dispose_Headset_2 : Event
                 var item_state_a = State.State_Phone_A_Scott;
                 var item_state_b = State.State_Shoes;
 
-                if (item_state_a == E_ThrowawayState.OnFloor || item_state_b == E_ThrowawayState.OnFloor)
+                if (item_state_a == E_ThrowawayState.OnFloor || item_state_b == E_ThrowawayState.OnFloor && item_state_a != E_ThrowawayState.PickedUp && item_state_b != E_ThrowawayState.PickedUp)
                 {
                     StoryManager.AddNextEvent<BaseStation_Dispose_Bedroom_Half_1>();
                 }
@@ -261,8 +261,8 @@ public class BaseStation_Dispose_Phone_A_Scott_2 : Event
 
                 var item_state_a = State.State_Shoes;
                 var item_state_b = State.State_Headset;
-                
-                if (item_state_a == E_ThrowawayState.OnFloor || item_state_b == E_ThrowawayState.OnFloor)
+
+                if (item_state_a == E_ThrowawayState.OnFloor || item_state_b == E_ThrowawayState.OnFloor && item_state_a != E_ThrowawayState.PickedUp && item_state_b != E_ThrowawayState.PickedUp)
                 {
                     StoryManager.AddNextEvent<BaseStation_Dispose_Bedroom_Half_1>();
                 }
@@ -309,7 +309,7 @@ public class BaseStation_Dispose_Shoes_2 : Event
                 var item_state_a = State.State_Headset;
                 var item_state_b = State.State_Phone_A_Scott;
 
-                if (item_state_a == E_ThrowawayState.OnFloor || item_state_b == E_ThrowawayState.OnFloor)
+                if (item_state_a == E_ThrowawayState.OnFloor || item_state_b == E_ThrowawayState.OnFloor && item_state_a != E_ThrowawayState.PickedUp && item_state_b != E_ThrowawayState.PickedUp)
                 {
                     StoryManager.AddNextEvent<BaseStation_Dispose_Bedroom_Half_1>();
                 }
@@ -373,14 +373,14 @@ public class BaseStation_Dispose_Capsules_B_2 : Event
                 var item_state_a = State.State_Phone_B_Jen;
                 var item_state_b = State.State_Vape;
 
-                if (item_state_a == E_ThrowawayState.PickedUp || item_state_b == E_ThrowawayState.PickedUp ||
+                if (item_state_a == E_ThrowawayState.OnFloor || item_state_b == E_ThrowawayState.OnFloor && item_state_a != E_ThrowawayState.PickedUp && item_state_b != E_ThrowawayState.PickedUp)
+                {
+                    StoryManager.AddNextEvent<BaseStation_Go_Find_Trash_Bathroom_Hurry>();
+                }
+                else if (item_state_a == E_ThrowawayState.PickedUp || item_state_b == E_ThrowawayState.PickedUp ||
                     item_state_a == E_ThrowawayState.ThrownInHomeStation || item_state_b == E_ThrowawayState.ThrownInHomeStation)
                 {
                     StoryManager.AddNextEvent<BaseStation_Interaction_Return>();
-                }
-                else
-                {
-                    StoryManager.AddNextEvent<BaseStation_Go_Find_Trash_Bathroom_Hurry>();
                 }
             };
         }
@@ -420,16 +420,15 @@ public class BaseStation_Dispose_Phone_B_Jen_2 : Event
                 var item_state_a = State.State_Capsules_B;
                 var item_state_b = State.State_Vape;
 
-                if (item_state_a == E_ThrowawayState.PickedUp || item_state_b == E_ThrowawayState.PickedUp ||
+                if (item_state_a == E_ThrowawayState.OnFloor || item_state_b == E_ThrowawayState.OnFloor && item_state_a != E_ThrowawayState.PickedUp && item_state_b != E_ThrowawayState.PickedUp)
+                {
+                    StoryManager.AddNextEvent<BaseStation_Go_Find_Trash_Bathroom_Hurry>();
+                }
+                else if (item_state_a == E_ThrowawayState.PickedUp || item_state_b == E_ThrowawayState.PickedUp ||
                     item_state_a == E_ThrowawayState.ThrownInHomeStation || item_state_b == E_ThrowawayState.ThrownInHomeStation)
                 {
                     StoryManager.AddNextEvent<BaseStation_Interaction_Return>();
                 }
-                else
-                {
-                    StoryManager.AddNextEvent<BaseStation_Go_Find_Trash_Bathroom_Hurry>();
-                }
-
             };
         }
     }
@@ -467,14 +466,14 @@ public class BaseStation_Dispose_Vape_2 : Event
                 var item_state_a = State.State_Phone_B_Jen;
                 var item_state_b = State.State_Capsules_B;
 
-                if (item_state_a == E_ThrowawayState.PickedUp || item_state_b == E_ThrowawayState.PickedUp ||
+                if (item_state_a == E_ThrowawayState.OnFloor || item_state_b == E_ThrowawayState.OnFloor && item_state_a != E_ThrowawayState.PickedUp && item_state_b != E_ThrowawayState.PickedUp)
+                {
+                    StoryManager.AddNextEvent<BaseStation_Go_Find_Trash_Bathroom_Hurry>();
+                }
+                else if (item_state_a == E_ThrowawayState.PickedUp || item_state_b == E_ThrowawayState.PickedUp ||
                     item_state_a == E_ThrowawayState.ThrownInHomeStation || item_state_b == E_ThrowawayState.ThrownInHomeStation)
                 {
                     StoryManager.AddNextEvent<BaseStation_Interaction_Return>();
-                }
-                else
-                {
-                    StoryManager.AddNextEvent<BaseStation_Go_Find_Trash_Bathroom_Hurry>();
                 }
             };
         }
