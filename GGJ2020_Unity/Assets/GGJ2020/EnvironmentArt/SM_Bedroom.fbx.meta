@@ -37,6 +37,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: M_DarkMetal
+    second: {fileID: 2100000, guid: c75c180f228bef246814db98e6b8a950, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: M_DarkVoronoi
     second: {fileID: 2100000, guid: 46f4d048d803f0541b5ff3207cace22b, type: 2}
   - first:
