@@ -36,10 +36,8 @@ public enum E_ThrowawayType
 	Headset,
 	Phone_A_Scott,
 	Capsules_B,
-
+	Shoes,
 	Phone_B_Jen,
-
-
 	Vape,
 }
 

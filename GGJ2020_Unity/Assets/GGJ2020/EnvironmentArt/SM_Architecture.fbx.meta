@@ -52,6 +52,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: M_GlassTransparent
+    second: {fileID: 2100000, guid: 14f7ca7c4aff24744a44ed14ed0f51f5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: M_Marble
     second: {fileID: 2100000, guid: a119dd5327a14cb4f91591284ee8772a, type: 2}
   - first:
@@ -159,7 +164,7 @@ ModelImporter:
     skinWeightsMode: 0
     maxBonesPerVertex: 4
     minBoneWeight: 0.001
-    meshOptimizationFlags: -1
+    meshOptimizationFlags: 0
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001

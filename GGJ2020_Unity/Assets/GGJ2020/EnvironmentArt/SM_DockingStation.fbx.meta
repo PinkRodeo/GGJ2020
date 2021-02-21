@@ -14,6 +14,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: M_INT_DockingStation
     second: {fileID: 2100000, guid: 5f9cff7874035834485e05fd37007d10, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_PlayerEm
+    second: {fileID: 2100000, guid: 529744fef6504be4a85bbb3dbf96de47, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
