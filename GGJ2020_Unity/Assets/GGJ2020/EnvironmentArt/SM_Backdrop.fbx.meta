@@ -24,6 +24,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: M_Backdrop_02
     second: {fileID: 2100000, guid: 6350bfe822dbeef44874c3f02637fd43, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.001
+    second: {fileID: 2100000, guid: 43f15628cd7439649929295279093ac4, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

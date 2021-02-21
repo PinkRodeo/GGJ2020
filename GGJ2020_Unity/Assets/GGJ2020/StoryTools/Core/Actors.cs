@@ -187,7 +187,7 @@ public static class Actors
 		{
 			_Shoes = new Actor(E_ActorCategory.Phone,
 							E_ActorType.Shoes,
-							Color.red,
+							Color.green,
 							"Scott's Shoes");
 		}
 
