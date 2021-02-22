@@ -21,9 +21,6 @@ public class Gamemode : MonoBehaviour
         {rooms.EndGameMenu, new string[]{"EndScreen"} },
         { rooms.Game, new string[] { "Environment" }},
     };
-
-    [SerializeField]
-    rooms activeRoom = rooms.MainMenu;
     #endregion
 
     static EventUIScriptableObject uiSettings;

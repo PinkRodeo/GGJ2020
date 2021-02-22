@@ -8,8 +8,9 @@ namespace GGJ2020.NarrativeSystem
 	{
 		private static readonly SerializableDictionary<string, SerializableDictionary<string, DialogueEntry>> narrative;
 
-		private static INarrativeAudioPlayer audioPlayer = null;
-		private static INarrativeIconGetter iconGetter = null;
+		// Commented out because it was causing warnings
+		// private static INarrativeAudioPlayer audioPlayer = null;
+		// private static INarrativeIconGetter iconGetter = null;
 
 		static NarrativeManager()
 		{
