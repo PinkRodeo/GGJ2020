@@ -7,14 +7,24 @@ using FMODUnity;
 [RequireComponent(typeof(CinemachineVirtualCamera))]
 public class OnCameraSwitch : MonoBehaviour
 {
-    public CameraText camtext;
+    public CameraText cameraTextUI;
     CinemachineVirtualCamera cam;
     StudioEventEmitter emitter;
     [SerializeField]
-    int room;
+    int roomId;
+
+    [SerializeField]
+    private string cameraText;
+
+    private bool _HasTriggeredAudioChange = false;
 
     void Awake()
     {
+        if (cameraText == null)
+        {
+            Debug.LogError("Missing reference to camera text UI");
+        }
+
         cam = GetComponent<CinemachineVirtualCamera>();
         emitter = transform.parent.gameObject.GetComponent<StudioEventEmitter>();
         if (emitter == null)
@@ -28,7 +38,6 @@ public class OnCameraSwitch : MonoBehaviour
 
     }
 
-    private bool _HasSet = false;
 
     // Start is called before the first frame update
     void Start()
@@ -36,11 +45,12 @@ public class OnCameraSwitch : MonoBehaviour
         cam.m_Transitions.m_OnCameraLive.AddListener(
             (a, b) =>
             {
-                if (!_HasSet)
+                cameraTextUI.SetLabel(cameraText);
+
+                if (!_HasTriggeredAudioChange)
                 {
-                    _HasSet = true;
-                    emitter.SetParameter("Room", room);
-                    camtext.SetRoom(room);
+                    _HasTriggeredAudioChange = true;
+                    emitter.SetParameter("Room", roomId);
                 }
             });
     }
