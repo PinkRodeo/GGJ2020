@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using DG.Tweening;
 
 public class OnItemInteractUI : MonoBehaviour
@@ -11,7 +9,7 @@ public class OnItemInteractUI : MonoBehaviour
     public static void SetActive(bool enabled)
     {
         instance.Toggle(enabled);
-        
+
     }
 
     void Toggle(bool enabled)

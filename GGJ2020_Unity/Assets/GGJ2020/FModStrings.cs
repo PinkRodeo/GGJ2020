@@ -9,5 +9,5 @@ public static class FModStrings
     public static readonly string ChoiceSubmit = "event:/Choices_ChoiceSelected";
     public static readonly string ListAppear = "event:/Choices_ListAppears";
     public static readonly string Music = "event:/Music";
-    
+
 }

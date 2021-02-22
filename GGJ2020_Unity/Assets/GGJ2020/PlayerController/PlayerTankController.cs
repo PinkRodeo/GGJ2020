@@ -8,262 +8,262 @@ using UnityEngine.SceneManagement;
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerTankController : MonoBehaviour
 {
-	private Rigidbody rigidBody;
+    private Rigidbody rigidBody;
 
-	[SerializeField] float rotationSpeed = 5f;
-	[SerializeField] float movementSpeed = 5f;
+    [SerializeField] float rotationSpeed = 5f;
+    [SerializeField] float movementSpeed = 5f;
 
-	private Vector2 movementInput = Vector2.zero;
+    private Vector2 movementInput = Vector2.zero;
 
-	private float currentMovementSpeed = 0f;
+    private float currentMovementSpeed = 0f;
 
-	private float rotationChangeSpeed = 0f;
-	private float currentRotationSpeed = 0f;
+    private float rotationChangeSpeed = 0f;
+    private float currentRotationSpeed = 0f;
 
-	private float previousAudioSpeed = 0f;
-	private IInteractable currentInteractable;
-	private StudioEventEmitter emitterOutline;
-	private StudioEventEmitter emitterInteract;
-	private StudioEventEmitter emitterDriving;
+    private float previousAudioSpeed = 0f;
+    private IInteractable currentInteractable;
+    private StudioEventEmitter emitterOutline;
+    private StudioEventEmitter emitterInteract;
+    private StudioEventEmitter emitterDriving;
 
-	private bool _wasFullyStopped = true;
+    private bool _wasFullyStopped = true;
 
-	public void MovementInput(InputAction.CallbackContext context)
-	{
-		movementInput = context.ReadValue<Vector2>();
-	}
+    public void MovementInput(InputAction.CallbackContext context)
+    {
+        movementInput = context.ReadValue<Vector2>();
+    }
 
-	public void InteractInput(InputAction.CallbackContext context)
-	{
-		if (currentInteractable != null && IsMovementInputAllowed() && currentInteractable.CanInteractWith())
-		{
-			if (emitterInteract == null)
-			{
-				SetupAudioEmitters();
-			}
-			emitterInteract.Play();
-			currentInteractable.OnInteract();
-		}
-	}
+    public void InteractInput(InputAction.CallbackContext context)
+    {
+        if (currentInteractable != null && IsMovementInputAllowed() && currentInteractable.CanInteractWith())
+        {
+            if (emitterInteract == null)
+            {
+                SetupAudioEmitters();
+            }
+            emitterInteract.Play();
+            currentInteractable.OnInteract();
+        }
+    }
 
-	public bool IsMovementInputAllowed()
-	{
-		return !StoryManager.Instance.IsEventActive();
-	}
+    public bool IsMovementInputAllowed()
+    {
+        return !StoryManager.Instance.IsEventActive();
+    }
 
-	private static PlayerTankController _singleInstance;
+    private static PlayerTankController _singleInstance;
 
-	void Awake()
-	{
-		if (_singleInstance != null)
-		{
-			Object.Destroy(gameObject);
-			return;
-		}
-		rigidBody = GetComponent<Rigidbody>();
-		SetupAudioEmitters();
-		DontDestroyOnLoad(gameObject);
-		_singleInstance = this;
+    void Awake()
+    {
+        if (_singleInstance != null)
+        {
+            Object.Destroy(gameObject);
+            return;
+        }
+        rigidBody = GetComponent<Rigidbody>();
+        SetupAudioEmitters();
+        DontDestroyOnLoad(gameObject);
+        _singleInstance = this;
 
-		SceneManager.sceneLoaded += (Scene scene, LoadSceneMode mode) =>
-		{
-			currentInteractable = null;
-			SetupAudioEmitters();
-		};
-	}
+        SceneManager.sceneLoaded += (Scene scene, LoadSceneMode mode) =>
+        {
+            currentInteractable = null;
+            SetupAudioEmitters();
+        };
+    }
 
-	void Start()
-	{
-		Gamemode.RegisterPlayer(this);
-	}
+    void Start()
+    {
+        Gamemode.RegisterPlayer(this);
+    }
 
-	void Update()
-	{
-		if (currentInteractable != null)
-		{
-			if (IsMovementInputAllowed())
-			{
-				if (currentInteractable.GetInteractType() == E_InteractType.OnOverlap)
-				{
-					OnItemInteractUI.SetActive(false);
+    void Update()
+    {
+        if (currentInteractable != null)
+        {
+            if (IsMovementInputAllowed())
+            {
+                if (currentInteractable.GetInteractType() == E_InteractType.OnOverlap)
+                {
+                    OnItemInteractUI.SetActive(false);
 
-					return;
-				}
+                    return;
+                }
 
-				if (!currentInteractable.CanInteractWith())
-				{
-					OnItemInteractUI.SetActive(false);
-					return;
-				}
+                if (!currentInteractable.CanInteractWith())
+                {
+                    OnItemInteractUI.SetActive(false);
+                    return;
+                }
 
-				currentInteractable.OnHover();
-				OnItemInteractUI.SetActive(true);
-			}
-			else
-			{
-				if (!currentInteractable.CanInteractWith())
-				{
-					OnItemInteractUI.SetActive(false);
-					return;
-				}
+                currentInteractable.OnHover();
+                OnItemInteractUI.SetActive(true);
+            }
+            else
+            {
+                if (!currentInteractable.CanInteractWith())
+                {
+                    OnItemInteractUI.SetActive(false);
+                    return;
+                }
 
-				OnItemInteractUI.SetActive(false);
-			}
-		}
-	}
+                OnItemInteractUI.SetActive(false);
+            }
+        }
+    }
 
-	void FixedUpdate()
-	{
-		if (emitterDriving == null)
-		{
-			SetupAudioEmitters();
-		}
+    void FixedUpdate()
+    {
+        if (emitterDriving == null)
+        {
+            SetupAudioEmitters();
+        }
 
-		if (!IsMovementInputAllowed())
-		{
-			rigidBody.velocity = Vector3.zero;
-			rigidBody.angularVelocity = Vector3.zero;
+        if (!IsMovementInputAllowed())
+        {
+            rigidBody.velocity = Vector3.zero;
+            rigidBody.angularVelocity = Vector3.zero;
 
-			emitterDriving.SetParameter("RobotSpeed", .00f);
-			emitterDriving.Stop();
+            emitterDriving.SetParameter("RobotSpeed", .00f);
+            emitterDriving.Stop();
 
-			_wasFullyStopped = true;
+            _wasFullyStopped = true;
 
-			return;
-		}
+            return;
+        }
 
-		if (Mathf.Abs(movementInput.x) > 0f)
-		{
-			currentRotationSpeed = Mathf.SmoothDamp(currentRotationSpeed, rotationSpeed * movementInput.x, ref rotationChangeSpeed, 0.2f, 20f, Time.fixedDeltaTime);
-		}
-		else
-		{
-			currentRotationSpeed = Mathf.SmoothDamp(currentRotationSpeed, rotationSpeed * movementInput.x, ref rotationChangeSpeed, 0.15f, 50f, Time.fixedDeltaTime);
-		}
+        if (Mathf.Abs(movementInput.x) > 0f)
+        {
+            currentRotationSpeed = Mathf.SmoothDamp(currentRotationSpeed, rotationSpeed * movementInput.x, ref rotationChangeSpeed, 0.2f, 20f, Time.fixedDeltaTime);
+        }
+        else
+        {
+            currentRotationSpeed = Mathf.SmoothDamp(currentRotationSpeed, rotationSpeed * movementInput.x, ref rotationChangeSpeed, 0.15f, 50f, Time.fixedDeltaTime);
+        }
 
-		if (Mathf.Abs(movementInput.y) > 0f)
-		{
-			currentMovementSpeed = Mathf.Lerp(currentMovementSpeed, movementInput.y * movementSpeed, 0.17f);
-		}
-		else
-		{
-			currentMovementSpeed = Mathf.Lerp(currentMovementSpeed, movementInput.y * movementSpeed, 0.28f);
-		}
+        if (Mathf.Abs(movementInput.y) > 0f)
+        {
+            currentMovementSpeed = Mathf.Lerp(currentMovementSpeed, movementInput.y * movementSpeed, 0.17f);
+        }
+        else
+        {
+            currentMovementSpeed = Mathf.Lerp(currentMovementSpeed, movementInput.y * movementSpeed, 0.28f);
+        }
 
-		rigidBody.velocity = Vector3.Lerp(rigidBody.velocity, transform.forward * currentMovementSpeed, 0.14f);
+        rigidBody.velocity = Vector3.Lerp(rigidBody.velocity, transform.forward * currentMovementSpeed, 0.14f);
 
-		var rotationModifier = Mathf.Abs(currentMovementSpeed);
+        var rotationModifier = Mathf.Abs(currentMovementSpeed);
 
-		rigidBody.MoveRotation(Quaternion.Euler(rigidBody.rotation.eulerAngles + new Vector3(0, Mathf.Lerp(currentRotationSpeed, currentRotationSpeed * 0.7f, rotationModifier), 0)));
+        rigidBody.MoveRotation(Quaternion.Euler(rigidBody.rotation.eulerAngles + new Vector3(0, Mathf.Lerp(currentRotationSpeed, currentRotationSpeed * 0.7f, rotationModifier), 0)));
 
-		var nextSpeed = Mathf.Clamp(movementInput.magnitude, 0f, 1f);
-		if (nextSpeed > previousAudioSpeed)
-		{
-			nextSpeed = Mathf.MoveTowards(previousAudioSpeed, nextSpeed, 0.5f * Time.fixedDeltaTime);
-		}
+        var nextSpeed = Mathf.Clamp(movementInput.magnitude, 0f, 1f);
+        if (nextSpeed > previousAudioSpeed)
+        {
+            nextSpeed = Mathf.MoveTowards(previousAudioSpeed, nextSpeed, 0.5f * Time.fixedDeltaTime);
+        }
 
-		var speed = Mathf.Max(nextSpeed, previousAudioSpeed);
-		if (_wasFullyStopped)
-		{
-			if (movementInput.magnitude > 0.2f)
-			{
-				_wasFullyStopped = false;
-			}
-			else
-			{
-				return;
-			}
-		}
-		if (speed < .05f)
-		{
-			emitterDriving.SetParameter("RobotSpeed", .05f);
-		}
-		else
-		{
-			emitterDriving.SetParameter("RobotSpeed", speed);
-			if (!emitterDriving.IsPlaying())
-				emitterDriving.Play();
-		}
+        var speed = Mathf.Max(nextSpeed, previousAudioSpeed);
+        if (_wasFullyStopped)
+        {
+            if (movementInput.magnitude > 0.2f)
+            {
+                _wasFullyStopped = false;
+            }
+            else
+            {
+                return;
+            }
+        }
+        if (speed < .05f)
+        {
+            emitterDriving.SetParameter("RobotSpeed", .05f);
+        }
+        else
+        {
+            emitterDriving.SetParameter("RobotSpeed", speed);
+            if (!emitterDriving.IsPlaying())
+                emitterDriving.Play();
+        }
 
-		if (movementInput.magnitude < 0.5f)
-			previousAudioSpeed = speed - ((1f / 2f) * Time.fixedDeltaTime);
-		else
-			previousAudioSpeed = speed;
+        if (movementInput.magnitude < 0.5f)
+            previousAudioSpeed = speed - ((1f / 2f) * Time.fixedDeltaTime);
+        else
+            previousAudioSpeed = speed;
 
-	}
+    }
 
-	void OnTriggerEnter(Collider collider)
-	{
-		IInteractable targetObj = collider.GetComponent<IInteractable>();
-		if (targetObj != null)
-		{
-			if (targetObj.GetEnterCollider() == collider)
-			{
-				StartInteracting(targetObj);
-			}
-		}
-	}
+    void OnTriggerEnter(Collider collider)
+    {
+        IInteractable targetObj = collider.GetComponent<IInteractable>();
+        if (targetObj != null)
+        {
+            if (targetObj.GetEnterCollider() == collider)
+            {
+                StartInteracting(targetObj);
+            }
+        }
+    }
 
-	void OnTriggerExit(Collider collider)
-	{
-		IInteractable targetObj = collider.GetComponent<IInteractable>();
-		if (targetObj != null)
-		{
-			if (targetObj == currentInteractable)
-			{
-				if (targetObj.GetExitCollider() == collider)
-				{
-					StopInteracting();
-				}
-			}
+    void OnTriggerExit(Collider collider)
+    {
+        IInteractable targetObj = collider.GetComponent<IInteractable>();
+        if (targetObj != null)
+        {
+            if (targetObj == currentInteractable)
+            {
+                if (targetObj.GetExitCollider() == collider)
+                {
+                    StopInteracting();
+                }
+            }
 
-		}
-	}
+        }
+    }
 
-	private void StartInteracting(IInteractable interactable)
-	{
-		if (!interactable.CanInteractWith())
-		{
-			return;
-		}
+    private void StartInteracting(IInteractable interactable)
+    {
+        if (!interactable.CanInteractWith())
+        {
+            return;
+        }
 
-		if (currentInteractable != null)
-		{
-			StopInteracting();
-		}
+        if (currentInteractable != null)
+        {
+            StopInteracting();
+        }
 
-		currentInteractable = interactable;
-		interactable.OnEnter();
+        currentInteractable = interactable;
+        interactable.OnEnter();
 
-		if (interactable.GetInteractType() == E_InteractType.OnOverlap)
-		{
-			return;
-		}
+        if (interactable.GetInteractType() == E_InteractType.OnOverlap)
+        {
+            return;
+        }
 
-		OnItemInteractUI.SetActive(true);
-		if (emitterOutline == null)
-		{
-			SetupAudioEmitters();
-		}
-		emitterOutline.Play();
+        OnItemInteractUI.SetActive(true);
+        if (emitterOutline == null)
+        {
+            SetupAudioEmitters();
+        }
+        emitterOutline.Play();
 
-	}
+    }
 
-	private void StopInteracting()
-	{
-		OnItemInteractUI.SetActive(false);
-		currentInteractable.OnExit();
-		currentInteractable = null;
-	}
+    private void StopInteracting()
+    {
+        OnItemInteractUI.SetActive(false);
+        currentInteractable.OnExit();
+        currentInteractable = null;
+    }
 
-	void SetupAudioEmitters()
-	{
-		emitterOutline = gameObject.AddComponent<StudioEventEmitter>();
-		emitterInteract = gameObject.AddComponent<StudioEventEmitter>();
-		emitterDriving = gameObject.AddComponent<StudioEventEmitter>();
+    void SetupAudioEmitters()
+    {
+        emitterOutline = gameObject.AddComponent<StudioEventEmitter>();
+        emitterInteract = gameObject.AddComponent<StudioEventEmitter>();
+        emitterDriving = gameObject.AddComponent<StudioEventEmitter>();
 
-		emitterOutline.Event = "event:/Interact_OutlineAppears";
-		emitterInteract.Event = "event:/Interact_InteractConfirmed";
-		emitterDriving.Event = "event:/RobotMovement";
-	}
+        emitterOutline.Event = "event:/Interact_OutlineAppears";
+        emitterInteract.Event = "event:/Interact_InteractConfirmed";
+        emitterDriving.Event = "event:/RobotMovement";
+    }
 }

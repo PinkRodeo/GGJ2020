@@ -2,8 +2,8 @@
 
 namespace GGJ2020.NarrativeSystem
 {
-	public interface INarrativeIconGetter
-	{
-		Sprite GetIcon(string iconString);
-	}
+    public interface INarrativeIconGetter
+    {
+        Sprite GetIcon(string iconString);
+    }
 }

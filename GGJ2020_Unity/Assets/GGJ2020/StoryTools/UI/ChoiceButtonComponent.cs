@@ -9,136 +9,136 @@ using UnityEngine.EventSystems;
 
 public class ChoiceButtonComponent : MonoBehaviour, IPointerEnterHandler, ISelectHandler, ISubmitHandler, IPointerDownHandler
 {
-	public TextMeshProUGUI choiceText;
+    public TextMeshProUGUI choiceText;
 
-	public Choice currentChoice;
+    public Choice currentChoice;
 
-	public Button button;
+    public Button button;
 
-	public CanvasGroup choiceButtonGroup;
+    public CanvasGroup choiceButtonGroup;
 
-	private StudioEventEmitter EmitterSelect;
-	private StudioEventEmitter EmitterSubmit;
-	private StudioEventEmitter EmitterAppear;
-	private EventUIScriptableObject uiTypes;
+    private StudioEventEmitter EmitterSelect;
+    private StudioEventEmitter EmitterSubmit;
+    private StudioEventEmitter EmitterAppear;
+    private EventUIScriptableObject uiTypes;
 
-	public void Awake()
-	{
-		SetVisible(false);
+    public void Awake()
+    {
+        SetVisible(false);
 
-		uiTypes = Gamemode.GetUiSettings();
+        uiTypes = Gamemode.GetUiSettings();
 
-		EmitterSelect = gameObject.AddComponent<StudioEventEmitter>();
-		EmitterSelect.Event = FModStrings.ChoiceHover;
-		EmitterSubmit = gameObject.AddComponent<StudioEventEmitter>();
-		EmitterSubmit.Event = FModStrings.ChoiceClick;
-		EmitterAppear = gameObject.AddComponent<StudioEventEmitter>();
-		EmitterAppear.Event = FModStrings.ListAppear;
+        EmitterSelect = gameObject.AddComponent<StudioEventEmitter>();
+        EmitterSelect.Event = FModStrings.ChoiceHover;
+        EmitterSubmit = gameObject.AddComponent<StudioEventEmitter>();
+        EmitterSubmit.Event = FModStrings.ChoiceClick;
+        EmitterAppear = gameObject.AddComponent<StudioEventEmitter>();
+        EmitterAppear.Event = FModStrings.ListAppear;
 
-		button.onClick.AddListener(delegate
-		{
-			if (currentChoice == null)
-			{
-				Debug.LogError("Button shouldn't have beenn interactable");
-				return;
-			}
-			currentChoice.Select();
-		});
+        button.onClick.AddListener(delegate
+        {
+            if (currentChoice == null)
+            {
+                Debug.LogError("Button shouldn't have beenn interactable");
+                return;
+            }
+            currentChoice.Select();
+        });
 
-		uiTypes = Gamemode.GetUiSettings();
-	}
+        uiTypes = Gamemode.GetUiSettings();
+    }
 
-	public void SetVisible(bool isVisible)
-	{
-		if (isVisible)
-		{
-			choiceButtonGroup.DOFade(1.0f, 0.5f).SetEase(Ease.OutSine);
-		}
-		else
-		{
-			choiceButtonGroup.DOFade(0.0f, 0.1f).SetEase(Ease.InSine);
-		}
+    public void SetVisible(bool isVisible)
+    {
+        if (isVisible)
+        {
+            choiceButtonGroup.DOFade(1.0f, 0.5f).SetEase(Ease.OutSine);
+        }
+        else
+        {
+            choiceButtonGroup.DOFade(0.0f, 0.1f).SetEase(Ease.InSine);
+        }
 
-		button.interactable = isVisible;
-	}
+        button.interactable = isVisible;
+    }
 
-	public void SetToChoice(Choice choice)
-	{
-		//TODO fix this sound
-		E_ActorCategory category = choice.ParentEvent.EventActor.ActorCategory;
+    public void SetToChoice(Choice choice)
+    {
+        //TODO fix this sound
+        E_ActorCategory category = choice.ParentEvent.EventActor.ActorCategory;
 
-		var data = uiTypes.GetDataForCategory(category);
-
-
-		EmitterAppear.Play();
-		if (data == null)
-		{
-			Debug.LogError($"No UI data found for {choice.ParentEvent.EventActor.ActorCategory}");
-			return;
-		}
-
-		currentChoice = choice;
-		SetVisible(true);
-		choiceText.text = choice.Text;
-
-		choiceText.font = data.font;
-		//choiceText.UpdateFontAsset();
-		choiceText.alignment = TextAlignmentOptions.Left;
-		choiceText.font = data.font;
-
-		var parrentButton = choiceText.GetComponentInParent<Button>();
-		var parrentImage = choiceText.GetComponentInParent<Image>();
-
-		var spriteState = parrentButton.spriteState;
-		spriteState.pressedSprite = data.PressedSprite;
-		spriteState.selectedSprite = data.SelectedSprite;
-		spriteState.highlightedSprite = data.SelectedSprite;
-		parrentButton.spriteState = spriteState;
-		parrentImage.sprite = data.DefaultSprite;
-	}
-
-	public void ClearChoice()
-	{
-		SetVisible(false);
-		currentChoice = null;
-	}
+        var data = uiTypes.GetDataForCategory(category);
 
 
-	#region Audio Handlers
-	public void OnPointerDown(PointerEventData eventData)
-	{
-		if (button.interactable)
-			SubmitEvent();
+        EmitterAppear.Play();
+        if (data == null)
+        {
+            Debug.LogError($"No UI data found for {choice.ParentEvent.EventActor.ActorCategory}");
+            return;
+        }
 
-	}
-	public void OnPointerEnter(PointerEventData eventData)
-	{
-		if (button.interactable)
-			HoverEvent();
-	}
+        currentChoice = choice;
+        SetVisible(true);
+        choiceText.text = choice.Text;
 
-	public void OnSelect(BaseEventData eventData)
-	{
-		HoverEvent();
-	}
+        choiceText.font = data.font;
+        //choiceText.UpdateFontAsset();
+        choiceText.alignment = TextAlignmentOptions.Left;
+        choiceText.font = data.font;
 
-	public void OnSubmit(BaseEventData eventData)
-	{
-		SubmitEvent();
-	}
+        var parrentButton = choiceText.GetComponentInParent<Button>();
+        var parrentImage = choiceText.GetComponentInParent<Image>();
+
+        var spriteState = parrentButton.spriteState;
+        spriteState.pressedSprite = data.PressedSprite;
+        spriteState.selectedSprite = data.SelectedSprite;
+        spriteState.highlightedSprite = data.SelectedSprite;
+        parrentButton.spriteState = spriteState;
+        parrentImage.sprite = data.DefaultSprite;
+    }
+
+    public void ClearChoice()
+    {
+        SetVisible(false);
+        currentChoice = null;
+    }
 
 
-	void HoverEvent()
-	{
-		// Emitter.Event = FModStrings.ChoiceClick;
+    #region Audio Handlers
+    public void OnPointerDown(PointerEventData eventData)
+    {
+        if (button.interactable)
+            SubmitEvent();
 
-		EmitterSelect.Play();
-	}
-	void SubmitEvent()
-	{
+    }
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        if (button.interactable)
+            HoverEvent();
+    }
 
-		EmitterSubmit.Play();
-	}
-	#endregion
+    public void OnSelect(BaseEventData eventData)
+    {
+        HoverEvent();
+    }
+
+    public void OnSubmit(BaseEventData eventData)
+    {
+        SubmitEvent();
+    }
+
+
+    void HoverEvent()
+    {
+        // Emitter.Event = FModStrings.ChoiceClick;
+
+        EmitterSelect.Play();
+    }
+    void SubmitEvent()
+    {
+
+        EmitterSubmit.Play();
+    }
+    #endregion
 
 }

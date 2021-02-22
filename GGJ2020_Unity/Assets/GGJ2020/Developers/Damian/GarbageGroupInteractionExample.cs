@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class GarbageGroupInteractionExample : MonoBehaviour
 {
-	// Start is called before the first frame update
-	void Start()
-	{
-		GarbageGroup.BindToFinish(GroupName.testGroup, () => { print("finished"); });
-	}
+    // Start is called before the first frame update
+    void Start()
+    {
+        GarbageGroup.BindToFinish(GroupName.testGroup, () => { print("finished"); });
+    }
 }

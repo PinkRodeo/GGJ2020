@@ -6,49 +6,49 @@ using VDFramework.Utility;
 
 namespace Utility
 {
-	[Serializable]
-	public class SerializableEnumDictionary<TKey, TValue> : SerializableDictionary<TKey, TValue>
-		where TKey : struct, Enum
-	{
-		public static implicit operator SerializableEnumDictionary<TKey, TValue>(List<SerializableKeyValuePair<TKey, TValue>> list)
-		{
-			return new SerializableEnumDictionary<TKey, TValue>(list);
-		}
+    [Serializable]
+    public class SerializableEnumDictionary<TKey, TValue> : SerializableDictionary<TKey, TValue>
+        where TKey : struct, Enum
+    {
+        public static implicit operator SerializableEnumDictionary<TKey, TValue>(List<SerializableKeyValuePair<TKey, TValue>> list)
+        {
+            return new SerializableEnumDictionary<TKey, TValue>(list);
+        }
 
-		public static implicit operator SerializableEnumDictionary<TKey, TValue>(Dictionary<TKey, TValue> dictionary)
-		{
-			return new SerializableEnumDictionary<TKey, TValue>(dictionary);
-		}
-		
-		public static implicit operator Dictionary<TKey, TValue>(SerializableEnumDictionary<TKey, TValue> serializableDictionary)
-		{
-			return serializableDictionary.InternalList.ToDictionary(pair => pair.Key, keyValuePair => keyValuePair.Value);
-		}
+        public static implicit operator SerializableEnumDictionary<TKey, TValue>(Dictionary<TKey, TValue> dictionary)
+        {
+            return new SerializableEnumDictionary<TKey, TValue>(dictionary);
+        }
 
-		public SerializableEnumDictionary(IEnumerable<SerializableKeyValuePair<TKey, TValue>> list) : base(list)
-		{
-		}
+        public static implicit operator Dictionary<TKey, TValue>(SerializableEnumDictionary<TKey, TValue> serializableDictionary)
+        {
+            return serializableDictionary.InternalList.ToDictionary(pair => pair.Key, keyValuePair => keyValuePair.Value);
+        }
 
-		public SerializableEnumDictionary(params SerializableKeyValuePair<TKey, TValue>[] keyValuePairs) : base(keyValuePairs.Distinct())
-		{
-		}
+        public SerializableEnumDictionary(IEnumerable<SerializableKeyValuePair<TKey, TValue>> list) : base(list)
+        {
+        }
 
-		public SerializableEnumDictionary(Dictionary<TKey, TValue> dictionary) : base(dictionary)
-		{
-		}
+        public SerializableEnumDictionary(params SerializableKeyValuePair<TKey, TValue>[] keyValuePairs) : base(keyValuePairs.Distinct())
+        {
+        }
 
-		public override void OnBeforeSerialize()
-		{
-			base.OnBeforeSerialize();
-			Populate();
-		}
-		
-		/// <summary>
-		/// Automatically fills the dictionary with an entry for every enum value
-		/// </summary>
-		public void Populate()
-		{
-			EnumDictionaryUtil.PopulateEnumDictionary<SerializableKeyValuePair<TKey, TValue>, TKey, TValue>(SerializedDictionary);
-		}
-	}
+        public SerializableEnumDictionary(Dictionary<TKey, TValue> dictionary) : base(dictionary)
+        {
+        }
+
+        public override void OnBeforeSerialize()
+        {
+            base.OnBeforeSerialize();
+            Populate();
+        }
+
+        /// <summary>
+        /// Automatically fills the dictionary with an entry for every enum value
+        /// </summary>
+        public void Populate()
+        {
+            EnumDictionaryUtil.PopulateEnumDictionary<SerializableKeyValuePair<TKey, TValue>, TKey, TValue>(SerializedDictionary);
+        }
+    }
 }
