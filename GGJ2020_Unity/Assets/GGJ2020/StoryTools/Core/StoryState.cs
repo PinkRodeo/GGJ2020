@@ -36,10 +36,8 @@ public enum E_ThrowawayType
 	Headset,
 	Phone_A_Scott,
 	Capsules_B,
-
+	Shoes,
 	Phone_B_Jen,
-
-
 	Vape,
 }
 
@@ -89,6 +87,7 @@ public class StoryState : Singleton<StoryState>
 				State_Headset == E_ThrowawayState.ThrownInHomeStation &&
 				State_Phone_A_Scott == E_ThrowawayState.ThrownInHomeStation &&
 				State_Capsules_B == E_ThrowawayState.PickedUp &&
+				State_Shoes == E_ThrowawayState.PickedUp &&
 				State_Phone_B_Jen == E_ThrowawayState.PickedUp &&
 				State_Vape == E_ThrowawayState.PickedUp)
 			{
@@ -148,7 +147,7 @@ public class StoryState : Singleton<StoryState>
 		}
 
 		// Threw away all the garbage in the bedroom
-		if (State_Headset == E_ThrowawayState.ThrownInHomeStation && State_Phone_A_Scott == E_ThrowawayState.ThrownInHomeStation)
+		if (State_Headset == E_ThrowawayState.ThrownInHomeStation && State_Phone_A_Scott == E_ThrowawayState.ThrownInHomeStation && State_Shoes == E_ThrowawayState.ThrownInHomeStation)
 		{
 			if (Door_B_State == E_DoorState.Locked)
 			{
@@ -162,6 +161,7 @@ public class StoryState : Singleton<StoryState>
 			State_Headset == E_ThrowawayState.ThrownInHomeStation &&
 			State_Phone_A_Scott == E_ThrowawayState.ThrownInHomeStation &&
 			State_Capsules_B == E_ThrowawayState.PickedUp &&
+			State_Shoes == E_ThrowawayState.PickedUp &&
 			State_Phone_B_Jen == E_ThrowawayState.PickedUp &&
 			State_Vape == E_ThrowawayState.PickedUp &&
 			IntroState != E_AlinnaState.PsychoAIRevealed && IntroState != E_AlinnaState.Done)
@@ -175,6 +175,7 @@ public class StoryState : Singleton<StoryState>
 			State_Headset == E_ThrowawayState.ThrownInHomeStation &&
 			State_Phone_A_Scott == E_ThrowawayState.ThrownInHomeStation &&
 			State_Capsules_B == E_ThrowawayState.ThrownInHomeStation &&
+			State_Shoes == E_ThrowawayState.ThrownInHomeStation &&
 			State_Phone_B_Jen == E_ThrowawayState.ThrownInHomeStation &&
 			State_Vape == E_ThrowawayState.ThrownInHomeStation &&
 			IntroState != E_AlinnaState.Done)
@@ -336,6 +337,29 @@ public class StoryState : Singleton<StoryState>
 		}
 	}
 
+	public ThrowawayChangedDelegate OnChanged_Shoes;
+	private E_ThrowawayState _stateShoes = E_ThrowawayState.OnFloor;
+
+	public E_ThrowawayState State_Shoes
+	{
+		get
+		{
+			return _stateShoes;
+		}
+		set
+		{
+			if (_stateShoes == value)
+				return;
+
+			_stateShoes = value;
+
+			if (OnChanged_Shoes != null)
+				OnChanged_Shoes(_stateShoes);
+
+			OnStoryStateChanged();
+		}
+	}
+
 	public DoorChangedDelegate OnDoorBChanged;
 
 	private E_DoorState _doorBState = E_DoorState.Locked;
@@ -445,6 +469,7 @@ public class StoryState : Singleton<StoryState>
 		State_Capsules_A = E_ThrowawayState.OnFloor;
 		State_Headset = E_ThrowawayState.OnFloor;
 		State_Phone_A_Scott = E_ThrowawayState.OnFloor;
+		State_Shoes = E_ThrowawayState.OnFloor;
 		Door_B_State = E_DoorState.Locked;
 		State_Capsules_B = E_ThrowawayState.OnFloor;
 		State_Vape = E_ThrowawayState.OnFloor;

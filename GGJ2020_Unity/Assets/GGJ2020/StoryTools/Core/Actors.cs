@@ -47,6 +47,7 @@ public enum E_ActorType
 
 	Headset,
 	Capsules,
+	Shoes,
 }
 
 public static class Actors
@@ -177,6 +178,20 @@ public static class Actors
 		}
 
 		return _Phone_Scott;
+	}
+
+	private static Actor _Shoes;
+	public static Actor Shoes()
+	{
+		if (_Shoes == null)
+		{
+			_Shoes = new Actor(E_ActorCategory.Phone,
+							E_ActorType.Shoes,
+							Color.green,
+							"Scott's Shoes");
+		}
+
+		return _Shoes;
 	}
 
 	private static Actor _Phone_Jen;

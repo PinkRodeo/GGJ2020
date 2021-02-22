@@ -27,6 +27,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: M_PlayerBody02
+    second: {fileID: 2100000, guid: e35db3dd28436cb42a4a2d7d319f8c61, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: M_PlayerEm
     second: {fileID: 2100000, guid: 529744fef6504be4a85bbb3dbf96de47, type: 2}
   - first:
@@ -71,7 +76,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     useSRGBMaterialColor: 1
     sortHierarchyByName: 1
     importVisibility: 1
@@ -102,8 +107,8 @@ ModelImporter:
   tangentSpace:
     normalSmoothAngle: 30
     normalImportMode: 0
-    tangentImportMode: 3
-    normalCalculationMode: 4
+    tangentImportMode: 2
+    normalCalculationMode: 3
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0

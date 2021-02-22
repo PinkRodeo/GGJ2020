@@ -116,7 +116,7 @@ Material:
     - Color_822c43bc6b72482a8a54bfa7a4945922: {r: 1, g: 0.30884862, b: 0, a: 0}
     - Color_c4a2637f0a6e489abd039fd6cae7ed74: {r: 0, g: 1, b: 0.08463907, a: 0}
     - Color_d71543a183494c40bcca54579dcc8329: {r: 0, g: 0, b: 0, a: 0}
-    - Color_f9bd1708daf74d988209959479c85d1c: {r: 1, g: 1, b: 1, a: 0}
+    - Color_f9bd1708daf74d988209959479c85d1c: {r: 1, g: 0, b: 0.051016808, a: 0}
     - EmissionCol: {r: 23.968628, g: 0.3764706, b: 0, a: 0}
     - MetallicMinMax: {r: 0, g: 0, b: 0, a: 0}
     - SmoothnessMinMax: {r: 0, g: 0.8, b: 0, a: 0}

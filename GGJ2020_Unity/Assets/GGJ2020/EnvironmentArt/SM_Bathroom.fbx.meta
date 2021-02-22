@@ -12,6 +12,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: M_Dirt
+    second: {fileID: 2100000, guid: 3c4301e098e27674d8603dc8258eee8f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: M_EmBlue
     second: {fileID: 2100000, guid: d2410b648ee661a48b778af6643b4f49, type: 2}
   - first:
@@ -28,12 +33,17 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: M_LIghtFixture
-    second: {fileID: 2100000, guid: a550e3753001c9c4e8a32880dc14d51b, type: 2}
+    second: {fileID: 2100000, guid: 16a6e48eea6aaff4da99fd380e06a316, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: M_Plants
     second: {fileID: 2100000, guid: 8761d6fe0ac83644182f1d06ae19d782, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Plants_D
+    second: {fileID: 2100000, guid: d3351cd1a298960438bd9f382f0e789a, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule

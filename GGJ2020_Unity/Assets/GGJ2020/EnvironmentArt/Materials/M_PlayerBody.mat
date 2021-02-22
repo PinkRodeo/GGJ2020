@@ -34,7 +34,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - Albedo:
-        m_Texture: {fileID: 2800000, guid: dffa005b97617e5468ea96cbb1a6d41c, type: 3}
+        m_Texture: {fileID: 2800000, guid: a36d257609b182f47860708ebdbfa041, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Normal:
@@ -138,7 +138,7 @@ Material:
     - Color_822c43bc6b72482a8a54bfa7a4945922: {r: 0, g: 0, b: 0, a: 0}
     - Color_f9bd1708daf74d988209959479c85d1c: {r: 0.8301887, g: 0.8301887, b: 0.8301887,
         a: 0}
-    - Vector4_06f8886bfcc54434a7a8872646916be3: {r: 0.1, g: 0.1, b: 0, a: 0}
+    - Vector4_06f8886bfcc54434a7a8872646916be3: {r: 1, g: 1, b: 0, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}

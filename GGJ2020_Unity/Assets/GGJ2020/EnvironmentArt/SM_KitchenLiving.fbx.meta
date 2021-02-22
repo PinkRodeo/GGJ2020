@@ -17,6 +17,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: M_CoffeeTable
+    second: {fileID: 2100000, guid: f768c4511a1f7bf4a85cbb4f55a07a70, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: M_DarkMetal
     second: {fileID: 2100000, guid: c75c180f228bef246814db98e6b8a950, type: 2}
   - first:
@@ -42,8 +47,33 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: M_EmYellow
+    second: {fileID: 2100000, guid: b29aeb23779cd30428a2aa124e60177f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Glass
+    second: {fileID: 2100000, guid: c7bc2e7fd20962f488030edabbfd8217, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Glass02
+    second: {fileID: 2100000, guid: 4bd4708d84b84df4fa12163048b3f705, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: M_GreyPlastic
     second: {fileID: 2100000, guid: 799b91a5826b4ce4fb6927bc763fd25b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_KitchenProps
+    second: {fileID: 2100000, guid: 200b7657dbdb04f4a8f9de35e28973b1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_LightMetal
+    second: {fileID: 2100000, guid: e400e6d37a9207d4bb9ee54322cdb6d3, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -57,8 +87,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: M_Plants_D
+    second: {fileID: 2100000, guid: d3351cd1a298960438bd9f382f0e789a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: M_Refrigator
     second: {fileID: 2100000, guid: 4b0a4fe8bfb0dea43a59fd9ef40e5974, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Silver
+    second: {fileID: 2100000, guid: 6c54a4b0f67937f4896190aead0c20c2, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -74,6 +114,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: M_WhitePlastic
     second: {fileID: 2100000, guid: 89d1555885e11f54f9e40e0a4b3b2e29, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Wood
+    second: {fileID: 2100000, guid: c74dce0cc5711c240b6c8d8899e15159, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
