@@ -26,16 +26,16 @@ public static class EventHelper
         return newChoices.ToArray();
     }
 
+    private static Type[] eventTypes = Assembly.GetAssembly(typeof(Event)).GetTypes().Where(t => t != typeof(Event) && typeof(Event).IsAssignableFrom(t)).ToArray();
+    private static string[] eventTypesStrings = eventTypes.Select(t => t.ToString()).ToArray();
+
     public static Event CreateEventByString(string EventID)
     {
-        var derivedType = typeof(Event);
-        var types = Assembly.GetAssembly(derivedType).GetTypes().Where(t => t != derivedType && derivedType.IsAssignableFrom(t)).ToArray();
-
-        for (int i = 0; i < types.Length; i++)
+        for (int i = 0; i < eventTypes.Length; i++)
         {
-            if (types[i].ToString() == EventID)
+            if (eventTypesStrings[i] == EventID)
             {
-                return Activator.CreateInstance(types[i]) as Event;
+                return Activator.CreateInstance(eventTypes[i]) as Event;
             }
         }
 
