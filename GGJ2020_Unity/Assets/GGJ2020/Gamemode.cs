@@ -19,7 +19,7 @@ public class Gamemode : MonoBehaviour
     static readonly Dictionary<rooms, string[]> Rooms = new Dictionary<rooms, string[]> {
         {rooms.MainMenu, new string[]{ "MainMenu"} },
         {rooms.EndGameMenu, new string[]{"EndScreen"} },
-        { rooms.Game, new string[] { "Environment" }},
+        { rooms.Game, new string[] { "ApartmentLevel_01" }},
     };
     #endregion
 
