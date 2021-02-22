@@ -142,7 +142,7 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - ColorTint: {r: 0.8, g: 0.8, b: 0.8, a: 0}
-    - Color_822c43bc6b72482a8a54bfa7a4945922: {r: 0, g: 1, b: 0.61524796, a: 0}
+    - Color_822c43bc6b72482a8a54bfa7a4945922: {r: 0, g: 0, b: 0, a: 0}
     - Color_c4a2637f0a6e489abd039fd6cae7ed74: {r: 0.18396226, g: 0.8693016, b: 1,
         a: 0}
     - Color_f9bd1708daf74d988209959479c85d1c: {r: 0, g: 1, b: 0.49818873, a: 0}

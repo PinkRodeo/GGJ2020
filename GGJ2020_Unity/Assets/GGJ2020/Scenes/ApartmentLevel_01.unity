@@ -1996,7 +1996,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 812913275, guid: 4a6d65176de5a1248bde26daf4ef89c4, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 4.8844147
+      value: 4.8843994
       objectReference: {fileID: 0}
     - target: {fileID: 927945031, guid: 4a6d65176de5a1248bde26daf4ef89c4, type: 3}
       propertyPath: m_Name
@@ -2088,7 +2088,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1407655097, guid: 4a6d65176de5a1248bde26daf4ef89c4, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -20.800476
+      value: -20.800537
       objectReference: {fileID: 0}
     - target: {fileID: 2050576307, guid: 4a6d65176de5a1248bde26daf4ef89c4, type: 3}
       propertyPath: m_Enabled
@@ -3692,6 +3692,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8463532312594686651, guid: af066f2613cea834cae33363b30ae1ca,
         type: 3}
+      propertyPath: _interactType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8463532312594686651, guid: af066f2613cea834cae33363b30ae1ca,
+        type: 3}
       propertyPath: eventToTrigger
       value: Overlap_Door_B
       objectReference: {fileID: 0}
@@ -5258,7 +5263,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1321395649}
-  m_LocalRotation: {x: 0.40106085, y: 0.4456945, z: -0.21605329, w: 0.7706021}
+  m_LocalRotation: {x: 0.40106085, y: 0.44569457, z: -0.21605334, w: 0.77060205}
   m_LocalPosition: {x: 1.3996333, y: 3.4018097, z: -2.401877}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -5359,6 +5364,11 @@ PrefabInstance:
     - target: {fileID: 8463532312594686651, guid: af066f2613cea834cae33363b30ae1ca,
         type: 3}
       propertyPath: interactType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8463532312594686651, guid: af066f2613cea834cae33363b30ae1ca,
+        type: 3}
+      propertyPath: _interactType
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8463532312594686651, guid: af066f2613cea834cae33363b30ae1ca,
@@ -5492,22 +5502,22 @@ PrefabInstance:
     - target: {fileID: 954834340688248936, guid: ac0aa20eda38f7a4e8023a5601f2080c,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7659084
+      value: 0.76590836
       objectReference: {fileID: 0}
     - target: {fileID: 954834340688248936, guid: ac0aa20eda38f7a4e8023a5601f2080c,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.39163896
+      value: 0.39163893
       objectReference: {fileID: 0}
     - target: {fileID: 954834340688248936, guid: ac0aa20eda38f7a4e8023a5601f2080c,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.45399594
+      value: 0.453996
       objectReference: {fileID: 0}
     - target: {fileID: 954834340688248936, guid: ac0aa20eda38f7a4e8023a5601f2080c,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.23214419
+      value: -0.23214422
       objectReference: {fileID: 0}
     - target: {fileID: 954834340688248943, guid: ac0aa20eda38f7a4e8023a5601f2080c,
         type: 3}
@@ -7533,6 +7543,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DoorType: 1
+  _doorIndicatorMaterial: {fileID: 0}
 --- !u!1 &8771697022930591816
 GameObject:
   m_ObjectHideFlags: 0
@@ -7566,6 +7577,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DoorType: 0
+  _doorIndicatorMaterial: {fileID: 0}
 --- !u!65 &8771697022930591818
 BoxCollider:
   m_ObjectHideFlags: 0
