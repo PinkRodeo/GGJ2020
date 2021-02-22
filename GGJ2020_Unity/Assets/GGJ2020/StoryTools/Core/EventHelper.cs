@@ -7,75 +7,79 @@ using UnityEngine;
 
 public static class EventHelper
 {
-	public static string[] GetAllEventStrings()
-	{
-		var derivedType = typeof(Event);
-		var types = Assembly.GetAssembly(derivedType).GetTypes().Where(t => t != derivedType && derivedType.IsAssignableFrom(t)).ToArray();
+    public static string[] GetAllEventStrings()
+    {
+        var derivedType = typeof(Event);
+        var types = Assembly.GetAssembly(derivedType).GetTypes().Where(
+            t =>
+                t != derivedType && derivedType.IsAssignableFrom(t)
 
-		var newChoices = new string[types.Length];
+            ).ToArray();
 
-		for (int i = 0; i < types.Length; i++)
-		{
-			newChoices[i] = types[i].ToString();
-		}
+        var newChoices = new string[types.Length];
 
-		return newChoices.ToArray();
-	}
+        for (int i = 0; i < types.Length; i++)
+        {
+            newChoices[i] = types[i].ToString();
+        }
 
-	public static Event CreateEventByString(string EventID)
-	{
-		var derivedType = typeof(Event);
-		var types = Assembly.GetAssembly(derivedType).GetTypes().Where(t => t != derivedType && derivedType.IsAssignableFrom(t)).ToArray();
+        return newChoices.ToArray();
+    }
 
-		for (int i = 0; i < types.Length; i++)
-		{
-			if (types[i].ToString() == EventID)
-			{
-				return Activator.CreateInstance(types[i]) as Event;
-			}
-		}
+    public static Event CreateEventByString(string EventID)
+    {
+        var derivedType = typeof(Event);
+        var types = Assembly.GetAssembly(derivedType).GetTypes().Where(t => t != derivedType && derivedType.IsAssignableFrom(t)).ToArray();
 
-		return null;
-	}
+        for (int i = 0; i < types.Length; i++)
+        {
+            if (types[i].ToString() == EventID)
+            {
+                return Activator.CreateInstance(types[i]) as Event;
+            }
+        }
 
-	public static Event CreateEventByType(Type EventType)
-	{
-		return Activator.CreateInstance(EventType) as Event;
-	}
+        return null;
+    }
 
-	public static string[] GetAllRewardStrings()
-	{
-		var derivedType = typeof(RewardBase);
-		var types = Assembly.GetAssembly(derivedType).GetTypes().Where(t => t != derivedType && derivedType.IsAssignableFrom(t)).ToArray();
+    public static Event CreateEventByType(Type EventType)
+    {
+        return Activator.CreateInstance(EventType) as Event;
+    }
 
-		var newChoices = new string[types.Length];
+    public static string[] GetAllRewardStrings()
+    {
+        var derivedType = typeof(RewardBase);
+        var types = Assembly.GetAssembly(derivedType).GetTypes().Where(t => t != derivedType && derivedType.IsAssignableFrom(t)).ToArray();
 
-		for (int i = 0; i < types.Length; i++)
-		{
-			newChoices[i] = types[i].ToString();
-		}
+        var newChoices = new string[types.Length];
 
-		return newChoices.ToArray();
-	}
+        for (int i = 0; i < types.Length; i++)
+        {
+            newChoices[i] = types[i].ToString();
+        }
 
-	public static RewardBase CreateEffectByString(string EventID)
-	{
-		var derivedType = typeof(RewardBase);
-		var types = Assembly.GetAssembly(derivedType).GetTypes().Where(t => t != derivedType && derivedType.IsAssignableFrom(t)).ToArray();
+        return newChoices.ToArray();
+    }
 
-		for (int i = 0; i < types.Length; i++)
-		{
-			if (types[i].ToString() == EventID)
-			{
-				return Activator.CreateInstance(types[i]) as RewardBase;
-			}
-		}
+    public static RewardBase CreateEffectByString(string EventID)
+    {
+        var derivedType = typeof(RewardBase);
+        var types = Assembly.GetAssembly(derivedType).GetTypes().Where(t => t != derivedType && derivedType.IsAssignableFrom(t)).ToArray();
 
-		return null;
-	}
+        for (int i = 0; i < types.Length; i++)
+        {
+            if (types[i].ToString() == EventID)
+            {
+                return Activator.CreateInstance(types[i]) as RewardBase;
+            }
+        }
 
-	public static RewardBase CreateRewardByType(Type RewardType)
-	{
-		return Activator.CreateInstance(RewardType) as RewardBase;
-	}
+        return null;
+    }
+
+    public static RewardBase CreateRewardByType(Type RewardType)
+    {
+        return Activator.CreateInstance(RewardType) as RewardBase;
+    }
 }
