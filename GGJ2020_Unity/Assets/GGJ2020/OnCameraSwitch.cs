@@ -10,10 +10,10 @@ public class OnCameraSwitch : MonoBehaviour
     public CameraText cameraTextUI;
     CinemachineVirtualCamera cam;
     StudioEventEmitter emitter;
-    [SerializeField]
+    [SerializeField, Tooltip("Used for the room ambient sound")]
     int roomId;
 
-    [SerializeField]
+    [SerializeField, Tooltip("Shown in the bottom of the screen")]
     private string cameraText;
 
     private bool _HasTriggeredAudioChange = false;
