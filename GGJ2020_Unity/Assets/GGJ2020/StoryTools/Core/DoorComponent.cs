@@ -50,22 +50,22 @@ public class DoorComponent : MonoBehaviour
         {
             case E_DoorState.Locked:
                 transform.DOLocalMove(_originalLocation, 0.8f, false);
-                _doorIndicatorMaterial.DOColor(new Color(5.5816f, 3.79995f, 0.1008f), "Color_822c43bc6b72482a8a54bfa7a4945922", 0.2f);
+                _doorIndicatorMaterial.DOColor(new Color(2f, 1f, 0.5f), "Color_822c43bc6b72482a8a54bfa7a4945922", 0.2f);
 
                 break;
             case E_DoorState.Unlocked:
                 transform.DOLocalMove(_originalLocation, 0.8f, false);
-                _doorIndicatorMaterial.DOColor(new Color(1.882959f, 5.648877f, 52.45385f), "Color_822c43bc6b72482a8a54bfa7a4945922", 0.4f);
+                _doorIndicatorMaterial.DOColor(new Color(0f, .8f, 2.0f), "Color_822c43bc6b72482a8a54bfa7a4945922", 0.4f);
 
                 break;
             case E_DoorState.Open:
                 transform.DOLocalMove(_originalLocation + new Vector3(0, 2.213f, 0), 1.2f, false).SetEase(Ease.InCubic);
-                _doorIndicatorMaterial.DOColor(new Color(1.882959f, 5.648877f, 52.45385f), "Color_822c43bc6b72482a8a54bfa7a4945922", 0.4f);
+                _doorIndicatorMaterial.DOColor(new Color(0f, 1f, 2.5f), "Color_822c43bc6b72482a8a54bfa7a4945922", 0.4f);
 
                 break;
             case E_DoorState.ShutHard:
                 transform.DOLocalMove(_originalLocation, 0.35f, false).SetEase(Ease.OutBack);
-                _doorIndicatorMaterial.DOColor(new Color(46.246f, 0.6544f, 0.6544f), "Color_822c43bc6b72482a8a54bfa7a4945922", 0.2f);
+                _doorIndicatorMaterial.DOColor(new Color(3f, .5f, 0f), "Color_822c43bc6b72482a8a54bfa7a4945922", 0.2f);
 
                 break;
             default:
