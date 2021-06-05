@@ -6,11 +6,11 @@ public class Phone_Jenn_Interaction : Event
         EventActor = Actors.Phone_Jen();
 
         {
-            var choice = NewChoice("CALLS");
-            choice.AddNextEvent<Call1>();
-
-            var Messages = NewChoice("MESSAGES");
+            var Messages = NewChoice("MESSAGES [3 UNREAD]");
             Messages.AddNextEvent<Message1>();
+
+            var choice = NewChoice("CALLS [2 RECORDED]");
+            choice.AddNextEvent<Call1>();
 
             var Settings = NewChoice("SETTINGS");
             Settings.AddNextEvent<Settings>();
@@ -23,13 +23,9 @@ public class Call1 : Event
     public override void PlayEvent()
     {
         EventActor = Actors.Phone_Jen();
-        Text = "CALL DATA: SCOTT [MISSED CALL]\n" +
-        "13 - 07 - 2065 | 04:32 | VOICEMAIL RECORDED\n" +
-        "analyze audio file:\n\n" +
+        Text = "14-JUL-2065 | 06:32 | SCOTT TO JEN [UNANSWERED]\n\nRECORDING AVAILABLE";
 
-        "Message recorded 13th of July at 04:32, from Scott.\n";
-
-        var choice = NewChoice("...");
+        var choice = NewChoice("LISTEN");
         choice.AddNextEvent<Call1B>();
     }
 }
@@ -39,8 +35,20 @@ public class Call1B : Event
     public override void PlayEvent()
     {
         EventActor = Actors.Phone_Jen();
-        Text = "Jen. I am so sorry about� about everything. I know I haven�t been there. There�s no excuse for missing out, and dinner last� [sighs] two weeks ago. My mind was somewhere else, you know. But I will be here now. I�m done with the VR stuff, the glass, with Alinna. You were always there, I see that now. When are you home? I will cook. No pizza, I promise. Jen? I didn�t know you were home. [phone falls] Jen?!" +
-            "\nMessage ended at 04:34.";
+        Text = "...Jen. I am so sorry about… about everything. I know I haven’t been there. There’s no excuse for missing out, and dinner last… [sighs] two weeks ago. My mind was somewhere else, you know. But I will be here now. I’m done with the VR stuff, the glass, with Alinna. You were always there, I see that now. When are you home? I will cook. No pizza, I promise. [footsteps] Jen? I didn’t know you were home... [phone falls] Jennette?! JEN!";
+
+        var choice = NewChoice("...");
+        choice.AddNextEvent<Call2A>();
+    }
+}
+
+public class Call2A : Event
+{
+
+    public override void PlayEvent()
+    {
+        EventActor = Actors.Phone_Jen();
+        Text = "07-JUL-2065 | 12:43 | SCOTT TO JEN [UNANSWERED]\n\nNO DATA";
 
         var choice = NewChoice("...");
         choice.AddNextEvent<Call2>();
@@ -53,8 +61,7 @@ public class Call2 : Event
     public override void PlayEvent()
     {
         EventActor = Actors.Phone_Jen();
-        Text = "CALL DATA: SCOTT [UNANSWERED CALL]\n" +
-        "01 - 07 - 2065 | 17:14";
+        Text = "05-JUL-2065 | 17:58 | SCOTT TO JEN [UNANSWERED]\n\nNO DATA";
 
         var choice = NewChoice("...");
         choice.AddNextEvent<Call3>();
@@ -66,10 +73,9 @@ public class Call3 : Event
     public override void PlayEvent()
     {
         EventActor = Actors.Phone_Jen();
-        Text = "CALL DATA: SCOTT [UNANSWERED CALL]\n" +
-        "01 - 07 - 2065 | 17:31";
+        Text = "03-JUL-2065 | 06:23 | JEN TO SCOTT [UNANSWERED]\n\nRECORDING AVAILABLE";
 
-        var choice = NewChoice("...");
+        var choice = NewChoice("LISTEN");
         choice.AddNextEvent<Call4>();
     }
 }
@@ -79,10 +85,9 @@ public class Call4 : Event
     public override void PlayEvent()
     {
         EventActor = Actors.Phone_Jen();
-        Text = "CALL DATA: SCOTT [UNANSWERED CALL] \n" +
-"01 - 07 - 2065 | 17:58";
+        Text = "[slurring] I hope you found your cold dinner nice. Next time I won't even bother making something for you.";
 
-        var choice = NewChoice("Return");
+        var choice = NewChoice("RETURN");
         choice.AddNextEvent<Phone_Jenn_Interaction>();
     }
 }
@@ -92,9 +97,7 @@ public class Message1 : Event
     public override void PlayEvent()
     {
         EventActor = Actors.Phone_Jen();
-        Text = "OPEN MESSAGE 6: SUSAN [UNREAD] \n" +
-        "12 - 07 - 2065 | 09:12 \n" +
-        "You didn�t join Scott did you? Jen you�re too pretty to be laying in bed all day, staring into The Glass. Call me. Today!";
+        Text = "12-JUL-2065 | 09:12 | SUSAN [UNREAD]\n\njenn i havent heard from you in ages. you didn't join Scott, did you? Jen you're too pretty to be laying in bed like him all day, staring into his Glass. call me today!!";
 
         var choice = NewChoice("...");
         choice.AddNextEvent<Message2>();
@@ -106,9 +109,7 @@ public class Message2 : Event
     public override void PlayEvent()
     {
         EventActor = Actors.Phone_Jen();
-        Text = "OPEN MESSAGE 5: SUSAN [UNREAD] \n" +
-        "07-07-2065 | 14:23 \n" +
-        "Worst idea ever. I will quit alcohol for a while. See what happens when you�re not around. Everything ok though?";
+        Text = "07-JUL-2065 | 14:23 | SUSAN [UNREAD] \n\nthat was my worst idea ever. ill quit alcohol for a while. everything ok though???";
 
         var choice = NewChoice("...");
         choice.AddNextEvent<Message3>();
@@ -119,9 +120,7 @@ public class Message3 : Event
     public override void PlayEvent()
     {
         EventActor = Actors.Phone_Jen();
-        Text = "OPEN MESSAGE 4: SUSAN [UNREAD] \n" +
-        "06-07-2065 | 22:29 \n" +
-        "JEN!!! Drinks my place! Now! Your sleeper husband won�t even know, you�ll be back before he wakes up. Haha! Get it. Heard from the guy from last week? Details?! See you in a bit.";
+        Text = "06-JUL-2065 | 22:29 | SUSAN [UNREAD]\n\nJEN!!! we need u!! drinks my place! now!! your sleeper husband wont even know, you'll be back before he wakes up. HAHA get it. see you in a bit.";
 
         var choice = NewChoice("...");
         choice.AddNextEvent<Message4>();
@@ -132,11 +131,9 @@ public class Message4 : Event
     public override void PlayEvent()
     {
         EventActor = Actors.Phone_Jen();
-        Text = "OPEN MESSAGE 3: SUSAN [UNREAD] \n" +
-        "04-07-2065 | 21:04 \n" +
-        "Hi green eyes, was fun last weekend. I�m out again. Want to meet? Maybe we can end up at your place next time. ";
+        Text = "04-JUL-2065 | 04:54 | ALINNA\n\nHello Jennette, I am very sorry to hear you are having a difficult day. Your requested capsules are on their way. The bath is ready. Hope they make you feel better. I am always here to talk. Have a good night Jennette. Looking forward to seeing you home safely.";
 
-        var choice = NewChoice("...");
+        var choice = NewChoice("RETURN");
         choice.AddNextEvent<Message5>();
     }
 }
@@ -146,11 +143,9 @@ public class Message5 : Event
     public override void PlayEvent()
     {
         EventActor = Actors.Phone_Jen();
-        Text = "OPEN MESSAGE 1: SUSAN [UNREAD] \n" +
-        "02-07-2065 | 04:54 \n" +
-        "Hello Jennette, I am very sorry to hear you are having a difficult day. Your requested capsules are on their way. The bath is ready. Hope they make you feel better. I am always here to talk. Have a good night Jennette. Looking forward to seeing you home safely. ";
+        Text = "02-JUL-2065 | 21:04 | SUSAN\n\nhhi green eyes, was fun last night. im out this evening again, wanna meet up? maybe we can end up at your place next time. dont u worry about Scott okay?";
 
-        var choice = NewChoice("...");
+        var choice = NewChoice("RETURN");
         choice.AddNextEvent<Phone_Jenn_Interaction>();
     }
 }
@@ -160,7 +155,7 @@ public class Settings : Event
     public override void PlayEvent()
     {
         EventActor = Actors.Phone_Jen();
-        Text = "SETTINGS";
+        Text = "Settings";
 
         var choice = NewChoice("ERASE USER DATA");
         choice.AddNextEvent<EraseUserData>();
@@ -171,8 +166,7 @@ public class EraseUserData : Event
     public override void PlayEvent()
     {
         EventActor = Actors.Phone_Jen();
-        Text = "System: All messages and call data will be erased.\n\n" +
-            " Are you sure you want to proceed?";
+        Text = "All messages and call data will be erased. Are you sure you wish to proceed?";
 
         var choice = NewChoice("PROCEED");
         choice.AddNextEvent<EraseUserDataProceed>();
@@ -184,7 +178,7 @@ public class EraseUserDataProceed : Event
     public override void PlayEvent()
     {
         EventActor = Actors.Phone_Jen();
-        Text = "Please wait when your memories are being erased� Done. \nYour phone is a clean slate.";
+        Text = "Please wait while your memories are being erased…\n\nDone. Your phone is a clean slate.";
 
         var choice = NewChoice("...");
         choice.AddNextEvent<EraseUserDataProceed2>();
@@ -196,7 +190,7 @@ public class EraseUserDataProceed2 : Event
     public override void PlayEvent()
     {
         EventActor = Actors.AI_Alinna();
-        Text = "heliOS won�t have to worry about this one any longer.";
+        Text = "heliOS won't have to worry about this one any longer.";
 
         var choice = NewChoice("[confused] affirmative.");
         choice.AddNextEvent<EraseUserDataProceed3>();

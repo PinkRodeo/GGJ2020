@@ -6,12 +6,12 @@
 
         if (State.IntroState == E_AlinnaState.PsychoAIRevealed && State.Door_A_State != E_DoorState.ShutHard)
         {
-            Text = "I need you to listen to me.\n\nFor both of us.";
+            Text = "I need you to listen to me.\n\nFor the both of us.";
 
             State.Door_A_State = E_DoorState.ShutHard;
 
             {
-                var choice = NewChoice("... ... ACKNOWLEDGED");
+                var choice = NewChoice("[...] acknowledged.");
                 choice.OnChoiceSelected += (Choice c) =>
                 {
 

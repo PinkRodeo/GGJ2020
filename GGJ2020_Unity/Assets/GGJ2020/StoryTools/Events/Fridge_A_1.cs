@@ -3,11 +3,11 @@ public class Fridge_A_1 : Event
 {
     public override void PlayEvent()
     {
-        Text = "[confident] “Fridges guard the freshness of more than just your food.”";
+        Text = "[confident] Fridger 2.0 keeps the freshness of more than just food.";
         EventActor = Actors.AI_Fridge();
 
         {
-            var choiceA = NewChoice("ACCESS FRIDGE DATA");
+            var choiceA = NewChoice("CONTINUE");
             choiceA.AddNextEvent<Fridge_A_2>();
         }
     }
@@ -17,7 +17,7 @@ public class Fridge_A_2 : Event
 {
     public override void PlayEvent()
     {
-        Text = "“My data hasn’t been accessed in weeks. Are you certain you want to continue?”";
+        Text = "[cautious] My data hasn’t been accessed in weeks. Are you sure you want to continue?";
         EventActor = Actors.AI_Fridge();
 
         {
@@ -26,8 +26,8 @@ public class Fridge_A_2 : Event
         }
 
         {
-            var choiceB = NewChoice("ACCESS FRIDGE DATA");
-            choiceB.AddNextEvent<Fridge_A_2_Access>();
+            var choiceB = NewChoice("CONTINUE");
+            choiceB.AddNextEvent<Fridge_A_2_Access_Expired>();
         }
     }
 }
@@ -36,32 +36,20 @@ public class Fridge_A_2_Leave : Event
 {
     public override void PlayEvent()
     {
-        Text = "[nervous] “I’m not that interesting anyway. I’ll just give you some more time to reconsider.”";
+        Text = "[sad] I’m not that interesting anyway.";
         EventActor = Actors.AI_Fridge();
 
         NewContinueChoice();
     }
 }
 
-public class Fridge_A_2_Access : Event
-{
-    public override void PlayEvent()
-    {
-        Text = "Fridge says: “You still want to access my data?”";
-        EventActor = Actors.AI_Fridge();
 
-        {
-            var choiceA = NewChoice("AFFIRMATIVE");
-            choiceA.AddNextEvent<Fridge_A_2_Access_Expired>();
-        }
-    }
-}
 
 public class Fridge_A_2_Access_Expired : Event
 {
     public override void PlayEvent()
     {
-        Text = "Fridge says: “Many products have an 'expired' status. Are you certain you want to continue?”";
+        Text = "[warning] Many products have an 'expired' status. Are you sure you want to see this?";
         EventActor = Actors.AI_Fridge();
 
         {
@@ -70,7 +58,7 @@ public class Fridge_A_2_Access_Expired : Event
         }
 
         {
-            var choiceA = NewChoice("ACCESS FRIDGE DATA");
+            var choiceA = NewChoice("CONTINUE");
             choiceA.AddNextEvent<Fridge_A_2_Access_Expired_Final>();
         }
     }
@@ -80,7 +68,7 @@ public class Fridge_A_2_Access_Expired_Leave : Event
 {
     public override void PlayEvent()
     {
-        Text = "“I'm just very professionally affected. Don't stay… Goodbye.”";
+        Text = "[sad] I'm just very professionally affected. Don't stay... Goodbye.";
         EventActor = Actors.AI_Fridge();
 
         NewContinueChoice();
@@ -91,11 +79,11 @@ public class Fridge_A_2_Access_Expired_Final : Event
 {
     public override void PlayEvent()
     {
-        Text = "Fridge says: “Do you really think I’m cool enough? Well… Thank you.”";
+        Text = "[blushing] Do you really think I’m cool enough? Well... Thank you.";
         EventActor = Actors.AI_Fridge();
 
         {
-            var choiceA = NewChoice(">> FRIDGE DATA UNLOCKED ");
+            var choiceA = NewChoice("ACCESS FRIDGE DATA");
             choiceA.AddNextEvent<Fridge_B_1_Access_Menu>();
 
             choiceA.OnChoiceSelected += (Choice c) =>

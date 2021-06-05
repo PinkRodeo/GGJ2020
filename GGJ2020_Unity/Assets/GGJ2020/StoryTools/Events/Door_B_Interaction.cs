@@ -6,7 +6,7 @@ public class Door_B_Interaction : Event
 
         if (State.Door_B_State == E_DoorState.Locked)
         {
-            Text = "Access Denied.\nYou’re not ready for the task that follows. Return later! ";
+            Text = "I don't think you're ready for that one just yet. Stay focused.";
             NewContinueChoice();
         }
         else if (State.Door_B_State == E_DoorState.ShutHard)
