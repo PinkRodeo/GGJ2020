@@ -50,6 +50,8 @@ public class ChoiceButtonComponent : MonoBehaviour, IPointerEnterHandler, ISelec
 
     public void SetVisible(bool isVisible)
     {
+        choiceButtonGroup.DOComplete();
+
         if (isVisible)
         {
             choiceButtonGroup.DOFade(1.0f, 0.5f).SetEase(Ease.OutSine);

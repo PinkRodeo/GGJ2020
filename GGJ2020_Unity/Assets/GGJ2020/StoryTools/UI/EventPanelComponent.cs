@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using DG.Tweening;
+using DG.Tweening.Core;
+using DG.Tweening.Plugins.Options;
 using UnityEngine.UI;
 
 public class EventPanelComponent : MonoBehaviour
@@ -33,10 +35,10 @@ public class EventPanelComponent : MonoBehaviour
         originalScale = eventText.transform.parent.GetComponent<RectTransform>().sizeDelta;
     }
 
+
     public void SetVisible(bool isVisible)
     {
-        // TODO animate with tweens
-        //this.gameObject.SetActive(isVisible);
+        eventPanelGroup.DOComplete();
 
         if (isVisible)
         {
