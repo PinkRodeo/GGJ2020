@@ -157,7 +157,7 @@ public class EventPanelComponent : MonoBehaviour
         if (EventActorName != "")
         {
             eventTitleText.transform.parent.gameObject.SetActive(true);
-            eventTitleText.text = "-" + newEvent.EventActor.Name;
+            eventTitleText.text = newEvent.EventActor.Name;
             eventTitleText.font = data.font;
             eventTitleText.GetComponentInParent<Image>().sprite = data.TitleSprite;
         }

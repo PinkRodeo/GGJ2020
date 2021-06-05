@@ -327,7 +327,7 @@ public class BaseStation_Dispose_Bedroom_Half_1 : Event
 {
     public override void PlayEvent()
     {
-        Text = "er ligt nog iets op de grond";
+        Text = "I believe you've missed something, little dancer.";
         EventActor = Actors.AI_Alinna();
 
         {

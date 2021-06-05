@@ -59,7 +59,7 @@ public static class Actors
         {
             _World = new Actor(E_ActorCategory.World,
                             E_ActorType.World,
-                            Color.white,
+                            Color.magenta,
                             "");
         }
 
@@ -71,10 +71,10 @@ public static class Actors
     {
         if (_AI_Alinna == null)
         {
-            _AI_Alinna = new Actor(E_ActorCategory.AI,
+            _AI_Alinna = new Actor(E_ActorCategory.World,
                             E_ActorType.AI_Alinna,
                             Color.magenta,
-                            "Alinna");
+                            "▼ AlinnaOS");
         }
 
         return _AI_Alinna;
@@ -85,10 +85,10 @@ public static class Actors
     {
         if (_AI_BaseStation == null)
         {
-            _AI_BaseStation = new Actor(E_ActorCategory.AI,
+            _AI_BaseStation = new Actor(E_ActorCategory.Phone,
                             E_ActorType.AI_BaseStation,
-                            Color.blue,
-                            "TAANGO Home Station");
+                            new Color(0.321f, 0.650f, 1f, 0.9f),
+                            "■ Taango Station");
         }
 
         return _AI_BaseStation;
@@ -101,8 +101,8 @@ public static class Actors
         {
             _AI_Fridge = new Actor(E_ActorCategory.AI,
                             E_ActorType.AI_Fridge,
-                            Color.white,
-                            "FIFO - Fridge");
+                            new Color(0.415f, 0.925f, 0.623f, 0.9f),
+                            "● Fridger 2.0");
         }
 
         return _AI_Fridge;
@@ -115,8 +115,8 @@ public static class Actors
         {
             _AI_Trashcan = new Actor(E_ActorCategory.AI,
                             E_ActorType.AI_Trashcan,
-                            Color.white,
-                            "Trashy the trashcan");
+                            Color.magenta,
+                            "● Trashy the trashcan");
         }
 
         return _AI_Trashcan;
@@ -129,8 +129,8 @@ public static class Actors
         {
             _AI_Plant_Fern = new Actor(E_ActorCategory.AI,
                             E_ActorType.AI_Plant_Fern,
-                            Color.green,
-                            "JULES FERN");
+                            new Color(0.415f, 0.925f, 0.623f, 0.9f),
+                            "● Jules Fern");
         }
 
         return _AI_Plant_Fern;
@@ -144,8 +144,8 @@ public static class Actors
         {
             _AI_Plant_Planto = new Actor(E_ActorCategory.AI,
                             E_ActorType.AI_Plant_Planto,
-                            Color.green,
-                            "PLANTO");
+                            new Color(0.415f, 0.925f, 0.623f, 0.9f),
+                            "● Planto");
         }
 
         return _AI_Plant_Planto;
@@ -159,8 +159,8 @@ public static class Actors
         {
             _AI_Plant_Blini = new Actor(E_ActorCategory.AI,
                             E_ActorType.AI_Plant_Blini,
-                            Color.green,
-                            "BLINI");
+                            new Color(0.415f, 0.925f, 0.623f, 0.9f),
+                            "● Blini");
         }
 
         return _AI_Plant_Blini;
@@ -173,8 +173,8 @@ public static class Actors
         {
             _Phone_Scott = new Actor(E_ActorCategory.Phone,
                             E_ActorType.Phone_Scott,
-                            Color.green,
-                            "Scott's Phone");
+                            Color.magenta,
+                            "■ Scott's Phone");
         }
 
         return _Phone_Scott;
@@ -185,10 +185,10 @@ public static class Actors
     {
         if (_Shoes == null)
         {
-            _Shoes = new Actor(E_ActorCategory.Phone,
+            _Shoes = new Actor(E_ActorCategory.AI,
                             E_ActorType.Shoes,
-                            Color.green,
-                            "Scott's Shoes");
+                            Color.red,
+                            "● Scott's Shoes");
         }
 
         return _Shoes;
@@ -201,8 +201,8 @@ public static class Actors
         {
             _Phone_Jen = new Actor(E_ActorCategory.Phone,
                             E_ActorType.Phone_Jen,
-                            Color.green,
-                            "Jen's Phone");
+                            Color.magenta,
+                            "■ Jen's Phone");
         }
 
         return _Phone_Jen;
@@ -216,8 +216,8 @@ public static class Actors
         {
             _Headset = new Actor(E_ActorCategory.Phone,
                             E_ActorType.Headset,
-                            Color.green,
-                            "VR GEAR THE GLASS");
+                            Color.magenta,
+                            "■ The Glass VR");
         }
 
         return _Headset;
@@ -230,8 +230,8 @@ public static class Actors
         {
             _Capsules = new Actor(E_ActorCategory.Phone,
                             E_ActorType.Capsules,
-                            Color.red,
-                            "E-CIG CAPSULES");
+                            Color.magenta,
+                            "■ Cappy Capsules");
         }
 
         return _Capsules;

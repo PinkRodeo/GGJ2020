@@ -14,4 +14,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/GGJ2020/Scenes/EndScreen.unity
     guid: 729e2aca38296cf438ed3d0e2a34e5f0
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 6df2c670b131a90478a936f8706391e8,
+      type: 2}
+    com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000,
+      guid: 5f1106a13d74cef4e817c5bfdedae704, type: 2}

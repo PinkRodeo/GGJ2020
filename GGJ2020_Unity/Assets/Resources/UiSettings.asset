@@ -20,9 +20,9 @@ MonoBehaviour:
     DefaultSprite: {fileID: 21300000, guid: bf689a0d25519ca4d8c0b037d8160c46, type: 3}
     PressedSprite: {fileID: 21300000, guid: 235503172721d1a4b9d300297ab8e33c, type: 3}
     SelectedSprite: {fileID: 21300000, guid: 940cfa520aa90454da13fc4a6e3b112b, type: 3}
-    alignment: 257
+    alignment: 4097
     UseColorBorder: 0
-    RightTextPanelOverride: 1170.6
+    RightTextPanelOverride: 0
   - Target: 0
     font: {fileID: 11400000, guid: fc13f4d962608614e92ea737eadc490f, type: 2}
     TitleSprite: {fileID: 21300000, guid: 1804a5caafef39e4499548f730df6372, type: 3}
@@ -30,7 +30,7 @@ MonoBehaviour:
     DefaultSprite: {fileID: 21300000, guid: 1804a5caafef39e4499548f730df6372, type: 3}
     PressedSprite: {fileID: 21300000, guid: 540eabcb9fd402e41a1db2edc58e78bd, type: 3}
     SelectedSprite: {fileID: 21300000, guid: 66f83af1adca2e444a2ebda1fd5a56a5, type: 3}
-    alignment: 8194
+    alignment: 4097
     UseColorBorder: 0
     RightTextPanelOverride: 0
   - Target: 1
@@ -40,6 +40,6 @@ MonoBehaviour:
     DefaultSprite: {fileID: 21300000, guid: 5f076dffe48e3ac4ba85e51c19abb0ae, type: 3}
     PressedSprite: {fileID: 21300000, guid: 040da960d279b684095503bd7416d2ca, type: 3}
     SelectedSprite: {fileID: 21300000, guid: 9f4716a2be876144a9e444c98278782b, type: 3}
-    alignment: 257
+    alignment: 4097
     UseColorBorder: 1
     RightTextPanelOverride: 0

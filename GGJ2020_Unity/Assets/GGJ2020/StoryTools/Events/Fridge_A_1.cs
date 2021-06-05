@@ -3,7 +3,7 @@ public class Fridge_A_1 : Event
 {
     public override void PlayEvent()
     {
-        Text = "Statement. “Fridges guard the freshness of more than just your food.”";
+        Text = "[confident] “Fridges guard the freshness of more than just your food.”";
         EventActor = Actors.AI_Fridge();
 
         {
@@ -17,7 +17,7 @@ public class Fridge_A_2 : Event
 {
     public override void PlayEvent()
     {
-        Text = "Access Denied. “My data hasn’t been accessed in weeks. Are you certain you want to continue?”";
+        Text = "“My data hasn’t been accessed in weeks. Are you certain you want to continue?”";
         EventActor = Actors.AI_Fridge();
 
         {
@@ -36,7 +36,7 @@ public class Fridge_A_2_Leave : Event
 {
     public override void PlayEvent()
     {
-        Text = "Nervous. “I’m not that interesting anyway. I’ll just give you some more time to reconsider.”";
+        Text = "[nervous] “I’m not that interesting anyway. I’ll just give you some more time to reconsider.”";
         EventActor = Actors.AI_Fridge();
 
         NewContinueChoice();
