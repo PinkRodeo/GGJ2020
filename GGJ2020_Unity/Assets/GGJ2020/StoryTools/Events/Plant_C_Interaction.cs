@@ -16,7 +16,7 @@ public class Plant_C_Interaction_2 : Event
 {
     public override void PlayEvent()
     {
-        Text = "So get lost, if you know what's good for you.";
+        Text = "...So get lost, if you know what's good for you.";
         EventActor = Actors.AI_Plant_JULES_FERN();
 
         {

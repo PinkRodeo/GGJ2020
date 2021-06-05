@@ -47,7 +47,8 @@ public enum E_ActorType
 
     Headset,
     Capsules,
-    Shoes,
+    AI_Shoes,
+    AI_Vape,
 }
 
 public static class Actors
@@ -88,7 +89,7 @@ public static class Actors
             _AI_BaseStation = new Actor(E_ActorCategory.Phone,
                             E_ActorType.AI_BaseStation,
                             new Color(0.321f, 0.650f, 1f, 0.9f),
-                            "■ Taango Station");
+                            "■ Taango Base Station");
         }
 
         return _AI_BaseStation;
@@ -186,12 +187,26 @@ public static class Actors
         if (_Shoes == null)
         {
             _Shoes = new Actor(E_ActorCategory.AI,
-                            E_ActorType.Shoes,
-                            Color.red,
+                            E_ActorType.AI_Shoes,
+                            new Color(0.415f, 0.925f, 0.623f, 0.9f),
                             "● Scott's Shoes");
         }
 
         return _Shoes;
+    }
+
+    private static Actor _Vape;
+    public static Actor Vape()
+    {
+        if (_Vape == null)
+        {
+            _Vape = new Actor(E_ActorCategory.AI,
+                            E_ActorType.AI_Vape,
+                            new Color(0.415f, 0.925f, 0.623f, 0.9f),
+                            "● Jen's Vape");
+        }
+
+        return _Vape;
     }
 
     private static Actor _Phone_Jen;
@@ -217,7 +232,7 @@ public static class Actors
             _Headset = new Actor(E_ActorCategory.Phone,
                             E_ActorType.Headset,
                             Color.magenta,
-                            "■ The Glass VR");
+                            "■ Glass VR");
         }
 
         return _Headset;

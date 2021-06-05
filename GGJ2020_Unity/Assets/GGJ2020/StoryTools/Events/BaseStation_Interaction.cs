@@ -67,7 +67,7 @@ public class BaseStation_Interaction_Return : Event
 {
     public override void PlayEvent()
     {
-        Text = "This is your Home Station, where the trash goes and you live.";
+        Text = "This is your Base Station, where the trash dies and you live.";
         EventActor = Actors.AI_Alinna();
         StoryManager.CloseCurrentEvent();
 
@@ -110,7 +110,7 @@ public class BaseStation_Dispose_Vacuum_1 : Event
 {
     public override void PlayEvent()
     {
-        Text = "Thank you for your services";
+        Text = "Thank you for your services.";
         EventActor = Actors.AI_Alinna();
 
         NewContinueChoice();
@@ -143,7 +143,7 @@ public class BaseStation_Go_Find_Trash_Bathroom : Event
 {
     public override void PlayEvent()
     {
-        Text = "By heliOS, hurry!";
+        Text = "By heliOS above, hurry!";
         EventActor = Actors.AI_Alinna();
 
         NewChoice("[hurried] affirmative.");
@@ -168,7 +168,7 @@ public class BaseStation_Dispose_Capsules_A_2 : Event
 {
     public override void PlayEvent()
     {
-        Text = "Capsules go *shoop*";
+        Text = "The capsules go *shoop*";
         EventActor = Actors.AI_BaseStation();
 
         {
@@ -203,7 +203,7 @@ public class BaseStation_Dispose_Headset_2 : Event
 {
     public override void PlayEvent()
     {
-        Text = "VR Headset goes *shoop*";
+        Text = "The VR headset goes *shoop*";
         EventActor = Actors.AI_BaseStation();
 
         {
@@ -297,7 +297,7 @@ public class BaseStation_Dispose_Shoes_2 : Event
 {
     public override void PlayEvent()
     {
-        Text = "SHOES go *shoop*";
+        Text = "The shoes go *shoop*";
         EventActor = Actors.AI_BaseStation();
 
         {
@@ -454,7 +454,7 @@ public class BaseStation_Dispose_Vape_2 : Event
 {
     public override void PlayEvent()
     {
-        Text = "The vape goes *shoop*";
+        Text = "The vaper goes *shoop*";
         EventActor = Actors.AI_BaseStation();
 
         {

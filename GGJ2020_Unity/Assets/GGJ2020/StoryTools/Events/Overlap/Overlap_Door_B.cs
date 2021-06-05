@@ -11,7 +11,7 @@
             State.Door_B_State = E_DoorState.ShutHard;
 
             {
-                var choice = NewChoice("ACKNOWLEDGED");
+                var choice = NewChoice("affirmative.");
                 choice.OnChoiceSelected += (Choice c) =>
                 {
 

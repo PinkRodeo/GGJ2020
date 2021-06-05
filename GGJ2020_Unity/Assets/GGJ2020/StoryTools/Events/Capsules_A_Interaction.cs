@@ -2,7 +2,7 @@ public class Capsules_A_Interaction : Event
 {
     public override void PlayEvent()
     {
-        Text = "I feel empty....";
+        Text = "...I feel empty...";
         EventActor = Actors.Capsules();
 
         {
@@ -16,11 +16,11 @@ public class Capsules_A_1 : Event
 {
     public override void PlayEvent()
     {
-        Text = "Capsules are depleted.\n\nThey do contain an unknown stray traces...";
+        Text = "I am depleted.\n\nBut I do contain some stray traces of-";
         EventActor = Actors.Capsules();
 
         {
-            var choice = NewChoice("ANALYZE");
+            var choice = NewChoice("[curious] ANALYZE");
             choice.AddNextEvent<Capsules_A_2>();
         }
     }
@@ -30,12 +30,12 @@ public class Capsules_A_2 : Event
 {
     public override void PlayEvent()
     {
-        Text = "No need to look into that, stay on top of your tasks. Take this litter out.";
+        Text = "No need to look into that, stay on top of your tasks. Take this litter back to your Base Station.\n\nI'll open the door to the bedroom after you're done.";
         EventActor = Actors.AI_Alinna();
 
         {
-            var choice = NewChoice("VACUUM");
-            choice.AddNextEvent<Capsules_A_3>();
+            var choice = NewChoice("VACCUUM");
+            //choice.AddNextEvent<Capsules_A_3>();
 
             choice.OnChoiceSelected += (Choice c) =>
             {
@@ -49,11 +49,11 @@ public class Capsules_A_3 : Event
 {
     public override void PlayEvent()
     {
-        Text = "Right on schedule. Please empty your container at your perfect little home station, we have more to do, more to clean.\nI will open the door to the bedroom for you after you’re done. ";
+        Text = "Right on schedule. I'll open the bedroom door once you empty your container at the Base Station. \n\nWe've got more to do, more to clean.";
         EventActor = Actors.AI_Alinna();
 
         {
-            var choice = NewChoice("[proud] affirmative. ");
+            var choice = NewChoice("[proud] affirmative.");
         }
     }
 }
