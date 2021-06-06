@@ -46,6 +46,14 @@ public class PlayerTankController : MonoBehaviour
         }
     }
 
+    public void JumpInput(InputAction.CallbackContext context)
+    {
+        if (IsMovementInputAllowed())
+        {
+            rigidBody.AddForce(new Vector3(0,5,0), ForceMode.Impulse);    
+        }
+    }
+
     public bool IsMovementInputAllowed()
     {
         return !StoryManager.Instance.IsEventActive();
