@@ -9,7 +9,7 @@ public class Phone_Jenn_Interaction : Event
             var Messages = NewChoice("MESSAGES [3 UNREAD]");
             Messages.AddNextEvent<Message1>();
 
-            var choice = NewChoice("CALLS [2 RECORDED]");
+            var choice = NewChoice("CALLS [3 RECORDED]");
             choice.AddNextEvent<Call1>();
 
             var Settings = NewChoice("SETTINGS");
@@ -23,10 +23,10 @@ public class Call1 : Event
     public override void PlayEvent()
     {
         EventActor = Actors.Phone_Jen();
-        Text = "14-JUL-2065 | 06:32 | SCOTT TO JEN [UNANSWERED]\n\nRECORDING AVAILABLE";
+        Text = "14-JUL-2065 | 06:32 | FROM: SCOTT [UNANSWERED] | RECORDING AVAILABLE\n\n...Jen. I am so sorry about… about everything. I know I haven’t been there. There’s no excuse for missing out, and dinner last… [sighs] two weeks ago. My mind was somewhere else, you know. But I will be here now. I’m done with the VR stuff, the glass, with Alinna. You were always there, I see that now. When are you home? I will cook. No pizza, I promise. [footsteps] Jen? I didn’t know you were home... [phone falls] Jennette?! JEN!";
 
-        var choice = NewChoice("LISTEN");
-        choice.AddNextEvent<Call1B>();
+        var choice = NewChoice("...");
+        choice.AddNextEvent<Call2A>();
     }
 }
 
@@ -35,8 +35,7 @@ public class Call1B : Event
     public override void PlayEvent()
     {
         EventActor = Actors.Phone_Jen();
-        Text = "...Jen. I am so sorry about… about everything. I know I haven’t been there. There’s no excuse for missing out, and dinner last… [sighs] two weeks ago. My mind was somewhere else, you know. But I will be here now. I’m done with the VR stuff, the glass, with Alinna. You were always there, I see that now. When are you home? I will cook. No pizza, I promise. [footsteps] Jen? I didn’t know you were home... [phone falls] Jennette?! JEN!";
-
+        Text = "14-JUL-2065 | 06:32 | FROM: SCOTT [UNANSWERED] | RECORDING AVAILABLE\n\n...Jen. I am so sorry about… about everything. I know I haven’t been there. There’s no excuse for missing out, and dinner last… [sighs] two weeks ago. My mind was somewhere else, you know. But I will be here now. I’m done with the VR stuff, the glass, with Alinna. You were always there, I see that now. When are you home? I will cook. No pizza, I promise. [footsteps] Jen? I didn’t know you were home... [phone falls] Jennette?! JEN!";
         var choice = NewChoice("...");
         choice.AddNextEvent<Call2A>();
     }
@@ -48,7 +47,7 @@ public class Call2A : Event
     public override void PlayEvent()
     {
         EventActor = Actors.Phone_Jen();
-        Text = "07-JUL-2065 | 12:43 | SCOTT TO JEN [UNANSWERED]\n\nNO DATA";
+        Text = "07-JUL-2065 | 12:43 | FROM: SCOTT [UNANSWERED]\n\nNO DATA";
 
         var choice = NewChoice("...");
         choice.AddNextEvent<Call2>();
@@ -61,7 +60,7 @@ public class Call2 : Event
     public override void PlayEvent()
     {
         EventActor = Actors.Phone_Jen();
-        Text = "05-JUL-2065 | 17:58 | SCOTT TO JEN [UNANSWERED]\n\nNO DATA";
+        Text = "05-JUL-2065 | 17:58 | FROM: SCOTT [UNANSWERED]\n\nNO DATA";
 
         var choice = NewChoice("...");
         choice.AddNextEvent<Call3>();
@@ -73,9 +72,9 @@ public class Call3 : Event
     public override void PlayEvent()
     {
         EventActor = Actors.Phone_Jen();
-        Text = "03-JUL-2065 | 06:23 | JEN TO SCOTT [UNANSWERED]\n\nRECORDING AVAILABLE";
+        Text = "03-JUL-2065 | 06:23 | FROM: SCOTT [UNANSWERED] | RECORDING AVAILABLE\n\n[slurring] I hope you found your cold dinner nice. Next time I won't even bother making something for you.";
 
-        var choice = NewChoice("LISTEN");
+        var choice = NewChoice("...");
         choice.AddNextEvent<Call4>();
     }
 }
@@ -85,7 +84,7 @@ public class Call4 : Event
     public override void PlayEvent()
     {
         EventActor = Actors.Phone_Jen();
-        Text = "[slurring] I hope you found your cold dinner nice. Next time I won't even bother making something for you.";
+        Text = "01-JUN-2065 | 14:34 | HOT GUY [UNANSWERED]\n\nNO DATA";
 
         var choice = NewChoice("RETURN");
         choice.AddNextEvent<Phone_Jenn_Interaction>();
