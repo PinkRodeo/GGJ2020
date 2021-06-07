@@ -224,7 +224,7 @@ public class Phone_Scott_SETTINGS_3_B : Event
 {
     public override void PlayEvent()
     {
-        Text = "Hold on while we cancel your reque-<#ff9b9b><b>bzzzt</b></color>\n\nAll your memories are erased. Your phone is a clean slate.";
+        Text = "Hold on while we cancel your reque-<#ff9b9b><i>bzzzt</i></color>\n\nAll your memories are erased. Your phone is a clean slate.";
         EventActor = Actors.Phone_Scott();
 
         {
