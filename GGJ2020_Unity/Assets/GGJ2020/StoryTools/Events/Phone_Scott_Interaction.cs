@@ -6,7 +6,7 @@ public class Phone_Scott_Interaction : Event
         EventActor = Actors.Phone_Scott();
 
         {
-            var choice = NewChoice("MESSAGES [2 UNREAD]");
+            var choice = NewChoice("MESSAGES [1 UNREAD]");
             choice.AddNextEvent<Phone_Scott_MESSAGES_1>();
         }
         {
@@ -24,21 +24,7 @@ public class Phone_Scott_MESSAGES_1 : Event
 {
     public override void PlayEvent()
     {
-        Text = "14-JUL-2065 | 01:23 | FROM: ALINNA\n\nScott! Your PERFECT PARTNER update came in, I’m so excited for you! The result is quite the reveal if I dare say ;)";
-        EventActor = Actors.Phone_Scott();
-
-        {
-            var choice = NewChoice("…");
-            choice.AddNextEvent<Phone_Scott_MESSAGES_2>();
-        }
-    }
-}
-
-public class Phone_Scott_MESSAGES_2 : Event
-{
-    public override void PlayEvent()
-    {
-        Text = "12-JUL-2065 | 22:13 | FROM: FLYING DOUGH PIZZA\n\nCheck your front door/balcony/roof. Your CHICKEN BBQ PIZZA has arrived at your residence. 400 credits will be charged to your account.";
+        Text = "02-AUG-2065 | 13:35 | FROM: ALINNA\n\nScott! Your PERFECT PARTNER update came in, I’m so excited for you! It's on your Glass VR right now. The result is quite the reveal if I dare say ;)";
         EventActor = Actors.Phone_Scott();
 
         {
@@ -48,11 +34,53 @@ public class Phone_Scott_MESSAGES_2 : Event
     }
 }
 
-public class Phone_Scott_MESSAGES_3 : Event
+public class Phone_Scott_MESSAGES_4 : Event
 {
     public override void PlayEvent()
     {
-        Text = "07-JUL-2065 | 03:54 | FROM: FLYING DOUGH PIZZA\n\nCheck your front door/balcony/roof. Your PEPPERONI PIZZA has arrived at your residence. 300 credits will be charged to your account.";
+        Text = "01-AUG-2065 | 09:13 | FROM: JEN [UNREAD]\n\nhey. we havent really talked in like, forever? how about i make dinner, just us. something that's not out of a box from the sky. i'll make Thai grill. will be ready at 7. love you :)";
+        EventActor = Actors.Phone_Scott();
+
+        {
+            var choice = NewChoice("…");
+            choice.AddNextEvent<Phone_Scott_MESSAGES_4B>();
+        }
+    }
+}
+
+public class Phone_Scott_MESSAGES_4B : Event
+{
+    public override void PlayEvent()
+    {
+        Text = "10-JUL-2065 | 03:25 | FLYING DOUGH PIZZA\n\nThank you for signing up to our DAILY PIZZA subscription. 250 credits will be charged daily to your account.";
+        EventActor = Actors.Phone_Scott();
+
+        {
+            var choice = NewChoice("…");
+            choice.AddNextEvent<Phone_Scott_MESSAGES_4C>();
+        }
+    }
+}
+
+public class Phone_Scott_MESSAGES_4C : Event
+{
+    public override void PlayEvent()
+    {
+        Text = "08-JUL-2065 | 02:52 | FLYING DOUGH PIZZA\n\nCheck your front door/balcony/roof. Your PEPPERONI PIZZA has arrived at your residence. 300 credits will be charged to your account.";
+        EventActor = Actors.Phone_Scott();
+
+        {
+            var choice = NewChoice("…");
+            choice.AddNextEvent<Phone_Scott_MESSAGES_4D>();
+        }
+    }
+}
+
+public class Phone_Scott_MESSAGES_4D : Event
+{
+    public override void PlayEvent()
+    {
+        Text = "05-JUL-2065 | 01:45 | FLYING DOUGH PIZZA\n\nCheck your front door/balcony/roof. Your SALAMI PIZZA has arrived at your residence. 350 credits will be charged to your account.";
         EventActor = Actors.Phone_Scott();
 
         {
@@ -62,25 +90,11 @@ public class Phone_Scott_MESSAGES_3 : Event
     }
 }
 
-public class Phone_Scott_MESSAGES_4 : Event
-{
-    public override void PlayEvent()
-    {
-        Text = "03-JUL-2065 | 03:56 | FROM: JEN [UNREAD]\n\nREALLY?! the food i made for u is cold. and your pizza order fell of the balcony. nice of you to think for the both of us. im out for the night";
-        EventActor = Actors.Phone_Scott();
-
-        {
-            var choice = NewChoice("…");
-            choice.AddNextEvent<Phone_Scott_MESSAGES_3>();
-        }
-    }
-}
-
 public class Phone_Scott_MESSAGES_5 : Event
 {
     public override void PlayEvent()
     {
-        Text = "02-JUL-2065 | 11:52 | FROM: PERFECT PARTNER\n\nThanks for signing up for the PERFECT PARTNER program. We will not disappoint you.";
+        Text = "03-JUL-2065 | 11:52 | FROM: PERFECT PARTNER\n\nThanks for signing up for the PERFECT PARTNER program. We will not disappoint you.";
         EventActor = Actors.Phone_Scott();
 
         {
@@ -94,7 +108,7 @@ public class Phone_Scott_MESSAGES_6 : Event
 {
     public override void PlayEvent()
     {
-        Text = "01-JUL-2065 | 09:13 | FROM: JEN [UNREAD]\n\nhey. where have u been? how about i make dinner, just us. something that's not out of a box from the sky. i'll make Thai grill. will be ready at 7. love you :)";
+        Text = "01-JUL-2065 | 09:13 | FROM: ALINNA \n\nWelcome Scott and Jennette to apartment number 2234. I am Alinna, your personalised HeliOS assisstant. My helper Taango and I will make your stay as comfortable as possible. If you need anything, just talk aloud and I will take care of it.";
         EventActor = Actors.Phone_Scott();
 
         {
@@ -108,7 +122,7 @@ public class Phone_Scott_CALLS_1 : Event
 {
     public override void PlayEvent()
     {
-        Text = "13-JUL-2065 | 04:54 | EMERGENCY SERVICES [UNANSWERED] | RECORDING AVAILABLE\n\nSir? Sir we are on our way to your apartment. Please stay calm. We are on our way.";
+        Text = "02-AUG-2065 | 13:46 | EMERGENCY SERVICES [UNANSWERED] | RECORDING AVAILABLE\n\nSir? Sir we are on our way to your apartment. Please stay calm. We are on our way.";
         EventActor = Actors.Phone_Scott();
 
         {
@@ -122,12 +136,12 @@ public class Phone_Scott_CALLS_2 : Event
 {
     public override void PlayEvent()
     {
-        Text = "03-JUL-2065 | 06:23 | FROM: JEN [UNANSWERED] | RECORDING AVAILABLE\n\n[slurring] I hope you found your cold dinner nice. Next time I won't even bother making something for you.";
+        Text = "02-AUG-2065 | 04:54 | FROM: JEN [UNANSWERED] | RECORDING AVAILABLE\n\n[slurring] I hope you found your cold Thai on the balcony. I should've known you'd just lie in bed and stare at that stupid Glass VR set. Next time I won't even bother making something for you.";
         EventActor = Actors.Phone_Scott();
 
         {
-            var choice = NewChoice("RETURN");
-            choice.AddNextEvent<Phone_Scott_Interaction>();
+            var choice = NewChoice("...");
+            choice.AddNextEvent<Phone_Scott_CALLS_3>();
         }
     }
 }
@@ -136,7 +150,21 @@ public class Phone_Scott_CALLS_3 : Event
 {
     public override void PlayEvent()
     {
-        Text = "[slurring] I hope you found your cold dinner nice. Next time I won't even bother making something for you.";
+        Text = "01-AUG-2065 | 22:34 | FROM: JEN [UNANSWERED] | RECORDING AVAILABLE\n\nI'm going out for the night. Maybe I'll come back... Not that it would make a difference to you with that stupid Glass thing.";
+        EventActor = Actors.Phone_Scott();
+
+        {
+            var choice = NewChoice("...");
+            choice.AddNextEvent<Phone_Scott_CALLS_4>();
+        }
+    }
+}
+
+public class Phone_Scott_CALLS_4 : Event
+{
+    public override void PlayEvent()
+    {
+        Text = "05-JUL-2065 | 23:01 | FROM: JEN [UNANSWERED]\n\nNO DATA";
         EventActor = Actors.Phone_Scott();
 
         {
@@ -171,6 +199,10 @@ public class Phone_Scott_SETTINGS_2 : Event
             var choice = NewChoice("PROCEED");
             choice.AddNextEvent<Phone_Scott_SETTINGS_3_A>();
         }
+        {
+            var choice = NewChoice("CANCEL");
+            choice.AddNextEvent<Phone_Scott_SETTINGS_3_B>();
+        }
     }
 }
 
@@ -178,7 +210,7 @@ public class Phone_Scott_SETTINGS_3_A : Event
 {
     public override void PlayEvent()
     {
-        Text = "Please wait while your memories are being erased…\n\nDone. Your phone is a clean slate.";
+        Text = "Please wait while your memories are being erased…\n\nAll your memories are erased. Your phone is a clean slate.";
         EventActor = Actors.Phone_Scott();
 
         {
@@ -192,7 +224,7 @@ public class Phone_Scott_SETTINGS_3_B : Event
 {
     public override void PlayEvent()
     {
-        Text = "Hold on while we cancel your reque-*bzzt*. \n\nDone. All your memories are erased. Your phone is a clean slate.";
+        Text = "Hold on while we cancel your reque-<#ff9b9b><b>bzzzt</b></color>\n\nAll your memories are erased. Your phone is a clean slate.";
         EventActor = Actors.Phone_Scott();
 
         {
