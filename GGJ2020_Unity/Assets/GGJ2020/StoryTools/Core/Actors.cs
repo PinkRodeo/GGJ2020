@@ -39,6 +39,8 @@ public enum E_ActorType
     AI_Plant_Fern,
     AI_Plant_Planto,
     AI_Plant_Blini,
+    AI_Plant_Eddie,
+    AI_Plant_Niels,
     AI_Trashcan,
 
     // Config
@@ -137,6 +139,34 @@ public static class Actors
         return _AI_Plant_Fern;
     }
 
+    private static Actor _AI_Plant_Eddie;
+    public static Actor AI_Plant_EDDIE_LEAFLY()
+    {
+        if (_AI_Plant_Eddie == null)
+        {
+            _AI_Plant_Eddie = new Actor(E_ActorCategory.AI,
+                            E_ActorType.AI_Plant_Eddie,
+                            new Color(0.415f, 0.925f, 0.623f, 0.9f),
+                            "● Eddie Leafly");
+        }
+
+        return _AI_Plant_Eddie;
+    }
+
+    private static Actor _AI_Plant_Niels;
+    public static Actor AI_Plant_NIELS()
+    {
+        if (_AI_Plant_Niels == null)
+        {
+            _AI_Plant_Niels = new Actor(E_ActorCategory.AI,
+                            E_ActorType.AI_Plant_Niels,
+                            new Color(0.415f, 0.925f, 0.623f, 0.9f),
+                            "● Nielsea Linaria");
+        }
+
+        return _AI_Plant_Niels;
+    }
+
     private static Actor _AI_Plant_Planto;
 
     public static Actor AI_Plant_PLANTO()
@@ -202,7 +232,7 @@ public static class Actors
         {
             _Vape = new Actor(E_ActorCategory.AI,
                             E_ActorType.AI_Vape,
-                            new Color(0.415f, 0.925f, 0.623f, 0.9f),
+                            new Color(0.192f, 0.545f, 0.749f),
                             "● Jen's Vape");
         }
 
@@ -243,7 +273,7 @@ public static class Actors
     {
         if (_Capsules == null)
         {
-            _Capsules = new Actor(E_ActorCategory.Phone,
+            _Capsules = new Actor(E_ActorCategory.AI,
                             E_ActorType.Capsules,
                             Color.magenta,
                             "■ Cappy Capsules");

@@ -29,7 +29,7 @@ public class VR_Interaction_A_1 : Event
         EventActor = Actors.Headset();
 
         {
-            var choice = NewChoice("ENTER");
+            var choice = NewChoice("OPEN");
             choice.AddNextEvent<VR_Interaction_A_2>();
         }
     }
@@ -39,7 +39,7 @@ public class VR_Interaction_A_2 : Event
 {
     public override void PlayEvent()
     {
-        Text = "Your Glass VR love partner statistics:\n\nBright green eyes, birthmarks on shoulders and nose, and red colored hair which has faded over time.";
+        Text = "Your PERFECT PARTNER statistics:\n\nBright green eyes, birthmarks on shoulders and nose, and red colored hair which has faded over time. Loves Thai food and taking long baths.";
         EventActor = Actors.Headset();
 
         {
@@ -67,7 +67,7 @@ public class VR_Interaction_B_1 : Event
 {
     public override void PlayEvent()
     {
-        Text = "13-JUL-2065 | 03:23 | PERFECT PARTNER\n\nGreat news, we’ve completed the analysis for your soul mate creation in the PERFECT PARTNER program on The Glass VR. Return to your device as soon as possible to meet your future!";
+        Text = "02-AUG-2065 | 13:32 | PERFECT PARTNER\n\nGreat news, we’ve completed the analysis for your soul mate creation in the PERFECT PARTNER program. Open the app now to meet your future!";
         EventActor = Actors.Headset();
 
         {
@@ -81,7 +81,7 @@ public class VR_Interaction_B_2 : Event
 {
     public override void PlayEvent()
     {
-        Text = "11-JUL-2065 | 11:52 | PERFECT PARTNER\n\nWe’re getting closer to the perfect match. Our latest iteration of your partner has improved your match by 3%, crossing the 90% line. The preferred green eye color and birthmarks help us greatly. Now for the last 10%!";
+        Text = "26-JUL-2065 | 11:52 | PERFECT PARTNER\n\nWe’re getting closer to the perfect match. Our latest iteration of your partner has improved your match by 3%, crossing the 90% line. The preferred green eye color and birthmarks help us greatly. Now for the last 10%!";
         EventActor = Actors.Headset();
 
         {
@@ -95,7 +95,7 @@ public class VR_Interaction_B_3 : Event
 {
     public override void PlayEvent()
     {
-        Text = "09-JUL-2065 | 23:59 | GLASS VR\n\nYour activity within The Glass VR has increased in the last month. You’ve been active for 423 hours and 28 minutes. We’re happy to award you with a platinum user status, granting you access to previously restricted corners of the Glass universe. We’re looking forward to seeing more of you.";
+        Text = "18-JUL-2065 | 23:59 | GLASS VR\n\nYour activity within The Glass VR has increased in the last month. You’ve been active for 423 hours and 28 minutes. We’re happy to award you with a platinum user status, granting you access to previously restricted corners of the Glass universe. We’re looking forward to seeing more of you.";
         EventActor = Actors.Headset();
 
         {
@@ -109,7 +109,7 @@ public class VR_Interaction_B_4 : Event
 {
     public override void PlayEvent()
     {
-        Text = "07-JUL-2065 | 02:01 | PERFECT PARTNER\n\nBased on your excessive delivery of user data we’ve been able to create an accurate estimate of the physique of your PERFECT PARTNER, getting to a 75% match on first calculation. Thank you for your active participation in the analysis phase. We will soon update your PERFECT PARTNER according to these calculations.";
+        Text = "09-JUL-2065 | 02:01 | PERFECT PARTNER\n\nBased on your excessive delivery of user data we’ve been able to create an accurate estimate of the physique of your PERFECT PARTNER, getting to a 75% match on first calculation. Thank you for your active participation in the analysis phase. We will soon update your PERFECT PARTNER according to these calculations.";
         EventActor = Actors.Headset();
 
         {
@@ -123,7 +123,7 @@ public class VR_Interaction_B_5 : Event
 {
     public override void PlayEvent()
     {
-        Text = "04-JUL-2065 | 04:40 | PERFECT PARTNER\n\nYour registration to PERFECT PARTNER has been completed. We recommend an active user mentality of casual and adult content on Glass VR applications. More data will result in the quickest way to the PERFECT PARTNER. We will update you as soon as our first calculations are complete.";
+        Text = "03-JUL-2065 | 04:40 | PERFECT PARTNER\n\nThank you for installing PERFECT PARTNER. We recommend an active user mentality of casual and adult content on Glass VR applications. More data will result in the quickest way to the PERFECT PARTNER. We will update you as soon as our first calculations are complete.";
         EventActor = Actors.Headset();
 
         {
@@ -137,7 +137,7 @@ public class VR_Interaction_C_1 : Event
 {
     public override void PlayEvent()
     {
-        Text = "SETTINGS";
+        Text = "Settings";
         EventActor = Actors.Headset();
 
         {
@@ -173,7 +173,7 @@ public class VR_Interaction_C_A_3 : Event
 {
     public override void PlayEvent()
     {
-        Text = "Hold on while we cancel your reque-*bzzt*. \n\nDone. All your memories are erased. Your Glass VR is a clean slate.";
+        Text = "Please wait while we cancel your req-<#ff9b9b><i>bzzzt</i></color>. \n\nAll your memories are erased. Your Glass VR is a clean slate.";
         EventActor = Actors.Headset();
 
         {
@@ -215,7 +215,7 @@ public class VR_Interaction_C_B_3 : Event
 {
     public override void PlayEvent()
     {
-        Text = "Please wait while your memories are being erased… \n\nDone. All your memories are erased. Your Glass VR is a clean slate.";
+        Text = "Please wait while your memories are being erased… \n\nAll your memories are erased. Your Glass VR is a clean slate.";
         EventActor = Actors.Headset();
 
         {

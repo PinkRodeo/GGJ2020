@@ -238,7 +238,7 @@ public class Phone_Scott_SETTINGS_3_A_ERASED : Event
 {
     public override void PlayEvent()
     {
-        Text = "That’s a big one from the list. Quite the cleaner you prove to be. Now dispose of the phone at your Base Station.";
+        Text = "That’s a big one from the list. Quite the cleaner you've proven to be. Now dispose of the phone at your Base Station.";
         EventActor = Actors.AI_Alinna();
 
         {
