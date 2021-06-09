@@ -12,6 +12,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: M_Clothing
+    second: {fileID: 2100000, guid: ea6968cac9af8894b8e4f68442218960, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: M_Dirt
     second: {fileID: 2100000, guid: 3c4301e098e27674d8603dc8258eee8f, type: 2}
   - first:

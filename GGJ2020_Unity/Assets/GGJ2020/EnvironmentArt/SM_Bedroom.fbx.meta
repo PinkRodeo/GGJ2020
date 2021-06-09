@@ -67,6 +67,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: M_INT_DarkMetal
+    second: {fileID: 2100000, guid: a121a63f9678f414298d50fb1f9d6a0b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: M_KitchenCounter
     second: {fileID: 2100000, guid: 74c4a7c599ae18d428e1697bac43d1c1, type: 2}
   - first:
