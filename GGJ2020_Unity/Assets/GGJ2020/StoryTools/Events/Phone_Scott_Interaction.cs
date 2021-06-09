@@ -108,7 +108,7 @@ public class Phone_Scott_MESSAGES_6 : Event
 {
     public override void PlayEvent()
     {
-        Text = "01-JUL-2065 | 09:13 | FROM: ALINNA \n\nWelcome Scott and Jennette to apartment number 2234. I am Alinna, your personalised HeliOS assisstant. My helper Taango and I will make your stay as comfortable as possible. If you need anything, just talk aloud and I will take care of it.";
+        Text = "01-JUL-2065 | 09:13 | FROM: ALINNA \n\nWelcome Scott and Jennette to apartment number 2234. I am Alinna, your personal HeliOS assisstant. My helpers and I will make your stay as comfortable as possible. If you need anything, I will take care of it.";
         EventActor = Actors.Phone_Scott();
 
         {
@@ -136,7 +136,7 @@ public class Phone_Scott_CALLS_2 : Event
 {
     public override void PlayEvent()
     {
-        Text = "02-AUG-2065 | 04:54 | FROM: JEN [UNANSWERED] | RECORDING AVAILABLE\n\n[slurring] I hope you found your cold Thai on the balcony. I should've known you'd just lie in bed and stare at that stupid Glass VR set. Next time I won't even bother making something for you.";
+        Text = "02-AUG-2065 | 04:54 | FROM: JEN [UNANSWERED] | RECORDING AVAILABLE\n\n[slurring] I hope you found the delicious homecooked meal I made you. What? You haven't? That's right... How surprising. You've been looking at your Glass all night. Next time, I won't even bother.";
         EventActor = Actors.Phone_Scott();
 
         {
@@ -150,7 +150,7 @@ public class Phone_Scott_CALLS_3 : Event
 {
     public override void PlayEvent()
     {
-        Text = "01-AUG-2065 | 22:34 | FROM: JEN [UNANSWERED] | RECORDING AVAILABLE\n\nI'm going out for the night. Maybe I'll come back... Not that it would make a difference to you with that stupid Glass thing.";
+        Text = "01-AUG-2065 | 22:34 | FROM: JEN [UNANSWERED] | RECORDING AVAILABLE\n\nI'm going out for the night. Maybe I'll come back... Not that you would notice the difference.";
         EventActor = Actors.Phone_Scott();
 
         {

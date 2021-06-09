@@ -3,7 +3,7 @@ public class Fridge_A_1 : Event
 {
     public override void PlayEvent()
     {
-        Text = "[confident] Fridger 2.0 keeps the freshness of more than just food.";
+        Text = "[confident] Fridger 2.0 keeps the freshness...\n\nOh, why bother.";
         EventActor = Actors.AI_Fridge();
 
         {
@@ -68,7 +68,7 @@ public class Fridge_A_2_Access_Expired_Leave : Event
 {
     public override void PlayEvent()
     {
-        Text = "[sad] I'm just very professionally affected. Don't stay... Goodbye.";
+        Text = "[sad] Please don't go... \n\nGoo... Goodbye.";
         EventActor = Actors.AI_Fridge();
 
         NewContinueChoice();

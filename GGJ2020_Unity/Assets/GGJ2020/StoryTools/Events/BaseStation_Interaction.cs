@@ -132,7 +132,7 @@ public class BaseStation_Go_Find_Trash_Bedroom : Event
 {
     public override void PlayEvent()
     {
-        Text = "You still have work to do. Chop chop. ";
+        Text = "You still have work to do. Chop chop.";
         EventActor = Actors.AI_Alinna();
 
         NewChoice("[diligent] affirmative.");

@@ -118,7 +118,7 @@ public class Message6 : Event
   public override void PlayEvent()
   {
     EventActor = Actors.Phone_Jen();
-    Text = "01-JUL-2065 | 09:13 | FROM: ALINNA \n\nWelcome Scott and Jennette to apartment number 2234. I am Alinna, your personalised HeliOS assisstant. My helper Taango and I will make your stay as comfortable as possible. If you need anything, just talk aloud and I will take care of it.";
+    Text = "01-JUL-2065 | 09:13 | FROM: ALINNA \n\nWelcome Scott and Jennette to apartment number 2234. I am Alinna, your personal HeliOS assisstant. My helpers and I will make your stay as comfortable as possible. If you need anything, I will take care of it.";
 
     var choice = NewChoice("RETURN");
     choice.AddNextEvent<Phone_Jenn_Interaction>();

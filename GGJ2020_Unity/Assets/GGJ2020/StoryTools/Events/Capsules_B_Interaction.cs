@@ -2,7 +2,7 @@ public class Capsules_B_Interaction : Event
 {
     public override void PlayEvent()
     {
-        Text = "I... I have to tell you something... \n\nMedicinal substance detected, large quantities of-";
+        Text = "Quickly... I... I have to tell you something... Before she notices...\n\nMedicinal substance detected, large quantities of-";
         EventActor = Actors.Capsules();
 
         {
