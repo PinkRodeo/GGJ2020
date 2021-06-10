@@ -23,7 +23,7 @@ public class Call1 : Event
     public override void PlayEvent()
     {
         EventActor = Actors.Phone_Jen();
-        Text = "02-AUG-2065 | 13:40 | FROM: SCOTT [UNANSWERED] | RECORDING AVAILABLE\n\n...Jen. I am so sorry about… about everything. I know I haven’t been there, for you, for dinner. My mind was somewhere else, you know. But I will be here now. I’m done with the VR stuff, the damn Glass. You were always there, I see that now. When are you home? I will cook. No pizza, I promise. [footsteps] Jen? I didn’t know you were home... [phone falls] Jennette?! JEN!";
+        Text = "02-AUG-2065 | 13:40 | FROM: SCOTT [UNANSWERED] | RECORDING AVAILABLE\n\n...Jen. I am so sorry about… about everything. I know I haven’t been there for you, for dinner. My mind was somewhere else, you know. But I’m here now. I’m done with the Glass, all of it. When will you get back? I will cook. No pizza, I promise. [footsteps] Jen? You’re home? Jennette?! [phone falls] JEN!";
 
         var choice = NewChoice("...");
         choice.AddNextEvent<Call2>();
@@ -83,7 +83,7 @@ public class Message2 : Event
     public override void PlayEvent()
     {
         EventActor = Actors.Phone_Jen();
-        Text = "01-AUG-2065 | 22:29 | SUSAN\n\nJENN! i havent heard from you in ages. you didn't join Scott in VR, did you? jen you're too pretty to be laying in bed like him all day, staring into his Glass. tonight, party at my place!!";
+        Text = "01-AUG-2065 | 22:29 | SUSAN\n\nJEN!!! we need u!! drinks my place! now!! You'll be back before he wakes up. HAHA get it. see you in a bit.";
 
         var choice = NewChoice("...");
         choice.AddNextEvent<Message3>();
@@ -94,7 +94,7 @@ public class Message3 : Event
     public override void PlayEvent()
     {
         EventActor = Actors.Phone_Jen();
-        Text = "28-JUL-2065 | 22:29 | SUSAN\n\nJEN!!! we need u!! drinks my place! now!! your sleeper husband wont even know, you'll be back before he wakes up. HAHA get it. see you in a bit.";
+        Text = "01-AUG-2065 | 20:13 | SUSAN\n\nJENN! i havent heard from you in ages. you didn't join Scott, did you? You're too pretty to be laying in bed like him all day. tonight, party at my place!!";
 
         var choice = NewChoice("...");
         choice.AddNextEvent<Message5>();
@@ -106,7 +106,7 @@ public class Message5 : Event
     public override void PlayEvent()
     {
         EventActor = Actors.Phone_Jen();
-        Text = "17-JUL-2065 | 21:04 | SUSAN\n\nhhi green eyes, was fun last night. im out this evening again, wanna meet up? maybe we can end up at your place next time. dont u worry about boring Scott okay?";
+        Text = "17-JUL-2065 | 21:04 | SUSAN\n\nhhi green eyes, was fun last night. wanna meet up? maybe we can end up at your place this time.";
 
         var choice = NewChoice("RETURN");
         choice.AddNextEvent<Message6>();
@@ -118,7 +118,7 @@ public class Message6 : Event
   public override void PlayEvent()
   {
     EventActor = Actors.Phone_Jen();
-    Text = "01-JUL-2065 | 09:13 | FROM: ALINNA \n\nWelcome Scott and Jennette to apartment number 2234. I am Alinna, your personal HeliOS assisstant. My helpers and I will make your stay as comfortable as possible. If you need anything, I will take care of it.";
+    Text = "01-JUL-2065 | 09:13 | FROM: ALINNA \n\nWelcome Scott and Jennette to apartment number 2234. I am Alinna, your personal HeliOS assisstant. My helpers and I will make your stay as comfortable as possible. If you need anything, I will take care of it. Welcome home.";
 
     var choice = NewChoice("RETURN");
     choice.AddNextEvent<Phone_Jenn_Interaction>();

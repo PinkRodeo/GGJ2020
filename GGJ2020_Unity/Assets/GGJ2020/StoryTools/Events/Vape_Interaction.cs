@@ -2,7 +2,7 @@ public class Vape_Interaction : Event
 {
     public override void PlayEvent()
     {
-        Text = "The electronic cigarette, ordered by Jennette, has been used last on the 1st of July. High levels of C17H3ClN4, also known as...";
+        Text = "I, Jennette's personal vaporized substance inhalation device, have met the softness of her lips last on August 2nd 2065. I still taste the fading remnants of C17H3ClN4, also known as...";
         EventActor = Actors.Vape();
 
         {

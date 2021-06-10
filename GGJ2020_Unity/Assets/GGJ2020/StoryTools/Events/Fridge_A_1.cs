@@ -3,7 +3,7 @@ public class Fridge_A_1 : Event
 {
     public override void PlayEvent()
     {
-        Text = "[confident] Fridger 2.0 keeps the freshness...\n\nOh, why bother.";
+        Text = "[disheartened] Fridger 2.0 keeps the freshness...\n\nOh, why bother.";
         EventActor = Actors.AI_Fridge();
 
         {

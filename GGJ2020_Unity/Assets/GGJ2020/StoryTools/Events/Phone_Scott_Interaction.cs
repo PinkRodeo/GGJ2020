@@ -52,7 +52,7 @@ public class Phone_Scott_MESSAGES_4B : Event
 {
     public override void PlayEvent()
     {
-        Text = "10-JUL-2065 | 03:25 | FLYING DOUGH PIZZA\n\nThank you for signing up to our DAILY PIZZA subscription. 250 credits will be charged daily to your account.";
+        Text = "10-JUL-2065 | 03:25 | FLYING DOUGH PIZZA\n\nThank you for signing up to our DAILY DOUGH subscription. 250 credits will be charged daily to your account.";
         EventActor = Actors.Phone_Scott();
 
         {
@@ -136,7 +136,7 @@ public class Phone_Scott_CALLS_2 : Event
 {
     public override void PlayEvent()
     {
-        Text = "02-AUG-2065 | 04:54 | FROM: JEN [UNANSWERED] | RECORDING AVAILABLE\n\n[slurring] I hope you found the delicious homecooked meal I made you. What? You haven't? That's right... How surprising. You've been looking at your Glass all night. Next time, I won't even bother.";
+        Text = "02-AUG-2065 | 04:54 | FROM: JEN [UNANSWERED] | RECORDING AVAILABLE\n\n[slurring] I hope you found the delicious homecooked meal I made you. Oh but let me guess... you haven't. Surprising. You've just been staring into your Glass all night. Next time, I won't even bother.";
         EventActor = Actors.Phone_Scott();
 
         {

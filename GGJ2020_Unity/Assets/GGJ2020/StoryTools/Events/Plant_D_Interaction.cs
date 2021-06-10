@@ -21,12 +21,11 @@ public class Plant_D_Interaction_2 : Event
 
         {
             var choice = NewChoice("[hurt] affirmative.");
-            choice.AddNextEvent<Plant_D_Interaction_3>();
         }
     }
 }
 
-public class Plant_D_Interaction_3 : Event
+/*public class Plant_D_Interaction_3 : Event
 {
     public override void PlayEvent()
     {
@@ -37,4 +36,4 @@ public class Plant_D_Interaction_3 : Event
             var choice = NewChoice("affirmative.");
         }
     }
-}
+}*/

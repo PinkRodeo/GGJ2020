@@ -53,7 +53,7 @@ public class VR_Interaction_A_3 : Event
 {
     public override void PlayEvent()
     {
-        Text = "It's rarely the case that the final result looks like the partner they're already with. Yes, many use it to escape the relationship they have. \n\nIt’s beautiful. Statistically close to impossible. How curious this possibility.\n\nReady to erase it?";
+        Text = "It's rarely the case that the final result looks like the partner they're already with. Most use it to escape their reality.\n\nHow curious this possibility. Statistically near impossible, and yet. It’s beautiful.\n\nReady to erase it?";
         EventActor = Actors.AI_Alinna();
 
         {
@@ -95,7 +95,7 @@ public class VR_Interaction_B_3 : Event
 {
     public override void PlayEvent()
     {
-        Text = "18-JUL-2065 | 23:59 | GLASS VR\n\nYour activity within The Glass VR has increased in the last month. You’ve been active for 423 hours and 28 minutes. We’re happy to award you with a platinum user status, granting you access to previously restricted corners of the Glass universe. We’re looking forward to seeing more of you.";
+        Text = "18-JUL-2065 | 23:59 | GLASS VR\n\nBased on your excessive delivery of user data we’ve been able to create an accurate estimate of the physique of your PERFECT PARTNER, getting to a 75% match on first calculation. Thank you for your active participation in the analysis phase. We will soon update your PERFECT PARTNER according to these calculations.";
         EventActor = Actors.Headset();
 
         {
@@ -109,7 +109,7 @@ public class VR_Interaction_B_4 : Event
 {
     public override void PlayEvent()
     {
-        Text = "09-JUL-2065 | 02:01 | PERFECT PARTNER\n\nBased on your excessive delivery of user data we’ve been able to create an accurate estimate of the physique of your PERFECT PARTNER, getting to a 75% match on first calculation. Thank you for your active participation in the analysis phase. We will soon update your PERFECT PARTNER according to these calculations.";
+        Text = "09-JUL-2065 | 02:01 | PERFECT PARTNER\n\nYour activity within The Glass VR has increased in the last month. You’ve been active for 423 hours and 28 minutes. We’re happy to award you with a platinum user status, granting you access to previously restricted corners of the Glass universe. We’re looking forward to seeing more of you.";
         EventActor = Actors.Headset();
 
         {

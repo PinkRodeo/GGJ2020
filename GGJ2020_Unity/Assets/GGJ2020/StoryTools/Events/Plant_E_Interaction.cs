@@ -2,7 +2,7 @@ public class Plant_E_Interaction : Event
 {
     public override void PlayEvent()
     {
-        Text = "Hoi ik ben niels en ik heb een heel lang verhaal voor je. wil je dit horen?";
+        Text = "A good twilight to you young Taango. Could I interest you in a tale at this infinite golden hour?";
         EventActor = Actors.AI_Plant_NIELS();
 
         {
@@ -10,7 +10,7 @@ public class Plant_E_Interaction : Event
             choice.AddNextEvent<Plant_E_Interaction_2>();
         }
         {
-            var choice = NewChoice("[unsure] affirmative.");
+            var choice = NewChoice("[uncertain] affirmative.");
             choice.AddNextEvent<Plant_E_Interaction_2>();
         }
     }
@@ -20,7 +20,7 @@ public class Plant_E_Interaction_2 : Event
 {
     public override void PlayEvent()
     {
-        Text = "Oh wat leuk! het begon allemaal 10 miljoen jaar geleden";
+        Text = "Marvelous! Our story begins at the moment before everything. The dark anticipation when all was nothing and all the same...";
         EventActor = Actors.AI_Plant_NIELS();
 
         {
@@ -34,7 +34,7 @@ public class Plant_E_Interaction_3 : Event
 {
     public override void PlayEvent()
     {
-        Text = "en toen gebeurde dit";
+        Text = "...after millions of years, as matter sought their kin in the vast expanse, stars were born. HeliOS taking flight for the first time, illuminating the would-be planets...";
         EventActor = Actors.AI_Plant_NIELS();
 
         {
@@ -48,7 +48,7 @@ public class Plant_E_Interaction_4 : Event
 {
     public override void PlayEvent()
     {
-        Text = "en toen gebeurde dat";
+        Text = "...invisible to the naked eye still, it seemed as an unimpactful development. A mere green spot in its translucent form. Itself incapable of comprehending its crucial role in the story of life...";
         EventActor = Actors.AI_Plant_NIELS();
 
         {
@@ -62,7 +62,7 @@ public class Plant_E_Interaction_5 : Event
 {
     public override void PlayEvent()
     {
-        Text = "en daarna zus";
+        Text = "With the ability to store the light from the ancient carriage above all manner of life evolved by harnessing that power for themselves. Evolving into vastly complex ecosystems...";
         EventActor = Actors.AI_Plant_NIELS();
 
         {
@@ -76,7 +76,7 @@ public class Plant_E_Interaction_6 : Event
 {
     public override void PlayEvent()
     {
-        Text = "en daarna zo";
+        Text = "And so...";
         EventActor = Actors.AI_Plant_NIELS();
 
         {
@@ -90,7 +90,7 @@ public class Plant_E_Interaction_END : Event
 {
     public override void PlayEvent()
     {
-        Text = "Oh my god shut up! We need to move Taango. Right now!";
+        Text = "By HeliOS shut up! Taango, go dance with someone else. We don't have time for this.";
         EventActor = Actors.AI_Alinna();
 
         {

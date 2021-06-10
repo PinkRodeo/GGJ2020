@@ -161,7 +161,7 @@ public static class Actors
             _AI_Plant_Niels = new Actor(E_ActorCategory.AI,
                             E_ActorType.AI_Plant_Niels,
                             new Color(0.415f, 0.925f, 0.623f, 0.9f),
-                            "● Nielsea Linaria");
+                            "● Sucratus");
         }
 
         return _AI_Plant_Niels;
