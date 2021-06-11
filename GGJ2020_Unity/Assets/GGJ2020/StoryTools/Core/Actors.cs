@@ -46,6 +46,7 @@ public enum E_ActorType
     // Config
     Phone_Scott,
     Phone_Jen,
+    Phone_Intercom,
 
     Headset,
     Capsules,
@@ -209,6 +210,20 @@ public static class Actors
         }
 
         return _Phone_Scott;
+    }
+
+    private static Actor _Phone_Intercom;
+    public static Actor Phone_Intercom()
+    {
+        if (_Phone_Intercom == null)
+        {
+            _Phone_Intercom = new Actor(E_ActorCategory.AI,
+                            E_ActorType.Phone_Intercom,
+                            Color.magenta,
+                            "● Intercom");
+        }
+
+        return _Phone_Intercom;
     }
 
     private static Actor _Shoes;
