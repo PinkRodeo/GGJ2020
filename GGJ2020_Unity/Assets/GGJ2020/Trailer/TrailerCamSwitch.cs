@@ -9,7 +9,7 @@ public class TrailerCamSwitch : MonoBehaviour
     public GameObject cam3;
     public GameObject cam4;
     public GameObject cam5;
-    public GameObject cam6;
+    public GameObject UserInterface;
 
     // Update is called once per frame
     void Update()
@@ -21,7 +21,7 @@ public class TrailerCamSwitch : MonoBehaviour
           cam3.SetActive(false);
           cam4.SetActive(false);
           cam5.SetActive(false);
-          cam6.SetActive(false);
+          UserInterface.SetActive(true);
         }
 
         if (Input.GetButtonDown("TrailerCam2"))
@@ -31,7 +31,7 @@ public class TrailerCamSwitch : MonoBehaviour
           cam3.SetActive(false);
           cam4.SetActive(false);
           cam5.SetActive(false);
-          cam6.SetActive(false);
+          UserInterface.SetActive(false);
         }
 
         if (Input.GetButtonDown("TrailerCam3"))
@@ -41,7 +41,7 @@ public class TrailerCamSwitch : MonoBehaviour
           cam3.SetActive(true);
           cam4.SetActive(false);
           cam5.SetActive(false);
-          cam6.SetActive(false);
+          UserInterface.SetActive(false);
         }
 
         if (Input.GetButtonDown("TrailerCam4"))
@@ -51,7 +51,7 @@ public class TrailerCamSwitch : MonoBehaviour
           cam3.SetActive(false);
           cam4.SetActive(true);
           cam5.SetActive(false);
-          cam6.SetActive(false);
+          UserInterface.SetActive(false);
         }
 
         if (Input.GetButtonDown("TrailerCam5"))
@@ -61,17 +61,17 @@ public class TrailerCamSwitch : MonoBehaviour
           cam3.SetActive(false);
           cam4.SetActive(false);
           cam5.SetActive(true);
-          cam6.SetActive(false);
+          UserInterface.SetActive(false);
         }
 
-        if (Input.GetButtonDown("TrailerCam6"))
+        if (Input.GetButtonDown("UserInterface"))
         {
           GameCam.SetActive(false);
           cam2.SetActive(false);
           cam3.SetActive(false);
           cam4.SetActive(false);
           cam5.SetActive(false);
-          cam6.SetActive(true);
+          UserInterface.SetActive(false);
         }
     }
 }

@@ -16,7 +16,7 @@ public class Alinna_Door_B_Unlock_2 : Event
 {
     public override void PlayEvent()
     {
-        Text = "The bathroom door is open, go along now. \n\nDon't mind the knocking on the door.";
+        Text = "The bathroom door is open, go along now.";
         EventActor = Actors.AI_Alinna();
 
         {

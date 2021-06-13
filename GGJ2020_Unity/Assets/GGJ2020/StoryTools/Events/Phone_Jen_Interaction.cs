@@ -37,7 +37,7 @@ public class Call2 : Event
         EventActor = Actors.Phone_Jen();
         Text = "23-JUL-2065 | 01:54 | UNKNOWN [UNANSWERED]\n\nNO DATA";
 
-        var choice = NewChoice("RETURN");
+        var choice = NewChoice("...");
         choice.AddNextEvent<Call3>();
     }
 }
@@ -49,7 +49,7 @@ public class Call3 : Event
         EventActor = Actors.Phone_Jen();
         Text = "09-JUL-2065 | 00:32 | UNKNOWN [UNANSWERED]\n\nNO DATA";
 
-        var choice = NewChoice("RETURN");
+        var choice = NewChoice("...");
         choice.AddNextEvent<Call5>();
     }
 }
@@ -108,7 +108,7 @@ public class Message5 : Event
         EventActor = Actors.Phone_Jen();
         Text = "17-JUL-2065 | 21:04 | SUSAN\n\nhhi green eyes, was fun last night. wanna meet up? maybe we can end up at your place this time.";
 
-        var choice = NewChoice("RETURN");
+        var choice = NewChoice("...");
         choice.AddNextEvent<Message6>();
     }
 }

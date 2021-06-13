@@ -143,7 +143,7 @@ public class BaseStation_Go_Find_Trash_Bathroom : Event
 {
     public override void PlayEvent()
     {
-        Text = "By heliOS above, hurry!";
+        Text = "By HeliOS above, hurry!";
         EventActor = Actors.AI_Alinna();
 
         NewChoice("[hurried] affirmative.");
